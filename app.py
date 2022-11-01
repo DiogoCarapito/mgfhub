@@ -7,10 +7,10 @@ from dash import dcc, html
 app = dash.Dash()
 
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='HELLO YOLO WORLD'),
 
     html.Div(children='''
-        Dash: A web application framework for Python.
+        HELLO YOLO WORLD
     '''),
 
     dcc.Graph(
