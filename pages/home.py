@@ -12,6 +12,6 @@ dash.register_page(__name__,
 layout = html.Div([
     html.Br(),
     dbc.Container([
-        html.H3('dashboard')
+        html.H3('Dashboard')
     ])
 ])
