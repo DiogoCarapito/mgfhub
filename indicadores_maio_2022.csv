@@ -1,0 +1,105 @@
+cod_indicador,designacao_indicador,tipo,exclusão,idg,mes_indicador,hierarquia_contratual_areahierarquia_contratual_area,hierarquia_contratual_areahierarquia_contratual_sub_area,hierarquia_contratual_dimensao,min_aceit,min_esper,max_esper,max_aceit,resultado,score,usado_no_idg_nacional
+2013.001.01 FL,1 - Proporção de consultas realizadas pelo MF,FL,,S,202205,Desempenho Assistencial,Acesso,Personalização,75.00,78.00,90.00,92.00,86.662,2,S
+2013.010.01 FL,10 - Taxa de utilização de consultas de PF (méd.),FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,25.00,45.00,55.00,65.00,20.759,0,N
+2013.100.01 FL,100 - Taxa utiliz. consultas médicas ou enferm. - 3 anos,FL,,N,202205,Desempenho Assistencial,Acesso,Cobertura ou Utilização,86.00,91.00,97.00,100.00,85.125,0,N
+2013.011.01 FL,11 - Proporção gráv. c/ consulta méd. vigil. 1º trim.,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,85.00,91.00,100.00,100.00,89.076,1.358543,S
+2013.014.01 FL,14 - Proporção RN c/ cons. méd. vigil. até 28 dias vida,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,90.00,96.50,100.00,100.00,82.569,0,N
+2013.015.01 FL,15 - Proporção RN c/ domicílio enf. até 15º dia de vida,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,10.00,50.00,100.00,100.00,1.010,0,N
+2013.016.01 FL,16 - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,50.00,89.00,100.00,100.00,65.217,0.780379,N
+2013.017.01 FL,17 - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,60.00,87.00,100.00,100.00,52.941,0,N
+2013.018.01 FL,18 - Proporção de hipertensos com IMC (12 meses),FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Hipertensão Arterial,65.00,80.00,100.00,100.00,60.907,0,S
+2013.019.01 FL,19 - Proporção de hipertensos com PA em cada semestre,FL,,N,202205,Desempenho Assistencial,Gestão da Doença,Hipertensão Arterial,40.00,75.00,100.00,100.00,25.578,0,N
+2013.002.01 FL,2 - Taxa de utilização global de consultas médicas,FL,,N,202205,Desempenho Assistencial,Acesso,Cobertura ou Utilização,66.00,73.50,85.00,90.00,68.014,0.537151,N
+2013.020.01 FL,20 - Proporção hipertensos < 65 A. com PA < 150/90,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Hipertensão Arterial,45.00,67.00,100.00,100.00,32.168,0,S
+2013.023.01 FL,23 - Proporção hipertensos com risco CV (3 A),FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Hipertensão Arterial,65.00,80.00,100.00,100.00,39.094,0,S
+2017.255.01 FL,255 - Propor. quinolonas entre antib. fatur. (embal.),FL,12,S,202204,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,0.00,0.00,7.00,10.00,5.561,2,S
+2017.257.01 FL,257 - Propor. cefalosp. entre antib. fatur. (embal.),FL,12,S,202204,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,0.00,0.00,4.50,6.50,8.172,0,S
+2017.259.01 FL,259 - Proporção coxibes entre AINEs faturados (DDD),FL,12,S,202204,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,0.00,0.00,5.50,9.00,8.745,0.145583,S
+2013.261.01 FL,261 - Proporção utentes DM c/ aval. risco úlcera pé,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,70.00,87.00,100.00,100.00,23.828,0,S
+2013.262.01 FL,262 - Proporção utentes com avaliação risco DM2 (3A),FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,35.00,58.00,100.00,100.00,0.932,0,S
+2013.269.01 FL,269 - Índice de acompanham. adequado s. infantil 2º ano,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,0.70,0.87,100.00,100.00,0.687,0,S
+2013.274.01 FL,274 - Propor. DM2 c/ indic. insul.. em terap. adequada,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,65.00,82.00,100.00,100.00,71.845,0.805254,S
+2013.275.01 FL,275 - Proporção novos DM2 em terap. c/ metform. monot.,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,55.00,70.00,100.00,100.00,57.627,0.350282,S
+2013.276.01 FL,276 - Rácio DDD prescrita DPP-4 e antidiabét. orais,FL,,S,202205,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,0.00,0.00,28.00,38.00,23.925,2,S
+2013.277.01 FL,277 - Proporção fumadores. c/ consulta relac. tabaco 1A,FL,,N,202205,Desempenho Assistencial,Gestão da Doença,Multimorbilidade e Outros Tipos de Doenças,14.00,31.00,100.00,100.00,12.440,0,N
+2013.278.01 FL,278 - Propor. medicam. prescr. de classes com genéricos,FL,,N,202205,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,60.00,66.00,80.00,90.00,67.551,2,N
+2013.294.01 FL,294 - Taxa domicílios enferm. p/ 1000 inscritos idosos,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Idoso,300.00,570.00,1500.00,1500.00,93.273,0,S
+2013.295.01 FL,295 - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,51.00,77.00,100.00,100.00,28.750,0,S
+2013.296.02 FL,296 - Proporção agreg. fam. puérp. RN c/ domic. enf.,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,5.00,45.00,100.00,100.00,0.714,0,N
+2013.297.01 FL,297 - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Idoso,74.00,82.50,100.00,100.00,83.337,2,S
+2013.003.01 FL,3 - Taxa de domicílios médicos por 1.000 inscritos,FL,,S,202205,Desempenho Assistencial,Acesso,Cobertura ou Utilização,12.00,18.00,35.00,40.00,7.173,0,S
+2013.030.01 FL,30 - Proporção idosos ou doença crónica. c/ vac. gripe,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Idoso,45.00,55.00,100.00,100.00,64.413,2,S
+2013.300.01 FL,300 - Nº médio prescr. consulta fisiatria. p/ utiliz.,FL,,S,202205,Desempenho Assistencial,Qualificação da Prescrição,Prescrição MCDT,0.00,0.00,0.10,0.16,0.137,0.779587,S
+2013.302.01 FL,302 - Índice de acompanham. adequado s. infantil 1º ano,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,0.82,0.93,1.00,1.00,0.871,0.920947,S
+2015.306.01 FL,306 - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,3.00,5.00,100.00,100.00,2.866,0,S
+2015.307.01 FL,307 - Proporção grávidas com ecografia 1º trimestre,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,60.00,80.00,100.00,100.00,64.486,0.448598,N
+2015.308.01 FL,308 - Proporção grávidas com ecografia 2º trimestre,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,60.00,80.00,100.00,100.00,71.111,1.111112,S
+2015.309.01 FL,309 - Proporção grávidas com ecografia 3º trimestre,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,47.00,68.00,100.00,100.00,54.545,0.718615,N
+2013.031.01 FL,"31 - Proporção crianças 7A. c/ peso e altura [5, 7[A",FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,70.00,92.00,100.00,100.00,79.891,0.899209,N
+2015.310.01 FL,310 - Índice realização exames laborat. 1º trim. grav.,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,0.62,0.79,1.00,1.00,0.782,1.903243,S
+2015.311.01 FL,311 - Índice realização exames laborat. 2º trim. grav.,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,0.40,0.54,1.00,1.00,0.480,1.142857,S
+2015.312.01 FL,312 - Índice realização exames laborat. 3º trim. grav.,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,0.30,0.43,1.00,1.00,0.415,1.765734,S
+2015.314.01 FL,314 - Proporção DM com PA >= 140/90 mmHg,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,0.00,0.00,12.00,22.00,35.581,0,S
+2015.315.01 FL,315 - Proporção DM com C-LDL < 100 mg/dl,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,33.00,48.00,100.00,100.00,42.004,1.200513,S
+2015.316.01 FL,"316 - Proporção hipert. [18, 65[A. com PA < 140/90",FL,,N,202205,Desempenho Assistencial,Gestão da Doença,Hipertensão Arterial,23.00,40.00,100.00,100.00,26.050,0.358766,N
+2013.032.01 FL,"32 - Proporção jovens 14A. c/ peso e altura [11, 14[A",FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,50.00,75.00,100.00,100.00,55.051,0.40404,N
+2017.330.01 FL,330 - Índice de utilização anual de consultas médicas,FL,,S,202205,Desempenho Assistencial,Acesso,Cobertura ou Utilização,0.75,0.82,2.00,2.00,0.726,0,S
+2017.331.01 FL,331 - Índice de utilização anual de consultas enferm.,FL,,S,202205,Desempenho Assistencial,Acesso,Cobertura ou Utilização,0.65,0.76,2.00,2.00,0.309,0,S
+2017.335.01 FL,335 - Prop. cons. ind. receit. c/ resposta 3 dias úteis,FL,,S,202205,Desempenho Assistencial,Acesso,Tempos Máximos de Resposta Garantidos,80.00,85.00,100.00,100.00,97.698,2,S
+2018.339.01 FL,339 - Taxa anual ajustada episódios urgência hospitalar,FL,13,S,202205,Desempenho Assistencial,Acesso,Consulta no Próprio Dia,0.00,0.00,47.00,63.00,38.582,2,S
+2013.034.01 FL,34 - Proporção obesos >=14A. c/ cons. vigil. obesid. 2A,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,60.00,72.00,100.00,100.00,15.876,0,S
+2017.341.01 FL,341 - Despesa PVP medic. pres. compart. p/ insc. padrão,FL,,S,202205,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,0.00,0.00,130.00,140.00,140.316,0,S
+2017.342.01 FL,342 - Proporção consul. méd. inic. ut. <= 15 dias úteis,FL,,S,202205,Desempenho Assistencial,Acesso,Tempos Máximos de Resposta Garantidos,70.00,88.00,100.00,100.00,82.722,1.413543,S
+2017.344.01 FL,344 - Propor. consultas médicas realiz. no dia agendam.,FL,,S,202205,Desempenho Assistencial,Acesso,Consulta no Próprio Dia,21.00,26.00,41.00,46.00,42.970,1.21212,S
+2017.345.01 FL,345 - Propor. consul. enfer. realiz. no dia do agendam.,FL,,S,202205,Desempenho Assistencial,Acesso,Consulta no Próprio Dia,18.00,23.00,40.00,45.00,29.580,2,S
+2017.346.01 FL,"346 - Propor. consul. realiz. intervalo [8, 11[h (Q1)",FL,,S,202205,Desempenho Assistencial,Acesso,Distribuição das Consultas Presenciais no Dia,15.00,20.00,35.00,37.50,28.581,2,S
+2017.347.01 FL,"347 - Propor. consul. realiz. intervalo [11, 14[h (Q2)",FL,,N,202205,Desempenho Assistencial,Acesso,Distribuição das Consultas Presenciais no Dia,20.00,22.50,32.50,35.00,37.476,0,N
+2017.348.01 FL,"348 - Propor. consul. realiz. intervalo [14, 17[ (Q3)",FL,,N,202205,Desempenho Assistencial,Acesso,Distribuição das Consultas Presenciais no Dia,20.00,22.50,32.50,35.00,22.691,2,N
+2017.349.01 FL,"349 - Propor. consul. realiz. intervalo [17, 20]h (Q4)",FL,,S,202205,Desempenho Assistencial,Acesso,Distribuição das Consultas Presenciais no Dia,12.00,17.50,25.00,35.00,11.252,0,S
+2013.035.01 FL,35 - Proporção DM com exame pés último ano,FL,,N,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,70.00,89.00,100.00,100.00,26.140,0,N
+2017.350.01 FL,350 - Custo c/ terapêut. do doente c/ Diabetes Mellitus,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,60.00,60.00,350.00,420.00,548.640,0,S
+2017.351.01 FL,351 - Custo c/ terap. doente c/ Diab. Mell. controlado,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,0.00,0.00,350.00,420.00,594.007,0,S
+2017.352.01 FL,352 - Custo c/ terapêut. do doente c/ HTA,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Hipertensão Arterial,40.00,40.00,80.00,90.00,79.122,2,S
+2017.353.01 FL,353 - Custo c/ terapêut. do doente c/ HTA controlada,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Hipertensão Arterial,0.00,0.00,90.00,100.00,97.819,0.436287,S
+2017.354.01 FL,354 - Despesa MCDT prescr. p/ insc. padrão (p. conv.),FL,,S,202205,Desempenho Assistencial,Qualificação da Prescrição,Prescrição MCDT,0.00,0.00,42.50,49.00,47.403,0.49137,S
+2013.036.01 FL,36 - Proporção utentes DM com registo de GRT,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,60.00,75.00,100.00,100.00,25.177,0,S
+2017.365.01 FL,365 - Taxa internam. evitáveis popul. adulta (ajust.),FL,12,S,202004,Desempenho Assistencial,Gestão da Doença,Multimorbilidade e Outros Tipos de Doenças,0.00,0.00,650.00,950.00,524.709,2,S
+2013.037.01 FL,37 - Proporção DM c/ cons. enf. vigil. DM último ano,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,70.00,87.00,100.00,100.00,29.672,0,S
+2017.372.01 FL,372 - Taxa de intern. por fratura do colo do fémur,FL,12,S,202004,Desempenho Assistencial,Gestão da Saúde,Saúde do Idoso,0.00,0.00,820.00,1200.00,462.250,2,S
+2017.378.01 FL,378 - Propor. PVP medicam. prescr. MF contexto privado,FL,12,S,202204,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,0.00,0.00,0.40,1.00,0.019,2,S
+2017.379.01 FL,379 - Propor. PVP medicam. prescr. MF em UF diferentes,FL,12,N,202204,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,0.00,0.00,0.01,0.04,0.034,0.379639,N
+2013.038.01 FL,38 - Proporção DM c/ 1 HbA1c por semestre,FL,,N,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,50.00,77.00,100.00,100.00,50.202,0.014934,N
+2017.380.01 FL,380 - Prop. adultos c/ asma/DPOC/bronq. cr.. com diagn.,FL,13,S,202205,Desempenho Assistencial,Gestão da Doença,Doenças Aparelho Respiratório,74.00,81.00,100.00,100.00,88.899,2,S
+2017.381.01 FL,381 - Prop. adultos c/ depressão/ansiedade. com diagn.,FL,13,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,70.00,78.00,100.00,100.00,81.666,2,S
+2017.382.01 FL,382 - Prop. adultos com DM. com diagn.,FL,13,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,97.00,98.70,100.00,100.00,97.915,1.076668,S
+2017.383.01 FL,383 - Prop. adultos com HTA. com diagnóstico,FL,13,S,202205,Desempenho Assistencial,Gestão da Doença,Hipertensão Arterial,89.00,94.00,100.00,100.00,93.510,1.8041,S
+2017.384.01 FL,384 - Propor. RN cuja mãe tem registo de gravidez,FL,13,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,89.00,94.00,100.00,100.00,81.633,0,S
+2013.039.01 FL,39 - Proporção DM c/ última HbA1c <= 8.0%,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,55.00,70.00,100.00,100.00,54.978,0,S
+2018.395.01 FL,395 - Prop. uten. >= 15 anos. c/ reg. hábit. tabág. 3A,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,55.00,71.00,100.00,100.00,45.398,0,S
+2018.397.01 FL,397 - Prop. fumador c/ int. breve ou muito breve 1 ano,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,15.00,22.00,100.00,100.00,2.017,0,S
+2018.398.01 FL,398 - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,40.00,60.00,100.00,100.00,0.000,0,S
+2018.404.01 FL,404 - Incidência anual de pessoas em abstin. tabág. 12M,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,20.00,60.00,10000.00,10000.00,5.888,0,S
+2018.405.01 FL,"405 - Propor. cons. médic. ""do dia"" efet. UF diferente",FL,,N,202205,Desempenho Assistencial,Acesso,Consulta no Próprio Dia,0.00,0.00,0.50,2.00,1.337,0.884516,N
+2018.409.01 FL,409 - Prop ute s/ prescr prolo ansio/seda/hipn (ajust),FL,,S,202205,Desempenho Assistencial,Qualificação da Prescrição,Prescrição Farmacoterapêutica,89.00,91.50,100.00,100.00,93.529,2,S
+2018.410.01 FL,410 - Taxa anual ajustada utiliz. freq. urgência hospit.,FL,13,S,202205,Desempenho Assistencial,Acesso,Consulta no Próprio Dia,0.00,0.00,2.70,3.60,1.830,2,S
+2018.412.01 FL,412 - [Cons. dia UF inscr.] / ([cons. dia] + [urgênc.]),FL,13,S,202205,Desempenho Assistencial,Acesso,Consulta no Próprio Dia,40.00,60.00,85.00,95.00,67.261,2,S
+2019.427.01 FL,427 - Proporção de grávidas com parto por cesariana,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,15.00,15.00,25.00,40.00,0.000,0,N
+2013.045.01 FL,45 - Prop. mulheres 25-60 anos c/ rastr. c. colo út.,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,41.00,60.00,100.00,100.00,31.663,0,S
+2013.046.01 FL,"46 - Proporção utentes [50, 75[A. c/ rastreio cancro CR",FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,45.00,67.00,100.00,100.00,49.149,0.377147,S
+2013.049.01 FL,49 - Proporção utentes c/ DPOC. c/ FeV1 em 3 anos,FL,,S,202205,Desempenho Assistencial,Gestão da Doença,Doenças Aparelho Respiratório,30.00,60.00,100.00,100.00,24.113,0,S
+2013.005.01 FL,5 - Proporção de consultas realizadas pelo EF,FL,,S,202205,Desempenho Assistencial,Acesso,Personalização,65.00,70.00,88.00,92.00,34.186,0,S
+2013.053.01 FL,53 - Proporção utentes >=14A. c/ registo consumo álcool,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,46.00,70.00,100.00,100.00,44.586,0,S
+2013.054.01 FL,54 - Proporção utentes consum. álcool. c/ consulta 3A,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,40.00,60.00,100.00,100.00,39.571,0,S
+2013.057.01 FL,57 - Proporção RN com TSHPKU realizado até ao 6º dia,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,83.00,94.00,100.00,100.00,95.455,2,N
+2013.059.01 FL,59 - Proporção crianças 2 anos. c/ peso e altura 1 ano,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,80.00,95.50,100.00,100.00,86.624,0.854736,N
+2013.006.01 FL,6 - Taxa de utilização de consultas médicas - 3 anos,FL,,S,202205,Desempenho Assistencial,Acesso,Cobertura ou Utilização,75.00,88.00,100.00,100.00,82.592,1.16802,S
+2013.063.01 FL,63 - Proporção crianças 7A. c/ cons. méd. vig. e PNV,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,65.00,85.00,100.00,100.00,72.283,0.728261,S
+2013.008.01 FL,8 - Taxa de utilização de consultas de PF (méd./enf.),FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,38.00,60.00,100.00,100.00,32.574,0,S
+2013.009.01 FL,9 - Taxa de utilização de consultas de PF (enf.),FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde da Mulher,25.00,42.00,75.00,80.00,21.723,0,N
+2013.091.01 FL,91 - Proporção DM < 65 A. c/ HbA1c <= 6.5 %,FL,,N,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,20.00,33.00,55.00,70.00,20.983,0.151228,N
+2013.093.01 FL,93 - Proporção crianças 2A. c/ PNV cumprido ou execução,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,95.00,95.00,100.00,100.00,98.718,2,N
+2013.094.01 FL,94 - Proporção crianças 7A. c/ PNV cumprido ou execução,FL,,N,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,95.00,95.00,100.00,100.00,96.685,2,N
+2013.095.01 FL,95 - Proporção jovens 14A. c/ PNV cumprido ou execução,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde Infantil e Juvenil,95.00,95.00,100.00,100.00,97.802,2,S
+2013.097.01 FL,97 - Proporção DM c/ microalbum. último ano,FL,,N,202205,Desempenho Assistencial,Gestão da Doença,Diabetes Mellitus,50.00,80.00,100.00,100.00,58.767,0.584457,N
+2013.098.01 FL,98 - Proporção utentes >= 25 A. c/ vacina tétano,FL,,S,202205,Desempenho Assistencial,Gestão da Saúde,Saúde do Adulto,85.00,93.00,100.00,100.00,91.366,1.591522,S
+2013.099.01 FL,99 - Taxa utilização consultas de enfermagem - 3 anos,FL,,S,202205,Desempenho Assistencial,Acesso,Cobertura ou Utilização,65.00,76.00,100.00,100.00,50.490,0,S
