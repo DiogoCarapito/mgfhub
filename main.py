@@ -1,16 +1,13 @@
 import dash
-from dash import Dash, dcc, html, Input, Output, State
-import pandas as pd
 import dash_bootstrap_components as dbc
+from dash import dcc
+from dash import Input, Output, State, html
 import plotly.express as px
-#import dash_core_components as dcc
-#import dash_html_components as html
+import pandas as pd
 
-# for deployment, pass app.server (which is the actual flask app) to WSGI etc
+df = pd.read_excel('data.xlsx', header=2)
 
-path = ''
-df_indicador = pd.DataFrame(data=pd.read_csv(path + 'indicadores_maio_2022.csv'))
-
+#app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SIMPLEX])
 app = dash.Dash(__name__, use_pages=True)
 
 navbar_pages = dbc.Row([
@@ -61,3 +58,4 @@ def toggle_navbar_collapse(n, is_open):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
