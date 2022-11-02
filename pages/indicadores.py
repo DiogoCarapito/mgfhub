@@ -9,8 +9,6 @@ dash.register_page(__name__,
                    name='Indicadores'
 )
 
-df = px.data.tips()
-
 layout = html.Div([
     html.Br(),
     dbc.Container([
