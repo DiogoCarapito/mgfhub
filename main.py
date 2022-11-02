@@ -44,7 +44,6 @@ app.layout = html.Div([
 ])
 @app.callback(
     Output("navbar-collapse", "is_open"),
-    Output("navbar-sunburst_indicadores", "figure"),
     Input("navbar-toggler", "n_clicks"),
     State("navbar-collapse", "is_open"),
 )

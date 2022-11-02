@@ -6,9 +6,7 @@ import dash_bootstrap_components as dbc
 dash.register_page(__name__,
                    path='/sobre',
                    title='Sobre',
-                   name='Sobre'
-)
-
+                   name='Sobre')
 
 layout = html.Div([
     html.Br(),
