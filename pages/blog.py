@@ -13,6 +13,5 @@ container_1 = dbc.Container([
     ])
 
 layout = html.Div([
-    html.Br(),
     container_1
 ])

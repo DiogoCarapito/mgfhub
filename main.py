@@ -1,6 +1,6 @@
 import dash
 import dash_bootstrap_components as dbc
-from dash import  Input, Output, State, html, dcc
+from dash import Input, Output, State, html, dcc
 import pandas as pd
 
 app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SIMPLEX])
@@ -34,10 +34,18 @@ navbar = dbc.Navbar([
             navbar=True,
         ),
     ]),
-], color="dark", dark=True)
+],
+    color="dark",
+    dark=True,
+    fixed='top',
+)
 
 app.layout = html.Div([
     navbar,
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    html.Br(),
     dash.page_container,
 ])
 @app.callback(

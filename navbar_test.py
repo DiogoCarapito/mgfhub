@@ -1,9 +1,10 @@
 import dash
 import dash_bootstrap_components as dbc
-from dash import Input, Output, State, html
+from dash import Input, Output, State, html, dash_table, Dash
 from dash_bootstrap_components._components.Container import Container
+import pandas as pd
 
-app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SIMPLEX])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SIMPLEX])
 
 PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 
@@ -46,13 +47,16 @@ navbar = dbc.Navbar(
             ),
         ]
     ),
-    color="dark",
+    color='dark',
     dark=True,
+    fixed='top',
 )
-
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
+table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
 
 app.layout = html.Div([
     navbar,
+    table
 ])
 
 # add callback for toggling the collapse on small screens
@@ -65,3 +69,6 @@ def toggle_navbar_collapse(n, is_open):
     if n:
         return not is_open
     return is_open
+
+if __name__ == "__main__":
+    app.run(debug=True)
