@@ -4,7 +4,6 @@ from dash import Input, Output, State, html, dcc
 import pandas as pd
 
 app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SIMPLEX])
-#app = dash.Dash(__name__, use_pages=True)
 
 navbar_pages = dbc.Row([
                     dbc.Col([

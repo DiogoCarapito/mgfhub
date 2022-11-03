@@ -8,9 +8,11 @@ dash.register_page(__name__,
                    title='Blog',
                    name='Blog')
 
-layout = html.Div([
-    html.Br(),
-    dbc.Container([
+container_1 = dbc.Container([
         html.H3('blog')
     ])
+
+layout = html.Div([
+    html.Br(),
+    container_1
 ])
