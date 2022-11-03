@@ -24,27 +24,45 @@ html_fim = '&CLUSTERS=S'
 ## Teste se já existeo csv
 html_bruto = []
 inicio = 0
-dados = {}
+dados = []
+
+categorias = [
+    'id',
+    'codigo',
+    'codigo_siars',
+    'nome_abreviado',
+    'designacao',
+    'objetivo',
+
+    'formula',
+    'unidade_de_medida',
+    'output',
+    'estado_do_indicador',
+
+    'area',
+    'subarea',
+    'dimensao',
+
+    'tipo_de_indicador',
+    'area_clinica',
+    'inclusao_de_utentes_no_indicador',
+    'prazo_para_registos',
+    'link',
+]
 
 try:
-    '''file = open("scrapped_indicadores.csv", "r+")
+    file = open("data/scrapped_indicadores.csv", "r")
     dados = list(csv.reader(file, delimiter=","))
-    inicio = len(dados)+1'''
-    with open("data/scrapped_indicadores.csv", 'r') as data:
-        dados = csv.DictReader(data)
-        '''for line in csv.DictReader(data):
-            dados.append(line)
-            inicio +=1
-        '''s
+    inicio = len(dados)
     file.close()
 
 except:
     dados = []
+    dados.append(categorias)
     inicio = 1
 
-print(dados)
 ## Lista de codigos de indicadores que faltam
-fim = inicio + 2 - 1
+fim = inicio + 50 - 1
 #fim = 448
 lista_codigo_html = np.arange(inicio,fim +1).tolist()
 
@@ -70,12 +88,12 @@ for html_code in lista_codigo_html:
 
         if len(items_header) < 9:
             items_header.append(item)
-            print(len(items_header) - 1, item)
+            #print(len(items_header) - 1, item)
         else:
             items_body.append(item)
-            print(len(items_body) - 1, item)
-    print('\n')
-
+            #print(len(items_body) - 1, item)
+    #print('\n')
+    print(items_header[0])
     lista.append(items_header)
     lista_corpo.append(items_body)
 
@@ -91,40 +109,33 @@ for numero_indicador, cabecalho in enumerate(lista):
     else:
         area_subarea_dimensao = ['','','']
 
-    dict_indicador = {
-        'id': cabecalho[0],
-        'codigo': cabecalho[4],
-        'codigo_siars': cabecalho[5],
-        'nome_abreviado': cabecalho[6],
-        'designacao': cabecalho[8],
-        'objetivo': lista_corpo[numero_indicador][1],
+    list_indicador = [
+        cabecalho[0], #'id',
+        cabecalho[4], #'codigo',
+        cabecalho[5], #'codigo_siars',
+        cabecalho[6], #'nome_abreviado',
+        cabecalho[8], #'designacao',
+        lista_corpo[numero_indicador][1], #'objetivo',
 
+        lista_corpo[numero_indicador][4+lista_corpo[numero_indicador].index('Fórmula')], #'formula',
+        lista_corpo[numero_indicador][4+lista_corpo[numero_indicador].index('Unidade de medida')], #'unidade_de_medida',
+        lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Output')], #'output',
+        lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Estado do indicador')], #'estado_do_indicador',
 
-        'formula': lista_corpo[numero_indicador][4+lista_corpo[numero_indicador].index('Fórmula')],
-        'unidade_de_medida': lista_corpo[numero_indicador][4+lista_corpo[numero_indicador].index('Unidade de medida')],
-        'output': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Output')],
-        'estado_do_indicador': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Estado do indicador')],
+        area_subarea_dimensao[0], #'area',
+        area_subarea_dimensao[1], #'subarea',
+        area_subarea_dimensao[2], #'dimensao',
 
-        'area': area_subarea_dimensao[0],
-        'subarea': area_subarea_dimensao[1],
-        'dimensao': area_subarea_dimensao[2],
+        lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Tipo de Indicador')], #'tipo_de_indicador',
+        lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Área clínica')], #'area_clinica',
+        lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Inclusão de utentes no indicador')], #'inclusao_de_utentes_no_indicador',
+        lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Prazo para Registos')], #'prazo_para_registos',
+        html_inicio + cabecalho[0] + html_fim #'link'
+    ]
 
-
-        'tipo_de_indicador': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Tipo de Indicador')],
-        'area_clinica': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Área clínica')],
-        'inclusao_de_utentes_no_indicador': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Inclusão de utentes no indicador')],
-        'prazo_para_registos': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Prazo para Registos')],
-        'link': html_inicio + cabecalho[0] + html_fim
-
-    }
-    print(dict_indicador)
-    dados.append(dict_indicador)
+    #print(list_indicador)
+    dados.append(list_indicador)
 
 ## Gravação em .csv
-df = pd.DataFrame(dados)
-df.to_csv('data/scrapped_indicadores.csv')
-
-'''file = open("scrapped_indicadores.csv", "a+")
-for line in  
-file.close()
-'''
+df = pd.DataFrame(dados, columns=dados[0])
+df.to_csv('data/scrapped_indicadores.csv',index=False,header=False)
