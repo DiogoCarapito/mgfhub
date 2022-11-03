@@ -21,11 +21,9 @@ container_1 = dbc.Container([
     html.H3('blog'),
     table
     ])'''
-
+print(blog_lines)
 blog = dbc.Container([
-    for each in blog_lines:
-        html.H3(each[0]),
-        html.H3(each[1]),
+    html.H3('blog'),
 ])
 
 container_1 = dbc.Container([
