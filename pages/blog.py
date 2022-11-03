@@ -8,8 +8,8 @@ dash.register_page(__name__,
                    title='Blog',
                    name='Blog')
 
-file = open('/data/blog.csv','r')
-blog_lines = list(csv.reader(file, delimiter=','))
+#file = open('/data/blog.csv','r')
+#blog_lines = list(csv.reader(file, delimiter=','))
 
 '''file = open("scrapped_indicadores.csv", "r")
 dados = list(csv.reader(file, delimiter=","))
@@ -20,7 +20,7 @@ container_1 = dbc.Container([
     html.H3('blog'),
     table
     ])'''
-print(blog_lines)
+
 blog = dbc.Container([
     html.H3('blog'),
 ])
