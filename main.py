@@ -22,7 +22,7 @@ navbar = dbc.Navbar([
             dbc.Row([
                     dbc.Col(html.Img(src=app.get_asset_url('LOGO.png'), height="30px")),
                     dbc.Col(dbc.NavbarBrand("BI-MGF", className="ms-2")),
-                ], align="center", className="g-0"),
+                    ], align="center", className="g-0"),
             href="/",
             style={"textDecoration": "none"},
         ),
@@ -48,16 +48,18 @@ app.layout = html.Div([
     html.Br(),
     dash.page_container,
 ])
+
+
 @app.callback(
     Output("navbar-collapse", "is_open"),
     Input("navbar-toggler", "n_clicks"),
-    State("navbar-collapse", "is_open"),
+    State("navbar-collapse", "is_open")
 )
-
 def toggle_navbar_collapse(n, is_open):
     if n:
         return not is_open
     return is_open
+
 
 if __name__ == "__main__":
     app.run(debug=True)
