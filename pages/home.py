@@ -9,7 +9,7 @@ dash.register_page(__name__,
                    name='Dashboard'
                 )
 
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
+df = pd.read_csv('scrapped_indicadores.csv')
 table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
 
 container_1 = dbc.Container([
@@ -18,5 +18,6 @@ container_1 = dbc.Container([
 ])
 
 layout = html.Div([
-    container_1
+    container_1,
+    html.Br(),
 ])
