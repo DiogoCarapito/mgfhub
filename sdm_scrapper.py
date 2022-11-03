@@ -53,7 +53,8 @@ categorias = [
 try:
     file = open("data/scrapped_indicadores.csv", "r")
     dados = list(csv.reader(file, delimiter=","))
-    inicio = len(dados)
+    ## Qual o id do último indicador para começar no seguinte
+    inicio = int(dados[-1][0]) + 1
     file.close()
 
 except:
