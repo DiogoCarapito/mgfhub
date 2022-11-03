@@ -9,8 +9,8 @@ dash.register_page(__name__,
                    name='Dashboard'
                    )
 
-'''df = pd.read_csv('scrapped_indicadores.csv')
-df.drop(columns=df.columns[0], axis=1, inplace=True)
+df = pd.read_csv('scrapped_indicadores.csv')
+'''df.drop(columns=df.columns[0], axis=1, inplace=True)
 
 #table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
 table = dbc.Table.from_dataframe(df, striped=True, bordered=True, hover=False)
