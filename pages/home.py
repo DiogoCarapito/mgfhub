@@ -7,7 +7,7 @@ dash.register_page(__name__,
                    path='/',
                    title='Dashboard Indicadores',
                    name='Dashboard'
-                )
+                   )
 
 df = pd.read_csv('scrapped_indicadores.csv')
 df.drop(columns=df.columns[0], axis=1, inplace=True)
