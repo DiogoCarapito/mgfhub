@@ -23,21 +23,30 @@ html_fim = '&CLUSTERS=S'
 
 ## Teste se já existeo csv
 html_bruto = []
+inicio = 0
+dados = {}
 
 try:
-    file = open("scrapped_indicadores.csv", "r+")
+    '''file = open("scrapped_indicadores.csv", "r+")
     dados = list(csv.reader(file, delimiter=","))
-    inicio = len(data)+1
+    inicio = len(dados)+1'''
+    with open("scrapped_indicadores.csv", 'r') as data:
+        dados = csv.DictReader(data)
+        '''for line in csv.DictReader(data):
+            dados.append(line)
+            inicio +=1
+        '''s
     file.close()
+
 except:
     dados = []
     inicio = 1
 
-print(inicio)
+print(dados)
 ## Lista de codigos de indicadores que faltam
-fim = 5
+fim = inicio + 2 - 1
+#fim = 448
 lista_codigo_html = np.arange(inicio,fim +1).tolist()
-print(lista_codigo_html)
 
 lista = []
 lista_corpo = []
@@ -114,3 +123,8 @@ for numero_indicador, cabecalho in enumerate(lista):
 ## Gravação em .csv
 df = pd.DataFrame(dados)
 df.to_csv('scrapped_indicadores.csv')
+
+'''file = open("scrapped_indicadores.csv", "a+")
+for line in  
+file.close()
+'''

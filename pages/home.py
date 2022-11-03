@@ -10,7 +10,10 @@ dash.register_page(__name__,
                 )
 
 df = pd.read_csv('scrapped_indicadores.csv')
-table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
+df.drop(columns=df.columns[0], axis=1, inplace=True)
+
+#table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
+table = dbc.Table.from_dataframe(df, striped=True, bordered=True, hover=True)
 
 container_1 = dbc.Container([
     html.H3('Dashboard'),
