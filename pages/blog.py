@@ -1,7 +1,6 @@
 import dash
 from dash import dcc, html
 import dash_bootstrap_components as dbc
-import pandas as pd
 import csv
 
 dash.register_page(__name__,
@@ -9,7 +8,7 @@ dash.register_page(__name__,
                    title='Blog',
                    name='Blog')
 
-file = open('data/blog.csv','r')
+file = open('/data/blog.csv','r')
 blog_lines = list(csv.reader(file, delimiter=','))
 
 '''file = open("scrapped_indicadores.csv", "r")
