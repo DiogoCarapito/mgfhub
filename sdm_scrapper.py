@@ -30,7 +30,7 @@ try:
     '''file = open("scrapped_indicadores.csv", "r+")
     dados = list(csv.reader(file, delimiter=","))
     inicio = len(dados)+1'''
-    with open("scrapped_indicadores.csv", 'r') as data:
+    with open("data/scrapped_indicadores.csv", 'r') as data:
         dados = csv.DictReader(data)
         '''for line in csv.DictReader(data):
             dados.append(line)
@@ -122,7 +122,7 @@ for numero_indicador, cabecalho in enumerate(lista):
 
 ## Gravação em .csv
 df = pd.DataFrame(dados)
-df.to_csv('scrapped_indicadores.csv')
+df.to_csv('data/scrapped_indicadores.csv')
 
 '''file = open("scrapped_indicadores.csv", "a+")
 for line in  

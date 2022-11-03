@@ -9,6 +9,9 @@ dash.register_page(__name__,
                    title='Blog',
                    name='Blog')
 
+file = open('data/blog.csv','r')
+blog_lines = list(csv.reader(file, delimiter=','))
+
 '''file = open("scrapped_indicadores.csv", "r")
 dados = list(csv.reader(file, delimiter=","))
 df = pd.DataFrame(dados)
@@ -19,8 +22,15 @@ container_1 = dbc.Container([
     table
     ])'''
 
+blog = dbc.Container([
+    for each in blog_lines:
+        html.H3(each[0]),
+        html.H3(each[1]),
+])
+
 container_1 = dbc.Container([
     html.H3('blog'),
+    blog,
     ])
 
 layout = html.Div([
