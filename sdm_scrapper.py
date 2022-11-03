@@ -103,7 +103,7 @@ for numero_indicador, cabecalho in enumerate(lista):
         'formula': lista_corpo[numero_indicador][4+lista_corpo[numero_indicador].index('Fórmula')],
         'unidade_de_medida': lista_corpo[numero_indicador][4+lista_corpo[numero_indicador].index('Unidade de medida')],
         'output': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Output')],
-        'estado:do_indicador': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Estado do indicador')],
+        'estado_do_indicador': lista_corpo[numero_indicador][4 + lista_corpo[numero_indicador].index('Estado do indicador')],
 
         'area': area_subarea_dimensao[0],
         'subarea': area_subarea_dimensao[1],
