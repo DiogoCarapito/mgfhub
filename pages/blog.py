@@ -9,7 +9,7 @@ dash.register_page(__name__,
                    title='Blog',
                    name='Blog')
 
-file = open("scrapped_indicadores.csv", "r")
+'''file = open("scrapped_indicadores.csv", "r")
 dados = list(csv.reader(file, delimiter=","))
 df = pd.DataFrame(dados)
 table = dbc.Table.from_dataframe(df, striped=True, bordered=True, hover=False)
@@ -17,6 +17,10 @@ table = dbc.Table.from_dataframe(df, striped=True, bordered=True, hover=False)
 container_1 = dbc.Container([
     html.H3('blog'),
     table
+    ])'''
+
+container_1 = dbc.Container([
+    html.H3('blog'),
     ])
 
 layout = html.Div([

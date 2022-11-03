@@ -20,8 +20,12 @@ container_1 = dbc.Container([
     table,
 ])'''
 
+df = pd.DataFrame([1,2])
+table = dbc.Table.from_dataframe(df, striped=True, bordered=True, hover=False)
+
 container_1 = dbc.Container([
     html.H3('Dashboard'),
+    table
 ])
 
 layout = html.Div([
