@@ -3,10 +3,13 @@ from dash import dcc, html
 import dash_bootstrap_components as dbc
 import csv
 
-dash.register_page(__name__,
-                   path='/blog',
-                   title='Blog',
-                   name='Blog')
+dash.register_page(
+    __name__,
+    path='/blog',
+    title='Blog',
+    name='Blog',
+    order=2,
+)
 
 #file = open('/data/blog.csv','r')
 #blog_lines = list(csv.reader(file, delimiter=','))
@@ -23,14 +26,15 @@ container_1 = dbc.Container([
 
 blog = dbc.Container([
     html.H3('blog'),
-])
+],fluid=True,)
 
 container_1 = dbc.Container([
     html.H3('blog'),
     blog,
-    ])
+    ],fluid=True,)
 
-layout = html.Div([
-    container_1,
-    html.Br(),
-])
+def layout():
+    return html.Div([
+        container_1,
+        html.Br(),
+    ])
