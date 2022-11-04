@@ -5,7 +5,6 @@ import pandas as pd
 
 app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SLATE])
 
-
 navbar_pages = dbc.Row([
                     dbc.Col([
                         dbc.Nav([
@@ -20,23 +19,22 @@ navbar = dbc.Navbar([
         html.A(
 
             dbc.Row([
-                    dbc.Col(html.Img(src=app.get_asset_url('LOGO.png'), height="30px")),
-                    dbc.Col(dbc.NavbarBrand("BI-MGF", className="ms-2")),
-                    ], align="center", className="g-0"),
-            href="/",
-            style={"textDecoration": "none"},
+                    dbc.Col(html.Img(src=app.get_asset_url('LOGO.png'), height='30px')),
+                    dbc.Col(dbc.NavbarBrand('BI-MGF', className='ms-2')),
+                    ], align='center', className='g-0'),
+            href='/',
+            style={'textDecoration': 'none'},
         ),
-        dbc.NavbarToggler(id="navbar-toggler", n_clicks=0),
+        dbc.NavbarToggler(id='navbar-toggler', n_clicks=0),
         dbc.Collapse(
             navbar_pages,
-            id="navbar-collapse",
+            id='navbar-collapse',
             is_open=False,
             navbar=True,
         ),
     ]),
-
 ],
-    color="dark",
+    color='dark',
     dark=True,
     fixed='top',
 )
@@ -52,9 +50,9 @@ app.layout = html.Div([
 
 
 @app.callback(
-    Output("navbar-collapse", "is_open"),
-    Input("navbar-toggler", "n_clicks"),
-    State("navbar-collapse", "is_open")
+    Output('navbar-collapse', 'is_open'),
+    Input('navbar-toggler', 'n_clicks'),
+    State('navbar-collapse', 'is_open')
 )
 def toggle_navbar_collapse(n, is_open):
     if n:
@@ -62,5 +60,5 @@ def toggle_navbar_collapse(n, is_open):
     return is_open
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)

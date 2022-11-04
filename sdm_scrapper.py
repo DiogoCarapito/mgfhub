@@ -23,7 +23,6 @@ html_fim = '&CLUSTERS=S'
 
 ## Teste se já existeo csv
 html_bruto = []
-inicio = 0
 dados = []
 
 categorias = [
@@ -63,7 +62,7 @@ except:
     inicio = 1
 
 ## Lista de codigos de indicadores que faltam
-fim = inicio + 50 - 1
+fim = inicio + 100 - 1
 #fim = 448
 lista_codigo_html = np.arange(inicio,fim +1).tolist()
 
@@ -98,10 +97,12 @@ for html_code in lista_codigo_html:
     lista.append(items_header)
     lista_corpo.append(items_body)
 
+print('---')
 ## For Loop para iterar sobre o cada linha e atribuir a um dicionário para criação da tabela
 for numero_indicador, cabecalho in enumerate(lista):
 
     if len(cabecalho)<5 : continue
+    if cabecalho[0][:4] == 'Erro' : continue
     print(cabecalho[0])
 
     area_subarea_dimensao_test = lista_corpo[numero_indicador][3 + lista_corpo[numero_indicador].index('Área | Subárea | Dimensão')]
@@ -111,7 +112,7 @@ for numero_indicador, cabecalho in enumerate(lista):
         area_subarea_dimensao = ['','','']
 
     list_indicador = [
-        cabecalho[0], #'id',
+        int(cabecalho[0]), #'id',
         cabecalho[4], #'codigo',
         cabecalho[5], #'codigo_siars',
         cabecalho[6], #'nome_abreviado',
