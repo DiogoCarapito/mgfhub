@@ -11,7 +11,7 @@ dash.register_page(
     order=1,
 )
 
-df = pd.read_csv('data/csv_test.csv')
+df = pd.read_csv('csv_test.csv')
 #df = pd.read_csv('data/scrapped_indicadores.csv')
 #df.drop(columns=df.columns[0], axis=1, inplace=True)
 
