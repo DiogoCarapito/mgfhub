@@ -11,7 +11,7 @@ dash.register_page(
     order=1,
 )
 
-df = pd.read_csv('data/scrapped_indicadores.csv')
+df = pd.read_csv('/data/scrapped_indicadores.csv')
 #df.drop(columns=df.columns[0], axis=1, inplace=True)
 
 #table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
