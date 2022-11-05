@@ -11,10 +11,13 @@ dash.register_page(
     order=1,
 )
 
-df = pd.read_csv('data/scrapped_indicadores.csv')
+#df = pd.read_csv('data/scrapped_indicadores.csv')
 #df.drop(columns=df.columns[0], axis=1, inplace=True)
 
 #table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
+
+df = pd.DataFrame([1,2,3,4,5,6])
+
 table = dbc.Table.from_dataframe(
     df,
     striped=True,
@@ -23,8 +26,8 @@ table = dbc.Table.from_dataframe(
     id='tabela_indicadores'
 )
 
-usf_ucsp_para_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
-usf_ucsp_sem_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
+#usf_ucsp_para_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
+#usf_ucsp_sem_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
 
 table_filters = ['Todos','USF/UCSP com impacto IDG','USF/UCSP sem impacto IDG',]
 
