@@ -1,7 +1,6 @@
 import dash
-from dash import dcc, html
+from dash import html
 import dash_bootstrap_components as dbc
-import csv
 
 dash.register_page(
     __name__,
@@ -11,10 +10,10 @@ dash.register_page(
     order=3,
 )
 
-
 container_1 = dbc.Container([
     html.H3('about'),
-    ],fluid=True,)
+], fluid=True)
+
 
 def layout():
     return html.Div([

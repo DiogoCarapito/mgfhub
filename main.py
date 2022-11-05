@@ -1,26 +1,25 @@
 import dash
 import dash_bootstrap_components as dbc
-from dash import Input, Output, State, html, dcc
+from dash import Input, Output, State, html
 
 app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SIMPLEX])
 
 navbar_pages = dbc.Row([
-                    dbc.Col([
-                        dbc.Nav([
-                            dbc.NavItem(dbc.NavLink(page['name'], href=page['path']))
-                            for page in dash.page_registry.values()
-                        ], navbar=True,)
-                    ]),
-                ])
+    dbc.Col([
+        dbc.Nav([
+            dbc.NavItem(dbc.NavLink(page['name'], href=page['path']))
+            for page in dash.page_registry.values()
+        ], navbar=True,)
+    ]),
+])
 
 navbar = dbc.Navbar([
     dbc.Container([
         html.A(
-
             dbc.Row([
-                    dbc.Col(html.Img(src=app.get_asset_url('LOGO.png'), height='30px')),
-                    dbc.Col(dbc.NavbarBrand('bi-indicadores', className='ms-2')),
-                    ], align='center', className='g-0'),
+                dbc.Col(html.Img(src=app.get_asset_url('LOGO_2.png'), height='30px')),
+                dbc.Col(dbc.NavbarBrand('bi-indicadores', className='ms-2')),
+                ], align='center', className='g-0'),
             href='/',
             style={'textDecoration': 'none'},
         ),
@@ -31,7 +30,7 @@ navbar = dbc.Navbar([
             is_open=False,
             navbar=True,
         ),
-    ],fluid=True,),
+    ], fluid=True,),
 ],
     color='light',
     dark=False,

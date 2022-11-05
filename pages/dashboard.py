@@ -11,18 +11,21 @@ dash.register_page(
     order=1,
 )
 
+# read_csv read no PyCharm!!
 df_todos_indicadores = pd.read_csv('data/scrapped_indicadores.csv')
 usf_ucsp_para_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
 #usf_ucsp_sem_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
 
+# read_csv read no PythonAnywhere!!
+'''
+df_todos_indicadores = pd.read_csv('/home/diogocarapito/bi_indicadores/data/scrapped_indicadores.csv')
+usf_ucsp_para_idg = pd.read_csv('/home/diogocarapito/bi_indicadores/data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
+usf_ucsp_sem_idg = pd.read_csv('/home/diogocarapito/bi_indicadores/data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
+'''
+
 df_todos_indicadores_filtered = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
 
-
-#df_todos_indicadores = pd.read_csv('/home/diogocarapito/bi_indicadores/data/scrapped_indicadores.csv')
-#df_todos_indicadores.drop(columns=df_todos_indicadores.columns[0], axis=1, inplace=True)
-
 #table = dash_table.DataTable(df_todos_indicadores.to_dict('records'), [{"name": i, "id": i} for i in df_todos_indicadores.columns])
-
 
 
 table = dbc.Table.from_dataframe(
@@ -33,7 +36,6 @@ table = dbc.Table.from_dataframe(
     id='tabela_indicadores'
 )
 
-
 table_filters = ['todos','USF/UCSP com impacto IDG','USF/UCSP sem impacto IDG',]
 
 filters = html.Div([
@@ -43,7 +45,8 @@ filters = html.Div([
                 options=table_filters,
                 value=table_filters[0],
                 inline=True,
-                id='radio_tabela')
+                id='radio_tabela'
+            )
         ])
     ])
 ])
