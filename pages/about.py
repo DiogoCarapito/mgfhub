@@ -6,8 +6,8 @@ import csv
 dash.register_page(
     __name__,
     path='/about',
-    title='About',
-    name='About',
+    title='about',
+    name='about',
     order=3,
 )
 

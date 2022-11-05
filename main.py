@@ -19,7 +19,7 @@ navbar = dbc.Navbar([
 
             dbc.Row([
                     dbc.Col(html.Img(src=app.get_asset_url('LOGO.png'), height='30px')),
-                    dbc.Col(dbc.NavbarBrand('BI-MGF', className='ms-2')),
+                    dbc.Col(dbc.NavbarBrand('bi-indicadores', className='ms-2')),
                     ], align='center', className='g-0'),
             href='/',
             style={'textDecoration': 'none'},
@@ -33,8 +33,8 @@ navbar = dbc.Navbar([
         ),
     ],fluid=True,),
 ],
-    color='dark',
-    dark=True,
+    color='light',
+    dark=False,
     fixed='top',
 )
 
