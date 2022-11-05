@@ -36,7 +36,7 @@ table = dbc.Table.from_dataframe(
     id='tabela_indicadores'
 )
 
-table_filters = ['todos','USF/UCSP com impacto IDG','USF/UCSP sem impacto IDG',]
+table_filters = ['todos', 'USF/UCSP com impacto IDG', 'USF/UCSP sem impacto IDG']
 
 filters = html.Div([
     dbc.Row([
@@ -56,7 +56,7 @@ container_1 = dbc.Container([
     html.Br(),
     filters,
     table,
-],fluid=True,)
+], fluid=True,)
 
 
 def layout():
@@ -65,7 +65,7 @@ def layout():
             dbc.Col([
                 container_1,
                 html.Br(),
-            ],width={"size": 10, "offset": 0},)
+            ], width={"size": 10, "offset": 0},)
         ])
 
     ])
