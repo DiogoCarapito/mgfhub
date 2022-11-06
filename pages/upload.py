@@ -4,14 +4,14 @@ import dash_bootstrap_components as dbc
 
 dash.register_page(
     __name__,
-    path='/',
-    title='starburst',
-    name='starburst',
-    order=1,
+    path='/upload',
+    title='upload',
+    name='upload',
+    order=2,
 )
 
 container_upload_file = html.Div([
-    html.H3('bi-csp'),
+    html.H3('upload from bi-csp'),
     dcc.Upload(
         id='upload-data',
         children=html.Div([

@@ -6,25 +6,21 @@ import pandas_dash
 
 dash.register_page(
     __name__,
-    path='/table',
+    path='/',
     title='tabela indicadores',
     name='tabela',
-    order=2,
+    order=1,
 )
 
 # read_csv read no PyCharm!!
-df_todos_indicadores = pd.read_csv('data/scrapped_indicadores.csv')
-usf_ucsp_para_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
-#usf_ucsp_sem_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
+pythonanywhere_file_tree = ''
+# pythonanywhere_file_tree = '/home/diogocarapito/bi_indicadores/'
 
-# read_csv read no PythonAnywhere!!
-'''
-df_todos_indicadores = pd.read_csv('/home/diogocarapito/bi_indicadores/data/scrapped_indicadores.csv')
-usf_ucsp_para_idg = pd.read_csv('/home/diogocarapito/bi_indicadores/data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
-usf_ucsp_sem_idg = pd.read_csv('/home/diogocarapito/bi_indicadores/data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
-'''
+df_todos_indicadores = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_indicadores.csv')
+usf_ucsp_para_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
+usf_ucsp_sem_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
 
-df_todos_indicadores_filtered = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
+#df_todos_indicadores_filtered = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
 
 #table = dash_table.DataTable(df_todos_indicadores.to_dict('records'), [{"name": i, "id": i} for i in df_todos_indicadores.columns])
 
@@ -78,17 +74,12 @@ table = dash_table.DataTable(
 '''
 table = dash_table.DataTable(
     id='tabela_indicadores',
-    data=df_todos_indicadores_filtered.to_dict('records'),
-    columns=[{"name": i, "id": i} for i in df_todos_indicadores_filtered.columns],
-    page_size=10,
-    style_cell={  # ensure adequate header width when text is shorter than cell's text
-        'minWidth': 30, 'maxWidth': 360, 'width': 95
-    },
-    style_data={  # overflow cells' content into multiple lines
-        'whiteSpace': 'normal',
-        'height': 'auto'
-    }
+    data = df_todos_indicadores.to_dict('records'),
+    columns = [{"name": i, "id": i} for i in df_todos_indicadores.columns],
+    page_size=50,
+    style_cell={'textAlign': 'left'}
 )
+
 
 table_filters = ['todos', 'USF/UCSP com impacto IDG', 'USF/UCSP sem impacto IDG']
 
@@ -106,7 +97,7 @@ filters = html.Div([
 ])
 
 container_1 = dbc.Container([
-    html.H3('dashboard'),
+    html.H3('tabela'),
     html.Br(),
     filters,
     dbc.Container([table]),
@@ -125,22 +116,22 @@ def layout():
     ])
 
 
-'''@callback(
+@callback(
     Output('tabela_indicadores', 'data'),
+    Output('tabela_indicadores', 'columns'),
     Input('radio_tabela', 'value'),
 )
 
 
 def table_update(radio_tabela):
-
+    df_todos_indicadores_novo = df_todos_indicadores
     if radio_tabela == 'Todos':
         df_todos_indicadores_novo = df_todos_indicadores
     elif radio_tabela == 'USF/UCSP com impacto IDG':
-        df_todos_indicadores_novo = df_todos_indicadores
+        df_todos_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
     elif radio_tabela == 'USF/UCSP sem impacto IDG':
-        df_todos_indicadores_novo = df_todos_indicadores
-    tabela_indicadores = dash_table.DataTable(
+        df_todos_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_sem_idg['indicador'].values.tolist())]
 
-    )
+    df_todos_indicadores_novo_colmun = [{"name": i, "id": i} for i in df_todos_indicadores_novo.columns]
 
-    return tabela_indicadores'''
+    return df_todos_indicadores_novo.to_dict('records'),df_todos_indicadores_novo_colmun
