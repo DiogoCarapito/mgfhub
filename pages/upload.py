@@ -10,7 +10,7 @@ dash.register_page(
     order=2,
 )
 
-container_upload_file = html.Div([
+container_upload_file = dbc.Container([
     html.H3('upload from bi-csp'),
     dcc.Upload(
         id='upload-data',

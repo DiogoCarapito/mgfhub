@@ -50,11 +50,16 @@ app.layout = html.Div([
 @app.callback(
     Output('navbar-collapse', 'is_open'),
     Input('navbar-toggler', 'n_clicks'),
+    Input('navbar-toggler', 'loading_state'),
     State('navbar-collapse', 'is_open')
 )
-def toggle_navbar_collapse(n, is_open):
+def toggle_navbar_collapse(n, n2, is_open):
+    print(n, n2, is_open)
+
     if n:
         return not is_open
+    if n2 != 'None':
+        return False
     return is_open
 
 

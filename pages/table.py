@@ -97,22 +97,21 @@ filters = html.Div([
 ])
 
 container_1 = dbc.Container([
-    html.H3('tabela'),
-    html.Br(),
-    filters,
-    dbc.Container([table]),
+    dbc.Row([
+        dbc.Col([
+            html.H3('tabela'),
+            html.Br(),
+            filters,
+            dbc.Container([table]),
+        ])
+    ])
 ], fluid=True,)
 
 
 def layout():
     return html.Div([
-        dbc.Row([
-            dbc.Col([
-                container_1,
-                html.Br(),
-            ], width={"size": 10, "offset": 0},)
-        ])
-
+        container_1,
+        html.Br(),
     ])
 
 
