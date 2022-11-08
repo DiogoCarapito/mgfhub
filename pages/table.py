@@ -87,7 +87,6 @@ table = dash_table.DataTable(
 
 
 table_filters = ['todos', 'USF/UCSP com impacto IDG', 'USF/UCSP sem impacto IDG']
-
 filters = html.Div([
     dbc.Row([
         dbc.Col([
