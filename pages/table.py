@@ -2,6 +2,7 @@ import dash
 from dash import Dash, dcc, html, callback, Input, Output, dash_table
 import dash_bootstrap_components as dbc
 import pandas as pd
+import plotly.graph_objects as go
 
 dash.register_page(
     __name__,
@@ -18,6 +19,11 @@ pythonanywhere_file_tree = ''
 df_todos_indicadores = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_indicadores.csv')
 usf_ucsp_para_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
 usf_ucsp_sem_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
+
+subgrupos = ['area','subarea','dimensao']
+for each in subgrupos:
+    print(df_todos_indicadores[each].dropna().drop_duplicates())
+    print(len(df_todos_indicadores[each].dropna().drop_duplicates()))
 
 #df_todos_indicadores_filtered = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
 

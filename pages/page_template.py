@@ -7,7 +7,7 @@ dash.register_page(
     path='/page_template',
     title='page template',
     name='page template',
-    order=5,
+    order=6,
 )
 
 container = dbc.Container([
