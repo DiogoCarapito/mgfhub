@@ -9,7 +9,7 @@ dash.register_page(
     name='blog',
     order=4,
 )
-posts_html = str()
+blog_posts_html = []
 blogposts = [['first post','4/11/2022','text text'],['second post','8/11/2022','text text2']]
 for each in blogposts:
     post = html.Div(dbc.Container([
@@ -20,6 +20,7 @@ for each in blogposts:
             ],fluid=True, className="py-3",
         ),className="p-3 bg-light rounded-3",
     ),
+    blog_posts_html.append(post)
 
 '''
 jumbotron = html.Div(
@@ -34,18 +35,14 @@ jumbotron = html.Div(
 )
 '''
 
-blog = dbc.Container([
-    html.H3('blog'),
-], fluid=True,)
-
 container_1 = dbc.Container([
     html.H3('blog'),
-    blog,
+    blog_posts_html,
     ], fluid=True,)
 
 
 def layout():
     return html.Div([
-        posts_html,
+        container_1,
         html.Br(),
     ])
