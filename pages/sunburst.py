@@ -1,7 +1,9 @@
 import dash
 from dash import html, dcc, callback, Output, Input
 import dash_bootstrap_components as dbc
-import plotly.express as px
+import pandas as pd
+import plotly.graph_objects as go
+import numpy as np
 
 dash.register_page(
     __name__,
@@ -10,7 +12,7 @@ dash.register_page(
     name='sunburst',
     order=3,
 )
-
+''''
 table_filters = ['todos', 'USF/UCSP com impacto IDG', 'USF/UCSP sem impacto IDG']
 filters = dbc.Container([
     dbc.Row([
@@ -24,6 +26,7 @@ filters = dbc.Container([
         ])
     ])
 ])
+'''
 
 header = dbc.Container((
     dbc.Row([
@@ -38,7 +41,7 @@ container = dbc.Container([
             dcc.Graph(id='sunburst')
         ], width=6),
         dbc.Col([
-            #dash_table.DataTable(id='table')
+
         ], width=6),
     ]),
 ], fluid=True)
@@ -47,7 +50,7 @@ container = dbc.Container([
 def layout():
     return html.Div([
         header,
-        filters,
+        #filters,
         container,
         html.Br(),
     ])
@@ -55,11 +58,12 @@ def layout():
 
 @callback(
     Output('sunburst', 'figure'),
-    Input('radio_tabela', 'value'),
+    #Input('radio_tabela', 'value'),
 )
 
 def sunburst_update(radio_tabela):
-    '''df_todos_indicadores_novo = df_todos_indicadores
+    '''
+    df_todos_indicadores_novo = df_todos_indicadores
     if radio_tabela == 'Todos':
         df_todos_indicadores_novo = df_todos_indicadores
     elif radio_tabela == 'USF/UCSP com impacto IDG':
@@ -70,7 +74,22 @@ def sunburst_update(radio_tabela):
     df_todos_indicadores_novo_colmun = [{"name": i, "id": i} for i in df_todos_indicadores_novo.columns]
     '''
 
-    df = px.data.tips()
-    fig = px.sunburst(df, path=['day', 'time', 'sex'], values='total_bill')
+    df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/coffee-flavors.csv')
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Sunburst(
+        ids=df.ids,
+        labels=df.labels,
+        parents=df.parents,
+        domain=dict(column=1),
+        maxdepth=2,
+        insidetextorientation='radial'
+    ))
+
+    fig.update_layout(
+        margin=dict(t=10, l=10, r=10, b=10)
+    )
+
 
     return fig

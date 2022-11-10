@@ -20,10 +20,12 @@ df_todos_indicadores = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_ind
 usf_ucsp_para_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
 usf_ucsp_sem_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
 
+'''
 subgrupos = ['area','subarea','dimensao']
 for each in subgrupos:
     print(df_todos_indicadores[each].dropna().drop_duplicates())
     print(len(df_todos_indicadores[each].dropna().drop_duplicates()))
+'''
 
 #df_todos_indicadores_filtered = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
 
@@ -81,7 +83,7 @@ table = dash_table.DataTable(
     id='tabela_indicadores',
     data = df_todos_indicadores.to_dict('records'),
     columns = [{"name": i, "id": i} for i in df_todos_indicadores.columns],
-    page_size=50,
+    page_size=448,
     style_cell={'textAlign': 'left'}
 )
 
@@ -106,7 +108,7 @@ container_1 = dbc.Container([
             html.H3('tabela'),
             html.Br(),
             filters,
-            dbc.Container([table]),
+            table,
         ])
     ])
 ], fluid=True,)
