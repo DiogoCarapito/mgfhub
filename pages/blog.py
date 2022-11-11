@@ -1,6 +1,7 @@
 import dash
-from dash import html
+from dash import html, dcc, callback, Output, Input
 import dash_bootstrap_components as dbc
+import pandas as pd
 
 dash.register_page(
     __name__,
@@ -9,10 +10,20 @@ dash.register_page(
     name='blog',
     order=4,
 )
+
+pythonanywhere_file_tree = ''
+#pythonanywhere_file_tree = '/home/diogocarapito/bi_indicadores/'
+
 blog_posts_html = []
-blogposts = [['first post','4/11/2022','text text'],['second post','8/11/2022','text text2']]
+blogposts = pd.read_csv(pythonanywhere_file_tree + 'data/blog.csv')
 
+'''
+for post,item in blogposts.iterrows():
+    #html = html.Div([dbc.Container([html.H2(item['title']),])])
+    #blog_posts_html.append(html)
+    print(item['title'])
 
+'''
 
 '''
 for each in blogposts:
@@ -43,7 +54,7 @@ jumbotron = html.Div(
 
 container_1 = dbc.Container([
     html.H3('blog'),
-    blog_posts_html,
+    html.Div(blog_posts_html),
     ], fluid=True,)
 
 

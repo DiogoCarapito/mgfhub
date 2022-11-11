@@ -7,7 +7,7 @@ dash.register_page(
     path='/upload',
     title='upload',
     name='upload',
-    order=2,
+    order=3,
 )
 
 container_upload_file = dbc.Container([
