@@ -39,7 +39,7 @@ table = dash_table.DataTable(
 )
 
 search_box = html.Div([
-    dbc.Input(id='searchbox', placeholder='', type='text'),
+    dbc.Input(id='searchbox', placeholder='search...', type='text'),
 ])
 
 container_1 = dbc.Container([
@@ -48,6 +48,7 @@ container_1 = dbc.Container([
             html.H3('tabela'),
             html.Br(),
             search_box,
+            html.Br(),
             table,
         ])
     ])
@@ -69,23 +70,30 @@ def layout():
 
 
 def table_update(searchbox):
-    print(type(searchbox))
-    if searchbox == None:
+    print(searchbox)
+    if searchbox == None or searchbox == '':
         df_after_search = df
     else:
-        if searchbox.isnumeric():
+
+        search_list = process.extract(searchbox, df.designacao, scorer=fuzz.WRatio, score_cutoff=59, limit=50)
+
+        '''
+        if searchbox.isdigit():
             search_list = process.extract(searchbox,df.id,scorer=fuzz.ratio,score_cutoff=99)
         else:
-            search_list = process.extract(searchbox, df.designacao,scorer=fuzz.WRatio,score_cutoff=20)
-            #search_list = process.extract(searchbox, df.designacao, scorer=fuzz.WRatio, limit=20)
+            search_list = process.extract(searchbox, df.designacao,scorer=fuzz.WRatio,score_cutoff=59, limit = 20)
+            #search_list = process.extract(searchbox, df.designacao, scorer=fuzz.WRatio, limit= 20)
             #search_list = process.extract(searchbox, df.designacao, scorer=fuzz.token_sort_ratio, score_cutoff=50)
+        '''
 
         df_after_search = df.filter([id[2] for id in search_list], axis=0)
 
         print(search_list)
-        print([id[2] for id in search_list])
+        print(len([id[2] for id in search_list]))
         print([id[1] for id in search_list])
+
     df_data = df_after_search.to_dict('records')
+    #df_data = df_after_search.sort_index().to_dict('records')
     df_columns = [{"name": i, "id": i} for i in df_after_search.columns]
 
     return df_data,df_columns
