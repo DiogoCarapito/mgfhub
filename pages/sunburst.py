@@ -149,7 +149,7 @@ df_sunburst = pd.concat([df_area,df_subarea,df_dimensao,df_indicadores])
 df_sunburst_2 = pd.concat([df_area,df_subarea,df_dimensao])
 
 table_filters = ['todos', 'USF/UCSP com impacto IDG', 'USF/UCSP sem impacto IDG']
-filters = dbc.Container([
+filters = html.Div([
     dbc.Row([
         dbc.Col([
             dcc.RadioItems(
@@ -163,29 +163,37 @@ filters = dbc.Container([
 ])
 
 
-header = dbc.Container((
+header = html.Div((
     dbc.Row([
         html.H3('sunburst'),
     ]),
 ))
 
-container = dbc.Container([
+graphs = html.Div([
     dbc.Row([
-        dbc.Col([
-            dcc.Graph(id='sunburst_indicadores')
-        ], width=6),
         dbc.Col([
             dcc.Graph(id='sunburst_indicadores_2')
         ], width=6),
+        dbc.Col([
+            dcc.Graph(id='sunburst_indicadores')
+        ], width=6),
     ]),
+])
+
+container = dbc.Container([
+    dbc.Row([
+        dbc.Col([
+            header,
+            filters,
+            html.Br(),
+            graphs,
+        ])
+    ])
 ], fluid=True)
 
 
 def layout():
     return html.Div([
-        header,
-        filters,
-        html.Br(),
         container,
         html.Br(),
     ])

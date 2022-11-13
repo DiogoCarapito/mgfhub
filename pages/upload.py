@@ -10,14 +10,10 @@ dash.register_page(
     order=3,
 )
 
-container_upload_file = dbc.Container([
-    html.H3('upload from bi-csp'),
+upload = html.Div([
     dcc.Upload(
         id='upload-data',
-        children=html.Div([
-            'Drag and Drop or ',
-            html.A('Select Files')
-        ]),
+        children=html.Div(['Drag and Drop or ',html.A('Select Files')]),
         style={
             'width': '100%',
             'height': '60px',
@@ -29,8 +25,16 @@ container_upload_file = dbc.Container([
             'margin': '10px'
         }, multiple=False
     ),
-    html.Div(id='output-data-upload'),
 ])
+container_1 = dbc.Container([
+    dbc.Row([
+        dbc.Col([
+            html.H3('upload from bi-csp'),
+            upload,
+            html.Div(id='output-data-upload'),
+        ])
+    ])
+], fluid=True)
 
 container_sunburst_table = dbc.Container([
     dbc.Row([
@@ -46,7 +50,7 @@ container_sunburst_table = dbc.Container([
 
 def layout():
     return html.Div([
-        container_upload_file,
+        container_1,
         html.Br(),
     ])
 
