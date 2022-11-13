@@ -39,7 +39,23 @@ table = dash_table.DataTable(
 )
 
 search_box = html.Div([
-    dbc.Input(id='searchbox', placeholder='search...', type='text'),
+    dbc.Input(
+        id='searchbox',
+        placeholder='search...',
+        type='text',
+        size='sm',
+    ),
+])
+
+filters = html.Div([
+    dbc.Row([
+        dbc.Col([
+            search_box
+        ], width=3),
+        dbc.Col([
+
+        ], width=9),
+    ])
 ])
 
 container_1 = dbc.Container([
@@ -47,7 +63,7 @@ container_1 = dbc.Container([
         dbc.Col([
             html.H3('tabela'),
             html.Br(),
-            search_box,
+            filters,
             html.Br(),
             table,
         ])
