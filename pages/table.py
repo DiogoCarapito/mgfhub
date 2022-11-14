@@ -157,11 +157,11 @@ def table_update(searchbox,radio_tabela):
     else:
         search_list = process.extract(searchbox, df_indicadores_novo.indexing, scorer=fuzz.WRatio, score_cutoff=59, limit=50)
         df_after_search = df_indicadores_novo.filter([id[2] for id in search_list], axis=0)
-
+        '''
         print(search_list)
         print(len([id[2] for id in search_list]))
         print([id[1] for id in search_list])
-
+        '''
     df_after_search = df_after_search.drop(columns=['codigo', 'codigo_siars', 'nome_abreviado','objetivo', 'formula', 'unidade_de_medida', 'output','estado_do_indicador', 'inclusao_de_utentes_no_indicador', 'prazo_para_registos', 'link','indexing'])
 
     df_data = df_after_search.to_dict('records')
