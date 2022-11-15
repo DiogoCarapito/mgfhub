@@ -6,7 +6,7 @@
 - É dificil entender como o IDG é calculado e de que forma é que cada indicador o influência
 - Saber quais as áreas necessitam de ser optimizadas não é apresentada de forma clara, tornado dificil tomar decisões de como gerir os recursos
 <img width="394" alt="Captura de ecrã 2022-11-15, às 20 41 15" src="https://user-images.githubusercontent.com/43778648/202021100-7f83e3fd-1c82-4938-8c33-e89c9f4dee2e.png">
-
+lol
 
 
 ## Objectivo:
