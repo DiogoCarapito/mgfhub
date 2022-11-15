@@ -46,17 +46,18 @@ app.layout = html.Div([
     dash.page_container,
 ])
 
-
+## Falta um callback para ler o click num navlink e fechar o navbar-toggle
 @app.callback(
     Output('navbar-collapse', 'is_open'),
     Input('navbar-toggler', 'n_clicks'),
     State('navbar-collapse', 'is_open'),
 )
+
+# Função para gerir o botão navbar colapse
 def toggle_navbar_collapse(n, is_open):
     if n:
         return not is_open
     return is_open
-
 
 if __name__ == '__main__':
     app.run(debug=True)

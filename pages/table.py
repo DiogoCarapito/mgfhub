@@ -14,16 +14,22 @@ dash.register_page(
 )
 
 # read_csv read no PyCharm!!
+## tem que ser mudado para link do github para funcionar cross platform
 pythonanywhere_file_tree = ''
 #pythonanywhere_file_tree = '/home/diogocarapito/bi_indicadores/'
 
 # Laod da principal base de dados em .csv
+## Ponderar fazer um script para adicionar informação sobre Intervalos aceitáveis ideias a partir do PDF da Operacionalização da ACSS
+## Terminar o scrapper sdm, porquen ainda falta infomração de formula de calculo
 df_todos_indicadores = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_indicadores.csv')
-# Load das listas de id's de indicadores utilizados para IDG
+# Load das listas de id's de indicadores utilizados para IDG das USFs/UCSPs
+## podem vir a ser adicionados a lista de indicadores doas UCC, USP, ACES
+## eventualmente tem que se escrever um script para extrair diretamente do PDF da Operacionalização da ACSS
 usf_ucsp_para_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
 usf_ucsp_sem_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
 
-
+# Criação de uma coluna com concatonação da info importante para o algoritmo de pesquiza pelo método fuzzy
+# Algumas celuas têm que ser
 s=' '
 df_todos_indicadores = df_todos_indicadores.assign(indexing=[str(row.id)+s+row.nome_abreviado+s+row.designacao+s+str(row.area)+s+str(row.subarea)+s+str(row.dimensao)+s+row.tipo_de_indicador+s+row.area_clinica for index, row in df_todos_indicadores.iterrows()])
 
@@ -48,7 +54,9 @@ df = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['ind
 df = df.drop(columns=['codigo','codigo_siars','nome_abreviado','objetivo','formula','unidade_de_medida', 'output','estado_do_indicador','inclusao_de_utentes_no_indicador','prazo_para_registos','link'])
 '''
 
-# objeto para entrar no HT
+# Definição da Tabela
+## Arranjar fomra de meter uma célula com um link para o SDM
+## Alterar a font do texto da tabela, está num retro proggraming dos anos 80 xD
 table = dash_table.DataTable(
     id='tabela_indicadores',
     page_size=448,
@@ -67,6 +75,7 @@ table = dash_table.DataTable(
         },
     style_data={'whiteSpace': 'normal','height': 'auto',},
     style_table={'overflowX': 'auto'},
+    # Linhas com fundo alternado
     style_data_conditional=[
         {
             'if': {'row_index': 'odd'},
@@ -75,6 +84,7 @@ table = dash_table.DataTable(
     ],
 )
 
+# Zona de introdução de texto para pesquisa
 search_box = html.Div([
     dbc.Input(
         id='searchbox',
@@ -84,6 +94,8 @@ search_box = html.Div([
     ),
 ])
 
+# Radio options para refinar a pesquisa
+## ponderar adicionar mais campos de filtors, como Ativos e desactivos, Por àreas, subáreas??
 radio_options=[
     {'label':'USF/UCSP com impacto IDG','value':'USF/UCSP com impacto IDG'},
     {'label':'USF/UCSP sem impacto IDG','value':'USF/UCSP sem impacto IDG'},
@@ -98,6 +110,7 @@ radio = html.Div([
     )
 ])
 
+# Barra dos filtros
 filters = html.Div([
     dbc.Row([
         dbc.Col([
@@ -109,8 +122,10 @@ filters = html.Div([
     ])
 ])
 
+# OCntagem de quantos indicadores estão selecionados
 contagem = html.Div([html.P(id='contagem_indicadores')],style={'padding': '12px 0px 0px 4px'})
 
+# Contentor principal
 container_1 = dbc.Container([
     dbc.Row([
         dbc.Col([
@@ -123,7 +138,7 @@ container_1 = dbc.Container([
     ])
 ], fluid=True)
 
-
+# Declaração do Layout
 def layout():
     return html.Div([
         container_1,
@@ -141,31 +156,39 @@ def layout():
 
 
 def table_update(searchbox,radio_tabela):
-    
+
+    # Reset da tablea
     df_indicadores_novo = df_todos_indicadores
-    if radio_tabela == 'Todos':
-        df_indicadores_novo = df_todos_indicadores
-    elif radio_tabela == 'USF/UCSP com impacto IDG':
-        df_indicadores_novo = df_todos_indicadores[
-            df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
+
+
+    # Filtragem por com impacto no IDG, sem impacto no IDG, ou todos
+    ## Eventualmente pré processar e ter os CSV's já gravados para poupar tempo
+    if radio_tabela == 'USF/UCSP com impacto IDG':
+        df_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
     elif radio_tabela == 'USF/UCSP sem impacto IDG':
-        df_indicadores_novo = df_todos_indicadores[
-            df_todos_indicadores['id'].isin(usf_ucsp_sem_idg['indicador'].values.tolist())]
-    
+        df_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_sem_idg['indicador'].values.tolist())]
+    elif radio_tabela == 'Todos':
+        df_indicadores_novo = df_todos_indicadores
+
+    # Garantir que quando a searchbox está vazia, se mostra todos os indicadores (independente dos filtros)
     if searchbox == None or searchbox == '':
         df_after_search = df_indicadores_novo
     else:
         search_list = process.extract(searchbox, df_indicadores_novo.indexing, scorer=fuzz.WRatio, score_cutoff=59, limit=50)
         df_after_search = df_indicadores_novo.filter([id[2] for id in search_list], axis=0)
+
+        # Sanity print para aferir qualidade dos resultados da pesquisa
         '''
         print(search_list)
         print(len([id[2] for id in search_list]))
         print([id[1] for id in search_list])
         '''
+
+    # remoção das colunas que não se querem vizualizar
     df_after_search = df_after_search.drop(columns=['codigo', 'codigo_siars', 'nome_abreviado','objetivo', 'formula', 'unidade_de_medida', 'output','estado_do_indicador', 'inclusao_de_utentes_no_indicador', 'prazo_para_registos', 'link','indexing'])
 
+    # Duas variáveis necessárias à exportação da tabela
     df_data = df_after_search.to_dict('records')
     df_columns = [{"name": i, "id": i} for i in df_after_search.columns]
-
 
     return df_data,df_columns,str(len(df_after_search))+' indicadores'
