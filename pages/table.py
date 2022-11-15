@@ -67,11 +67,13 @@ table = dash_table.DataTable(
         'fontWeight': 'bold'
     },
     style_cell={
-        'padding': '5px',
+        'padding': '2px',
         'textAlign': 'left',
         'height': 'auto',
         #'minWidth': '30px', 'width': '30px','maxWidth': '360px',
         'whiteSpace': 'normal',
+        'font_family': 'sans-serif',
+        'font_size': '13px',
         },
     style_data={'whiteSpace': 'normal','height': 'auto',},
     style_table={'overflowX': 'auto'},
@@ -115,10 +117,10 @@ filters = html.Div([
     dbc.Row([
         dbc.Col([
             search_box,
-        ], width=3),
+        ], width=4),
         dbc.Col([
             radio,
-        ], width=9),
+        ], width=8),
     ])
 ])
 

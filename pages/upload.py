@@ -7,7 +7,7 @@ dash.register_page(
     path='/upload',
     title='upload',
     name='upload',
-    order=3,
+    order=4,
 )
 
 upload = html.Div([

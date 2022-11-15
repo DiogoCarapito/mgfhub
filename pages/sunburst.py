@@ -1,5 +1,5 @@
 import dash
-from dash import html, dcc, callback, Output, Input
+from dash import html, dcc, callback, Output, Input, dash_table
 import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.graph_objects as go
@@ -13,13 +13,20 @@ dash.register_page(
     order=2,
 )
 
+# read_csv read no PyCharm!!
+## tem que ser mudado para link do github para funcionar cross platform
 pythonanywhere_file_tree = ''
 #pythonanywhere_file_tree = '/home/diogocarapito/bi_indicadores/'
 
+# Laod da principal base de dados em .csv
+## Ponderar fazer um script para adicionar informação sobre Intervalos aceitáveis ideias a partir do PDF da Operacionalização da ACSS
 df_todos_indicadores = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_indicadores.csv')
 usf_ucsp_para_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
 df_todos_indicadores_filtrado = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
-df = df_todos_indicadores_filtrado.drop(columns=['codigo','codigo_siars','objetivo','formula','unidade_de_medida', 'output','estado_do_indicador','tipo_de_indicador','area_clinica','inclusao_de_utentes_no_indicador','prazo_para_registos','link'])
+
+# Remoção de tabelas que não interessam
+## Há um bug que me está a impedir de retirar as colunas 'area', 'subarea' e 'dimensao'...
+df = df_todos_indicadores_filtrado.drop(columns=['codigo','codigo_siars','objetivo','formula','unidade_de_medida','output','estado_do_indicador','tipo_de_indicador','area_clinica','inclusao_de_utentes_no_indicador','prazo_para_registos','link'])
 
 df_area = pd.DataFrame({
     'id':df.area.drop_duplicates(),
@@ -148,6 +155,8 @@ df_indicadores = pd.DataFrame({
 df_sunburst = pd.concat([df_area,df_subarea,df_dimensao,df_indicadores])
 df_sunburst_2 = pd.concat([df_area,df_subarea,df_dimensao])
 
+root=''
+
 table_filters = ['todos', 'USF/UCSP com impacto IDG', 'USF/UCSP sem impacto IDG']
 filters = html.Div([
     dbc.Row([
@@ -156,7 +165,8 @@ filters = html.Div([
                 options=table_filters,
                 value=table_filters[0],
                 inline=True,
-                id='radio_tabela'
+                id='radio_tabela',
+
             )
         ])
     ])
@@ -169,13 +179,40 @@ header = html.Div((
     ]),
 ))
 
+table = dash_table.DataTable(
+    id='tabela_sunburst',
+    page_size=10,
+    sort_action="native",
+    #filter_action='native',
+    style_header={
+        'backgroundColor': 'rgb(240, 240, 240)',
+        'fontWeight': 'bold'
+    },
+    style_cell={
+        'padding': '5px',
+        'textAlign': 'left',
+        'height': 'auto',
+        #'minWidth': '30px', 'width': '30px','maxWidth': '360px',
+        'whiteSpace': 'normal',
+        },
+    style_data={'whiteSpace': 'normal','height': 'auto',},
+    style_table={'overflowX': 'auto'},
+    # Linhas com fundo alternado
+    style_data_conditional=[
+        {
+            'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(248, 248, 248)',
+        }
+    ],
+)
+
 graphs = html.Div([
     dbc.Row([
         dbc.Col([
-            dcc.Graph(id='sunburst_indicadores_2')
+            dcc.Graph(id='sunburst_indicadores')
         ], width=6),
         dbc.Col([
-            dcc.Graph(id='sunburst_indicadores')
+            table
         ], width=6),
     ]),
 ])
@@ -201,8 +238,6 @@ def layout():
 
 @callback(
     Output('sunburst_indicadores', 'figure'),
-    Output('sunburst_indicadores_2', 'figure'),
-    #Output('sunburst', 'figure'),
     Input('radio_tabela', 'value'),
 )
 
@@ -219,44 +254,45 @@ def sunburst_update(radio_tabela):
     df_todos_indicadores_novo_colmun = [{"name": i, "id": i} for i in df_todos_indicadores_novo.columns]
     '''
 
+
     fig_sunburst_indicadores = go.Figure()
     fig_sunburst_indicadores.add_trace(go.Sunburst(
-        ids=df_sunburst.id,
-        labels=df_sunburst.label,
-        parents=df_sunburst.parent,
-        #values=df_sunburst.value,
-        branchvalues="total",
-        #domain=dict(column=1),
-        insidetextorientation='radial',
-    ))
-    fig_sunburst_indicadores.update_layout(margin=dict(t=0, l=0, r=0, b=0))
-
-    fig_sunburst_indicadores_2 = go.Figure()
-    fig_sunburst_indicadores_2.add_trace(go.Sunburst(
         ids=df_sunburst_2.id,
         labels=df_sunburst_2.label,
         parents=df_sunburst_2.parent,
         values=df_sunburst_2.value,
         branchvalues="total",
         # domain=dict(column=1),
-        insidetextorientation='radial',
+        #insidetextorientation='radial',
     ))
-    fig_sunburst_indicadores_2.update_layout(margin=dict(t=0, l=0, r=0, b=0))
+    fig_sunburst_indicadores.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 
-    '''
-    df_coffe = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/coffee-flavors.csv')
-    fig = go.Figure()
-    fig.add_trace(go.Sunburst(
-        ids=df_coffe.ids,
-        labels=df_coffe.labels,
-        parents=df_coffe.parents,
-        domain=dict(column=1),
-        maxdepth=2,
-        insidetextorientation='radial'
-    ))
-    fig.update_layout(
-        margin=dict(t=10, l=10, r=10, b=10)
-    )
-    '''
+    return fig_sunburst_indicadores
 
-    return fig_sunburst_indicadores,fig_sunburst_indicadores_2
+@callback(
+    Output(component_id='tabela_sunburst',component_property='data'),
+    Output(component_id='tabela_sunburst',component_property='columns'),
+    #Output('tabela_sunburst', 'data'),
+    #Output('tabela_sunburst', 'columns'),
+    Input(component_id='sunburst_indicadores', component_property='clickData'),
+    Input(component_id='sunburst_indicadores', component_property='selectedData'),
+
+)
+
+def table_update(clickData,maxdepth):
+
+    if clickData == None:
+    #if clickData == None or root=='':
+        df_updated = df
+    else:
+        df_updated = df
+    print(clickData['points'][0])
+    print(clickData['points'][0]['percentEntry'])
+    print(clickData['points'][0]['id'])
+    print(clickData['points'][0]['parent'])
+
+    # Duas variáveis necessárias à exportação da tabela
+    df_data = df_updated.to_dict('records')
+    df_columns = [{"name": i, "id": i} for i in df_updated.columns]
+
+    return df_data, df_columns

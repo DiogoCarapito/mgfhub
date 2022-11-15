@@ -8,7 +8,7 @@ dash.register_page(
     path='/blog',
     title='blog',
     name='blog',
-    order=4,
+    order=5,
 )
 
 pythonanywhere_file_tree = ''
