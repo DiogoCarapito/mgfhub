@@ -1,6 +1,6 @@
 # bi_indicadores
 
-## Probelma:
+## Probelma
 - A compreensão e visualização da forma como os inidcadores de desempenho funcionam nos cuidados de saúde primários é difícil
 - É dificil compreender que indicadores existem
 - É dificil entender como o IDG é calculado e de que forma é que cada indicador o influência
@@ -9,12 +9,12 @@
 lol
 
 
-## Objectivo:
+## Objectivo
 - Produzir uma ferramenta de analise dos indicadores das unidades de saude familiares dos cuidados de saude primários
 - Oferecer uma vizualização intiuitiva, que permite exploração da forma como o desempenho é medido e calculado
 - auxiliar na toma de decisão para otimizar os recursos tendo como base o principio dos incentivos existente nos cuidados de saude primários. 
 
-## Origem dos dados:
+## Origem dos dados
 - SDM (webscrapping)
 - BI-CSP (por intermédio de upload)
 - Documentação da ACSS (Operacionalização da Contratualização nos Cuidados de Saúde Primários)
