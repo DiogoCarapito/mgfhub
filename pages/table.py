@@ -97,7 +97,7 @@ search_box = html.Div([
 ])
 
 # Radio options para refinar a pesquisa
-## ponderar adicionar mais campos de filtors, como Ativos e desactivos, Por àreas, subáreas??
+## ponderar adicionar mais campos de filtros, como Ativos e desactivos, Por àreas, subáreas??
 radio_options=[
     {'label':'USF/UCSP com impacto IDG','value':'USF/UCSP com impacto IDG'},
     {'label':'USF/UCSP sem impacto IDG','value':'USF/UCSP sem impacto IDG'},
@@ -124,7 +124,7 @@ filters = html.Div([
     ])
 ])
 
-# OCntagem de quantos indicadores estão selecionados
+# Contagem de quantos indicadores estão selecionados
 contagem = html.Div([html.P(id='contagem_indicadores')],style={'padding': '12px 0px 0px 4px'})
 
 # Contentor principal
@@ -159,12 +159,11 @@ def layout():
 
 def table_update(searchbox,radio_tabela):
 
-    # Reset da tablea
+    # Reset da tabela antes da pesquisa
     df_indicadores_novo = df_todos_indicadores
 
-
     # Filtragem por com impacto no IDG, sem impacto no IDG, ou todos
-    ## Eventualmente pré processar e ter os CSV's já gravados para poupar tempo
+    ## Eventualmente pré-processar e ter os CSV's já gravados para poupar tempo
     if radio_tabela == 'USF/UCSP com impacto IDG':
         df_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
     elif radio_tabela == 'USF/UCSP sem impacto IDG':
@@ -193,4 +192,8 @@ def table_update(searchbox,radio_tabela):
     df_data = df_after_search.to_dict('records')
     df_columns = [{"name": i, "id": i} for i in df_after_search.columns]
 
-    return df_data,df_columns,str(len(df_after_search))+' indicadores'
+    # Texto que refere quantos indicadores estão na tabela resultado da pesquisa
+    numero_indicadores = str(len(df_after_search))+' indicadores'
+
+    return df_data,df_columns,numero_indicadores
+

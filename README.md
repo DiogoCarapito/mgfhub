@@ -20,8 +20,10 @@ lol
 - Documentação da ACSS (Operacionalização da Contratualização nos Cuidados de Saúde Primários)
 
 ## Roadmap
+  - [x] escrever o README.md 
+
 extração de dados
-  - [x] web scrapper
+  - [x] web scrapper dos 448 indicadores do SDM para csv
   - [ ] extrair tabela das paginas 76-80 do pdf das contratualizações para csv com os intervalos aceitavel e esperado em 4 colunas
 
 
