@@ -152,8 +152,8 @@ df_indicadores = pd.DataFrame({
     'parent':[df.loc[each]['dimensao'] for each in df.nome_abreviado.drop_duplicates().index],
 })
 
-df_sunburst = pd.concat([df_area,df_subarea,df_dimensao,df_indicadores])
-df_sunburst_2 = pd.concat([df_area,df_subarea,df_dimensao])
+#df_sunburst_2 = pd.concat([df_area,df_subarea,df_dimensao,df_indicadores])
+df_sunburst = pd.concat([df_area,df_subarea,df_dimensao])
 
 root=''
 
@@ -179,9 +179,13 @@ header = html.Div((
     ]),
 ))
 
+df_inicial = df.drop(columns=['area','subarea','dimensao'])
+
 table = dash_table.DataTable(
     id='tabela_sunburst',
     page_size=10,
+    data=df_inicial.to_dict('records'),
+    columns=[{"name": i, "id": i} for i in df_inicial.columns],
     sort_action="native",
     #filter_action='native',
     style_header={
@@ -194,15 +198,18 @@ table = dash_table.DataTable(
         'height': 'auto',
         #'minWidth': '30px', 'width': '30px','maxWidth': '360px',
         'whiteSpace': 'normal',
+        'font_family': 'sans-serif',
+        'font_size': '13px',
         },
-    style_data={'whiteSpace': 'normal','height': 'auto',},
+    style_data={'whiteSpace': 'normal',
+                'height': 'auto'},
+    # Scroll horizontal ativado
+    ## falta ter um scroll vertical embutido
     style_table={'overflowX': 'auto'},
     # Linhas com fundo alternado
-    style_data_conditional=[
-        {
+    style_data_conditional=[{
             'if': {'row_index': 'odd'},
-            'backgroundColor': 'rgb(248, 248, 248)',
-        }
+            'backgroundColor': 'rgb(248, 248, 248)',}
     ],
 )
 
@@ -257,10 +264,10 @@ def sunburst_update(radio_tabela):
 
     fig_sunburst_indicadores = go.Figure()
     fig_sunburst_indicadores.add_trace(go.Sunburst(
-        ids=df_sunburst_2.id,
-        labels=df_sunburst_2.label,
-        parents=df_sunburst_2.parent,
-        values=df_sunburst_2.value,
+        ids=df_sunburst.id,
+        labels=df_sunburst.label,
+        parents=df_sunburst.parent,
+        values=df_sunburst.value,
         branchvalues="total",
         # domain=dict(column=1),
         #insidetextorientation='radial',
@@ -286,6 +293,7 @@ def table_update(clickData,maxdepth):
         df_updated = df
     else:
         df_updated = df
+
     print(clickData['points'][0])
     print(clickData['points'][0]['percentEntry'])
     print(clickData['points'][0]['id'])

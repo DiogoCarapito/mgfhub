@@ -1,6 +1,6 @@
 # bi_indicadores
 
-## Probelma
+## Problema
 - A compreensão e visualização da forma como os inidcadores de desempenho funcionam nos cuidados de saúde primários é difícil
 - É dificil compreender que indicadores existem
 - É dificil entender como o IDG é calculado e de que forma é que cada indicador o influência
