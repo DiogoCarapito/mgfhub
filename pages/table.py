@@ -162,7 +162,6 @@ def layout():
     Input('radio_tabela', 'value'),
 )
 
-
 def table_update(searchbox,radio_tabela):
 
     # Reset da tabela antes da pesquisa

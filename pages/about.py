@@ -7,7 +7,7 @@ dash.register_page(
     path='/about',
     title='about',
     name='about',
-    order=6,
+    order=5,
 )
 
 container_1 = dbc.Container([
@@ -20,3 +20,4 @@ def layout():
         container_1,
         html.Br(),
     ])
+

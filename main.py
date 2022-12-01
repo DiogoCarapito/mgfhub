@@ -9,8 +9,15 @@ navbar_pages = dbc.Row([
         dbc.Nav([
             dbc.NavItem(dbc.NavLink(page['name'], href=page['path']))
             for page in dash.page_registry.values()
+        ]+[
+            dbc.NavItem(dbc.NavLink(html.I(
+                # children=' source code',
+                className='bi bi-github'),
+                href='https://github.com/DiogoCarapito/bi_indicadores',
+                external_link=True)),
         ], navbar=True,)
     ]),
+
 ])
 
 navbar = dbc.Navbar([
@@ -20,12 +27,9 @@ navbar = dbc.Navbar([
                 dbc.Col(html.Img(src=app.get_asset_url('LOGO_2.png'), height='30px')),
                 dbc.Col(dbc.NavbarBrand('bi-indicadores', className='ms-2')),
                 ], align='center', className='g-0'),
-            href='/',
+            #href='/',
             style={'textDecoration': 'none'},
         ),
-
-
-
         dbc.NavbarToggler(id='navbar-toggler', n_clicks=0),
         dbc.Collapse(
             navbar_pages,
@@ -34,15 +38,6 @@ navbar = dbc.Navbar([
             navbar=True,
         ),
     ], fluid=True,),
-    html.Div([
-            dbc.Row([
-                dbc.Col([
-                    dbc.Nav(
-                        dbc.NavItem(dbc.NavLink(html.I(className='bi bi-github'), href='https://github.com/DiogoCarapito/bi_indicadores', external_link=True)),
-                    )
-                ])
-            ])
-        ]),
 ],
     color='light',
     dark=False,
