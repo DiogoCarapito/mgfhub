@@ -19,23 +19,25 @@ lol
 - BI-CSP (por intermédio de upload)
 - Documentação da ACSS (Operacionalização da Contratualização nos Cuidados de Saúde Primários)
 
-## Roadmap
+## To-do List
   - [x] escrever o README.md 
 
 extração de dados
   - [x] web scrapper dos 448 indicadores do SDM para csv
-  - [ ] extrair tabela das paginas 76-80 do pdf das contratualizações para csv com os intervalos aceitavel e esperado em 4 colunas
+  - [x] extrair tabela das paginas 76-80 do pdf das contratualizações para csv com os intervalos aceitavel e esperado em 4 colunas
+  - [ ] extrair (com scrapper) indicadores com impacto e sem impacto no IDG
 
 
 layout
   - [x] setup da pagina no pythonanywere pelo framework flask
   - [x] setup do ambiente dash, num sistema de multipaginas
   - [x] deploy das principais visualizaçõs
+  - [ ] adicionar foot notes
 
 
 pagina 'indicadores'
   - [ ] organização dos indicadores existentes em tabela, com campo de filtro e pesquisa
-  - [ ] incluir link para o SDM em cada indicador na tabela
+  - [x] incluir link para o SDM em cada indicador na tabela
   - [ ] pensar noutros filtros possíveis
   - [ ] otimizar o campo de pesquisa para sucesos quando se pesquisa pelo numero de indicador
   - [ ] otimizar quantas colunas e quais colunas
@@ -44,7 +46,9 @@ pagina 'indicadores'
 pagina 'sunburst'
   - [ ] conectar a seleção no sunburst com a tabela, de forma a apresentar
   - [ ] modificar as cores
-  - [ ] 
+  - [ ] mudar fundo para mesmo da pagina
+
+
 pagina 'upload'
   - [ ] configurar a ferramenta de upload
   - [ ] confirmação se é a tabela correta
@@ -54,7 +58,7 @@ pagina 'upload'
 
 
 pagina 'blog'
-  - [ ] definir um for loop para por a partir de um csv com cada entrada de blog em dash/html
+  - [x] definir um for loop para por a partir de um csv com cada entrada de blog em dash/html
   - [ ] escrever as entradas do blog em atraso
 
 

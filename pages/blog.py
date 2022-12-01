@@ -17,49 +17,25 @@ pythonanywhere_file_tree = ''
 blog_posts_html = []
 blogposts = pd.read_csv(pythonanywhere_file_tree + 'data/blog.csv')
 
-'''
-for post,item in blogposts.iterrows():
-    #html = html.Div([dbc.Container([html.H2(item['title']),])])
-    #blog_posts_html.append(html)
-    print(item['title'])
+def generate_blog_post(blogpost):
+    return dbc.Container([
+        html.H3(blogpost[1][0]),
+        html.H5(blogpost[1][1]),
+        html.P(blogpost[1][2]),
+        html.A([blogpost[1][3]],href=blogpost[1][3]),
+        html.Hr(className="my-2"),
+        html.Br(),
+        ],fluid=True, className="py-3")
 
-'''
-
-'''
-for each in blogposts:
-    post = html.Div(
-        dbc.Container([
-                    html.H2(each[0]),
-                    html.P(each[1]),
-                    html.Hr(className="my-2"),
-                    html.P(each[2]),
-                ],fluid=True, className="py-3",
-            ),className="p-3 bg-light rounded-3",
-        )
-    blog_posts_html.append(post)
-'''
-
-'''
-jumbotron = html.Div(
-    dbc.Container(
-        [
-            html.H2(blogposts[0][0]),
-            html.P(blogposts[0][1]),
-            html.Hr(className="my-2"),
-            html.P(blogposts[0][2]),
-        ],fluid=True, className="py-3",
-    ),className="p-3 bg-light rounded-3",
-)
-'''
-
-container_1 = dbc.Container([
-    html.H3('blog'),
-    html.Div(blog_posts_html),
+container = dbc.Container([
+    html.H1('blog'),
+    html.Br(),
+    html.Div(children=[generate_blog_post(i) for i in blogposts.iterrows()]),
     ], fluid=True,)
 
 
 def layout():
     return html.Div([
-        container_1,
+        container,
         html.Br(),
     ])

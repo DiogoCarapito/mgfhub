@@ -22,6 +22,7 @@ pythonanywhere_file_tree = ''
 ## Ponderar fazer um script para adicionar informação sobre Intervalos aceitáveis ideias a partir do PDF da Operacionalização da ACSS
 ## Terminar o scrapper sdm, porquen ainda falta infomração de formula de calculo
 df_todos_indicadores = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_indicadores.csv')
+
 # Load das listas de id's de indicadores utilizados para IDG das USFs/UCSPs
 ## podem vir a ser adicionados a lista de indicadores doas UCC, USP, ACES
 ## eventualmente tem que se escrever um script para extrair diretamente do PDF da Operacionalização da ACSS
@@ -29,10 +30,12 @@ usf_ucsp_para_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indica
 usf_ucsp_sem_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
 
 # Criação de uma coluna com concatonação da info importante para o algoritmo de pesquiza pelo método fuzzy
-# Algumas celuas têm que ser
+# Algumas celulas têm que ser
 s=' '
 df_todos_indicadores = df_todos_indicadores.assign(indexing=[str(row.id)+s+row.nome_abreviado+s+row.designacao+s+str(row.area)+s+str(row.subarea)+s+str(row.dimensao)+s+row.tipo_de_indicador+s+row.area_clinica for index, row in df_todos_indicadores.iterrows()])
 
+# Markdown para ter um link na tabela
+df_todos_indicadores = df_todos_indicadores.assign(id_sdm = [ '['+ str(row['id']) +']('+ row['link'] +')' for index, row in df_todos_indicadores.iterrows()])
 
 '''
 s=' '
@@ -54,6 +57,7 @@ df = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['ind
 df = df.drop(columns=['codigo','codigo_siars','nome_abreviado','objetivo','formula','unidade_de_medida', 'output','estado_do_indicador','inclusao_de_utentes_no_indicador','prazo_para_registos','link'])
 '''
 
+
 # Definição da Tabela
 ## Arranjar fomra de meter uma célula com um link para o SDM
 ## Alterar a font do texto da tabela, está num retro proggraming dos anos 80 xD
@@ -67,7 +71,7 @@ table = dash_table.DataTable(
         'fontWeight': 'bold'
     },
     style_cell={
-        'padding': '2px',
+        'padding': '4px',
         'textAlign': 'left',
         'height': 'auto',
         #'minWidth': '30px', 'width': '30px','maxWidth': '360px',
@@ -84,6 +88,8 @@ table = dash_table.DataTable(
             'backgroundColor': 'rgb(248, 248, 248)',
         }
     ],
+    #export_format='xlsx',
+    #export_headers='display',
 )
 
 # Zona de introdução de texto para pesquisa
@@ -186,14 +192,17 @@ def table_update(searchbox,radio_tabela):
         '''
 
     # remoção das colunas que não se querem vizualizar
-    df_after_search = df_after_search.drop(columns=['codigo', 'codigo_siars', 'nome_abreviado','objetivo', 'formula', 'unidade_de_medida', 'output','estado_do_indicador', 'inclusao_de_utentes_no_indicador', 'prazo_para_registos', 'link','indexing'])
+    df_after_search = df_after_search.drop(columns=['id','codigo', 'codigo_siars', 'nome_abreviado','objetivo', 'formula', 'unidade_de_medida', 'output','tipo_de_indicador','estado_do_indicador', 'inclusao_de_utentes_no_indicador', 'prazo_para_registos','link','indexing'])
+    df_id_sdm = df_after_search.pop('id_sdm')
+    df_after_search.insert(0, 'id', df_id_sdm)
 
     # Duas variáveis necessárias à exportação da tabela
-    df_data = df_after_search.to_dict('records')
-    df_columns = [{"name": i, "id": i} for i in df_after_search.columns]
+    df_data = df_after_search.to_dict(orient='records')
+    df_columns = [{'id': x, 'name': x, 'presentation': 'markdown'} if x == 'id' else {'id': x, 'name': x} for x in df_after_search.columns]
+    #df_columns = [{"name": i, "id": i} for i in df_after_search.columns]
 
     # Texto que refere quantos indicadores estão na tabela resultado da pesquisa
-    numero_indicadores = str(len(df_after_search))+' indicadores'
+    numero_indicadores = str(len(df_after_search))+' indicadores encontrados'
 
     return df_data,df_columns,numero_indicadores
 

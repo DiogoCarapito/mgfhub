@@ -30,27 +30,23 @@ container_1 = dbc.Container([
     dbc.Row([
         dbc.Col([
             html.H3('upload from bi-csp'),
-            upload,
+            dbc.Row([
+                dbc.Col(width=3),
+                dbc.Col([
+                    upload,
+                ],width=6),
+                dbc.Col(width=3),
+            ]),
             html.Div(id='output-data-upload'),
         ])
     ])
 ], fluid=True)
 
-container_sunburst_table = dbc.Container([
-    dbc.Row([
-        dbc.Col([
-
-        ], width=8),
-        dbc.Col([
-
-        ], width=4),
-    ])
-], fluid=True)
-
-
 def layout():
     return html.Div([
         container_1,
+        html.Div(id='output-div'),
+        html.Div(id='output-datatable'),
         html.Br(),
     ])
 
@@ -75,20 +71,6 @@ def parse_contents(contents, filename, date):
     return html.Div([
         html.H5(filename),
         html.H6(datetime.datetime.fromtimestamp(date)),
-
-        dash_table.DataTable(
-            df.to_dict('records'),
-            [{'name': i, 'id': i} for i in df.columns]
-        ),
-
-        html.Hr(),  # horizontal line
-
-        # For debugging, display the raw contents provided by the web browser
-        html.Div('Raw Content'),
-        html.Pre(contents[0:200] + '...', style={
-            'whiteSpace': 'pre-wrap',
-            'wordBreak': 'break-all'
-        })
     ])
 
 @callback(

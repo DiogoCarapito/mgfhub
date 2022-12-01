@@ -43,7 +43,9 @@ app.layout = html.Div([
     html.Br(),
     html.Br(),
     html.Br(),
-    dash.page_container,
+    dbc.Container([
+        dash.page_container,
+    ]),
 ])
 
 ## Falta um callback para ler o click num navlink e fechar o navbar-toggle

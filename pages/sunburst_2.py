@@ -97,12 +97,14 @@ df_dimensao = pd.DataFrame({
 })
 
 df_dimensao = df_dimensao.drop(index=[378,376])
-df_dimensao_2 = pd.DataFrame({
-        'id':['Serviços de Carácter Assistencial','Acesso MCQ'],
+df_dimensao_2 = pd.DataFrame(
+    {'id':['Serviços de Carácter Assistencial','Acesso MCQ'],
         'label':['Serviços de Carácter Assistencial','Acesso MCQ'],
         'parent':['Serviços Assistenciais','Melhoria Contínua'],
-        'value':[8,2]},
-    index=[376,378])
+        'value':[8,2]
+    },index=[376,378]
+)
+
 df_dimensao_3 = pd.DataFrame({
         'id':[
             'Atendimento Telefónico',
@@ -136,7 +138,8 @@ df_dimensao_3 = pd.DataFrame({
             2.4,
             2.4
         ]},
-    index=[0,0,0,0,0,0])
+    index=[0,0,0,0,0,0]
+)
 df_dimensao = pd.concat([df_dimensao,df_dimensao_2,df_dimensao_3])
 
 df_indicadores = pd.DataFrame({
