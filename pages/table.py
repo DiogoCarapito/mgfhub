@@ -192,7 +192,7 @@ def table_update(searchbox,radio_tabela):
         '''
 
     # remoção das colunas que não se querem vizualizar
-    df_after_search = df_after_search.drop(columns=['id','codigo', 'codigo_siars', 'nome_abreviado','objetivo', 'formula', 'unidade_de_medida', 'output','tipo_de_indicador','estado_do_indicador', 'inclusao_de_utentes_no_indicador', 'prazo_para_registos','link','indexing'])
+    df_after_search = df_after_search.drop(columns=['id','codigo', 'codigo_siars', 'nome_abreviado', 'formula', 'unidade_de_medida', 'output','tipo_de_indicador','estado_do_indicador', 'inclusao_de_utentes_no_indicador', 'prazo_para_registos','link','indexing'])
     df_id_sdm = df_after_search.pop('id_sdm')
     df_after_search.insert(0, 'id', df_id_sdm)
 

@@ -2,7 +2,7 @@ import dash
 import dash_bootstrap_components as dbc
 from dash import Input, Output, State, html
 
-app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SIMPLEX])
+app = dash.Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SIMPLEX,dbc.icons.BOOTSTRAP])
 
 navbar_pages = dbc.Row([
     dbc.Col([
@@ -23,6 +23,9 @@ navbar = dbc.Navbar([
             href='/',
             style={'textDecoration': 'none'},
         ),
+
+
+
         dbc.NavbarToggler(id='navbar-toggler', n_clicks=0),
         dbc.Collapse(
             navbar_pages,
@@ -31,6 +34,15 @@ navbar = dbc.Navbar([
             navbar=True,
         ),
     ], fluid=True,),
+    html.Div([
+            dbc.Row([
+                dbc.Col([
+                    dbc.Nav(
+                        dbc.NavItem(dbc.NavLink(html.I(className='bi bi-github'), href='https://github.com/DiogoCarapito/bi_indicadores', external_link=True)),
+                    )
+                ])
+            ])
+        ]),
 ],
     color='light',
     dark=False,
