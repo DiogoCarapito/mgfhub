@@ -34,12 +34,14 @@ df_area = pd.DataFrame({
     'parent':[np.nan for each in df.area.drop_duplicates()],
     'value':[50,10,20,10]
 })
+
 df_area_2 = pd.DataFrame({
     'id': ['Atividade Científica'],
     'label': ['Atividade Científica'],
     'parent':[np.nan],
     'value':[10],
 })
+
 df_area = pd.concat([df_area,df_area_2])
 
 df_subarea = pd.DataFrame({
@@ -48,6 +50,7 @@ df_subarea = pd.DataFrame({
     'parent':[df.loc[each]['area'] for each in df.subarea.drop_duplicates().index],
     'value':[10,10,10,10,8,2,8,8,8,4]
 })
+
 df_subarea_2 = pd.DataFrame({
     'id':[
         'Satisfação de Utentes',
@@ -70,6 +73,7 @@ df_subarea_2 = pd.DataFrame({
         5,
         5],
 })
+
 df_subarea = pd.concat([df_subarea,df_subarea_2])
 
 df_dimensao = pd.DataFrame({
@@ -104,46 +108,49 @@ df_dimensao = pd.DataFrame({
 })
 
 df_dimensao = df_dimensao.drop(index=[378,376])
+
 df_dimensao_2 = pd.DataFrame({
         'id':['Serviços de Carácter Assistencial','Acesso MCQ'],
         'label':['Serviços de Carácter Assistencial','Acesso MCQ'],
         'parent':['Serviços Assistenciais','Melhoria Contínua'],
         'value':[8,2]},
     index=[376,378])
+
 df_dimensao_3 = pd.DataFrame({
-        'id':[
-            'Atendimento Telefónico',
-            'Trajeto do Utente na Unidade Funcional',
-            'Prescrição de Cuidados',
-            'Outras Atividades não Assistenciais',
-            'Segurança de Profissionais',
-            'Gestão do Risco',
-        ],
-        'label':[
-            'Atendimento Telefónico',
-            'Trajeto do Utente na Unidade Funcional',
-            'Prescrição de Cuidados',
-            'Outras Atividades não Assistenciais',
-            'Segurança de Profissionais',
-            'Gestão do Risco',
-        ],
-        'parent':[
-            'Acesso',
-            'Acesso',
-            'Qualificação da Prescrição',
-            'Serviços não Assistenciais',
-            'Segurança',
-            'Segurança',
-        ],
-        'value':[
-            1,
-            1,
-            2,
-            0.4,
-            2.4,
-            2.4
-        ]},
-    index=[0,0,0,0,0,0])
+    'id':[
+        'Atendimento Telefónico',
+        'Trajeto do Utente na Unidade Funcional',
+        'Prescrição de Cuidados',
+        'Outras Atividades não Assistenciais',
+        'Segurança de Profissionais',
+        'Gestão do Risco',
+    ],
+    'label':[
+        'Atendimento Telefónico',
+        'Trajeto do Utente na Unidade Funcional',
+        'Prescrição de Cuidados',
+        'Outras Atividades não Assistenciais',
+        'Segurança de Profissionais',
+        'Gestão do Risco',
+    ],
+    'parent':[
+        'Acesso',
+        'Acesso',
+        'Qualificação da Prescrição',
+        'Serviços não Assistenciais',
+        'Segurança',
+        'Segurança',
+    ],
+    'value':[
+        1,
+        1,
+        2,
+        0.4,
+        2.4,
+        2.4
+    ]
+},index=[0,0,0,0,0,0])
+
 df_dimensao = pd.concat([df_dimensao,df_dimensao_2,df_dimensao_3])
 
 df_indicadores = pd.DataFrame({
@@ -171,7 +178,6 @@ filters = html.Div([
         ])
     ])
 ])
-
 
 header = html.Div((
     dbc.Row([
@@ -249,19 +255,6 @@ def layout():
 )
 
 def sunburst_update(radio_tabela):
-    '''
-    df_todos_indicadores_novo = df_todos_indicadores
-    if radio_tabela == 'Todos':
-        df_todos_indicadores_novo = df_todos_indicadores
-    elif radio_tabela == 'USF/UCSP com impacto IDG':
-        df_todos_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
-    elif radio_tabela == 'USF/UCSP sem impacto IDG':
-        df_todos_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_sem_idg['indicador'].values.tolist())]
-
-    df_todos_indicadores_novo_colmun = [{"name": i, "id": i} for i in df_todos_indicadores_novo.columns]
-    '''
-
-
     fig_sunburst_indicadores = go.Figure()
     fig_sunburst_indicadores.add_trace(go.Sunburst(
         ids=df_sunburst.id,
@@ -270,7 +263,7 @@ def sunburst_update(radio_tabela):
         values=df_sunburst.value,
         branchvalues="total",
         # domain=dict(column=1),
-        #insidetextorientation='radial',
+        # insidetextorientation='radial',
     ))
     fig_sunburst_indicadores.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 

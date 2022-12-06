@@ -37,27 +37,6 @@ df_todos_indicadores = df_todos_indicadores.assign(indexing=[str(row.id)+s+row.n
 # Markdown para ter um link na tabela
 df_todos_indicadores = df_todos_indicadores.assign(id_sdm = [ '['+ str(row['id']) +']('+ row['link'] +')' for index, row in df_todos_indicadores.iterrows()])
 
-'''
-s=' '
-df_search_indexing = pd.DataFrame([
-    {'indexing': str(row.id)+s+row.nome_abreviado+s+row.designacao+s+row.objetivo+s+str(row.area)+s+str(row.subarea)+s+str(row.dimensao)+s+row.tipo_de_indicador+s+row.area_clinica
-    } for index, row in df_todos_indicadores.iterrows()
-])
-
-df_todos_indicadores = pd.concat([df_todos_indicadores,df_search_indexing])
-'''
-
-#[str(row.id)+s+row.nome_abreviado+s+row.designacao+s+row.objetivo+s+str(row.area)+s+str(row.subarea)+s+str(row.dimensao)+s+row.tipo_de_indicador+s+row.area_clinica for index, row in df.iterrows()]
-
-'''
-# Filtragem dos indicadores que contam apenas para o IDG das USF E USCP
-df = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
-
-# Simplificação da tabela, deixando cair colunas não importantes para mostrar
-df = df.drop(columns=['codigo','codigo_siars','nome_abreviado','objetivo','formula','unidade_de_medida', 'output','estado_do_indicador','inclusao_de_utentes_no_indicador','prazo_para_registos','link'])
-'''
-
-
 # Definição da Tabela
 ## Arranjar fomra de meter uma célula com um link para o SDM
 ## Alterar a font do texto da tabela, está num retro proggraming dos anos 80 xD
