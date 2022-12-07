@@ -29,13 +29,33 @@ df_todos_indicadores = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_ind
 usf_ucsp_para_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
 usf_ucsp_sem_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
 
+# Load dos intervalos aceitávels e esperados
+df_intervalos = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_intervalos.csv')
+print(df_intervalos.head())
+
 # Criação de uma coluna com concatonação da info importante para o algoritmo de pesquiza pelo método fuzzy
 # Algumas celulas têm que ser
 s=' '
-df_todos_indicadores = df_todos_indicadores.assign(indexing=[str(row.id)+s+row.nome_abreviado+s+row.designacao+s+str(row.area)+s+str(row.subarea)+s+str(row.dimensao)+s+row.tipo_de_indicador+s+row.area_clinica for index, row in df_todos_indicadores.iterrows()])
+df_todos_indicadores = df_todos_indicadores.assign(
+    indexing=[
+        str(row.id) + s
+        + row.nome_abreviado + s
+        + row.designacao+s+str(row.area) + s
+        + str(row.subarea) + s
+        + str(row.dimensao) + s
+        + row.tipo_de_indicador + s
+        + row.area_clinica
+        for index, row in df_todos_indicadores.iterrows()])
 
 # Markdown para ter um link na tabela
-df_todos_indicadores = df_todos_indicadores.assign(id_sdm = [ '['+ str(row['id']) +']('+ row['link'] +')' for index, row in df_todos_indicadores.iterrows()])
+df_todos_indicadores = df_todos_indicadores.assign(
+    id_sdm = [
+        '['
+        + str(row['id'])
+        + ']('
+        + row['link']
+        + ')'
+        for index, row in df_todos_indicadores.iterrows()])
 
 # Definição da Tabela
 ## Arranjar fomra de meter uma célula com um link para o SDM
@@ -84,14 +104,14 @@ search_box = html.Div([
 # Radio options para refinar a pesquisa
 ## ponderar adicionar mais campos de filtros, como Ativos e desactivos, Por àreas, subáreas??
 radio_options=[
-    {'label':'USF/UCSP com impacto IDG','value':'USF/UCSP com impacto IDG'},
-    {'label':'USF/UCSP sem impacto IDG','value':'USF/UCSP sem impacto IDG'},
-    {'label':'todos','value':'todos'},
+    {'label':'Com impacto IDG','value':'Com impacto IDG'},
+    {'label':'Sem impacto IDG','value':'Sem impacto IDG'},
+    {'label':'Todos indicadores','value':'Todos indicadores'},
 ]
 radio = html.Div([
     dbc.RadioItems(
         options=radio_options,
-        value='USF/UCSP com impacto IDG',
+        value='Com impacto IDG',
         inline=True,
         id='radio_tabela'
     )
@@ -148,11 +168,11 @@ def table_update(searchbox,radio_tabela):
 
     # Filtragem por com impacto no IDG, sem impacto no IDG, ou todos
     ## Eventualmente pré-processar e ter os CSV's já gravados para poupar tempo
-    if radio_tabela == 'USF/UCSP com impacto IDG':
+    if radio_tabela == 'Com impacto IDG':
         df_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
-    elif radio_tabela == 'USF/UCSP sem impacto IDG':
+    elif radio_tabela == 'Sem impacto IDG':
         df_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_sem_idg['indicador'].values.tolist())]
-    elif radio_tabela == 'Todos':
+    elif radio_tabela == 'Todos indicadores':
         df_indicadores_novo = df_todos_indicadores
 
     # Garantir que quando a searchbox está vazia, se mostra todos os indicadores (independente dos filtros)
@@ -170,7 +190,25 @@ def table_update(searchbox,radio_tabela):
         '''
 
     # remoção das colunas que não se querem vizualizar
-    df_after_search = df_after_search.drop(columns=['id','codigo', 'codigo_siars', 'nome_abreviado', 'formula', 'unidade_de_medida', 'output','tipo_de_indicador','estado_do_indicador', 'inclusao_de_utentes_no_indicador', 'prazo_para_registos','link','indexing'])
+    df_after_search = df_after_search.drop(
+        columns=[
+            'id',
+            'codigo',
+            'codigo_siars',
+            'nome_abreviado',
+            'formula',
+            'unidade_de_medida',
+            'output',
+            'tipo_de_indicador',
+            'estado_do_indicador',
+            'inclusao_de_utentes_no_indicador',
+            'prazo_para_registos',
+            'link',
+            'indexing'
+        ]
+    )
+
+
     df_id_sdm = df_after_search.pop('id_sdm')
     df_after_search.insert(0, 'id', df_id_sdm)
 
