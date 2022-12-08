@@ -104,14 +104,14 @@ search_box = html.Div([
 # Radio options para refinar a pesquisa
 ## ponderar adicionar mais campos de filtros, como Ativos e desactivos, Por àreas, subáreas??
 radio_options=[
-    {'label':'Com impacto IDG','value':'Com impacto IDG'},
-    {'label':'Sem impacto IDG','value':'Sem impacto IDG'},
-    {'label':'Todos indicadores','value':'Todos indicadores'},
+    {'label':'com impacto IDG','value':'com impacto IDG'},
+    {'label':'sem impacto IDG','value':'sem impacto IDG'},
+    {'label':'todos os indicadores','value':'todos os indicadores'},
 ]
 radio = html.Div([
     dbc.RadioItems(
         options=radio_options,
-        value='Com impacto IDG',
+        value='com impacto IDG',
         inline=True,
         id='radio_tabela'
     )
@@ -168,11 +168,11 @@ def table_update(searchbox,radio_tabela):
 
     # Filtragem por com impacto no IDG, sem impacto no IDG, ou todos
     ## Eventualmente pré-processar e ter os CSV's já gravados para poupar tempo
-    if radio_tabela == 'Com impacto IDG':
+    if radio_tabela == 'com impacto IDG':
         df_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
-    elif radio_tabela == 'Sem impacto IDG':
+    elif radio_tabela == 'sem impacto IDG':
         df_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_sem_idg['indicador'].values.tolist())]
-    elif radio_tabela == 'Todos indicadores':
+    elif radio_tabela == 'todos os indicadores':
         df_indicadores_novo = df_todos_indicadores
 
     # Garantir que quando a searchbox está vazia, se mostra todos os indicadores (independente dos filtros)

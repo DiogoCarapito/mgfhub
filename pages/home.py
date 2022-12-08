@@ -5,46 +5,27 @@ import dash_bootstrap_components as dbc
 dash.register_page(
     __name__,
     path='/',
-    title='bi indicadires',
-    name='bi indicadores',
+    title='home',
+    name='home',
     order=1,
 )
 
-card_1 = dbc.Card(
-    [
-        dbc.CardImg(src="data/table_image.png", top=True),
-        dbc.CardBody(
-            [
-                html.H4("Card title", className="card-title"),
-                html.P(
-                    "Some quick example text to build on the card title and "
-                    "make up the bulk of the card's content.",
-                    className="card-text",
-                ),
-                dbc.Button("Go somewhere", color="primary"),
-            ]
-        ),
-    ],
-    style={"width": "18rem"},
-)
+card_1 = dbc.Card([
+    dbc.CardBody([
+        html.H4("tabela", className="card-title"),
+        html.P("pesquisar e explorar os diferentes indicadores em forma de tabela.",className="card-text",),
+        dbc.Button("tabela", color="info",href='/tabela'),
+    ]),
+])
 
-card_2 = dbc.Card(
-    [
-        dbc.CardImg(src="sunburst_image.png", top=True),
-        dbc.CardBody(
-            [
-                html.H4("Card title", className="card-title"),
-                html.P(
-                    "Some quick example text to build on the card title and "
-                    "make up the bulk of the card's content.",
-                    className="card-text",
-                ),
-                dbc.Button("Go somewhere", color="primary"),
-            ]
-        ),
-    ],
-    style={"width": "18rem"},
-)
+card_2 = dbc.Card([
+    dbc.CardBody([
+        html.H4("sunburst", className="card-title"),
+        html.P("navegar pelos indicadores em visualização interactiva",className="card-text"),
+        dbc.Button("sunburst", color="info", href='/sunburst'),
+    ])
+])
+
 
 
 container_1 = dbc.Container([
