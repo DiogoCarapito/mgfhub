@@ -10,7 +10,7 @@ dash.register_page(
     path='/sunburst',
     title='sunburst',
     name='sunburst',
-    order=3,
+    order=4,
 )
 
 # read_csv read no PyCharm!!

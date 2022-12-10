@@ -26,8 +26,6 @@ card_2 = dbc.Card([
     ])
 ])
 
-
-
 container_1 = dbc.Container([
     html.Br(),
     dbc.Row([
@@ -40,8 +38,16 @@ container_1 = dbc.Container([
     ]),
 ], fluid=True)
 
+container_descrição = dbc.Container([
+    html.Br(),
+    dbc.Row([
+
+        ])
+])
+
 def layout():
     return html.Div([
+        container_descrição,
         container_1,
         html.Br(),
     ])

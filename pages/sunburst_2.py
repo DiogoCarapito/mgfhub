@@ -10,7 +10,7 @@ dash.register_page(
     path='/sunburst_2',
     title='sunburst_2',
     name='sunburst_2',
-    order=3,
+    order=5,
 )
 
 pythonanywhere_file_tree = ''
@@ -174,12 +174,11 @@ header = html.Div((
 
 graphs = html.Div([
     dbc.Row([
+        dbc.Col([],width=1),
         dbc.Col([
             dcc.Graph(id='sunburstindicadores')
-        ], width=6),
-        dbc.Col([
-            dcc.Graph(id='sunburstindicadores_2')
-        ], width=6),
+        ], width=10),
+        dbc.Col([], width=1),
     ]),
 ])
 
@@ -204,7 +203,6 @@ def layout():
 
 @callback(
     Output('sunburstindicadores', 'figure'),
-    Output('sunburstindicadores_2', 'figure'),
     #Output('sunburst', 'figure'),
     Input('radio_tabela', 'value'),
 )
@@ -234,18 +232,6 @@ def sunburst_update(radio_tabela):
     ))
     fig_sunburstindicadores.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 
-    fig_sunburstindicadores_2 = go.Figure()
-    fig_sunburstindicadores_2.add_trace(go.Sunburst(
-        ids=df_sunburst_2.id,
-        labels=df_sunburst_2.label,
-        parents=df_sunburst_2.parent,
-        values=df_sunburst_2.value,
-        branchvalues="total",
-        # domain=dict(column=1),
-        insidetextorientation='radial',
-    ))
-    fig_sunburstindicadores_2.update_layout(margin=dict(t=0, l=0, r=0, b=0))
-
     '''
     df_coffe = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/coffee-flavors.csv')
     fig = go.Figure()
@@ -262,4 +248,5 @@ def sunburst_update(radio_tabela):
     )
     '''
 
-    return fig_sunburstindicadores,fig_sunburstindicadores_2
+    return fig_sunburstindicadores
+
