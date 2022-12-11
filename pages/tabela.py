@@ -11,7 +11,7 @@ dash.register_page(
     path='/tabela',
     title='tabela',
     name='tabela',
-    order=3,
+    order=2,
 )
 
 # read_csv read no PyCharm!!

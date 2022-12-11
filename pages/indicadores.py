@@ -11,7 +11,7 @@ dash.register_page(
     path='/indicadores',
     title='indicadores',
     name='indicadores',
-    order=2,
+    order=1,
 )
 
 # read_csv read no PyCharm!!
@@ -61,37 +61,95 @@ df_todos_indicadores = df_todos_indicadores.assign(
 
 def generate_html_indicador(indicador):
     separador = ' - '
-    separador_2 = ' > '
-    h = '16'
     return dbc.Container([
-        html.H4([str(indicador[1][0]) + separador +  indicador[1][1]]),
-        dbc.Container([
-            dbc.Row([
-                dbc.Col([
-                    html.P(indicador[1][2] + separador_2 + indicador[1][3] + separador_2 + indicador[1][4]),
-                ],width = 6),
-                dbc.Col([
-                    html.P([str(indicador[1]['intervalo_variavel']) + separador + str(indicador[1]['intervalo_esperado'])])
-                ], width = 3),
-                dbc.Col([
-                    dbc.Progress([
-                        dbc.Progress(id=str(indicador[1][0])+'_0-', value=indicador[1]['min_aceitavel'], color="primary", bar=True),
-                        dbc.Progress(id=str(indicador[1][0])+'_1-',value=indicador[1]['min_esperado']-indicador[1]['min_aceitavel'], color="warning", bar=True),
-                        dbc.Progress(id=str(indicador[1][0])+'_2', value=indicador[1]['max_esperado']-indicador[1]['min_esperado'], color="success", bar=True),
-                        dbc.Progress(id=str(indicador[1][0])+'_1+', value=indicador[1]['max_aceitavel']-indicador[1]['max_esperado'], color="warning", bar=True, striped=True),
-                        dbc.Progress(id=str(indicador[1][0])+'_0+', value=100-indicador[1]['max_aceitavel'], color="primary", bar=True, striped=True),
-                    ],style={"height":"30px"}),
-                    dbc.Tooltip('0 - ' + str(indicador[1]['min_aceitavel'])+'', target=str(indicador[1][0])+'_0-', placement='top'),
-                    dbc.Tooltip('' + str(indicador[1]['min_aceitavel']) + ' - ' + str(indicador[1]['min_esperado']) + '', target=str(indicador[1][0]) + '_1-', placement='top'),
-                    dbc.Tooltip('' + str(indicador[1]['min_esperado']) + ' - ' + str(indicador[1]['max_esperado']) + '', target=str(indicador[1][0]) + '_2', placement='top'),
-                    dbc.Tooltip('' + str(indicador[1]['max_esperado']) + ' - ' + str(indicador[1]['max_aceitavel']) + '', target=str(indicador[1][0]) + '_1+', placement='top'),
-                    dbc.Tooltip('' + str(indicador[1]['max_aceitavel']) + ' - 100', target=str(indicador[1][0]) + '_0+', placement='top'),
-                ], width = 3),
-            ]),
+        dbc.Card([
+            dbc.CardHeader(children=html.H4([str(indicador[1][0]) + separador + indicador[1][1]])),
+            dbc.CardBody([
+                dbc.Container([
+                    dbc.Row([
+                        dbc.Col([
 
-        ]),
-        html.Br(),
-    ], fluid=True, className="py-3")
+                            dbc.Table([
+                                html.Thead([
+                                    html.Th('área'),
+                                    html.Th('subarea'),
+                                    html.Th('dimensao')
+                                ]),
+                                html.Tbody([
+                                    html.Tr([
+                                        html.Td(indicador[1]['area']),
+                                        html.Td(indicador[1]['subarea']),
+                                        html.Td(indicador[1]['dimensao']),
+                                    ]),
+                                ])
+                            ]),
+
+                            html.A('SDM', href=indicador[1]['link']),
+                        ],width=7),
+                        dbc.Col([],width=1),
+                        dbc.Col([
+                            dbc.Row([
+                                html.P([str(indicador[1]['intervalo_variavel']) + separador + str(indicador[1]['intervalo_esperado'])])
+                            ]),
+                            dbc.Row([
+                                dbc.Progress([
+                                    dbc.Progress(
+                                        id=str(indicador[1][0]) + '_0-',
+                                        value=indicador[1]['min_aceitavel'],
+                                        color="primary",
+                                        bar=True),
+                                    dbc.Progress(
+                                        id=str(indicador[1][0]) + '_1-',
+                                        value=indicador[1]['min_esperado'] - indicador[1]['min_aceitavel'],
+                                        color="warning",
+                                        bar=True),
+                                    dbc.Progress(
+                                        id=str(indicador[1][0]) + '_2',
+                                        value=indicador[1]['max_esperado'] - indicador[1]['min_esperado'],
+                                        color="success",
+                                        bar=True),
+                                    dbc.Progress(
+                                        id=str(indicador[1][0]) + '_1+',
+                                        value=indicador[1]['max_aceitavel'] - indicador[1]['max_esperado'],
+                                        color="warning",
+                                        bar=True,
+                                        striped=True),
+                                    dbc.Progress(
+                                        id=str(indicador[1][0]) + '_0+',
+                                        value=100 - indicador[1]['max_aceitavel'],
+                                        color="primary",
+                                        bar=True,
+                                        striped=True),
+                                ], style={"height": "30px"}),
+                                dbc.Tooltip(
+                                    '0 - ' + str(indicador[1]['min_aceitavel']),
+                                    target=str(indicador[1][0]) + '_0-',
+                                    placement='top'),
+                                dbc.Tooltip(
+                                    str(indicador[1]['min_aceitavel']) + ' - ' + str(indicador[1]['min_esperado']),
+                                    target=str(indicador[1][0]) + '_1-',
+                                    placement='top'),
+                                dbc.Tooltip(
+                                    str(indicador[1]['min_esperado']) + ' - ' + str(indicador[1]['max_esperado']),
+                                    target=str(indicador[1][0]) + '_2',
+                                    placement='top'),
+                                dbc.Tooltip(
+                                    str(indicador[1]['max_esperado']) + ' - ' + str(indicador[1]['max_aceitavel']),
+                                    target=str(indicador[1][0]) + '_1+',
+                                    placement='top'),
+                                dbc.Tooltip(
+                                    str(indicador[1]['max_aceitavel']) + ' - 100',
+                                    target=str(indicador[1][0]) + '_0+',
+                                    placement='top'),
+                            ]),
+                        ], width=4),
+                    ]),
+
+                ]),
+            ]),
+        ],class_name="bg-light"),
+        #html.Br(),
+    ], fluid=True, class_name="py-3")
 
 
 
@@ -198,7 +256,6 @@ def table_update(searchbox_indicadores,radio_indicadores):
     # remoção das colunas que não se querem vizualizar
     df_after_search = df_after_search.drop(
         columns=[
-            #'id',
             'codigo',
             'codigo_siars',
             'nome_abreviado',
@@ -211,7 +268,6 @@ def table_update(searchbox_indicadores,radio_indicadores):
             'estado_do_indicador',
             'inclusao_de_utentes_no_indicador',
             'prazo_para_registos',
-            'link',
             'indexing',
             'nome_indicador',
         ]
