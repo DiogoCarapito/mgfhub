@@ -81,9 +81,9 @@ def parse_contents(contents, filename, date):
                 io.StringIO(decoded.decode('utf-8')))
         elif 'xls' in filename:
             # Assume that the user uploaded an excel file
-            df = pd.read_excel(io.BytesIO(decoded),skiprows=2)
+            df = pd.read_excel(io.BytesIO(decoded), skiprows=2, engine='openpyxl')
 
-            '''reg = '\.([0-9]*)\.'
+            reg = '\.([0-9]*)\.'
             df_2 = pd.DataFrame([re.findall(reg, row[0]) for index, row in df.iterrows()])
 
             df_2.columns = ['id']
@@ -97,7 +97,7 @@ def parse_contents(contents, filename, date):
                 '\'# Métricas Indicador\'[Score V2]',
                 'color',
                 'Código - ID - Indicador / Médico'
-            ]]'''
+            ]]
             print(df)
 
     except Exception as e:
@@ -112,10 +112,10 @@ def parse_contents(contents, filename, date):
         html.H5(filename),
         html.H6(datetime.datetime.fromtimestamp(date)),
 
-        '''dash_table.DataTable(
+        dash_table.DataTable(
             df.to_dict('records'),
             [{'name': i, 'id': i} for i in df.columns]
-        )''',
+        ),
         html.Hr(),  # horizontal line
 
         # For debugging, display the raw contents provided by the web browser
