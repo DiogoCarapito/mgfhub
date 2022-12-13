@@ -11,6 +11,7 @@ from dash import dash_table
 import plotly.express as px
 
 import pandas as pd
+import numpy as np
 import re
 
 
@@ -68,6 +69,7 @@ def layout():
         container_1,
 
         html.Br(),
+        dcc.Store(id='store_data', data=[], storage_type='memory'),
     ])
 
 def parse_contents(contents, filename, date):
@@ -128,6 +130,7 @@ def parse_contents(contents, filename, date):
 
 @callback(
     Output('output-data-upload', 'children'),
+
     Input('upload-data', 'contents'),
     State('upload-data', 'filename'),
     State('upload-data', 'last_modified')
@@ -141,5 +144,15 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
             zip(list_of_contents, list_of_names, list_of_dates)]
         return children
 
+@callback(
+    Output('store_data','data'),
+    Input('upload-data', 'contents'),
+)
 
+def store_data_upload(contents):
+    try:
+        store_data = contents.to_dict('records')
+    except:
+        store_data = [np.nan]
 
+    return store_data

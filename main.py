@@ -1,6 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import Input, Output, State, html
+from dash import dcc
 
 app = dash.Dash(__name__, use_pages=True,suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.SIMPLEX,dbc.icons.BOOTSTRAP])
 
@@ -27,7 +28,7 @@ navbar = dbc.Navbar([
                 dbc.Col(html.Img(src=app.get_asset_url('LOGO_2.png'), height='30px')),
                 dbc.Col(dbc.NavbarBrand('bi-indicadores', className='ms-2')),
                 ], align='center', className='g-0'),
-            #href='/',
+            href='/',
             style={'textDecoration': 'none'},
         ),
         dbc.NavbarToggler(id='navbar-toggler', n_clicks=0),
