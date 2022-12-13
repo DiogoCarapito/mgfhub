@@ -230,7 +230,11 @@ def sunburst_update(radio_tabela):
         #domain=dict(column=1),
         insidetextorientation='radial',
     ))
-    fig_sunburstindicadores.update_layout(margin=dict(t=0, l=0, r=0, b=0))
+    fig_sunburstindicadores.update_layout(
+        margin=dict(t=0, l=0, r=0, b=0),
+        width=800,
+        height=800,
+    )
 
     '''
     df_coffe = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/coffee-flavors.csv')

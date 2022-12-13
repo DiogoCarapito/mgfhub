@@ -11,7 +11,7 @@ dash.register_page(
     path='/indicadores',
     title='indicadores',
     name='indicadores',
-    order=1,
+    order=2,
 )
 
 # read_csv read no PyCharm!!
@@ -83,10 +83,9 @@ def generate_html_indicador(indicador):
                                     ]),
                                 ])
                             ]),
-
                             html.A('SDM', href=indicador[1]['link']),
                         ],width=7),
-                        dbc.Col([],width=1),
+                        dbc.Col([],width=2),
                         dbc.Col([
                             dbc.Row([
                                 html.P([str(indicador[1]['intervalo_variavel']) + separador + str(indicador[1]['intervalo_esperado'])])
@@ -120,7 +119,7 @@ def generate_html_indicador(indicador):
                                         color="primary",
                                         bar=True,
                                         striped=True),
-                                ], style={"height": "30px"}),
+                                ], style={"height": "20px"}),
                                 dbc.Tooltip(
                                     '0 - ' + str(indicador[1]['min_aceitavel']),
                                     target=str(indicador[1][0]) + '_0-',
@@ -142,7 +141,7 @@ def generate_html_indicador(indicador):
                                     target=str(indicador[1][0]) + '_0+',
                                     placement='top'),
                             ]),
-                        ], width=4),
+                        ], width=3),
                     ]),
 
                 ]),
@@ -272,7 +271,8 @@ def table_update(searchbox_indicadores,radio_indicadores):
             'nome_indicador',
         ]
     )
-    print(df_after_search.columns)
+
+    #print(df_after_search.columns)
 
     #df_id_sdm = df_after_search.pop('id_sdm')
     #df_after_search.insert(0, 'id', df_id_sdm)

@@ -8,10 +8,10 @@ from rapidfuzz import process, fuzz
 
 dash.register_page(
     __name__,
-    path='/tabela',
+    path='/',
     title='tabela',
     name='tabela',
-    order=2,
+    order=1,
 )
 
 # read_csv read no PyCharm!!

@@ -287,10 +287,10 @@ def table_update(clickData,maxdepth):
     else:
         df_updated = df
 
-    print(clickData['points'][0])
+    '''print(clickData['points'][0])
     print(clickData['points'][0]['percentEntry'])
     print(clickData['points'][0]['id'])
-    print(clickData['points'][0]['parent'])
+    print(clickData['points'][0]['parent'])'''
 
     # Duas variáveis necessárias à exportação da tabela
     df_data = df_updated.to_dict('records')

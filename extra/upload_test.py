@@ -3,26 +3,17 @@ import datetime
 import io
 
 import dash
-from dash import html, dcc, callback, Output, Input, State
-import dash_bootstrap_components as dbc
-#from dash.dependencies import Input, Output, State
-
-from dash import dash_table
-import plotly.express as px
+from dash.dependencies import Input, Output, State
+from dash import dcc, html, dash_table
 
 import pandas as pd
 import re
 
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-dash.register_page(
-    __name__,
-    path='/upload',
-    title='upload',
-    name='upload',
-    order=5,
-)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-upload = html.Div([
+app.layout = html.Div([
     dcc.Upload(
         id='upload-data',
         children=html.Div([
@@ -42,33 +33,8 @@ upload = html.Div([
         # Allow multiple files to be uploaded
         multiple=True
     ),
+    html.Div(id='output-data-upload'),
 ])
-
-
-container_1 = dbc.Container([
-    dbc.Row([
-        dbc.Col([
-            html.H3('upload from bi-csp'),
-            dbc.Row([
-                dbc.Col(width=3),
-                dbc.Col([
-                    upload,
-                ],width=6),
-                dbc.Col(width=3),
-            ]),
-        ])
-    ]),
-    dbc.Row([
-        html.Div(id='output-data-upload'),
-    ])
-], fluid=True)
-
-def layout():
-    return html.Div([
-        container_1,
-
-        html.Br(),
-    ])
 
 def parse_contents(contents, filename, date):
     content_type, content_string = contents.split(',')
@@ -82,23 +48,7 @@ def parse_contents(contents, filename, date):
         elif 'xls' in filename:
             # Assume that the user uploaded an excel file
             df = pd.read_excel(io.BytesIO(decoded),skiprows=2)
-
-            reg = '\.([0-9]*)\.'
-            df_2 = pd.DataFrame([re.findall(reg, row[0]) for index, row in df.iterrows()])
-
-            df_2.columns = ['id']
-            df = df.join(df_2)
-
-            colors_coresp = {'0-': 'red', '1-': 'yellow', '2': 'green', '1+': 'dark_yellow', '0+': 'dark_red'}
-            df['color'] = [colors_coresp[row[2]] for index, row in df.iterrows()]
-            df = df[[
-                'id',
-                'Nº Ordem',
-                '\'# Métricas Indicador\'[Score V2]',
-                'color',
-                'Código - ID - Indicador / Médico'
-            ]]
-
+            print(df)
     except Exception as e:
         print(e)
         return html.Div([
@@ -106,7 +56,21 @@ def parse_contents(contents, filename, date):
         ])
 
 
+    reg = '\.([0-9])+\.'
+    df_2 = pd.DataFrame([re.findall(reg, row[0]) for index, row in df.iterrows()])
 
+    df_2.columns = ['id']
+    df = df.join(df_2)
+
+    colors_coresp = {'0-': 'red', '1-': 'yellow', '2': 'green', '1+': 'dark_yellow', '0+': 'dark_red'}
+    df['color'] = [colors_coresp[row[2]] for index, row in df.iterrows()]
+    df = df[[
+        'id',
+        'Nº Ordem',
+        '\'# Métricas Indicador\'[Score V2]',
+        'color',
+        'Código - ID - Indicador / Médico'
+    ]]
 
 
     return html.Div([
@@ -127,12 +91,10 @@ def parse_contents(contents, filename, date):
         })
     ])
 
-@callback(
-    Output('output-data-upload', 'children'),
-    Input('upload-data', 'contents'),
-    State('upload-data', 'filename'),
-    State('upload-data', 'last_modified')
-)
+@app.callback(Output('output-data-upload', 'children'),
+              Input('upload-data', 'contents'),
+              State('upload-data', 'filename'),
+              State('upload-data', 'last_modified'))
 
 
 def update_output(list_of_contents, list_of_names, list_of_dates):
@@ -142,5 +104,5 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
             zip(list_of_contents, list_of_names, list_of_dates)]
         return children
 
-
-
+if __name__ == '__main__':
+    app.run_server(debug=True)
