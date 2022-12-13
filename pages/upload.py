@@ -100,14 +100,12 @@ def parse_contents(contents, filename, date):
                 'color',
                 'Código - ID - Indicador / Médico'
             ]]
-            print(df)
 
     except Exception as e:
         print(e)
         return html.Div([
             'There was an error processing this file.'
         ])
-
 
 
     return html.Div([
@@ -130,7 +128,6 @@ def parse_contents(contents, filename, date):
 
 @callback(
     Output('output-data-upload', 'children'),
-
     Input('upload-data', 'contents'),
     State('upload-data', 'filename'),
     State('upload-data', 'last_modified')
@@ -154,5 +151,5 @@ def store_data_upload(contents):
         store_data = contents.to_dict('records')
     except:
         store_data = [np.nan]
-
+    print(store_data)
     return store_data

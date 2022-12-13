@@ -51,9 +51,11 @@ app.layout = html.Div([
     html.Br(),
     html.Br(),
     html.Br(),
+
     dbc.Container([
         dash.page_container,
     ]),
+    dcc.Store(id='store_data', data=[], storage_type='memory'),
 ])
 
 ## Falta um callback para ler o click num navlink e fechar o navbar-toggle
@@ -68,6 +70,19 @@ def toggle_navbar_collapse(n, is_open):
     if n:
         return not is_open
     return is_open
+
+'''
+    html.Div([],id='test_container', children=[]),
+
+@app.callback(
+    Output('test_container', 'children'),
+    Input('store_data', 'data'),
+)
+
+def storage_data_show(data):
+    
+
+'''
 
 if __name__ == '__main__':
     app.run(debug=True)
