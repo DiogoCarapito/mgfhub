@@ -180,6 +180,9 @@ graphs = html.Div([
         ], width=10),
         dbc.Col([], width=1),
     ]),
+    dbc.Row([
+        html.Div(id='test_container'),
+    ])
 ])
 
 container = dbc.Container([
@@ -208,17 +211,6 @@ def layout():
 )
 
 def sunburst_update(radio_tabela):
-    '''
-    df_todos_indicadores_novo = df_todos_indicadores
-    if radio_tabela == 'Todos':
-        df_todos_indicadores_novo = df_todos_indicadores
-    elif radio_tabela == 'USF/UCSP com impacto IDG':
-        df_todos_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_para_idg['indicador'].values.tolist())]
-    elif radio_tabela == 'USF/UCSP sem impacto IDG':
-        df_todos_indicadores_novo = df_todos_indicadores[df_todos_indicadores['id'].isin(usf_ucsp_sem_idg['indicador'].values.tolist())]
-
-    df_todos_indicadores_novo_colmun = [{"name": i, "id": i} for i in df_todos_indicadores_novo.columns]
-    '''
 
     fig_sunburstindicadores = go.Figure()
     fig_sunburstindicadores.add_trace(go.Sunburst(
@@ -236,21 +228,21 @@ def sunburst_update(radio_tabela):
         height=800,
     )
 
-    '''
-    df_coffe = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/coffee-flavors.csv')
-    fig = go.Figure()
-    fig.add_trace(go.Sunburst(
-        ids=df_coffe.ids,
-        labels=df_coffe.labels,
-        parents=df_coffe.parents,
-        domain=dict(column=1),
-        maxdepth=2,
-        insidetextorientation='radial'
-    ))
-    fig.update_layout(
-        margin=dict(t=10, l=10, r=10, b=10)
-    )
-    '''
-
     return fig_sunburstindicadores
+
+
+@callback(
+    Output('test_container', 'children'),
+    Input('store_data', 'data'),
+)
+
+def stora_data_show(data):
+    if data is None:
+        return
+    else:
+        df=pd.DataFrame(data)
+        print(df.columns)
+        return html.Div([
+                html.H1(['SUCCESS'])
+            ])
 

@@ -51,7 +51,6 @@ app.layout = html.Div([
     html.Br(),
     html.Br(),
     html.Br(),
-
     dbc.Container([
         dash.page_container,
     ]),
@@ -71,18 +70,6 @@ def toggle_navbar_collapse(n, is_open):
         return not is_open
     return is_open
 
-'''
-    html.Div([],id='test_container', children=[]),
-
-@app.callback(
-    Output('test_container', 'children'),
-    Input('store_data', 'data'),
-)
-
-def storage_data_show(data):
-    
-
-'''
 
 if __name__ == '__main__':
     app.run(debug=True)
