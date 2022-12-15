@@ -25,7 +25,7 @@ lol
 extração de dados
   - [x] web scrapper dos 448 indicadores do SDM para csv
   - [x] extrair tabela das paginas 76-80 do pdf das contratualizações para csv com os intervalos aceitavel e esperado em 4 colunas
-  - [ x extrair (com scrapper) indicadores com impacto e sem impacto no IDG
+  - [x] extrair (com scrapper) indicadores com impacto e sem impacto no IDG
 
 
 layout
@@ -44,7 +44,9 @@ pagina 'indicadores'
 
 
 pagina 'sunburst'
-
+  - [x] sunburst com pesos dos indicadores e areas corretas
+  - [x] dropdown menu ligado ao upload 
+  - [ ] conecção entre upload e sunburst
   - [ ] modificar as cores
   - [ ] mudar fundo para mesmo da pagina
 
@@ -53,7 +55,7 @@ pagina 'upload'
   - [x] configurar a ferramenta de upload
   - [x] confirmação se é a tabela correta
   - [ ] pssobilidade de fazer upload de indicadores da unidade ou por médico
-  - [ x processamento do doc upload em dataframe
+  - [x] processamento do doc upload em dataframe
   - [ ] construir a visualização (sunburst+tabela, lado lado e fundir com a pagina sunburst)
 
 
