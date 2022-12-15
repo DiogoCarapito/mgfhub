@@ -106,6 +106,8 @@ def store_xlsx(contents, filename):
                 'nome_indicador'
             ]]
 
+            df = df.assign(pontuacao=[re.findall('[0-2]', row['score']) for index, row in df.iterrows()])
+
 
     except Exception as e:
         print(e)
