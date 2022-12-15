@@ -115,6 +115,7 @@ def store_xlsx(contents, filename):
             df['pontuacao'] = [re.findall('[0-2]', row['score']) for index, row in df.iterrows()]
             df['pontuacao'] = [row['pontuacao'][0] for index, row in df.iterrows()]
             df['id_indicador'] = [int(row['id_indicador']) for index, row in df.iterrows()]
+            df.to_csv('data/df_after_upload.csv', index=True)
 
 
 

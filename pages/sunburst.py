@@ -101,9 +101,17 @@ def sunburst_update(dropdown_options, store_data):
     if store_data != []:
 
         df = pd.DataFrame(store_data)
-        #print(df.columns)
-        df = df[df['id_medico'] == dropdown_options]
 
+        df = df[df['id_medico'] == dropdown_options]
+        print(len(df))
+        df_sunburst_with_score = df_sunburst.merge(df, on='id_indicador',how='outer')
+        #print(df_sunburst_with_score.columns)
+        #df_sunburst_with_score[df_sunburst_with_score['pontuacao']==''] = 0
+        df_sunburst_with_score['pontuacao'] = df_sunburst_with_score['pontuacao'].fillna(0)
+
+        df.to_csv('data/df_from_upload.csv', index=True)
+        df_sunburst.to_csv('data/df_sunburst_pre_graph.csv', index=True)
+        df_sunburst_with_score.to_csv('data/df_sunburst_with_score.csv', index=True)
         #print(len(df))
         #df_sunburst['score'] = [row['score'] for index, row in df.iteritems()]
         #df_sunburst = df_sunburst.merge(df['score'], on="id", how="outer")
@@ -125,19 +133,34 @@ def sunburst_update(dropdown_options, store_data):
 
     fig_sunburst_indicadores = go.Figure()
 
-    fig_sunburst_indicadores.add_trace(go.Sunburst(
-        ids=df_sunburst.id,
-        labels=df_sunburst.label,
-        parents=df_sunburst.parent,
-        values=df_sunburst.value,
-        branchvalues="total",
-        domain=dict(column=1),
-        insidetextorientation='radial',
-        #marker=dict(
-        #    colors=df_all_trees['color'],
-        #    colorscale='RdBu',
-        #    cmid=average_score),
-    ))
+    try:
+        fig_sunburst_indicadores.add_trace(go.Sunburst(
+            ids=df_sunburst_with_score.id,
+            #labels=df_sunburst_with_score.label,
+            labels=df_sunburst_with_score.pontuacao,
+            parents=df_sunburst_with_score.parent,
+            values=df_sunburst_with_score.value,
+            branchvalues="total",
+            domain=dict(column=1),
+            insidetextorientation='radial',
+            colors=df_sunburst_with_score.pontuacao / 2,
+            colorscale='RdBu',
+            #marker=dict(
+            #    colors=df_sunburst_with_score['pontuacao'],
+            #    colorscale='RdBu',
+            #    cmid=average_score),
+        ))
+        print('YESS')
+    except:
+        fig_sunburst_indicadores.add_trace(go.Sunburst(
+            ids=df_sunburst.id,
+            labels=df_sunburst.label,
+            parents=df_sunburst.parent,
+            values=df_sunburst.value,
+            branchvalues="total",
+            domain=dict(column=1),
+            insidetextorientation='radial',
+        ))
     
     fig_sunburst_indicadores.update_layout(
         margin=dict(t=0, l=0, r=0, b=0),
