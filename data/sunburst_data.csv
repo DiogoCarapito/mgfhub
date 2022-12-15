@@ -1,4 +1,4 @@
-id_inidicador,id,label,parent,value,tipo
+id_indicador,id,label,parent,value,tipo
 1001,Desempenho,Desempenho,,50.0,área
 1002,Serviços,Serviços,,10.0,área
 1003,Qualidade Organizacional,Qualidade Organizacional,,20.0,área

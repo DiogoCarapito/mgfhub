@@ -12,7 +12,7 @@ df_todos_indicadores_filtrado = df_todos_indicadores[df_todos_indicadores['id'].
 df = df_todos_indicadores_filtrado.drop(columns=['codigo','codigo_siars','objetivo','formula','unidade_de_medida', 'output','estado_do_indicador','tipo_de_indicador','area_clinica','inclusao_de_utentes_no_indicador','prazo_para_registos','link'])
 
 df_area = pd.DataFrame({
-    'id_inidicador':[1001,1002,1003,1004],
+    'id_indicador':[1001,1002,1003,1004],
     'id':df.area.drop_duplicates(),
     'label':df.area.drop_duplicates(),
     'parent':[np.nan for each in df.area.drop_duplicates()],
@@ -20,7 +20,7 @@ df_area = pd.DataFrame({
     'tipo': ['área' for each in df.area.drop_duplicates()],
 })
 df_area_2 = pd.DataFrame({
-    'id_inidicador':[1005],
+    'id_indicador':[1005],
     'id': ['Atividade Científica'],
     'label': ['Atividade Científica'],
     'parent':[np.nan],
@@ -30,7 +30,7 @@ df_area_2 = pd.DataFrame({
 df_area = pd.concat([df_area,df_area_2])
 
 df_subarea = pd.DataFrame({
-    'id_inidicador':[2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010],
+    'id_indicador':[2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010],
     'id':df.subarea.drop_duplicates(),
     'label':df.subarea.drop_duplicates(),
     'parent':[df.loc[each]['area'] for each in df.subarea.drop_duplicates().index],
@@ -44,7 +44,7 @@ df_subarea_2 = pd.DataFrame({
         'Autoria de Artigos Escritos',
         'Trabalhos de Investigação',
     ],
-    'id_inidicador':[
+    'id_indicador':[
         2021,
         2022,
         2023,
@@ -70,7 +70,7 @@ df_subarea = pd.concat([df_subarea,df_subarea_2])
 
 
 df_dimensao = pd.DataFrame({
-    'id_inidicador':range(2025,2048),
+    'id_indicador':range(2025,2048),
     'id':df.dimensao.drop_duplicates(),
     'label':df.dimensao.drop_duplicates(),
     'parent':[df.loc[each]['subarea'] for each in df.dimensao.drop_duplicates().index],
@@ -104,7 +104,7 @@ df_dimensao = pd.DataFrame({
 
 df_dimensao = df_dimensao.drop(index=[378,376])
 df_dimensao_2 = pd.DataFrame({
-    'id_inidicador':[2049, 2050],
+    'id_indicador':[2049, 2050],
     'id':['Serviços de Carácter Assistencial','Acesso MCQ'],
     'label':['Serviços de Carácter Assistencial','Acesso MCQ'],
     'parent':['Serviços Assistenciais','Melhoria Contínua'],
@@ -121,7 +121,7 @@ df_dimensao_3 = pd.DataFrame({
         'Outras Atividades não Assistenciais',
         'Segurança de Profissionais',
         'Gestão do Risco',],
-    'id_inidicador':[2051,2052, 2053, 2054, 2055, 2056],
+    'id_indicador':[2051,2052, 2053, 2054, 2055, 2056],
     'label':[
         'Atendimento Telefónico',
         'Trajeto do Utente na Unidade Funcional',
@@ -156,7 +156,7 @@ df_dimensao = pd.concat([df_dimensao,df_dimensao_2,df_dimensao_3])
 print(df_dimensao)
 
 df_indicadores = pd.DataFrame({
-    'id_inidicador': df.id.drop_duplicates(),
+    'id_indicador': df.id.drop_duplicates(),
     'id':df.nome_abreviado.drop_duplicates(),
     'label':[str(row['id']) + ' - ' + row['nome_abreviado'] for index, row in df.drop_duplicates().iterrows()],
     'parent':[df.loc[each]['dimensao'] for each in df.nome_abreviado.drop_duplicates().index],
@@ -183,6 +183,6 @@ df_sunburst = pd.concat([df_area,df_subarea,df_dimensao,df_indicadores])
 #df_sunburst = pd.concat([df_area,df_subarea])
 #df_sunburst = df_area
 
-df_sunburst = df_sunburst.set_index('id_inidicador')
+df_sunburst = df_sunburst.set_index('id_indicador')
 print(df_sunburst)
 df_sunburst.to_csv('data/sunburst_data.csv',index=True)

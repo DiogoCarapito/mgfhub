@@ -88,25 +88,34 @@ def store_xlsx(contents, filename):
             reg = '\.([0-9]*)\.'
             df_2 = pd.DataFrame([re.findall(reg, row[0]) for index, row in df.iterrows()])
 
-            df_2.columns = ['id']
+            df_2.columns = ['id_indicador']
             df = df.join(df_2)
 
-            colors_coresp = {'0-': 'red', '1-': 'yellow', '2': 'green', '1+': 'dark_yellow', '0+': 'dark_red'}
-            df['color'] = [colors_coresp[row[2]] for index, row in df.iterrows()]
             df = df.rename(columns={
                 '\'# Métricas Indicador\'[Score V2]': 'score',
                 'Código - ID - Indicador / Médico': 'nome_indicador',
-                'Nº Ordem': 'id_medico'
+                'Nº Ordem': 'id_medico',
             })
+
+            df = df[df['id_medico'] != 99999]
+
+            colors_coresp = {'0-': 'red', '1-': 'yellow', '2': 'green', '1+': 'dark_yellow', '0+': 'dark_red'}
+            df['color'] = [colors_coresp[row[2]] for index, row in df.iterrows()]
+
+
             df = df[[
-                'id',
+                'id_indicador',
                 'id_medico',
                 'score',
                 'color',
                 'nome_indicador'
             ]]
 
-            df = df.assign(pontuacao=[re.findall('[0-2]', row['score']) for index, row in df.iterrows()])
+            #df = df.assign(pontuacao=[re.findall('[0-2]', row['score']) for index, row in df.iterrows()])
+            df['pontuacao'] = [re.findall('[0-2]', row['score']) for index, row in df.iterrows()]
+            df['pontuacao'] = [row['pontuacao'][0] for index, row in df.iterrows()]
+            df['id_indicador'] = [int(row['id_indicador']) for index, row in df.iterrows()]
+
 
 
     except Exception as e:
