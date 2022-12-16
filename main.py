@@ -26,7 +26,7 @@ navbar = dbc.Navbar([
         html.A(
             dbc.Row([
                 dbc.Col(html.Img(src=app.get_asset_url('LOGO_2.png'), height='30px')),
-                dbc.Col(dbc.NavbarBrand('bi-indicadores', className='ms-2')),
+                dbc.Col(dbc.NavbarBrand('bi indicadores', className='ms-2')),
                 ], align='center', className='g-0'),
             href='/',
             style={'textDecoration': 'none'},

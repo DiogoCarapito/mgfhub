@@ -35,6 +35,10 @@ df_intervalos = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_intervalos
 df_todos_indicadores = df_todos_indicadores.merge(df_intervalos, on="id",how="outer")
 df_todos_indicadores.fillna(np.nan, inplace=True)
 
+cor_vermelha = '#CB707A'
+cor_laranja = '#E6C68F'
+cor_verde = '#86BF8B'
+
 # Criação de uma coluna com concatonação da info importante para o algoritmo de pesquiza pelo método fuzzy
 # Algumas celulas têm que ser
 s=' '
@@ -78,7 +82,7 @@ def generate_html_indicador(indicador):
     separador = ' - '
     return dbc.Container([
         dbc.Card([
-            dbc.CardHeader(children=html.H4([str(indicador[1][0]) + separador + indicador[1][1]])),
+            dbc.CardHeader(children=html.H5([str(indicador[1][0]) + separador + indicador[1][1]])),
             dbc.CardBody([
                 dbc.Container([
                     dbc.Row([
@@ -100,30 +104,32 @@ def generate_html_indicador(indicador):
                                     dbc.Progress(
                                         id=str(indicador[1][0]) + '_0-',
                                         value=indicador[1]['min_aceitavel'],
-                                        color="primary",
+                                        color=cor_vermelha,
                                         bar=True),
                                     dbc.Progress(
                                         id=str(indicador[1][0]) + '_1-',
                                         value=indicador[1]['min_esperado'] - indicador[1]['min_aceitavel'],
-                                        color="warning",
+                                        color=cor_laranja,
                                         bar=True),
                                     dbc.Progress(
                                         id=str(indicador[1][0]) + '_2',
                                         value=indicador[1]['max_esperado'] - indicador[1]['min_esperado'],
-                                        color="success",
+                                        color=cor_verde,
                                         bar=True),
                                     dbc.Progress(
                                         id=str(indicador[1][0]) + '_1+',
                                         value=indicador[1]['max_aceitavel'] - indicador[1]['max_esperado'],
-                                        color="warning",
+                                        color=cor_laranja,
                                         bar=True,
-                                        striped=True),
+                                        #striped=True
+                                    ),
                                     dbc.Progress(
                                         id=str(indicador[1][0]) + '_0+',
                                         value=100 - indicador[1]['max_aceitavel'],
-                                        color="primary",
+                                        color=cor_vermelha,
                                         bar=True,
-                                        striped=True),
+                                        #striped=True
+                                    ),
                                 ], style={"height": "20px"}),
                                 dbc.Tooltip(
                                     'score 0- ' + '[0 - ' + str(indicador[1]['min_aceitavel']) + ']',
@@ -148,8 +154,8 @@ def generate_html_indicador(indicador):
                             ]),
                             html.Br(),
                             dbc.Row([
-                                html.P(['intervalo aceitável: ' + str(indicador[1]['intervalo_aceitavel'])], style={'color':'orange'}),
-                                html.P(['intervalo esperado: ' + str(indicador[1]['intervalo_esperado'])], style={'color':'green'}),
+                                html.P(['intervalo aceitável: ' + str(indicador[1]['intervalo_aceitavel'])], style={'color':cor_laranja}),
+                                html.P(['intervalo esperado: ' + str(indicador[1]['intervalo_esperado'])], style={'color':cor_verde}),
                             ]),
                         ], width=4),
                     ]),

@@ -123,9 +123,10 @@ def store_xlsx(contents, filename):
                 'id_medico': ['unidade' for each in lista_indicadores],
                 'score': [np.nan for each in lista_indicadores],
                 'pontuacao': [df[df['id_indicador'] == each]['pontuacao'].mean() for each in lista_indicadores],
-                'nome_indicador': lista_nome_indicadores
+                'pontuacao_arredondada': [np.rint(df[df['id_indicador'] == each]['pontuacao'].mean()) for each in lista_indicadores],
+                'nome_indicador': lista_nome_indicadores,
             })
-
+            print(df_unidade)
             df = pd.concat([df_unidade,df])
 
             #colors_coresp = {'0-': 'red', '1-': 'yellow', '2': 'green', '1+': 'dark_yellow', '0+': 'dark_red'}

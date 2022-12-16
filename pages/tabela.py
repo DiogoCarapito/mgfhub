@@ -138,7 +138,7 @@ contagem = html.Div([html.P(id='searchbox_indicadores_tabela')],style={'padding'
 container_1 = dbc.Container([
     dbc.Row([
         dbc.Col([
-            html.H3('indicadores'),
+            html.H3('tabela'),
             html.Br(),
             filters,
             contagem,

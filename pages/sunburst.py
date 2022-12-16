@@ -2,8 +2,13 @@ import dash
 from dash import html, dcc, callback, Output, Input
 import dash_bootstrap_components as dbc
 import pandas as pd
+import numpy as np
 import plotly.graph_objects as go
+import plotly.io as pio
 
+pio.templates.default = 'seaborn'
+#seaborn
+#presentation
 
 dash.register_page(
     __name__,
@@ -16,6 +21,8 @@ dash.register_page(
 pythonanywhere_file_tree = ''
 #pythonanywhere_file_tree = '/home/diogocarapito/bi_indicadores/'
 df_sunburst = pd.read_csv(pythonanywhere_file_tree + 'data/sunburst_data.csv')
+
+
 
 dropdown_options = ['unidade']
 
@@ -59,7 +66,6 @@ container = dbc.Container([
             html.Br(),
             graphs,
             html.Br(),
-            html.Div(id='test_container'),
         ])
     ])
 ], fluid=True)
@@ -105,9 +111,11 @@ def sunburst_update(dropdown_options, store_data):
         df = df[df['id_medico'] == dropdown_options]
         #df = df.dropna(subset='pontuacao')
 
+        df_sunburst[df_sunburst['pontuacao'] == np.nan] = 1.1
+        df_sunburst[df_sunburst['pontuacao_arredondada'] == np.nan] = 1.1
         df_sunburst_with_score = df_sunburst.merge(df, on='id_indicador',how='outer')
 
-        # df_sunburst_with_score[df_sunburst_with_score['pontuacao']==np.nan] =
+
 
         #df_sunburst_with_score['pontuacao'] = df_sunburst_with_score['pontuacao'].fillna(0)
 
@@ -137,6 +145,11 @@ def sunburst_update(dropdown_options, store_data):
     fig_sunburst_indicadores = go.Figure()
 
     try:
+        if dropdown_options == 'unidade':
+            cor = df_sunburst_with_score.pontuacao_arredondada
+        else:
+            cor = df_sunburst_with_score.pontuacao
+
         fig_sunburst_indicadores.add_trace(go.Sunburst(
             ids=df_sunburst_with_score.id,
             labels=df_sunburst_with_score.label,
@@ -146,10 +159,12 @@ def sunburst_update(dropdown_options, store_data):
             domain=dict(column=1),
             insidetextorientation='radial',
             marker=dict(
-                colors=df_sunburst_with_score.pontuacao,
+                colors=cor,
+                cmax = 2.8,
+                cmin = -0.2,
                 colorscale='temps',
                 reversescale=True,
-                showscale=True,
+                #showscale=True,
             ),
             hovertemplate='<b>%{label} </b> <br> peso: %{value:.2f}%<br> score: %{color:.2f}',
         ))
@@ -169,8 +184,8 @@ def sunburst_update(dropdown_options, store_data):
     
     fig_sunburst_indicadores.update_layout(
         margin=dict(t=0, l=0, r=0, b=0),
-        width=880,
-        height=800,
+        width=550,
+        height=500,
     )
 
     return fig_sunburst_indicadores
