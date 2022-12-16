@@ -1,0 +1,98 @@
+,id_indicador,id_medico,score,pontuacao,pontuacao_arredondada,nome_indicador
+108,1,54537,2,2.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+120,2,54537,2,2.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+132,3,54537,2,2.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+144,5,54537,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+156,6,54537,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+168,8,54537,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+180,9,54537,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+192,10,54537,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+204,11,54537,0-,0.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+216,14,54537,2,2.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+228,15,54537,1-,1.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+240,16,54537,2,2.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+252,17,54537,1-,1.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+264,18,54537,2,2.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+276,19,54537,1-,1.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+288,20,54537,0-,0.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+300,23,54537,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+312,30,54537,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+324,31,54537,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+336,32,54537,1-,1.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+348,33,54537,1-,1.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+360,34,54537,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+372,35,54537,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+384,36,54537,0-,0.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+396,37,54537,0-,0.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+408,38,54537,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+420,39,54537,2,2.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+432,40,54537,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+444,44,54537,0-,0.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+456,45,54537,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+468,46,54537,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+480,49,54537,2,2.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+492,53,54537,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+504,54,54537,2,2.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+516,57,54537,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+528,59,54537,2,2.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+540,63,54537,0-,0.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+552,91,54537,2,2.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+564,92,54537,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+576,93,54537,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+588,94,54537,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+600,95,54537,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+612,97,54537,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+624,98,54537,1-,1.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+636,99,54537,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+648,100,54537,1-,1.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+660,261,54537,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+672,262,54537,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+684,265,54537,1-,1.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+696,266,54537,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+708,267,54537,1-,1.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+720,269,54537,1-,1.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+732,270,54537,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+744,271,54537,2,2.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+756,272,54537,2,2.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+768,274,54537,2,2.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+780,275,54537,2,2.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+792,276,54537,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+804,277,54537,2,2.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+816,278,54537,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+828,294,54537,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+840,295,54537,1-,1.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+852,297,54537,1-,1.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+864,300,54537,0+,0.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+876,302,54537,2,2.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+888,306,54537,2,2.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+900,307,54537,2,2.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+912,308,54537,1-,1.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+924,309,54537,2,2.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+936,310,54537,2,2.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+948,311,54537,2,2.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+960,312,54537,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+972,313,54537,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+984,314,54537,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+996,315,54537,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+1008,316,54537,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+1020,330,54537,1-,1.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+1032,331,54537,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+1044,335,54537,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+1056,342,54537,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+1068,344,54537,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+1080,345,54537,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+1092,346,54537,1+,1.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+1104,347,54537,1+,1.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1116,348,54537,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1128,349,54537,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1140,350,54537,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1152,351,54537,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1164,352,54537,1+,1.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1176,353,54537,2,2.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1188,375,54537,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1200,395,54537,1-,1.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1212,397,54537,2,2.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1223,398,54537,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1235,404,54537,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1247,405,54537,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1259,427,54537,2,2.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana

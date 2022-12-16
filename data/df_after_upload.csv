@@ -1,0 +1,1261 @@
+,id_indicador,id_medico,score,pontuacao,pontuacao_arredondada,nome_indicador
+0,1,unidade,,1.1666666666666667,1.0,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+1,2,unidade,,0.9166666666666666,1.0,2013.002.01 FL - Taxa de utilização global de consultas médicas
+2,3,unidade,,0.3333333333333333,0.0,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+3,5,unidade,,0.25,0.0,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+4,6,unidade,,1.0,1.0,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+5,8,unidade,,0.75,1.0,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+6,9,unidade,,0.8333333333333334,1.0,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+7,10,unidade,,0.6666666666666666,1.0,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+8,11,unidade,,1.0,1.0,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+9,14,unidade,,0.75,1.0,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+10,15,unidade,,0.08333333333333333,0.0,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+11,16,unidade,,1.0,1.0,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+12,17,unidade,,0.6666666666666666,1.0,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+13,18,unidade,,1.0,1.0,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+14,19,unidade,,0.3333333333333333,0.0,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+15,20,unidade,,0.5,0.0,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+16,23,unidade,,0.08333333333333333,0.0,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+17,30,unidade,,2.0,2.0,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+18,31,unidade,,0.75,1.0,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+19,32,unidade,,0.5833333333333334,1.0,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+20,33,unidade,,1.0,1.0,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+21,34,unidade,,0.0,0.0,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+22,35,unidade,,0.4166666666666667,0.0,2013.035.01 FL - Proporção DM com exame pés último ano
+23,36,unidade,,1.1666666666666667,1.0,2013.036.01 FL - Proporção utentes DM com registo de GRT
+24,37,unidade,,0.5,0.0,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+25,38,unidade,,0.5833333333333334,1.0,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+26,39,unidade,,1.0833333333333333,1.0,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+27,40,unidade,,0.0,0.0,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+28,44,unidade,,0.9166666666666666,1.0,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+29,45,unidade,,0.25,0.0,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+30,46,unidade,,0.8333333333333334,1.0,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+31,49,unidade,,0.5,0.0,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+32,53,unidade,,0.6666666666666666,1.0,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+33,54,unidade,,1.0833333333333333,1.0,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+34,57,unidade,,1.9166666666666667,2.0,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+35,59,unidade,,1.25,1.0,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+36,63,unidade,,0.5833333333333334,1.0,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+37,91,unidade,,1.0833333333333333,1.0,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+38,92,unidade,,0.0,0.0,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+39,93,unidade,,2.0,2.0,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+40,94,unidade,,1.3333333333333333,1.0,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+41,95,unidade,,1.6666666666666667,2.0,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+42,97,unidade,,1.1666666666666667,1.0,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+43,98,unidade,,1.5833333333333333,2.0,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+44,99,unidade,,0.0,0.0,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+45,100,unidade,,0.3333333333333333,0.0,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+46,261,unidade,,0.4166666666666667,0.0,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+47,262,unidade,,0.0,0.0,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+48,265,unidade,,1.75,2.0,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+49,266,unidade,,2.0,2.0,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+50,267,unidade,,0.5,0.0,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+51,269,unidade,,0.6666666666666666,1.0,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+52,270,unidade,,1.6666666666666667,2.0,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+53,271,unidade,,1.0,1.0,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+54,272,unidade,,0.6666666666666666,1.0,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+55,274,unidade,,1.1666666666666667,1.0,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+56,275,unidade,,1.0833333333333333,1.0,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+57,276,unidade,,1.75,2.0,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+58,277,unidade,,1.3333333333333333,1.0,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+59,278,unidade,,1.5833333333333333,2.0,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+60,294,unidade,,0.08333333333333333,0.0,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+61,295,unidade,,0.5,0.0,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+62,297,unidade,,1.5833333333333333,2.0,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+63,300,unidade,,0.75,1.0,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+64,302,unidade,,1.0833333333333333,1.0,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+65,306,unidade,,0.75,1.0,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+66,307,unidade,,1.0833333333333333,1.0,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+67,308,unidade,,1.4166666666666667,1.0,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+68,309,unidade,,1.25,1.0,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+69,310,unidade,,1.25,1.0,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+70,311,unidade,,1.3333333333333333,1.0,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+71,312,unidade,,1.75,2.0,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+72,313,unidade,,0.6666666666666666,1.0,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+73,314,unidade,,0.6666666666666666,1.0,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+74,315,unidade,,1.6666666666666667,2.0,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+75,316,unidade,,1.0833333333333333,1.0,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+76,330,unidade,,0.5,0.0,2017.330.01 FL - Índice de utilização anual de consultas médicas
+77,331,unidade,,0.0,0.0,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+78,335,unidade,,2.0,2.0,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+79,342,unidade,,1.0,1.0,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+80,344,unidade,,1.4166666666666667,1.0,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+81,345,unidade,,2.0,2.0,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+82,346,unidade,,1.6666666666666667,2.0,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+83,347,unidade,,0.5833333333333334,1.0,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+84,348,unidade,,1.5833333333333333,2.0,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+85,349,unidade,,0.08333333333333333,0.0,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+86,350,unidade,,0.0,0.0,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+87,351,unidade,,0.0,0.0,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+88,352,unidade,,1.1666666666666667,1.0,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+89,353,unidade,,0.8333333333333334,1.0,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+90,375,unidade,,1.6666666666666667,2.0,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+91,395,unidade,,0.3333333333333333,0.0,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+92,397,unidade,,0.5,0.0,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+93,398,unidade,,0.18181818181818182,0.0,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+94,404,unidade,,0.08333333333333333,0.0,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+95,405,unidade,,0.5833333333333334,1.0,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+96,427,unidade,,0.5,0.0,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+0,1,32270,0+,0.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+1,1,34306,2,2.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+2,1,35968,0+,0.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+3,1,36082,2,2.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+4,1,36147,2,2.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+5,1,36162,0+,0.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+6,1,38123,2,2.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+7,1,41375,1+,1.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+8,1,43090,1+,1.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+9,1,44258,2,2.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+10,1,48486,0+,0.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+11,1,54537,2,2.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+12,2,32270,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+13,2,34306,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+14,2,35968,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+15,2,36082,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+16,2,36147,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+17,2,36162,0-,0.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+18,2,38123,0-,0.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+19,2,41375,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+20,2,43090,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+21,2,44258,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+22,2,48486,1-,1.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+23,2,54537,2,2.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+24,3,32270,1-,1.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+25,3,34306,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+26,3,35968,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+27,3,36082,1-,1.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+28,3,36147,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+29,3,36162,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+30,3,38123,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+31,3,41375,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+32,3,43090,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+33,3,44258,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+34,3,48486,0-,0.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+35,3,54537,2,2.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+37,5,32270,1-,1.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+38,5,34306,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+39,5,35968,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+40,5,36082,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+41,5,36147,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+42,5,36162,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+43,5,38123,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+44,5,41375,2,2.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+45,5,43090,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+46,5,44258,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+47,5,48486,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+48,5,54537,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+49,6,32270,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+50,6,34306,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+51,6,35968,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+52,6,36082,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+53,6,36147,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+54,6,36162,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+55,6,38123,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+56,6,41375,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+57,6,43090,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+58,6,44258,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+59,6,48486,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+60,6,54537,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+61,8,32270,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+62,8,34306,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+63,8,35968,0-,0.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+64,8,36082,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+65,8,36147,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+66,8,36162,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+67,8,38123,0-,0.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+68,8,41375,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+69,8,43090,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+70,8,44258,0-,0.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+71,8,48486,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+72,8,54537,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+73,9,32270,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+74,9,34306,0-,0.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+75,9,35968,0-,0.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+76,9,36082,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+77,9,36147,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+78,9,36162,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+79,9,38123,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+80,9,41375,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+81,9,43090,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+82,9,44258,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+83,9,48486,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+84,9,54537,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+85,10,32270,0-,0.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+86,10,34306,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+87,10,35968,0-,0.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+88,10,36082,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+89,10,36147,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+90,10,36162,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+91,10,38123,0-,0.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+92,10,41375,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+93,10,43090,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+94,10,44258,0-,0.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+95,10,48486,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+96,10,54537,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+97,11,32270,2,2.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+98,11,34306,1-,1.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+99,11,35968,0-,0.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+100,11,36082,1-,1.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+101,11,36147,1-,1.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+102,11,36162,2,2.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+103,11,38123,0-,0.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+104,11,41375,2,2.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+105,11,43090,2,2.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+106,11,44258,0-,0.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+107,11,48486,1-,1.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+108,11,54537,0-,0.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+109,14,32270,1-,1.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+110,14,34306,2,2.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+111,14,35968,1-,1.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+112,14,36082,0-,0.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+113,14,36147,0-,0.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+114,14,36162,1-,1.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+115,14,38123,0-,0.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+116,14,41375,0-,0.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+117,14,43090,0-,0.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+118,14,44258,0-,0.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+119,14,48486,2,2.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+120,14,54537,2,2.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+121,15,32270,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+122,15,34306,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+123,15,35968,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+124,15,36082,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+125,15,36147,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+126,15,36162,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+127,15,38123,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+128,15,41375,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+129,15,43090,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+130,15,44258,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+131,15,48486,0-,0.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+132,15,54537,1-,1.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+133,16,32270,1-,1.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+134,16,34306,2,2.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+135,16,35968,1-,1.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+136,16,36082,0-,0.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+137,16,36147,1-,1.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+138,16,36162,0-,0.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+139,16,38123,1-,1.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+140,16,41375,1-,1.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+141,16,43090,1-,1.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+142,16,44258,1-,1.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+143,16,48486,1-,1.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+144,16,54537,2,2.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+145,17,32270,0-,0.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+146,17,34306,0-,0.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+147,17,35968,1-,1.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+148,17,36082,1-,1.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+149,17,36147,0-,0.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+150,17,36162,0-,0.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+151,17,38123,0-,0.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+152,17,41375,1-,1.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+153,17,43090,2,2.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+154,17,44258,1-,1.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+155,17,48486,1-,1.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+156,17,54537,1-,1.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+157,18,32270,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+158,18,34306,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+159,18,35968,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+160,18,36082,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+161,18,36147,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+162,18,36162,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+163,18,38123,0-,0.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+164,18,41375,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+165,18,43090,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+166,18,44258,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+167,18,48486,1-,1.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+168,18,54537,2,2.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+169,19,32270,1-,1.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+170,19,34306,1-,1.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+171,19,35968,0-,0.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+172,19,36082,0-,0.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+173,19,36147,1-,1.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+174,19,36162,0-,0.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+175,19,38123,0-,0.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+176,19,41375,0-,0.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+177,19,43090,0-,0.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+178,19,44258,0-,0.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+179,19,48486,0-,0.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+180,19,54537,1-,1.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+181,20,32270,0-,0.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+182,20,34306,1-,1.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+183,20,35968,1-,1.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+184,20,36082,0-,0.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+185,20,36147,1-,1.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+186,20,36162,1-,1.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+187,20,38123,0-,0.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+188,20,41375,0-,0.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+189,20,43090,1-,1.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+190,20,44258,1-,1.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+191,20,48486,0-,0.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+192,20,54537,0-,0.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+193,23,32270,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+194,23,34306,1-,1.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+195,23,35968,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+196,23,36082,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+197,23,36147,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+198,23,36162,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+199,23,38123,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+200,23,41375,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+201,23,43090,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+202,23,44258,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+203,23,48486,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+204,23,54537,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+205,30,32270,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+206,30,34306,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+207,30,35968,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+208,30,36082,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+209,30,36147,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+210,30,36162,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+211,30,38123,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+212,30,41375,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+213,30,43090,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+214,30,44258,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+215,30,48486,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+216,30,54537,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+217,31,32270,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+218,31,34306,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+219,31,35968,0-,0.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+220,31,36082,0-,0.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+221,31,36147,0-,0.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+222,31,36162,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+223,31,38123,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+224,31,41375,0-,0.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+225,31,43090,2,2.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+226,31,44258,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+227,31,48486,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+228,31,54537,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+229,32,32270,1-,1.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+230,32,34306,0-,0.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+231,32,35968,1-,1.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+232,32,36082,0-,0.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+233,32,36147,0-,0.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+234,32,36162,0-,0.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+235,32,38123,1-,1.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+236,32,41375,0-,0.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+237,32,43090,0-,0.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+238,32,44258,1-,1.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+239,32,48486,2,2.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+240,32,54537,1-,1.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+241,33,32270,2,2.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+242,33,34306,2,2.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+243,33,35968,1-,1.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+244,33,36082,1-,1.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+245,33,36147,1-,1.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+246,33,36162,0-,0.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+247,33,38123,0-,0.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+248,33,41375,1-,1.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+249,33,43090,1-,1.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+250,33,44258,0-,0.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+251,33,48486,2,2.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+252,33,54537,1-,1.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+253,34,32270,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+254,34,34306,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+255,34,35968,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+256,34,36082,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+257,34,36147,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+258,34,36162,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+259,34,38123,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+260,34,41375,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+261,34,43090,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+262,34,44258,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+263,34,48486,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+264,34,54537,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+265,35,32270,1-,1.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+266,35,34306,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+267,35,35968,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+268,35,36082,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+269,35,36147,1-,1.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+270,35,36162,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+271,35,38123,1-,1.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+272,35,41375,1-,1.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+273,35,43090,1-,1.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+274,35,44258,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+275,35,48486,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+276,35,54537,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+277,36,32270,2,2.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+278,36,34306,1-,1.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+279,36,35968,0-,0.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+280,36,36082,1-,1.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+281,36,36147,2,2.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+282,36,36162,1-,1.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+283,36,38123,2,2.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+284,36,41375,2,2.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+285,36,43090,2,2.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+286,36,44258,0-,0.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+287,36,48486,1-,1.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+288,36,54537,0-,0.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+289,37,32270,1-,1.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+290,37,34306,0-,0.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+291,37,35968,0-,0.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+292,37,36082,0-,0.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+293,37,36147,1-,1.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+294,37,36162,0-,0.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+295,37,38123,1-,1.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+296,37,41375,1-,1.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+297,37,43090,1-,1.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+298,37,44258,0-,0.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+299,37,48486,1-,1.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+300,37,54537,0-,0.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+301,38,32270,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+302,38,34306,0-,0.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+303,38,35968,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+304,38,36082,0-,0.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+305,38,36147,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+306,38,36162,0-,0.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+307,38,38123,0-,0.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+308,38,41375,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+309,38,43090,0-,0.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+310,38,44258,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+311,38,48486,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+312,38,54537,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+313,39,32270,1-,1.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+314,39,34306,1-,1.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+315,39,35968,1-,1.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+316,39,36082,1-,1.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+317,39,36147,2,2.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+318,39,36162,0-,0.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+319,39,38123,1-,1.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+320,39,41375,2,2.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+321,39,43090,0-,0.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+322,39,44258,1-,1.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+323,39,48486,1-,1.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+324,39,54537,2,2.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+325,40,32270,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+326,40,34306,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+327,40,35968,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+328,40,36082,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+329,40,36147,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+330,40,36162,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+331,40,38123,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+332,40,41375,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+333,40,43090,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+334,40,44258,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+335,40,48486,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+336,40,54537,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+337,44,32270,1-,1.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+338,44,34306,2,2.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+339,44,35968,1-,1.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+340,44,36082,1-,1.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+341,44,36147,2,2.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+342,44,36162,1-,1.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+343,44,38123,0-,0.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+344,44,41375,2,2.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+345,44,43090,0-,0.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+346,44,44258,0-,0.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+347,44,48486,1-,1.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+348,44,54537,0-,0.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+349,45,32270,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+350,45,34306,1-,1.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+351,45,35968,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+352,45,36082,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+353,45,36147,1-,1.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+354,45,36162,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+355,45,38123,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+356,45,41375,1-,1.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+357,45,43090,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+358,45,44258,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+359,45,48486,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+360,45,54537,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+361,46,32270,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+362,46,34306,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+363,46,35968,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+364,46,36082,0-,0.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+365,46,36147,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+366,46,36162,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+367,46,38123,0-,0.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+368,46,41375,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+369,46,43090,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+370,46,44258,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+371,46,48486,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+372,46,54537,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+373,49,32270,0-,0.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+374,49,34306,0-,0.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+375,49,35968,1-,1.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+376,49,36082,0-,0.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+377,49,36147,1-,1.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+378,49,36162,0-,0.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+379,49,38123,0-,0.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+380,49,41375,0-,0.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+381,49,43090,0-,0.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+382,49,44258,1-,1.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+383,49,48486,1-,1.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+384,49,54537,2,2.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+385,53,32270,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+386,53,34306,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+387,53,35968,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+388,53,36082,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+389,53,36147,0-,0.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+390,53,36162,0-,0.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+391,53,38123,0-,0.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+392,53,41375,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+393,53,43090,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+394,53,44258,0-,0.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+395,53,48486,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+396,53,54537,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+397,54,32270,0-,0.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+398,54,34306,1-,1.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+399,54,35968,0-,0.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+400,54,36082,1-,1.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+401,54,36147,1-,1.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+402,54,36162,1-,1.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+403,54,38123,0-,0.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+404,54,41375,2,2.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+405,54,43090,1-,1.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+406,54,44258,2,2.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+407,54,48486,2,2.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+408,54,54537,2,2.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+409,57,32270,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+410,57,34306,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+411,57,35968,1-,1.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+412,57,36082,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+413,57,36147,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+414,57,36162,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+415,57,38123,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+416,57,41375,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+417,57,43090,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+418,57,44258,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+419,57,48486,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+420,57,54537,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+421,59,32270,1-,1.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+422,59,34306,2,2.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+423,59,35968,2,2.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+424,59,36082,0-,0.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+425,59,36147,0-,0.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+426,59,36162,2,2.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+427,59,38123,0-,0.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+428,59,41375,2,2.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+429,59,43090,1-,1.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+430,59,44258,1-,1.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+431,59,48486,2,2.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+432,59,54537,2,2.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+433,63,32270,1-,1.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+434,63,34306,1-,1.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+435,63,35968,1-,1.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+436,63,36082,0-,0.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+437,63,36147,0-,0.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+438,63,36162,1-,1.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+439,63,38123,0-,0.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+440,63,41375,0-,0.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+441,63,43090,2,2.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+442,63,44258,0-,0.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+443,63,48486,1-,1.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+444,63,54537,0-,0.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+445,91,32270,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+446,91,34306,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+447,91,35968,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+448,91,36082,0-,0.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+449,91,36147,2,2.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+450,91,36162,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+451,91,38123,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+452,91,41375,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+453,91,43090,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+454,91,44258,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+455,91,48486,1-,1.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+456,91,54537,2,2.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+457,92,32270,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+458,92,34306,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+459,92,35968,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+460,92,36082,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+461,92,36147,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+462,92,36162,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+463,92,38123,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+464,92,41375,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+465,92,43090,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+466,92,44258,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+467,92,48486,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+468,92,54537,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+469,93,32270,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+470,93,34306,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+471,93,35968,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+472,93,36082,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+473,93,36147,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+474,93,36162,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+475,93,38123,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+476,93,41375,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+477,93,43090,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+478,93,44258,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+479,93,48486,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+480,93,54537,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+481,94,32270,0-,0.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+482,94,34306,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+483,94,35968,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+484,94,36082,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+485,94,36147,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+486,94,36162,0-,0.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+487,94,38123,0-,0.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+488,94,41375,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+489,94,43090,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+490,94,44258,0-,0.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+491,94,48486,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+492,94,54537,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+493,95,32270,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+494,95,34306,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+495,95,35968,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+496,95,36082,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+497,95,36147,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+498,95,36162,0-,0.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+499,95,38123,0-,0.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+500,95,41375,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+501,95,43090,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+502,95,44258,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+503,95,48486,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+504,95,54537,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+505,97,32270,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+506,97,34306,2,2.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+507,97,35968,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+508,97,36082,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+509,97,36147,2,2.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+510,97,36162,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+511,97,38123,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+512,97,41375,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+513,97,43090,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+514,97,44258,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+515,97,48486,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+516,97,54537,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+517,98,32270,2,2.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+518,98,34306,1-,1.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+519,98,35968,1-,1.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+520,98,36082,2,2.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+521,98,36147,1-,1.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+522,98,36162,2,2.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+523,98,38123,2,2.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+524,98,41375,2,2.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+525,98,43090,2,2.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+526,98,44258,1-,1.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+527,98,48486,2,2.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+528,98,54537,1-,1.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+529,99,32270,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+530,99,34306,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+531,99,35968,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+532,99,36082,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+533,99,36147,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+534,99,36162,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+535,99,38123,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+536,99,41375,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+537,99,43090,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+538,99,44258,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+539,99,48486,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+540,99,54537,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+541,100,32270,0-,0.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+542,100,34306,0-,0.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+543,100,35968,0-,0.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+544,100,36082,1-,1.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+545,100,36147,0-,0.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+546,100,36162,0-,0.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+547,100,38123,0-,0.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+548,100,41375,1-,1.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+549,100,43090,0-,0.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+550,100,44258,0-,0.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+551,100,48486,1-,1.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+552,100,54537,1-,1.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+553,261,32270,1-,1.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+554,261,34306,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+555,261,35968,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+556,261,36082,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+557,261,36147,1-,1.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+558,261,36162,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+559,261,38123,1-,1.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+560,261,41375,1-,1.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+561,261,43090,1-,1.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+562,261,44258,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+563,261,48486,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+564,261,54537,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+565,262,32270,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+566,262,34306,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+567,262,35968,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+568,262,36082,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+569,262,36147,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+570,262,36162,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+571,262,38123,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+572,262,41375,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+573,262,43090,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+574,262,44258,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+575,262,48486,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+576,262,54537,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+577,265,32270,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+578,265,34306,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+579,265,35968,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+580,265,36082,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+581,265,36147,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+582,265,36162,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+583,265,38123,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+584,265,41375,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+585,265,43090,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+586,265,44258,0-,0.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+587,265,48486,2,2.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+588,265,54537,1-,1.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+589,266,32270,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+590,266,34306,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+591,266,35968,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+592,266,36082,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+593,266,36147,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+594,266,36162,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+595,266,38123,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+596,266,41375,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+597,266,43090,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+598,266,44258,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+599,266,48486,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+600,266,54537,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+601,267,32270,0-,0.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+602,267,34306,2,2.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+603,267,35968,0-,0.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+604,267,36082,1-,1.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+605,267,36147,0-,0.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+606,267,36162,0-,0.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+607,267,38123,0-,0.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+608,267,41375,1-,1.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+609,267,43090,0-,0.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+610,267,44258,0-,0.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+611,267,48486,1-,1.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+612,267,54537,1-,1.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+613,269,32270,0-,0.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+614,269,34306,0-,0.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+615,269,35968,1-,1.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+616,269,36082,1-,1.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+617,269,36147,0-,0.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+618,269,36162,0-,0.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+619,269,38123,0-,0.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+620,269,41375,1-,1.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+621,269,43090,2,2.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+622,269,44258,1-,1.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+623,269,48486,1-,1.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+624,269,54537,1-,1.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+625,270,32270,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+626,270,34306,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+627,270,35968,1-,1.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+628,270,36082,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+629,270,36147,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+630,270,36162,0-,0.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+631,270,38123,1-,1.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+632,270,41375,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+633,270,43090,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+634,270,44258,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+635,270,48486,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+636,270,54537,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+637,271,32270,2,2.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+638,271,34306,0-,0.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+639,271,35968,2,2.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+640,271,36082,1-,1.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+641,271,36147,2,2.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+642,271,36162,0-,0.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+643,271,38123,0-,0.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+644,271,41375,2,2.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+645,271,43090,0-,0.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+646,271,44258,0-,0.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+647,271,48486,1-,1.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+648,271,54537,2,2.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+649,272,32270,1-,1.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+650,272,34306,2,2.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+651,272,35968,0-,0.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+652,272,36082,2,2.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+653,272,36147,1-,1.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+654,272,36162,0-,0.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+655,272,38123,0-,0.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+656,272,41375,0-,0.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+657,272,43090,0-,0.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+658,272,44258,0-,0.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+659,272,48486,0-,0.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+660,272,54537,2,2.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+661,274,32270,2,2.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+662,274,34306,2,2.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+663,274,35968,1-,1.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+664,274,36082,1-,1.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+665,274,36147,1-,1.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+666,274,36162,1-,1.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+667,274,38123,1-,1.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+668,274,41375,1-,1.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+669,274,43090,2,2.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+670,274,44258,0-,0.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+671,274,48486,0-,0.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+672,274,54537,2,2.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+673,275,32270,2,2.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+674,275,34306,2,2.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+675,275,35968,1-,1.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+676,275,36082,0-,0.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+677,275,36147,2,2.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+678,275,36162,2,2.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+679,275,38123,0-,0.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+680,275,41375,0-,0.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+681,275,43090,2,2.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+682,275,44258,0-,0.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+683,275,48486,0-,0.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+684,275,54537,2,2.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+685,276,32270,1+,1.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+686,276,34306,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+687,276,35968,1+,1.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+688,276,36082,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+689,276,36147,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+690,276,36162,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+691,276,38123,1+,1.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+692,276,41375,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+693,276,43090,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+694,276,44258,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+695,276,48486,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+696,276,54537,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+697,277,32270,1-,1.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+698,277,34306,2,2.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+699,277,35968,1-,1.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+700,277,36082,1-,1.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+701,277,36147,1-,1.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+702,277,36162,2,2.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+703,277,38123,1-,1.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+704,277,41375,1-,1.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+705,277,43090,2,2.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+706,277,44258,1-,1.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+707,277,48486,1-,1.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+708,277,54537,2,2.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+709,278,32270,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+710,278,34306,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+711,278,35968,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+712,278,36082,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+713,278,36147,1-,1.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+714,278,36162,1-,1.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+715,278,38123,1-,1.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+716,278,41375,1-,1.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+717,278,43090,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+718,278,44258,1-,1.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+719,278,48486,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+720,278,54537,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+721,294,32270,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+722,294,34306,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+723,294,35968,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+724,294,36082,1-,1.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+725,294,36147,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+726,294,36162,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+727,294,38123,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+728,294,41375,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+729,294,43090,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+730,294,44258,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+731,294,48486,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+732,294,54537,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+734,295,32270,1-,1.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+735,295,34306,0-,0.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+736,295,35968,0-,0.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+737,295,36082,1-,1.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+738,295,36147,2,2.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+739,295,36162,0-,0.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+740,295,38123,0-,0.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+741,295,41375,1-,1.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+742,295,43090,0-,0.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+743,295,44258,0-,0.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+744,295,48486,0-,0.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+745,295,54537,1-,1.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+746,297,32270,2,2.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+747,297,34306,2,2.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+748,297,35968,2,2.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+749,297,36082,2,2.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+750,297,36147,2,2.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+751,297,36162,2,2.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+752,297,38123,1-,1.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+753,297,41375,1-,1.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+754,297,43090,2,2.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+755,297,44258,1-,1.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+756,297,48486,1-,1.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+757,297,54537,1-,1.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+758,300,32270,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+759,300,34306,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+760,300,35968,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+761,300,36082,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+762,300,36147,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+763,300,36162,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+764,300,38123,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+765,300,41375,0+,0.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+766,300,43090,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+767,300,44258,0+,0.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+768,300,48486,1+,1.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+769,300,54537,0+,0.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+770,302,32270,1-,1.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+771,302,34306,2,2.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+772,302,35968,1-,1.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+773,302,36082,0-,0.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+774,302,36147,1-,1.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+775,302,36162,0-,0.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+776,302,38123,1-,1.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+777,302,41375,0-,0.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+778,302,43090,2,2.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+779,302,44258,2,2.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+780,302,48486,1-,1.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+781,302,54537,2,2.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+782,306,32270,0-,0.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+783,306,34306,0-,0.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+784,306,35968,2,2.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+785,306,36082,2,2.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+786,306,36147,1-,1.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+787,306,36162,0-,0.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+788,306,38123,0-,0.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+789,306,41375,0-,0.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+790,306,43090,0-,0.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+791,306,44258,0-,0.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+792,306,48486,2,2.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+793,306,54537,2,2.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+794,307,32270,2,2.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+795,307,34306,1-,1.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+796,307,35968,1-,1.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+797,307,36082,1-,1.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+798,307,36147,1-,1.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+799,307,36162,0-,0.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+800,307,38123,0-,0.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+801,307,41375,1-,1.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+802,307,43090,1-,1.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+803,307,44258,1-,1.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+804,307,48486,2,2.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+805,307,54537,2,2.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+806,308,32270,2,2.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+807,308,34306,2,2.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+808,308,35968,0-,0.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+809,308,36082,2,2.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+810,308,36147,2,2.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+811,308,36162,1-,1.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+812,308,38123,2,2.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+813,308,41375,1-,1.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+814,308,43090,1-,1.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+815,308,44258,2,2.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+816,308,48486,1-,1.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+817,308,54537,1-,1.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+818,309,32270,1-,1.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+819,309,34306,2,2.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+820,309,35968,0-,0.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+821,309,36082,1-,1.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+822,309,36147,1-,1.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+823,309,36162,1-,1.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+824,309,38123,0-,0.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+825,309,41375,2,2.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+826,309,43090,2,2.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+827,309,44258,2,2.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+828,309,48486,1-,1.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+829,309,54537,2,2.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+830,310,32270,1-,1.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+831,310,34306,2,2.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+832,310,35968,1-,1.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+833,310,36082,2,2.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+834,310,36147,2,2.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+835,310,36162,1-,1.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+836,310,38123,0-,0.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+837,310,41375,1-,1.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+838,310,43090,1-,1.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+839,310,44258,2,2.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+840,310,48486,0-,0.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+841,310,54537,2,2.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+842,311,32270,1-,1.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+843,311,34306,1-,1.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+844,311,35968,1-,1.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+845,311,36082,2,2.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+846,311,36147,2,2.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+847,311,36162,1-,1.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+848,311,38123,0-,0.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+849,311,41375,2,2.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+850,311,43090,1-,1.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+851,311,44258,2,2.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+852,311,48486,1-,1.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+853,311,54537,2,2.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+854,312,32270,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+855,312,34306,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+856,312,35968,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+857,312,36082,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+858,312,36147,1-,1.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+859,312,36162,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+860,312,38123,0-,0.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+861,312,41375,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+862,312,43090,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+863,312,44258,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+864,312,48486,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+865,312,54537,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+866,313,32270,1+,1.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+867,313,34306,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+868,313,35968,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+869,313,36082,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+870,313,36147,2,2.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+871,313,36162,2,2.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+872,313,38123,1+,1.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+873,313,41375,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+874,313,43090,2,2.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+875,313,44258,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+876,313,48486,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+877,313,54537,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+878,314,32270,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+879,314,34306,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+880,314,35968,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+881,314,36082,0+,0.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+882,314,36147,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+883,314,36162,0+,0.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+884,314,38123,0+,0.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+885,314,41375,0+,0.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+886,314,43090,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+887,314,44258,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+888,314,48486,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+889,314,54537,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+890,315,32270,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+891,315,34306,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+892,315,35968,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+893,315,36082,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+894,315,36147,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+895,315,36162,1-,1.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+896,315,38123,0-,0.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+897,315,41375,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+898,315,43090,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+899,315,44258,1-,1.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+900,315,48486,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+901,315,54537,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+902,316,32270,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+903,316,34306,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+904,316,35968,2,2.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+905,316,36082,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+906,316,36147,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+907,316,36162,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+908,316,38123,0-,0.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+909,316,41375,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+910,316,43090,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+911,316,44258,2,2.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+912,316,48486,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+913,316,54537,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+914,330,32270,0-,0.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+915,330,34306,0-,0.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+916,330,35968,1-,1.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+917,330,36082,0-,0.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+918,330,36147,1-,1.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+919,330,36162,0-,0.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+920,330,38123,0-,0.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+921,330,41375,0-,0.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+922,330,43090,0-,0.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+923,330,44258,2,2.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+924,330,48486,1-,1.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+925,330,54537,1-,1.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+927,331,32270,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+928,331,34306,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+929,331,35968,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+930,331,36082,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+931,331,36147,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+932,331,36162,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+933,331,38123,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+934,331,41375,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+935,331,43090,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+936,331,44258,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+937,331,48486,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+938,331,54537,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+940,335,32270,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+941,335,34306,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+942,335,35968,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+943,335,36082,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+944,335,36147,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+945,335,36162,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+946,335,38123,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+947,335,41375,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+948,335,43090,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+949,335,44258,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+950,335,48486,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+951,335,54537,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+952,342,32270,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+953,342,34306,2,2.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+954,342,35968,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+955,342,36082,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+956,342,36147,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+957,342,36162,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+958,342,38123,0-,0.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+959,342,41375,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+960,342,43090,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+961,342,44258,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+962,342,48486,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+963,342,54537,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+964,344,32270,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+965,344,34306,0+,0.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+966,344,35968,0+,0.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+967,344,36082,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+968,344,36147,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+969,344,36162,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+970,344,38123,1+,1.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+971,344,41375,1+,1.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+972,344,43090,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+973,344,44258,1+,1.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+974,344,48486,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+975,344,54537,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+976,345,32270,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+977,345,34306,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+978,345,35968,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+979,345,36082,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+980,345,36147,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+981,345,36162,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+982,345,38123,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+983,345,41375,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+984,345,43090,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+985,345,44258,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+986,345,48486,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+987,345,54537,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+988,346,32270,2,2.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+989,346,34306,2,2.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+990,346,35968,1+,1.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+991,346,36082,2,2.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+992,346,36147,2,2.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+993,346,36162,2,2.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+994,346,38123,2,2.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+995,346,41375,1+,1.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+996,346,43090,1+,1.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+997,346,44258,2,2.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+998,346,48486,2,2.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+999,346,54537,1+,1.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+1000,347,32270,1+,1.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1001,347,34306,0+,0.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1002,347,35968,2,2.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1003,347,36082,0+,0.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1004,347,36147,0+,0.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1005,347,36162,0+,0.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1006,347,38123,0+,0.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1007,347,41375,1+,1.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1008,347,43090,1+,1.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1009,347,44258,0+,0.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1010,347,48486,1+,1.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1011,347,54537,1+,1.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+1012,348,32270,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1013,348,34306,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1014,348,35968,1-,1.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1015,348,36082,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1016,348,36147,0-,0.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1017,348,36162,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1018,348,38123,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1019,348,41375,1-,1.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1020,348,43090,1-,1.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1021,348,44258,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1022,348,48486,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1023,348,54537,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+1024,349,32270,1-,1.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1025,349,34306,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1026,349,35968,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1027,349,36082,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1028,349,36147,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1029,349,36162,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1030,349,38123,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1031,349,41375,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1032,349,43090,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1033,349,44258,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1034,349,48486,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1035,349,54537,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+1036,350,32270,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1037,350,34306,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1038,350,35968,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1039,350,36082,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1040,350,36147,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1041,350,36162,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1042,350,38123,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1043,350,41375,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1044,350,43090,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1045,350,44258,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1046,350,48486,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1047,350,54537,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+1048,351,32270,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1049,351,34306,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1050,351,35968,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1051,351,36082,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1052,351,36147,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1053,351,36162,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1054,351,38123,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1055,351,41375,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1056,351,43090,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1057,351,44258,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1058,351,48486,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1059,351,54537,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+1060,352,32270,2,2.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1061,352,34306,2,2.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1062,352,35968,1+,1.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1063,352,36082,1+,1.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1064,352,36147,2,2.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1065,352,36162,2,2.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1066,352,38123,0+,0.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1067,352,41375,0+,0.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1068,352,43090,1+,1.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1069,352,44258,1+,1.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1070,352,48486,1+,1.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1071,352,54537,1+,1.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+1072,353,32270,2,2.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1073,353,34306,2,2.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1074,353,35968,1+,1.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1075,353,36082,1+,1.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1076,353,36147,1+,1.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1077,353,36162,1+,1.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1078,353,38123,0+,0.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1079,353,41375,0+,0.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1080,353,43090,0+,0.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1081,353,44258,0+,0.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1082,353,48486,0+,0.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1083,353,54537,2,2.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+1084,375,32270,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1085,375,34306,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1086,375,35968,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1087,375,36082,0+,0.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1088,375,36147,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1089,375,36162,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1090,375,38123,0+,0.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1091,375,41375,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1092,375,43090,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1093,375,44258,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1094,375,48486,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1095,375,54537,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+1096,395,32270,0-,0.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1097,395,34306,1-,1.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1098,395,35968,0-,0.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1099,395,36082,0-,0.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1100,395,36147,0-,0.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1101,395,36162,0-,0.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1102,395,38123,0-,0.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1103,395,41375,1-,1.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1104,395,43090,0-,0.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1105,395,44258,0-,0.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1106,395,48486,1-,1.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1107,395,54537,1-,1.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+1108,397,32270,0-,0.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1109,397,34306,0-,0.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1110,397,35968,0-,0.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1111,397,36082,1-,1.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1112,397,36147,0-,0.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1113,397,36162,2,2.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1114,397,38123,0-,0.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1115,397,41375,0-,0.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1116,397,43090,1-,1.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1117,397,44258,0-,0.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1118,397,48486,0-,0.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1119,397,54537,2,2.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+1120,398,32270,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1121,398,34306,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1122,398,35968,2,2.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1123,398,36082,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1124,398,36147,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1125,398,36162,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1126,398,41375,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1127,398,43090,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1128,398,44258,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1129,398,48486,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1130,398,54537,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+1131,404,32270,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1132,404,34306,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1133,404,35968,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1134,404,36082,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1135,404,36147,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1136,404,36162,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1137,404,38123,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1138,404,41375,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1139,404,43090,1-,1.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1140,404,44258,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1141,404,48486,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1142,404,54537,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+1143,405,32270,0+,0.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1144,405,34306,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1145,405,35968,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1146,405,36082,0+,0.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1147,405,36147,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1148,405,36162,0+,0.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1149,405,38123,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1150,405,41375,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1151,405,43090,0+,0.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1152,405,44258,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1153,405,48486,0+,0.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1154,405,54537,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+1155,427,32270,0-,0.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1156,427,34306,0-,0.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1157,427,35968,1+,1.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1158,427,36082,0+,0.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1159,427,36147,2,2.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1160,427,36162,0-,0.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1161,427,38123,0-,0.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1162,427,41375,0-,0.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1163,427,43090,0+,0.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1164,427,44258,1+,1.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1165,427,48486,0-,0.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
+1166,427,54537,2,2.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana

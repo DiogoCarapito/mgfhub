@@ -111,8 +111,8 @@ def sunburst_update(dropdown_options, store_data):
         df = df[df['id_medico'] == dropdown_options]
         #df = df.dropna(subset='pontuacao')
 
-        df_sunburst[df_sunburst['pontuacao'] == np.nan] = 1.1
-        df_sunburst[df_sunburst['pontuacao_arredondada'] == np.nan] = 1.1
+        #df_sunburst[df_sunburst['pontuacao'] == np.nan] = 1.1
+        #df_sunburst[df_sunburst['pontuacao_arredondada'] == np.nan] = 1.1
         df_sunburst_with_score = df_sunburst.merge(df, on='id_indicador',how='outer')
 
 

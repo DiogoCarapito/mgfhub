@@ -1,0 +1,171 @@
+,id_indicador,id,label,parent,value,tipo,id_medico,score,pontuacao,pontuacao_arredondada,nome_indicador
+0,1001,Desempenho,Desempenho,,50.0,área,,,,,
+1,1002,Serviços,Serviços,,10.0,área,,,,,
+2,1003,Qualidade Organizacional,Qualidade Organizacional,,20.0,área,,,,,
+3,1004,Formação,Formação,,10.0,área,,,,,
+4,1005,Atividade Científica,Atividade Científica,,10.0,área,,,,,
+5,2001,Acesso,Acesso,Desempenho,10.0,subárea,,,,,
+6,2002,Gestão da Saúde,Gestão da Saúde,Desempenho,10.0,subárea,,,,,
+7,2003,Gestão da Doença,Gestão da Doença,Desempenho,10.0,subárea,,,,,
+8,2004,Qualificação da Prescrição,Qualificação da Prescrição,Desempenho,10.0,subárea,,,,,
+9,2005,Serviços Assistenciais,Serviços Assistenciais,Serviços,8.0,subárea,,,,,
+10,2006,Serviços não Assistenciais,Serviços não Assistenciais,Serviços,2.0,subárea,,,,,
+11,2007,Melhoria Contínua,Melhoria Contínua,Qualidade Organizacional,8.0,subárea,,,,,
+12,2008,Formação Interna,Formação Interna,Formação,8.0,subárea,,,,,
+13,2009,Segurança,Segurança,Qualidade Organizacional,8.0,subárea,,,,,
+14,2010,Centralidade no Cidadão,Centralidade no Cidadão,Qualidade Organizacional,4.0,subárea,,,,,
+15,2021,Satisfação de Utentes,Satisfação de Utentes,Desempenho,10.0,subárea,,,,,
+16,2022,Formação Externa,Formação Externa,Formação,2.0,subárea,,,,,
+17,2023,Autoria de Artigos Escritos,Autoria de Artigos Escritos,Atividade Científica,5.0,subárea,,,,,
+18,2024,Trabalhos de Investigação,Trabalhos de Investigação,Atividade Científica,5.0,subárea,,,,,
+19,2025,Personalização,Personalização,Acesso,1.0,dimensão,,,,,
+20,2026,Cobertura ou Utilização,Cobertura ou Utilização,Acesso,1.0,dimensão,,,,,
+21,2027,Saúde da Mulher,Saúde da Mulher,Gestão da Saúde,2.5,dimensão,,,,,
+22,2028,Hipertensão Arterial,Hipertensão Arterial,Gestão da Doença,2.5,dimensão,,,,,
+23,2029,Saúde do Idoso,Saúde do Idoso,Gestão da Saúde,2.5,dimensão,,,,,
+24,2030,Saúde do Adulto,Saúde do Adulto,Gestão da Saúde,2.5,dimensão,,,,,
+25,2031,Diabetes Mellitus,Diabetes Mellitus,Gestão da Doença,2.5,dimensão,,,,,
+26,2032,Doenças Aparelho Respiratório,Doenças Aparelho Respiratório,Gestão da Doença,2.5,dimensão,,,,,
+27,2033,Saúde Infantil e Juvenil,Saúde Infantil e Juvenil,Gestão da Saúde,2.5,dimensão,,,,,
+28,2034,Prescrição Farmacoterapêutica,Prescrição Farmacoterapêutica,Qualificação da Prescrição,5.0,dimensão,,,,,
+29,2035,Prescrição MCDT,Prescrição MCDT,Qualificação da Prescrição,3.0,dimensão,,,,,
+30,2036,Tempos Máximos de Resposta Garantidos,Tempos Máximos de Resposta Garantidos,Acesso,4.0,dimensão,,,,,
+31,2037,Consulta no Próprio Dia,Consulta no Próprio Dia,Acesso,1.0,dimensão,,,,,
+32,2038,Distribuição das Consultas Presenciais no Dia,Distribuição das Consultas Presenciais no Dia,Acesso,1.0,dimensão,,,,,
+33,2039,Multimorbilidade e Outros Tipos de Doenças,Multimorbilidade e Outros Tipos de Doenças,Gestão da Doença,2.5,dimensão,,,,,
+34,2041,Governação Clínica,Governação Clínica,Serviços não Assistenciais,1.6,dimensão,,,,,
+35,2043,Prog. Melh. Contínua Qual. e Proc. Assist. Integr.,Prog. Melh. Contínua Qual. e Proc. Assist. Integr.,Melhoria Contínua,6.0,dimensão,,,,,
+36,2044,Formação da Equipa Multiprofissional,Formação da Equipa Multiprofissional,Formação Interna,4.0,dimensão,,,,,
+37,2045,Formação de Internos e Alunos,Formação de Internos e Alunos,Formação Interna,4.0,dimensão,,,,,
+38,2046,Segurança de Utentes,Segurança de Utentes,Segurança,3.2,dimensão,,,,,
+39,2047,Participação do Cidadão,Participação do Cidadão,Centralidade no Cidadão,4.0,dimensão,,,,,
+40,2049,Serviços de Carácter Assistencial,Serviços de Carácter Assistencial,Serviços Assistenciais,8.0,dimensão,,,,,
+41,2050,Acesso MCQ,Acesso MCQ,Melhoria Contínua,2.0,dimensão,,,,,
+42,2051,Atendimento Telefónico,Atendimento Telefónico,Acesso,1.0,dimensão,,,,,
+43,2052,Trajeto do Utente na Unidade Funcional,Trajeto do Utente na Unidade Funcional,Acesso,1.0,dimensão,,,,,
+44,2053,Prescrição de Cuidados,Prescrição de Cuidados,Qualificação da Prescrição,2.0,dimensão,,,,,
+45,2054,Outras Atividades não Assistenciais,Outras Atividades não Assistenciais,Serviços não Assistenciais,0.4,dimensão,,,,,
+46,2055,Segurança de Profissionais,Segurança de Profissionais,Segurança,2.4,dimensão,,,,,
+47,2056,Gestão do Risco,Gestão do Risco,Segurança,2.4,dimensão,,,,,
+48,1,Proporção de consultas realizadas pelo MF,1 - Proporção de consultas realizadas pelo MF,Personalização,0.5,indicador,54537,2,2.0,,2013.001.01 FL - Proporção de consultas realizadas pelo MF
+49,3,Taxa de domicílios médicos por 1.000 inscritos,3 - Taxa de domicílios médicos por 1.000 inscritos,Cobertura ou Utilização,0.2,indicador,54537,2,2.0,,2013.003.01 FL - Taxa de domicílios médicos por 1.000 inscritos
+50,5,Proporção de consultas realizadas pelo EF,5 - Proporção de consultas realizadas pelo EF,Personalização,0.5,indicador,54537,0-,0.0,,2013.005.01 FL - Proporção de consultas realizadas pelo EF
+51,6,Taxa de utilização de consultas médicas - 3 anos,6 - Taxa de utilização de consultas médicas - 3 anos,Cobertura ou Utilização,0.2,indicador,54537,1-,1.0,,2013.006.01 FL - Taxa de utilização de consultas médicas - 3 anos
+52,8,Taxa de utilização de consultas de PF (méd./enf.),8 - Taxa de utilização de consultas de PF (méd./enf.),Saúde da Mulher,0.25,indicador,54537,1-,1.0,,2013.008.01 FL - Taxa de utilização de consultas de PF (méd./enf.)
+53,11,Proporção gráv. c/ consulta méd. vigil. 1º trim.,11 - Proporção gráv. c/ consulta méd. vigil. 1º trim.,Saúde da Mulher,0.25,indicador,54537,0-,0.0,,2013.011.01 FL - Proporção gráv. c/ consulta méd. vigil. 1º trim.
+54,18,Proporção de hipertensos com IMC (12 meses),18 - Proporção de hipertensos com IMC (12 meses),Hipertensão Arterial,0.4166666666666667,indicador,54537,2,2.0,,2013.018.01 FL - Proporção de hipertensos com IMC (12 meses)
+55,20,"Proporção hipertensos < 65 A, com PA < 150/90","20 - Proporção hipertensos < 65 A, com PA < 150/90",Hipertensão Arterial,0.4166666666666667,indicador,54537,0-,0.0,,"2013.020.01 FL - Proporção hipertensos < 65 A, com PA < 150/90"
+56,23,Proporção hipertensos com risco CV (3 A),23 - Proporção hipertensos com risco CV (3 A),Hipertensão Arterial,0.4166666666666667,indicador,54537,0-,0.0,,2013.023.01 FL - Proporção hipertensos com risco CV (3 A)
+57,30,"Proporção idosos ou doença crónica, c/ vac. gripe","30 - Proporção idosos ou doença crónica, c/ vac. gripe",Saúde do Idoso,0.625,indicador,54537,2,2.0,,"2013.030.01 FL - Proporção idosos ou doença crónica, c/ vac. gripe"
+58,34,"Proporção obesos >=14A, c/ cons. vigil. obesid. 2A","34 - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A",Saúde do Adulto,0.2272727272727272,indicador,54537,0-,0.0,,"2013.034.01 FL - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A"
+59,36,Proporção utentes DM com registo de GRT,36 - Proporção utentes DM com registo de GRT,Diabetes Mellitus,0.2272727272727272,indicador,54537,0-,0.0,,2013.036.01 FL - Proporção utentes DM com registo de GRT
+60,37,Proporção DM c/ cons. enf. vigil. DM último ano,37 - Proporção DM c/ cons. enf. vigil. DM último ano,Diabetes Mellitus,0.2272727272727272,indicador,54537,0-,0.0,,2013.037.01 FL - Proporção DM c/ cons. enf. vigil. DM último ano
+61,39,"Proporção DM c/ última HbA1c <= 8,0%","39 - Proporção DM c/ última HbA1c <= 8,0%",Diabetes Mellitus,0.2272727272727272,indicador,54537,2,2.0,,"2013.039.01 FL - Proporção DM c/ última HbA1c <= 8,0%"
+62,45,Prop. mulheres 25-60 anos c/ rastr. c. colo út.,45 - Prop. mulheres 25-60 anos c/ rastr. c. colo út.,Saúde da Mulher,0.25,indicador,54537,0-,0.0,,2013.045.01 FL - Prop. mulheres 25-60 anos c/ rastr. c. colo út.
+63,46,"Proporção utentes [50; 75[A, c/ rastreio cancro CR","46 - Proporção utentes [50; 75[A, c/ rastreio cancro CR",Saúde do Adulto,0.2272727272727272,indicador,54537,1-,1.0,,"2013.046.01 FL - Proporção utentes [50; 75[A, c/ rastreio cancro CR"
+64,49,"Proporção utentes c/ DPOC, c/ FeV1 em 3 anos","49 - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos",Doenças Aparelho Respiratório,1.25,indicador,54537,2,2.0,,"2013.049.01 FL - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos"
+65,53,"Proporção utentes >=14A, c/ registo consumo álcool","53 - Proporção utentes >=14A, c/ registo consumo álcool",Saúde do Adulto,0.2272727272727272,indicador,54537,1-,1.0,,"2013.053.01 FL - Proporção utentes >=14A, c/ registo consumo álcool"
+66,54,"Proporção utentes consum. álcool, c/ consulta 3A","54 - Proporção utentes consum. álcool, c/ consulta 3A",Saúde do Adulto,0.2272727272727272,indicador,54537,2,2.0,,"2013.054.01 FL - Proporção utentes consum. álcool, c/ consulta 3A"
+67,63,"Proporção crianças 7A, c/ cons. méd. vig. e PNV","63 - Proporção crianças 7A, c/ cons. méd. vig. e PNV",Saúde Infantil e Juvenil,0.625,indicador,54537,0-,0.0,,"2013.063.01 FL - Proporção crianças 7A, c/ cons. méd. vig. e PNV"
+68,95,"Proporção jovens 14A, c/ PNV cumprido ou execução","95 - Proporção jovens 14A, c/ PNV cumprido ou execução",Saúde Infantil e Juvenil,0.625,indicador,54537,2,2.0,,"2013.095.01 FL - Proporção jovens 14A, c/ PNV cumprido ou execução"
+69,98,"Proporção utentes >= 25 A, c/ vacina tétano","98 - Proporção utentes >= 25 A, c/ vacina tétano",Saúde do Adulto,0.2272727272727272,indicador,54537,1-,1.0,,"2013.098.01 FL - Proporção utentes >= 25 A, c/ vacina tétano"
+70,99,Taxa utilização consultas de enfermagem - 3 anos,99 - Taxa utilização consultas de enfermagem - 3 anos,Cobertura ou Utilização,0.2,indicador,54537,0-,0.0,,2013.099.01 FL - Taxa utilização consultas de enfermagem - 3 anos
+71,255,Propor. quinolonas entre antib. fatur. (embal.),255 - Propor. quinolonas entre antib. fatur. (embal.),Prescrição Farmacoterapêutica,0.7142857142857143,indicador,,,,,
+72,257,Propor. cefalosp. entre antib. fatur. (embal.),257 - Propor. cefalosp. entre antib. fatur. (embal.),Prescrição Farmacoterapêutica,0.7142857142857143,indicador,,,,,
+73,259,Proporção coxibes entre AINEs faturados (DDD),259 - Proporção coxibes entre AINEs faturados (DDD),Prescrição Farmacoterapêutica,0.7142857142857143,indicador,,,,,
+74,261,Proporção utentes DM c/ aval. risco úlcera pé,261 - Proporção utentes DM c/ aval. risco úlcera pé,Diabetes Mellitus,0.2272727272727272,indicador,54537,0-,0.0,,2013.261.01 FL - Proporção utentes DM c/ aval. risco úlcera pé
+75,262,Proporção utentes com avaliação risco DM2 (3A),262 - Proporção utentes com avaliação risco DM2 (3A),Saúde do Adulto,0.2272727272727272,indicador,54537,0-,0.0,,2013.262.01 FL - Proporção utentes com avaliação risco DM2 (3A)
+76,269,Índice de acompanham. adequado s. infantil 2º ano,269 - Índice de acompanham. adequado s. infantil 2º ano,Saúde Infantil e Juvenil,0.625,indicador,54537,1-,1.0,,2013.269.01 FL - Índice de acompanham. adequado s. infantil 2º ano
+77,274,"Propor. DM2 c/ indic. insul., em terap. adequada","274 - Propor. DM2 c/ indic. insul., em terap. adequada",Diabetes Mellitus,0.2272727272727272,indicador,54537,2,2.0,,"2013.274.01 FL - Propor. DM2 c/ indic. insul., em terap. adequada"
+78,275,Proporção novos DM2 em terap. c/ metform. monot.,275 - Proporção novos DM2 em terap. c/ metform. monot.,Diabetes Mellitus,0.2272727272727272,indicador,54537,2,2.0,,2013.275.01 FL - Proporção novos DM2 em terap. c/ metform. monot.
+79,276,Rácio DDD prescrita DPP-4 e antidiabét. orais,276 - Rácio DDD prescrita DPP-4 e antidiabét. orais,Prescrição Farmacoterapêutica,0.7142857142857143,indicador,54537,2,2.0,,2013.276.01 FL - Rácio DDD prescrita DPP-4 e antidiabét. orais
+80,294,Taxa domicílios enferm. p/ 1000 inscritos idosos,294 - Taxa domicílios enferm. p/ 1000 inscritos idosos,Saúde do Idoso,0.625,indicador,54537,0-,0.0,,2013.294.01 FL - Taxa domicílios enferm. p/ 1000 inscritos idosos
+81,295,Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP,295 - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP,Saúde da Mulher,0.25,indicador,54537,1-,1.0,,2013.295.01 FL - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP
+82,297,Prop. idosos s/ presc. prol. ansiol/sedat/hipnót,297 - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót,Saúde do Idoso,0.625,indicador,54537,1-,1.0,,2013.297.01 FL - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót
+83,300,"Nº médio prescr. consulta fisiatria, p/ utiliz.","300 - Nº médio prescr. consulta fisiatria, p/ utiliz.",Prescrição MCDT,1.5,indicador,54537,0+,0.0,,"2013.300.01 FL - Nº médio prescr. consulta fisiatria, p/ utiliz."
+84,302,Índice de acompanham. adequado s. infantil 1º ano,302 - Índice de acompanham. adequado s. infantil 1º ano,Saúde Infantil e Juvenil,0.625,indicador,54537,2,2.0,,2013.302.01 FL - Índice de acompanham. adequado s. infantil 1º ano
+85,306,Propor. ute. s/ rastr. VIH/SIDA que o efetuaram,306 - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram,Saúde do Adulto,0.2272727272727272,indicador,54537,2,2.0,,2015.306.01 FL - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram
+86,308,Proporção grávidas com ecografia 2º trimestre,308 - Proporção grávidas com ecografia 2º trimestre,Saúde da Mulher,0.25,indicador,54537,1-,1.0,,2015.308.01 FL - Proporção grávidas com ecografia 2º trimestre
+87,310,Índice realização exames laborat. 1º trim. grav.,310 - Índice realização exames laborat. 1º trim. grav.,Saúde da Mulher,0.25,indicador,54537,2,2.0,,2015.310.01 FL - Índice realização exames laborat. 1º trim. grav.
+88,311,Índice realização exames laborat. 2º trim. grav.,311 - Índice realização exames laborat. 2º trim. grav.,Saúde da Mulher,0.25,indicador,54537,2,2.0,,2015.311.01 FL - Índice realização exames laborat. 2º trim. grav.
+89,312,Índice realização exames laborat. 3º trim. grav.,312 - Índice realização exames laborat. 3º trim. grav.,Saúde da Mulher,0.25,indicador,54537,2,2.0,,2015.312.01 FL - Índice realização exames laborat. 3º trim. grav.
+90,314,Proporção DM com PA >= 140/90 mmHg,314 - Proporção DM com PA >= 140/90 mmHg,Diabetes Mellitus,0.2272727272727272,indicador,54537,1+,1.0,,2015.314.01 FL - Proporção DM com PA >= 140/90 mmHg
+91,315,Proporção DM com C-LDL < 100 mg/dl,315 - Proporção DM com C-LDL < 100 mg/dl,Diabetes Mellitus,0.2272727272727272,indicador,54537,2,2.0,,2015.315.01 FL - Proporção DM com C-LDL < 100 mg/dl
+92,330,Índice de utilização anual de consultas médicas,330 - Índice de utilização anual de consultas médicas,Cobertura ou Utilização,0.2,indicador,54537,1-,1.0,,2017.330.01 FL - Índice de utilização anual de consultas médicas
+93,331,Índice de utilização anual de consultas enferm.,331 - Índice de utilização anual de consultas enferm.,Cobertura ou Utilização,0.2,indicador,54537,0-,0.0,,2017.331.01 FL - Índice de utilização anual de consultas enferm.
+94,335,Prop. cons. ind. receit. c/ resposta 3 dias úteis,335 - Prop. cons. ind. receit. c/ resposta 3 dias úteis,Tempos Máximos de Resposta Garantidos,2.0,indicador,54537,2,2.0,,2017.335.01 FL - Prop. cons. ind. receit. c/ resposta 3 dias úteis
+95,339,Taxa anual ajustada episódios urgência hospitalar,339 - Taxa anual ajustada episódios urgência hospitalar,Consulta no Próprio Dia,0.2,indicador,,,,,
+96,341,Despesa PVP medic. pres. compart. p/ insc. padrão,341 - Despesa PVP medic. pres. compart. p/ insc. padrão,Prescrição Farmacoterapêutica,0.7142857142857143,indicador,,,,,
+97,342,Proporção consul. méd. inic. ut. <= 15 dias úteis,342 - Proporção consul. méd. inic. ut. <= 15 dias úteis,Tempos Máximos de Resposta Garantidos,2.0,indicador,54537,1-,1.0,,2017.342.01 FL - Proporção consul. méd. inic. ut. <= 15 dias úteis
+98,344,Propor. consultas médicas realiz. no dia agendam.,344 - Propor. consultas médicas realiz. no dia agendam.,Consulta no Próprio Dia,0.2,indicador,54537,2,2.0,,2017.344.01 FL - Propor. consultas médicas realiz. no dia agendam.
+99,345,Propor. consul. enfer. realiz. no dia do agendam.,345 - Propor. consul. enfer. realiz. no dia do agendam.,Consulta no Próprio Dia,0.2,indicador,54537,2,2.0,,2017.345.01 FL - Propor. consul. enfer. realiz. no dia do agendam.
+100,346,Propor. consul. realiz. intervalo [8; 11[h (Q1),346 - Propor. consul. realiz. intervalo [8; 11[h (Q1),Distribuição das Consultas Presenciais no Dia,0.5,indicador,54537,1+,1.0,,2017.346.01 FL - Propor. consul. realiz. intervalo [8; 11[h (Q1)
+101,349,Propor. consul. realiz. intervalo [17; 20]h (Q4),349 - Propor. consul. realiz. intervalo [17; 20]h (Q4),Distribuição das Consultas Presenciais no Dia,0.5,indicador,54537,0-,0.0,,2017.349.01 FL - Propor. consul. realiz. intervalo [17; 20]h (Q4)
+102,350,Custo c/ terapêut. do doente c/ Diabetes Mellitus,350 - Custo c/ terapêut. do doente c/ Diabetes Mellitus,Diabetes Mellitus,0.2272727272727272,indicador,54537,0+,0.0,,2017.350.01 FL - Custo c/ terapêut. do doente c/ Diabetes Mellitus
+103,351,Custo c/ terap. doente c/ Diab. Mell. controlado,351 - Custo c/ terap. doente c/ Diab. Mell. controlado,Diabetes Mellitus,0.2272727272727272,indicador,54537,0+,0.0,,2017.351.01 FL - Custo c/ terap. doente c/ Diab. Mell. controlado
+104,352,Custo c/ terapêut. do doente c/ HTA,352 - Custo c/ terapêut. do doente c/ HTA,Hipertensão Arterial,0.4166666666666667,indicador,54537,1+,1.0,,2017.352.01 FL - Custo c/ terapêut. do doente c/ HTA
+105,353,Custo c/ terapêut. do doente c/ HTA controlada,353 - Custo c/ terapêut. do doente c/ HTA controlada,Hipertensão Arterial,0.4166666666666667,indicador,54537,2,2.0,,2017.353.01 FL - Custo c/ terapêut. do doente c/ HTA controlada
+106,354,Despesa MCDT prescr. p/ insc. padrão (p. conv.),354 - Despesa MCDT prescr. p/ insc. padrão (p. conv.),Prescrição MCDT,1.5,indicador,,,,,
+107,365,Taxa internam. evitáveis popul. adulta (ajust.),365 - Taxa internam. evitáveis popul. adulta (ajust.),Multimorbilidade e Outros Tipos de Doenças,2.5,indicador,,,,,
+108,372,Taxa de intern. por fratura do colo do fémur,372 - Taxa de intern. por fratura do colo do fémur,Saúde do Idoso,0.625,indicador,,,,,
+109,378,Propor. PVP medicam. prescr. MF contexto privado,378 - Propor. PVP medicam. prescr. MF contexto privado,Prescrição Farmacoterapêutica,0.7142857142857143,indicador,,,,,
+110,380,"Prop. adultos c/ asma/DPOC/bronq. cr., com diagn.","380 - Prop. adultos c/ asma/DPOC/bronq. cr., com diagn.",Doenças Aparelho Respiratório,1.25,indicador,,,,,
+111,381,"Prop. adultos c/ depressão/ansiedade, com diagn.","381 - Prop. adultos c/ depressão/ansiedade, com diagn.",Saúde do Adulto,0.2272727272727272,indicador,,,,,
+112,382,"Prop. adultos com DM, com diagn.","382 - Prop. adultos com DM, com diagn.",Diabetes Mellitus,0.2272727272727272,indicador,,,,,
+113,383,"Prop. adultos com HTA, com diagnóstico","383 - Prop. adultos com HTA, com diagnóstico",Hipertensão Arterial,0.4166666666666667,indicador,,,,,
+114,384,Propor. RN cuja mãe tem registo de gravidez,384 - Propor. RN cuja mãe tem registo de gravidez,Saúde da Mulher,0.25,indicador,,,,,
+115,389,"Score dimensão ""serviços de caráter assistencial""","389 - Score dimensão ""serviços de caráter assistencial""",Serviços de Carácter Assistencial,8.0,indicador,,,,,
+116,390,"Score dimensão ""serv. não assis. gov. clín. ACES""","390 - Score dimensão ""serv. não assis. gov. clín. ACES""",Governação Clínica,1.6,indicador,,,,,
+117,391,"Score dimensão ""melhoria cont. qualid. acesso""","391 - Score dimensão ""melhoria cont. qualid. acesso""",Acesso MCQ,2.0,indicador,,,,,
+118,392,"IDS da dimensão ""melhoria cont. qualid. e PAI""","392 - IDS da dimensão ""melhoria cont. qualid. e PAI""",Prog. Melh. Contínua Qual. e Proc. Assist. Integr.,6.0,indicador,,,,,
+119,393,"Score dimensão ""formação equipa multiprofis.""","393 - Score dimensão ""formação equipa multiprofis.""",Formação da Equipa Multiprofissional,4.0,indicador,,,,,
+120,394,"Score dimensão ""formação internos e alunos""","394 - Score dimensão ""formação internos e alunos""",Formação de Internos e Alunos,4.0,indicador,,,,,
+121,395,"Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A","395 - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A",Saúde do Adulto,0.2272727272727272,indicador,54537,1-,1.0,,"2018.395.01 FL - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A"
+122,397,Prop. fumador c/ int. breve ou muito breve 1 ano,397 - Prop. fumador c/ int. breve ou muito breve 1 ano,Saúde do Adulto,0.2272727272727272,indicador,54537,2,2.0,,2018.397.01 FL - Prop. fumador c/ int. breve ou muito breve 1 ano
+123,398,Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT,398 - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT,Saúde da Mulher,0.25,indicador,54537,0-,0.0,,2018.398.01 FL - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT
+124,404,Incidência anual de pessoas em abstin. tabág. 12M,404 - Incidência anual de pessoas em abstin. tabág. 12M,Saúde do Adulto,0.2272727272727272,indicador,54537,0-,0.0,,2018.404.01 FL - Incidência anual de pessoas em abstin. tabág. 12M
+125,409,Prop ute s/ prescr prolo ansio/seda/hipn (ajust),409 - Prop ute s/ prescr prolo ansio/seda/hipn (ajust),Prescrição Farmacoterapêutica,0.7142857142857143,indicador,,,,,
+126,410,Taxa anual ajustada utiliz. freq. urgência hospit.,410 - Taxa anual ajustada utiliz. freq. urgência hospit.,Consulta no Próprio Dia,0.2,indicador,,,,,
+127,412,[Cons. dia UF inscr.] / ([cons. dia] + [urgênc.]),412 - [Cons. dia UF inscr.] / ([cons. dia] + [urgênc.]),Consulta no Próprio Dia,0.2,indicador,,,,,
+128,428,"Score dimensão ""segurança de utentes""","428 - Score dimensão ""segurança de utentes""",Segurança de Utentes,3.2,indicador,,,,,
+129,430,"Score dimensão ""participação do cidadão""","430 - Score dimensão ""participação do cidadão""",Participação do Cidadão,4.0,indicador,,,,,
+130,2,,,,,,54537,2,2.0,,2013.002.01 FL - Taxa de utilização global de consultas médicas
+131,9,,,,,,54537,1-,1.0,,2013.009.01 FL - Taxa de utilização de consultas de PF (enf.)
+132,10,,,,,,54537,1-,1.0,,2013.010.01 FL - Taxa de utilização de consultas de PF (méd.)
+133,14,,,,,,54537,2,2.0,,2013.014.01 FL - Proporção RN c/ cons. méd. vigil. até 28 dias vida
+134,15,,,,,,54537,1-,1.0,,2013.015.01 FL - Proporção RN c/ domicílio enf. até 15º dia de vida
+135,16,,,,,,54537,2,2.0,,2013.016.01 FL - Proporção crianças c/ 6+ cons. méd. vigil. 1º ano
+136,17,,,,,,54537,1-,1.0,,2013.017.01 FL - Proporção crianças c/ 3+ cons. méd. vigil. 2º ano
+137,19,,,,,,54537,1-,1.0,,2013.019.01 FL - Proporção de hipertensos com PA em cada semestre
+138,31,,,,,,54537,1-,1.0,,"2013.031.01 FL - Proporção crianças 7A, c/ peso e altura [5; 7[A"
+139,32,,,,,,54537,1-,1.0,,"2013.032.01 FL - Proporção jovens 14A, c/ peso e altura [11; 14[A"
+140,33,,,,,,54537,1-,1.0,,"2013.033.01 FL - Proporção utentes >= 14A, c/ IMC últimos 3 anos"
+141,35,,,,,,54537,0-,0.0,,2013.035.01 FL - Proporção DM com exame pés último ano
+142,38,,,,,,54537,1-,1.0,,2013.038.01 FL - Proporção DM c/ 1 HbA1c por semestre
+143,40,,,,,,54537,0-,0.0,,2013.040.01 FL - Proporção DM c/ exame oftalmológico último ano
+144,44,,,,,,54537,0-,0.0,,"2013.044.01 FL - Proporção mulheres [50; 70[ A, c/ mamogr. (2 anos)"
+145,57,,,,,,54537,2,2.0,,2013.057.01 FL - Proporção RN com TSHPKU realizado até ao 6º dia
+146,59,,,,,,54537,2,2.0,,"2013.059.01 FL - Proporção crianças 2 anos, c/ peso e altura 1 ano"
+147,91,,,,,,54537,2,2.0,,"2013.091.01 FL - Proporção DM < 65 A, c/ HbA1c <= 6,5 %"
+148,92,,,,,,54537,0-,0.0,,2013.092.01 FL - Proporção hipocoagulados controlados na unidade
+149,93,,,,,,54537,2,2.0,,"2013.093.01 FL - Proporção crianças 2A, c/ PNV cumprido ou execução"
+150,94,,,,,,54537,2,2.0,,"2013.094.01 FL - Proporção crianças 7A, c/ PNV cumprido ou execução"
+151,97,,,,,,54537,1-,1.0,,2013.097.01 FL - Proporção DM c/ microalbum. último ano
+152,100,,,,,,54537,1-,1.0,,2013.100.01 FL - Taxa utiliz. consultas médicas ou enferm. - 3 anos
+153,265,,,,,,54537,1-,1.0,,"2013.265.01 FL - Percent. DM vigiado, c/ registo risco úlcera pé"
+154,266,,,,,,54537,2,2.0,,"2013.266.01 FL - Percent. DM vigiados, c/ úlcera ativa no pé"
+155,267,,,,,,54537,1-,1.0,,"2013.267.01 FL - Índice de acompanhamento adequado em PF, nas MIF"
+156,270,,,,,,54537,2,2.0,,2013.270.01 FL - Índice de acompanham. adequado em saúde materna
+157,271,,,,,,54537,2,2.0,,2013.271.01 FL - Índice de acompanhamento adequado utentes DM
+158,272,,,,,,54537,2,2.0,,2013.272.01 FL - Índice de acompanham. adequado de hipertensos
+159,277,,,,,,54537,2,2.0,,"2013.277.01 FL - Proporção fumadores, c/ consulta relac. tabaco 1A"
+160,278,,,,,,54537,2,2.0,,2013.278.01 FL - Propor. medicam. prescr. de classes com genéricos
+161,307,,,,,,54537,2,2.0,,2015.307.01 FL - Proporção grávidas com ecografia 1º trimestre
+162,309,,,,,,54537,2,2.0,,2015.309.01 FL - Proporção grávidas com ecografia 3º trimestre
+163,313,,,,,,54537,0+,0.0,,"2015.313.01 FL - Proporção DM < 75A c/ última HbA1c > 8,0%"
+164,316,,,,,,54537,1-,1.0,,"2015.316.01 FL - Proporção hipert. [18; 65[A, com PA < 140/90"
+165,347,,,,,,54537,1+,1.0,,2017.347.01 FL - Propor. consul. realiz. intervalo [11; 14[h (Q2)
+166,348,,,,,,54537,2,2.0,,2017.348.01 FL - Propor. consul. realiz. intervalo [14; 17[ (Q3)
+167,375,,,,,,54537,2,2.0,,"2017.375.01 FL - Proporção de RN de termo, de baixo peso"
+168,405,,,,,,54537,1+,1.0,,"2018.405.01 FL - Propor. cons. médic. ""do dia"" efet. UF diferente"
+169,427,,,,,,54537,2,2.0,,2019.427.01 FL - Proporção de grávidas com parto por cesariana
