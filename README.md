@@ -36,7 +36,7 @@ layout
 
 
 pagina 'indicadores'
-  - [ ] organização dos indicadores existentes em tabela, com campo de filtro e pesquisa
+  - [x] organização dos indicadores existentes em tabela, com campo de filtro e pesquisa
   - [x] incluir link para o SDM em cada indicador na tabela
   - [ ] pensar noutros filtros possíveis
   - [ ] otimizar o campo de pesquisa para sucesos quando se pesquisa pelo numero de indicador
@@ -46,8 +46,8 @@ pagina 'indicadores'
 pagina 'sunburst'
   - [x] sunburst com pesos dos indicadores e areas corretas
   - [x] dropdown menu ligado ao upload 
-  - [ ] conecção entre upload e sunburst
-  - [ ] modificar as cores
+  - [x] conecção entre upload e sunburst
+  - [x] modificar as cores
   - [ ] mudar fundo para mesmo da pagina
 
 
@@ -56,7 +56,7 @@ pagina 'upload'
   - [x] confirmação se é a tabela correta
   - [ ] pssobilidade de fazer upload de indicadores da unidade ou por médico
   - [x] processamento do doc upload em dataframe
-  - [ ] construir a visualização (sunburst+tabela, lado lado e fundir com a pagina sunburst)
+  - [x] construir a visualização (sunburst+tabela, lado lado e fundir com a pagina sunburst)
 
 
 pagina 'blog'
