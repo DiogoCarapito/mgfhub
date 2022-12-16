@@ -59,6 +59,21 @@ df_todos_indicadores = df_todos_indicadores.assign(
         + ')'
         for index, row in df_todos_indicadores.iterrows()])
 
+'''dbc.Table([
+                                    html.Thead([
+                                        html.Th('área'),
+                                        html.Th('subarea'),
+                                        html.Th('dimensao')
+                                    ]),
+                                    html.Tbody([
+                                        html.Tr([
+                                            html.Td(indicador[1]['area']),
+                                            html.Td(indicador[1]['subarea']),
+                                            html.Td(indicador[1]['dimensao']),
+                                        ]),
+                                    ])
+                                ]),'''
+
 def generate_html_indicador(indicador):
     separador = ' - '
     return dbc.Container([
@@ -68,28 +83,18 @@ def generate_html_indicador(indicador):
                 dbc.Container([
                     dbc.Row([
                         dbc.Col([
-
-                            dbc.Table([
-                                html.Thead([
-                                    html.Th('área'),
-                                    html.Th('subarea'),
-                                    html.Th('dimensao')
-                                ]),
-                                html.Tbody([
-                                    html.Tr([
-                                        html.Td(indicador[1]['area']),
-                                        html.Td(indicador[1]['subarea']),
-                                        html.Td(indicador[1]['dimensao']),
-                                    ]),
-                                ])
-                            ]),
-                            html.A('SDM', href=indicador[1]['link']),
-                        ],width=7),
-                        dbc.Col([],width=2),
-                        dbc.Col([
                             dbc.Row([
-                                html.P([str(indicador[1]['intervalo_variavel']) + separador + str(indicador[1]['intervalo_esperado'])])
+                                html.B([str(indicador[1]['area']) + ' > ' + str(indicador[1]['subarea']) + ' > ' + str(indicador[1]['dimensao'])])
                             ]),
+                            html.Br(),
+                            dbc.Row([
+                                html.P([indicador[1]['objetivo']]),
+                                html.A('link SDM', href=indicador[1]['link']),
+                            ]),
+
+                        ],width=7),
+                        dbc.Col([],width=1),
+                        dbc.Col([
                             dbc.Row([
                                 dbc.Progress([
                                     dbc.Progress(
@@ -121,27 +126,32 @@ def generate_html_indicador(indicador):
                                         striped=True),
                                 ], style={"height": "20px"}),
                                 dbc.Tooltip(
-                                    '0 - ' + str(indicador[1]['min_aceitavel']),
+                                    'score 0- ' + '[0 - ' + str(indicador[1]['min_aceitavel']) + ']',
                                     target=str(indicador[1][0]) + '_0-',
                                     placement='top'),
                                 dbc.Tooltip(
-                                    str(indicador[1]['min_aceitavel']) + ' - ' + str(indicador[1]['min_esperado']),
+                                    'score 1- [' + str(indicador[1]['min_aceitavel']) + ' - ' + str(indicador[1]['min_esperado']) + ']',
                                     target=str(indicador[1][0]) + '_1-',
                                     placement='top'),
                                 dbc.Tooltip(
-                                    str(indicador[1]['min_esperado']) + ' - ' + str(indicador[1]['max_esperado']),
+                                    'score 2 [' + str(indicador[1]['min_esperado']) + ' - ' + str(indicador[1]['max_esperado']) + ']',
                                     target=str(indicador[1][0]) + '_2',
                                     placement='top'),
                                 dbc.Tooltip(
-                                    str(indicador[1]['max_esperado']) + ' - ' + str(indicador[1]['max_aceitavel']),
+                                    'score 1+ [' + str(indicador[1]['max_esperado']) + ' - ' + str(indicador[1]['max_aceitavel']) + ']',
                                     target=str(indicador[1][0]) + '_1+',
                                     placement='top'),
                                 dbc.Tooltip(
-                                    str(indicador[1]['max_aceitavel']) + ' - 100',
+                                    'score 0+ [' + str(indicador[1]['max_aceitavel']) + ' - 100' + ']',
                                     target=str(indicador[1][0]) + '_0+',
                                     placement='top'),
                             ]),
-                        ], width=3),
+                            html.Br(),
+                            dbc.Row([
+                                html.P(['intervalo aceitável: ' + str(indicador[1]['intervalo_aceitavel'])], style={'color':'orange'}),
+                                html.P(['intervalo esperado: ' + str(indicador[1]['intervalo_esperado'])], style={'color':'green'}),
+                            ]),
+                        ], width=4),
                     ]),
 
                 ]),
@@ -258,7 +268,6 @@ def table_update(searchbox_indicadores,radio_indicadores):
             'codigo',
             'codigo_siars',
             'nome_abreviado',
-            'objetivo',
             'formula',
             'unidade_de_medida',
             'output',

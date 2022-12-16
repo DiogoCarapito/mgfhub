@@ -1,4 +1,4 @@
-id,nome_indicador,min_aceitavel,min_esperado,max_esperado,max_aceitavel,intervalo_variavel,intervalo_esperado
+id,nome_indicador,min_aceitavel,min_esperado,max_esperado,max_aceitavel,intervalo_aceitavel,intervalo_esperado
 1,Proporção de consultas realizadas pelo MF,75,78,90,92,[75; 92],[78; 90]
 2,Taxa de utilização global de consultas médicas,66,73.5,85,90,[66; 90],[73.5; 85]
 3,Taxa de domicílios médicos por 1.000 inscritos,12,18,35,40,[12; 40],[18; 35]

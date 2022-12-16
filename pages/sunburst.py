@@ -103,11 +103,14 @@ def sunburst_update(dropdown_options, store_data):
         df = pd.DataFrame(store_data)
 
         df = df[df['id_medico'] == dropdown_options]
-        print(len(df))
+        #df = df.dropna(subset='pontuacao')
+
         df_sunburst_with_score = df_sunburst.merge(df, on='id_indicador',how='outer')
-        #print(df_sunburst_with_score.columns)
-        #df_sunburst_with_score[df_sunburst_with_score['pontuacao']==''] = 0
-        df_sunburst_with_score['pontuacao'] = df_sunburst_with_score['pontuacao'].fillna(0)
+
+        # df_sunburst_with_score[df_sunburst_with_score['pontuacao']==np.nan] =
+
+        #df_sunburst_with_score['pontuacao'] = df_sunburst_with_score['pontuacao'].fillna(0)
+
 
         df.to_csv('data/df_from_upload.csv', index=True)
         df_sunburst.to_csv('data/df_sunburst_pre_graph.csv', index=True)
@@ -136,19 +139,19 @@ def sunburst_update(dropdown_options, store_data):
     try:
         fig_sunburst_indicadores.add_trace(go.Sunburst(
             ids=df_sunburst_with_score.id,
-            #labels=df_sunburst_with_score.label,
-            labels=df_sunburst_with_score.pontuacao,
+            labels=df_sunburst_with_score.label,
             parents=df_sunburst_with_score.parent,
             values=df_sunburst_with_score.value,
             branchvalues="total",
             domain=dict(column=1),
             insidetextorientation='radial',
-            colors=df_sunburst_with_score.pontuacao / 2,
-            colorscale='RdBu',
-            #marker=dict(
-            #    colors=df_sunburst_with_score['pontuacao'],
-            #    colorscale='RdBu',
-            #    cmid=average_score),
+            marker=dict(
+                colors=df_sunburst_with_score.pontuacao,
+                colorscale='temps',
+                reversescale=True,
+                showscale=True,
+            ),
+            hovertemplate='<b>%{label} </b> <br> peso: %{value:.2f}%<br> score: %{color:.2f}',
         ))
         print('YESS')
     except:
@@ -160,15 +163,18 @@ def sunburst_update(dropdown_options, store_data):
             branchvalues="total",
             domain=dict(column=1),
             insidetextorientation='radial',
+
+            hovertemplate='<b>%{label} </b> <br> peso: %{value:.1f}%}',
         ))
     
     fig_sunburst_indicadores.update_layout(
         margin=dict(t=0, l=0, r=0, b=0),
-        width=800,
+        width=880,
         height=800,
     )
 
     return fig_sunburst_indicadores
 
 
-
+# temps
+# rdylgn

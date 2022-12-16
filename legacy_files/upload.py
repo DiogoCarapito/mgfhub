@@ -99,22 +99,39 @@ def store_xlsx(contents, filename):
 
             df = df[df['id_medico'] != 99999]
 
-            colors_coresp = {'0-': 'red', '1-': 'yellow', '2': 'green', '1+': 'dark_yellow', '0+': 'dark_red'}
-            df['color'] = [colors_coresp[row[2]] for index, row in df.iterrows()]
+
 
 
             df = df[[
                 'id_indicador',
                 'id_medico',
                 'score',
-                'color',
                 'nome_indicador'
             ]]
 
             #df = df.assign(pontuacao=[re.findall('[0-2]', row['score']) for index, row in df.iterrows()])
             df['pontuacao'] = [re.findall('[0-2]', row['score']) for index, row in df.iterrows()]
             df['pontuacao'] = [row['pontuacao'][0] for index, row in df.iterrows()]
+            df['pontuacao'] = [int(row['pontuacao']) for index, row in df.iterrows()]
             df['id_indicador'] = [int(row['id_indicador']) for index, row in df.iterrows()]
+
+            lista_indicadores = df['id_indicador'].unique().tolist()
+            lista_nome_indicadores = df['nome_indicador'].unique().tolist()
+            print(lista_indicadores)
+            df_unidade = pd.DataFrame({
+                'id_indicador': lista_indicadores,
+                'id_medico': ['unidade' for each in lista_indicadores],
+                'score': [np.nan for each in lista_indicadores],
+                'pontuacao': [df[df['id_indicador'] == each]['pontuacao'].mean() for each in lista_indicadores],
+                'nome_indicador': lista_nome_indicadores
+            })
+
+            df = pd.concat([df_unidade,df])
+
+            #colors_coresp = {'0-': 'red', '1-': 'yellow', '2': 'green', '1+': 'dark_yellow', '0+': 'dark_red'}
+            #df['color'] = [colors_coresp[row[2]] for index, row in df.iterrows()]
+
+            print(df)
             df.to_csv('data/df_after_upload.csv', index=True)
 
 
