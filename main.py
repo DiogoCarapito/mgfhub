@@ -26,7 +26,7 @@ navbar = dbc.Navbar([
         html.A(
             dbc.Row([
                 dbc.Col(html.Img(src=app.get_asset_url('logo.png'), height='30px')),
-                dbc.Col(dbc.NavbarBrand('github', className='ms-2')),
+                dbc.Col(dbc.NavbarBrand('mgfhub', className='ms-2')),
                 ], align='center', className='g-0'),
             href='/',
             style={'textDecoration': 'none'},
