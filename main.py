@@ -4,6 +4,7 @@ from dash import Input, Output, State, html
 from dash import dcc
 
 app = dash.Dash(__name__, use_pages=True,suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.SIMPLEX,dbc.icons.BOOTSTRAP])
+app._favicon = ('logo_2.ico')
 
 navbar_pages = dbc.Row([
     dbc.Col([
@@ -14,18 +15,24 @@ navbar_pages = dbc.Row([
             dbc.NavItem(dbc.NavLink(html.I(
                 # children=' source code',
                 className='bi bi-github'),
-                href='https://www.mgfhub.com',
-                external_link=True)),
-        ], navbar=True,)
+                href='https://github.com/DiogoCarapito/mgfhub',
+                external_link=True)
+            ),
+            dbc.NavItem(dbc.NavLink(html.I(
+                # children=' source code',
+                className='bi bi-twitter'),
+                href='https://twitter.com/diogocarapito',
+                external_link=True)
+            ),
+        ], navbar=True)
     ]),
-
 ])
 
 navbar = dbc.Navbar([
     dbc.Container([
         html.A(
             dbc.Row([
-                dbc.Col(html.Img(src=app.get_asset_url('logo.png'), height='30px')),
+                dbc.Col(html.Img(src=app.get_asset_url('logo_2.png'), height='30px')),
                 dbc.Col(dbc.NavbarBrand('mgfhub', className='ms-2')),
                 ], align='center', className='g-0'),
             href='/',

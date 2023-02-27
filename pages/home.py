@@ -2,12 +2,16 @@ import dash
 import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, callback, Input, Output
 
+import requests
+
+
+
 dash.register_page(
     __name__,
     path='/home',
     title='home',
     name='home',
-    order=0,
+    order=1,
 )
 
 searchbox = html.Div([
@@ -17,6 +21,7 @@ searchbox = html.Div([
         type='text',
         size='lg',
     ),
+    dbc.Button("Ask", color="secondary", className="me-1"),
 ])
 
 responses = html.Div([],id='responses')
@@ -41,4 +46,12 @@ def layout():
 )
 
 def search_query(search):
-    return search
+    if search == None:
+        return None
+    else:
+        response = requests.post("https://mrjiggy-model1.hf.space/run/predict", json={
+            "data": [search]
+        }).json()
+
+        data = response["data"]
+        return data

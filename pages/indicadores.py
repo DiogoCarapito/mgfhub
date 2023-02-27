@@ -7,7 +7,7 @@ dash.register_page(
     path='/indicadores',
     title='indicadores',
     name='indicadores',
-    order=0,
+    order=2,
 )
 
 tab1_content = dbc.Card(
