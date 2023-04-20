@@ -2,11 +2,17 @@ import pandas as pd
 import tabula
 import re
 
-# Seleção das paginas onde estão as tabelas
-pages = [76,77,78,79,80]
+# seleção do documento e paginas com as tabelas
+# 2022
+#documento = 'data/ACSS-Operacionalizacao_CSP_2022_Final.pdf'
+#pages = [76,77,78,79,80]
 
-#
-tables = tabula.read_pdf('data/ACSS-Operacionalizacao_CSP_2022_Final.pdf', pages=pages)
+documento = 'data/Operacionalizacao_CSP_2023_VF.pdf'
+pages = [74, 75, 76, 77, 78]
+# Seleção das paginas onde estão as tabelas
+
+
+tables = tabula.read_pdf(documento, pages=pages)
 
 df = pd.concat([tables[pages.index(page)].dropna() for page in pages],ignore_index=True)
 

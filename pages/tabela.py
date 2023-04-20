@@ -9,8 +9,8 @@ from rapidfuzz import process, fuzz
 dash.register_page(
     __name__,
     path='/',
-    title='tabela',
-    name='tabela',
+    title='lista',
+    name='lista',
     order=1,
 )
 
@@ -79,9 +79,12 @@ table = dash_table.DataTable(
         'whiteSpace': 'normal',
         'font_family': 'sans-serif',
         'font_size': '13px',
+        # permitir que texto possa ser selecionado
+        'user-select': 'text',
         },
     style_data={'whiteSpace': 'normal','height': 'auto',},
     style_table={'overflowX': 'auto'},
+
     # Linhas com fundo alternado
     style_data_conditional=[
         {
@@ -138,7 +141,7 @@ contagem = html.Div([html.P(id='searchbox_indicadores_tabela')],style={'padding'
 container_1 = dbc.Container([
     dbc.Row([
         dbc.Col([
-            html.H3('tabela'),
+            html.H3('Lista de Indicadores'),
             html.Br(),
             filters,
             contagem,

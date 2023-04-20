@@ -12,7 +12,7 @@ navbar_pages = dbc.Row([
             for page in dash.page_registry.values()
         ]+[
             dbc.NavItem(dbc.NavLink(html.I(
-                # children=' source code',
+                #children='source code',
                 className='bi bi-github'),
                 href='https://github.com/DiogoCarapito/bi_indicadores',
                 external_link=True)),
