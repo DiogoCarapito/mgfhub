@@ -1,5 +1,6 @@
 flask
 dash
+gunicorn
 dash_bootstrap_components
 pandas
 numpy
