@@ -1,9 +1,8 @@
 import dash
-from dash import Dash, dcc, html, callback, Input, Output, dash_table
+from dash import html, callback, Input, Output
 import dash_bootstrap_components as dbc
 import pandas as pd
 import numpy as np
-#import plotly.graph_objects as go
 from rapidfuzz import process, fuzz
 
 dash.register_page(
