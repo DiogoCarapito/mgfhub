@@ -7,7 +7,7 @@ from rapidfuzz import process, fuzz
 
 dash.register_page(
     __name__,
-    path='/indicadores',
+    path='/',
     title='indicadores',
     name='indicadores',
     order=2,
@@ -140,7 +140,7 @@ contagem = html.Div([html.P(id='searchbox_indicadores_tabela')],style={'padding'
 container_1 = dbc.Container([
     dbc.Row([
         dbc.Col([
-            html.H3('Lista de Indicadores'),
+            html.H3('lista de indicadores'),
             html.Br(),
             filters,
             contagem,

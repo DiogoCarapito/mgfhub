@@ -56,7 +56,6 @@ graphs = html.Div([
     ]),
 
 ])
-
 container = dbc.Container([
     dbc.Row([
         dbc.Col([
@@ -183,8 +182,8 @@ def sunburst_update(dropdown_options, store_data):
     
     fig_sunburst_indicadores.update_layout(
         margin=dict(t=0, l=0, r=0, b=0),
-        width=550,
-        height=500,
+        width=800,
+        height=800,
     )
 
     return fig_sunburst_indicadores

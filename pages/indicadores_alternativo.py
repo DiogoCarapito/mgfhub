@@ -214,7 +214,7 @@ lista_indicadores = html.Div([],id='lista_indicadores')
 container_1 = dbc.Container([
     dbc.Row([
         dbc.Col([
-            html.H3('indicadores'),
+            html.H3('cartões de indicadores'),
             html.Br(),
             filters,
             html.Br(),
