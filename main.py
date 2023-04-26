@@ -3,20 +3,38 @@ import dash_bootstrap_components as dbc
 from dash import Input, Output, State, html
 from dash import dcc
 
-app = dash.Dash(__name__, use_pages=True,suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.SIMPLEX,dbc.icons.BOOTSTRAP])
+app = dash.Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.SIMPLEX,dbc.icons.BOOTSTRAP])
 
 navbar_pages = dbc.Row([
     dbc.Col([
         dbc.Nav([
             dbc.NavItem(dbc.NavLink(page['name'], href=page['path']))
             for page in dash.page_registry.values()
+        ] + [
+            dbc.NavItem(dbc.NavLink(html.I(
+                html.Img(src=app.get_asset_url('Diogo DALL-E circle 256.png'), height='18px')),
+                href='https://diogocarapito.com',
+                external_link=True)),
+        ] + [
+            dbc.NavItem(dbc.NavLink(html.I(
+                # children='source code',
+                className='bi bi-twitter'),
+                href='https://twitter.com/DiogoCarapito',
+                external_link=True)),
         ]+[
             dbc.NavItem(dbc.NavLink(html.I(
                 #children='source code',
                 className='bi bi-github'),
-                href='https://github.com/DiogoCarapito/bi_indicadores',
+                href='https://github.com/DiogoCarapito',
                 external_link=True)),
-        ], navbar=True,)
+        ] + [
+            dbc.NavItem(dbc.NavLink(html.I(
+                # children='source code',
+                className='bi bi-linkedin'),
+                href='https://www.linkedin.com/in/diogo-carapito-564a51262/',
+                external_link=True)),
+
+        ], navbar=True, )
     ]),
 
 ])
@@ -26,7 +44,7 @@ navbar = dbc.Navbar([
         html.A(
             dbc.Row([
                 dbc.Col(html.Img(src=app.get_asset_url('LOGO_2.png'), height='30px')),
-                dbc.Col(dbc.NavbarBrand('bi indicadores', className='ms-2')),
+                dbc.Col(dbc.NavbarBrand('mgfhub', className='ms-2')),
                 ], align='center', className='g-0'),
             href='/',
             style={'textDecoration': 'none'},

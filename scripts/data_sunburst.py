@@ -185,4 +185,4 @@ df_sunburst = pd.concat([df_area,df_subarea,df_dimensao,df_indicadores])
 
 df_sunburst = df_sunburst.set_index('id_indicador')
 print(df_sunburst)
-df_sunburst.to_csv('data/sunburst_data.csv',index=True)
+df_sunburst.to_csv('../data/sunburst_data.csv',index=True)

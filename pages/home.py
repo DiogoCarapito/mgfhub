@@ -5,8 +5,8 @@ import dash_bootstrap_components as dbc
 dash.register_page(
     __name__,
     path='/',
-    title='home',
-    name='home',
+    title='',
+    name='',
     order=1,
 )
 
@@ -47,7 +47,5 @@ container_descrição = dbc.Container([
 
 def layout():
     return html.Div([
-        container_descrição,
-        container_1,
-        html.Br(),
+
     ])
