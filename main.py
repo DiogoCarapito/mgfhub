@@ -92,7 +92,7 @@ def toggle_navbar_collapse(n, is_open):
     return is_open
 
 
-#server = app.server
+server = app.server
 
 #print(type(app))
 #print(type(server))
