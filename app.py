@@ -94,7 +94,10 @@ def toggle_navbar_collapse(n, is_open):
 
 server = app.server
 
+#print(type(app))
+#print(type(server))
+
 # Run the app
 if __name__ == '__main__':
     #app.run_server(debug=True)
-    server.run_server(debug=True)
+    server.run(debug=True)
