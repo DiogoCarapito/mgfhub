@@ -183,7 +183,7 @@ def table_update(searchbox,radio_tabela):
     if searchbox == None or searchbox == '':
         df_after_search = df_indicadores_novo
     else:
-        search_list = process.extract(searchbox, df_indicadores_novo.indexing, scorer=fuzz.WRatio, score_cutoff=59, limit=50)
+        search_list = process.extract(searchbox.lower(), df_indicadores_novo.lower().indexing, scorer=fuzz.WRatio, score_cutoff=59, limit=50)
         df_after_search = df_indicadores_novo.filter([id[2] for id in search_list], axis=0)
 
         # Sanity print para aferir qualidade dos resultados da pesquisa
