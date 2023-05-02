@@ -2,7 +2,7 @@ import dash
 from dash import html, callback, Input, Output
 import dash_bootstrap_components as dbc
 import pandas as pd
-import numpy as np
+from unidecode import unidecode
 from rapidfuzz import process, fuzz
 
 dash.register_page(
@@ -13,69 +13,22 @@ dash.register_page(
     order=3,
 )
 
-# read_csv read no PyCharm!!
-## tem que ser mudado para link do github para funcionar cross platform
-pythonanywhere_file_tree = ''
-#pythonanywhere_file_tree = '/home/diogocarapito/bi_indicadores/'
-
 # Laod da principal base de dados em .csv
 ## Ponderar fazer um script para adicionar informação sobre Intervalos aceitáveis ideias a partir do PDF da Operacionalização da ACSS
 ## Terminar o scrapper sdm, porquen ainda falta infomração de formula de calculo
-df_todos_indicadores = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_indicadores.csv')
+df_todos_indicadores = pd.read_csv('data/indicadores_post_processed.csv')
 
 # Load das listas de id's de indicadores utilizados para IDG das USFs/UCSPs
 ## podem vir a ser adicionados a lista de indicadores doas UCC, USP, ACES
 ## eventualmente tem que se escrever um script para extrair diretamente do PDF da Operacionalização da ACSS
-usf_ucsp_para_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
-usf_ucsp_sem_idg = pd.read_csv(pythonanywhere_file_tree + 'data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
+usf_ucsp_para_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_comimpactoIDG.csv')
+usf_ucsp_sem_idg = pd.read_csv('data/usf_ucsp_indicadores_2022_semimpactoIDG.csv')
 
-# Load dos intervalos aceitávels e esperados
-df_intervalos = pd.read_csv(pythonanywhere_file_tree + 'data/scrapped_intervalos.csv')
-df_todos_indicadores = df_todos_indicadores.merge(df_intervalos, on="id",how="outer")
-df_todos_indicadores.fillna(np.nan, inplace=True)
+
 
 cor_vermelha = '#CB707A'
 cor_laranja = '#E6C68F'
 cor_verde = '#86BF8B'
-
-# Criação de uma coluna com concatonação da info importante para o algoritmo de pesquiza pelo método fuzzy
-# Algumas celulas têm que ser
-s=' '
-df_todos_indicadores = df_todos_indicadores.assign(
-    indexing=[
-        str(row.id).lower() + s
-        + row.nome_abreviado.lower() + s
-        + row.designacao+s+str(row.area).lower() + s
-        + str(row.subarea).lower() + s
-        + str(row.dimensao).lower() + s
-        + row.tipo_de_indicador.lower() + s
-        + row.area_clinica.lower()
-        for index, row in df_todos_indicadores.iterrows()])
-
-# Markdown para ter um link na tabela
-df_todos_indicadores = df_todos_indicadores.assign(
-    id_sdm = [
-        '['
-        + str(row['id'])
-        + ']('
-        + row['link']
-        + ')'
-        for index, row in df_todos_indicadores.iterrows()])
-
-'''dbc.Table([
-                                    html.Thead([
-                                        html.Th('área'),
-                                        html.Th('subarea'),
-                                        html.Th('dimensao')
-                                    ]),
-                                    html.Tbody([
-                                        html.Tr([
-                                            html.Td(indicador[1]['area']),
-                                            html.Td(indicador[1]['subarea']),
-                                            html.Td(indicador[1]['dimensao']),
-                                        ]),
-                                    ])
-                                ]),'''
 
 def generate_html_indicador(indicador):
     separador = ' - '
@@ -239,7 +192,7 @@ def layout():
     Input('radio_indicadores', 'value'),
 )
 
-def table_update(searchbox_indicadores,radio_indicadores):
+def table_update(searchbox,radio_indicadores):
 
     # Reset da tabela antes da pesquisa
     df_indicadores_novo = df_todos_indicadores
@@ -254,10 +207,14 @@ def table_update(searchbox_indicadores,radio_indicadores):
         df_indicadores_novo = df_todos_indicadores
 
     # Garantir que quando a searchbox está vazia, se mostra todos os indicadores (independente dos filtros)
-    if searchbox_indicadores == None or searchbox_indicadores == '':
+    if searchbox == None or searchbox == '':
         df_after_search = df_indicadores_novo
     else:
-        search_list = process.extract(searchbox_indicadores, df_indicadores_novo.indexing, scorer=fuzz.WRatio, score_cutoff=59, limit=50)
+        # colocar a query da search box em lowercase e remover acentos
+        searchbox = unidecode(searchbox.lower())
+
+        # fuzzy search com score cutoff de 59, comparando com indexing
+        search_list = process.extract(searchbox, df_indicadores_novo['indexing'], scorer=fuzz.WRatio, score_cutoff=59, limit=50)
         df_after_search = df_indicadores_novo.filter([id[2] for id in search_list], axis=0)
 
         # Sanity print para aferir qualidade dos resultados da pesquisa

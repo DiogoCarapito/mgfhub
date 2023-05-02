@@ -154,7 +154,8 @@ def table_update(searchbox,radio_tabela):
     else:
         # colocar a query da search box em lowercase e remover acentos
         searchbox = unidecode(searchbox.lower())
-        # fuzzy search com score cutoff de 59, comparando com
+
+        # fuzzy search com score cutoff de 59, comparando com indexing
         search_list = process.extract(searchbox, df_indicadores_novo['indexing'], scorer=fuzz.WRatio, score_cutoff=59, limit=50)
         df_after_search = df_indicadores_novo.filter([id[2] for id in search_list], axis=0)
 
