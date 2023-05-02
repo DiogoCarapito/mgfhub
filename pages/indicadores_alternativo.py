@@ -43,13 +43,13 @@ cor_verde = '#86BF8B'
 s=' '
 df_todos_indicadores = df_todos_indicadores.assign(
     indexing=[
-        str(row.id) + s
-        + row.nome_abreviado + s
-        + row.designacao+s+str(row.area) + s
-        + str(row.subarea) + s
-        + str(row.dimensao) + s
-        + row.tipo_de_indicador + s
-        + row.area_clinica
+        str(row.id).lower() + s
+        + row.nome_abreviado.lower() + s
+        + row.designacao+s+str(row.area).lower() + s
+        + str(row.subarea).lower() + s
+        + str(row.dimensao).lower() + s
+        + row.tipo_de_indicador.lower() + s
+        + row.area_clinica.lower()
         for index, row in df_todos_indicadores.iterrows()])
 
 # Markdown para ter um link na tabela
