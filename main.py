@@ -3,8 +3,8 @@ import dash_bootstrap_components as dbc
 from dash import Input, Output, State, html
 from dash import dcc
 
-
-app = dash.Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.SIMPLEX,dbc.icons.BOOTSTRAP])
+bs = 'https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/simplex/bootstrap.min.css'
+app = dash.Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=[bs,dbc.icons.BOOTSTRAP])
 
 # Navbar pages
 navbar_pages = dbc.Row([

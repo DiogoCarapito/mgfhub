@@ -125,7 +125,7 @@ def generate_html_indicador(indicador):
 ## Alterar a font do texto da tabela, está num retro proggraming dos anos 80 xD
 table = dash_table.DataTable(
     id='tabela_indicadores',
-    page_size=448,
+    page_size=50,
     sort_action="native",
     #filter_action='native',
     style_header={
