@@ -7,7 +7,7 @@ from rapidfuzz import process, fuzz
 
 dash.register_page(
     __name__,
-    path='/',
+    path='/indicadores',
     title='indicadores',
     name='indicadores',
     order=2,

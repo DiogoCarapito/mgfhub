@@ -14,7 +14,7 @@ dash.register_page(
     path='/sunburst',
     title='sunburst',
     name='sunburst',
-    order=4,
+    order=3,
 )
 
 pythonanywhere_file_tree = ''
