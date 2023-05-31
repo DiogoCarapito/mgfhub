@@ -177,7 +177,7 @@ def sunburst_update(dropdown_options, store_data):
             domain=dict(column=1),
             insidetextorientation='radial',
 
-            hovertemplate='<b>%{label} </b> <br> peso: %{value:.1f}%}',
+            hovertemplate='<b>%{label} </b> <br> peso: %{value:.2f}%',
         ))
     
     fig_sunburst_indicadores.update_layout(
