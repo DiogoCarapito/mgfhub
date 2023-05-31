@@ -125,7 +125,7 @@ def generate_html_indicador(indicador):
 ## Alterar a font do texto da tabela, está num retro proggraming dos anos 80 xD
 table = dash_table.DataTable(
     id='tabela_indicadores',
-    page_size=50,
+    page_size=25,
     sort_action="native",
     #filter_action='native',
     style_header={
@@ -203,7 +203,7 @@ cartoes_indicadores = html.Div([],id='cartoes_indicadores')
 tab1_tabela = dbc.Card(
     dbc.CardBody([
         table
-    ]),
+    ],className="p-0")
 )
 #,style={"background-color": "#ADD8E6"}
 tab2_cartões = dbc.Card(

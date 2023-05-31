@@ -17,7 +17,7 @@ introduction = html.Div([
     dbc.Container([
         html.H1('mgfhub'),
         html.Br(),
-        html.P('Bem-vindo ao mgfhub, uma plataforma de visualização de dados para auxiliar a gestão de cuidados de saúde primários.'),
+        html.H5('Bem-vindo ao mgfhub, uma plataforma de visualização de dados para auxiliar a gestão de cuidados de saúde primários.'),
     ]),
     html.Br(),
     html.Br(),
@@ -26,30 +26,38 @@ introduction = html.Div([
 first_card = dbc.Card(
     dbc.CardBody(
         [
-            html.H3("indicadores", className="card-title"),
+            html.A(
+                html.H2('Indicadores'),
+                href='/indicadores',
+                className="card-title",
+                # target='_blank'  # Open the link in a new tab
+            ),
             html.Br(),
-            html.P("Ferramenta de pesquisa de indicadores dos CSP"),
-            html.P("Inclui link para SDM"),
-            dbc.Button("Link", color="info", href='/indicadores'),
+            html.P("Ferramenta de pesquisa de indicadores dos CSP sob a forma de tabla com filtros"),
+            html.P("Inclui link para SDM para cada indicador"),
         ]
     )
 )
 second_card = dbc.Card(
     dbc.CardBody(
         [
-            html.H3("sunburst", className="card-title"),
+            html.A(
+                html.H2('Sunburst'),
+                href='/sunburst',
+                className="card-title",
+                #target='_blank'  # Open the link in a new tab
+            ),
             html.Br(),
-            html.P("Visualização de indicadores em formato de sunburst."),
+            html.P("Visualização de indicadores em formato de sunburst interativo"),
             html.P("Inlcui percentagem de impacto no IDG"),
-            dbc.Button("Link", color="info", href='/sunburst'),
         ]
     )
 )
 
 cards = html.Div([
     dbc.Container([
-        html.H1('ferramentas'),
-        html.Br(),
+        #html.H2('Ferramentas'),
+        #html.Br(),
         dbc.Row([
             dbc.Col(first_card, width=6),
             dbc.Col(second_card, width=6),
