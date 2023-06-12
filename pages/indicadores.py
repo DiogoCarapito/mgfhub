@@ -4,6 +4,12 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 from unidecode import unidecode
 from rapidfuzz import process, fuzz
+import os
+from dotenv import load_dotenv
+from supabase import create_client, Client
+from datetime import datetime
+
+
 
 dash.register_page(
     __name__,
@@ -12,6 +18,19 @@ dash.register_page(
     name='indicadores',
     order=2,
 )
+load_dotenv()
+# Supabase configuration
+url: str = os.environ.get('SUPABASE_URL')
+key: str = os.environ.get('SUPABASE_KEY')
+supabase: Client = create_client(url, key)
+
+def supabase_insert(input_text):
+    # Get current datetime
+    date_time = datetime.now().isoformat()
+    # Create the data in a format to be inserted into Supabase
+    sb_insert = {'created_at': date_time, 'query': input_text}
+    # Insert data into Supabase
+    supabase.table('mgfhub_queries').insert(sb_insert).execute()
 
 # definir cores
 cor_vermelha = '#CB707A'
@@ -345,6 +364,13 @@ def table_update(searchbox,radio_tabela):
 
     # Texto que refere quantos indicadores estão na tabela resultado da pesquisa
     numero_indicadores_tabela = str(len(df_after_search))+' indicadores encontrados'
+
+    if searchbox == None or searchbox == '':
+        pass
+    elif len(searchbox) > 2:
+        supabase_insert(searchbox)
+    else:
+        pass
 
     return df_data, df_columns, cartoes_indicadores_gerados, numero_indicadores_tabela,
 
