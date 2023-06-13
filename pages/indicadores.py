@@ -9,8 +9,6 @@ from dotenv import load_dotenv
 from supabase import create_client, Client
 from datetime import datetime
 
-
-
 dash.register_page(
     __name__,
     path='/indicadores',
@@ -249,6 +247,8 @@ container_1 = dbc.Container([
     ])
 ], fluid=True)
 
+
+
 # Declaração do Layout
 def layout():
     return html.Div([
@@ -358,8 +358,6 @@ def table_update(searchbox,radio_tabela):
     )
 
     cartoes_indicadores_gerados = [generate_html_indicador(i) for i in df_after_search_cartoes.iterrows()]
-
-
 
 
     # Texto que refere quantos indicadores estão na tabela resultado da pesquisa

@@ -11,17 +11,16 @@ dash.register_page(
     order=1,
 )
 
-
-
 introduction = html.Div([
     dbc.Container([
-        html.H1('mgfhub'),
+        html.H1('mgfhub', style={'text-align': 'center'}),
         html.Br(),
-        html.H5('Bem-vindo ao mgfhub, uma plataforma de visualização de dados para auxiliar a gestão de cuidados de saúde primários.'),
+        html.P('Uma plataforma de pesquisa e visualização de indicadores para auxiliar a gestão de cuidados de saúde primários.', style={'text-align': 'center'}),
     ]),
     html.Br(),
     html.Br(),
-])
+]
+)
 
 first_card = dbc.Card(
     dbc.CardBody(
@@ -30,13 +29,24 @@ first_card = dbc.Card(
                 html.H2('Indicadores'),
                 href='/indicadores',
                 className="card-title",
+                style={'display': 'flex', 'justify-content': 'center', 'color': 'blue'},
                 # target='_blank'  # Open the link in a new tab
             ),
+            html.Br(),
+            html.Div([
+                html.Img(src='/assets/Tabela.png', style={'width': '80%'}),
+                ], style={'display': 'flex', 'justify-content': 'center'}
+            ),
+            html.Br(),
             html.Br(),
             html.P("Ferramenta de pesquisa de indicadores dos CSP sob a forma de tabla com filtros"),
             html.P("Inclui link para SDM para cada indicador"),
         ]
-    )
+    ), style={
+            'width': '80%',  # Set the card width to 80% of the parent container
+            'max-width': '600px',  # Set a maximum width to limit card expansion on larger screens
+            'margin': 'auto',  # Center the card horizontally within the parent container
+        }
 )
 second_card = dbc.Card(
     dbc.CardBody(
@@ -45,26 +55,43 @@ second_card = dbc.Card(
                 html.H2('Sunburst'),
                 href='/sunburst',
                 className="card-title",
+                style={'display': 'flex', 'justify-content': 'center', 'color': 'blue'},
                 #target='_blank'  # Open the link in a new tab
             ),
+            html.Br(),
+            html.Div([
+                html.Img(src='/assets/Sunburst.png', style={'width': '50%'}),
+            ], style={'display': 'flex', 'justify-content': 'center'}
+            ),
+            html.Br(),
             html.Br(),
             html.P("Visualização de indicadores em formato de sunburst interativo"),
             html.P("Inlcui percentagem de impacto no IDG"),
         ]
-    )
+    ), style={
+            'width': '80%',  # Set the card width to 80% of the parent container
+            'max-width': '600px',  # Set a maximum width to limit card expansion on larger screens
+            'margin': 'auto',  # Center the card horizontally within the parent container
+
+        }
 )
 
 cards = html.Div([
     dbc.Container([
-        #html.H2('Ferramentas'),
-        #html.Br(),
-        dbc.Row([
-            dbc.Col(first_card, width=6),
-            dbc.Col(second_card, width=6),
-        ]),
+        html.Div(
+            style={'display': 'flex', 'justify-content': 'center'},
+            children=[first_card]
+        ),
+        html.Br(),
+        html.Div(
+            style={'display': 'flex', 'justify-content': 'center'},
+            children=[second_card]
+        ),
     ]),
-])
-container = dbc.Container([
+], style={'display': 'flex', 'justify-content': 'center'},)
+
+
+main_page_layout = dbc.Container([
     introduction,
     html.Br(),
     cards,
@@ -72,5 +99,5 @@ container = dbc.Container([
 
 def layout():
     return html.Div([
-        container,
+        main_page_layout,
     ])
