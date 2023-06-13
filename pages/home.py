@@ -34,7 +34,7 @@ first_card = dbc.Card(
             ),
             html.Br(),
             html.Div([
-                html.Img(src='/assets/Tabela.png', style={'width': '80%'}),
+                html.Img(src='/assets/tabela.jpg', style={'width': '80%'}),
                 ], style={'display': 'flex', 'justify-content': 'center'}
             ),
             html.Br(),
@@ -60,7 +60,7 @@ second_card = dbc.Card(
             ),
             html.Br(),
             html.Div([
-                html.Img(src='/assets/Sunburst.png', style={'width': '50%'}),
+                html.Img(src='/assets/sunburst.jpg', style={'width': '50%'}),
             ], style={'display': 'flex', 'justify-content': 'center'}
             ),
             html.Br(),
