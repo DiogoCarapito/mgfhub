@@ -9,3 +9,5 @@ Inclui:
 - visualização de indicadores com impacto do IDG em sunburst
 
 Um projeto em desenvolvimento
+
+Disponível em [mgfhub.com](mgfhub.com)
