@@ -8,6 +8,7 @@ import os
 from dotenv import load_dotenv
 from supabase import create_client, Client
 from datetime import datetime
+import time
 
 dash.register_page(
     __name__,
@@ -365,7 +366,8 @@ def table_update(searchbox,radio_tabela):
 
     if searchbox == None or searchbox == '':
         pass
-    elif len(searchbox) > 2:
+    # se for text com mais de 2 caracteres, ou se for um  numero, inserir na base de dados supabase
+    elif len(searchbox) > 2 or searchbox.isnumeric():
         supabase_insert(searchbox)
     else:
         pass
