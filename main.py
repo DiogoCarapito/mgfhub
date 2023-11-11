@@ -1,15 +1,21 @@
-import dash
 import dash_bootstrap_components as dbc
-from dash import Input, Output, State, html
-from dash import dcc
+from dash import Dash, page_registry, page_container,Input, Output, State, html, dcc
 
+
+# Boostrap theme
 bs = "https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/simplex/bootstrap.min.css"
-app = dash.Dash(
+
+# Register pages
+app = Dash(
     __name__,
     use_pages=True,
     suppress_callback_exceptions=True,
     external_stylesheets=[bs, dbc.icons.BOOTSTRAP],
 )
+
+# App title
+app.title = "mgfhub"
+
 
 # Navbar pages
 navbar_pages = dbc.Row(
@@ -19,7 +25,7 @@ navbar_pages = dbc.Row(
                 dbc.Nav(
                     [
                         dbc.NavItem(dbc.NavLink(page["name"], href=page["path"]))
-                        for page in dash.page_registry.values()
+                        for page in page_registry.values()
                     ]
                     + [
                         dbc.NavItem(
@@ -126,7 +132,7 @@ app.layout = html.Div(
         html.Br(),
         dbc.Container(
             [
-                dash.page_container,
+                page_container,
             ]
         ),
         dcc.Store(id="store_data", data=[], storage_type="memory"),
