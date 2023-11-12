@@ -1,5 +1,7 @@
 import dash
-from dash import html, dcc, callback, Output, Input
+from dash import html, dcc
+
+# callback, Output, Input
 import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.graph_objects as go
@@ -31,7 +33,7 @@ fig_sunburst_indicadores.add_trace(
         labels=df_sunburst["label"],
         parents=df_sunburst["parent"],
         values=df_sunburst["value"],
-        #values=df_sunburst["valor_operacionalizado"],
+        # values=df_sunburst["valor_operacionalizado"],
         branchvalues="total",
         domain=dict(column=1),
         insidetextorientation="radial",
