@@ -10,5 +10,4 @@ format:
 
 lint:
 	pylint --disable=R,C *.py utils/*.py tests/*.py pages/*.py
-
 all: install lint test format 

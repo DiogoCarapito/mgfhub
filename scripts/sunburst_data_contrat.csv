@@ -1,0 +1,99 @@
+id_indicador,name,label,parent,value,tipo
+1001,Desempenho,Desempenho,,55.55555555555556,área
+1002,Serviços,Serviços,,11.11111111111111,área
+1003,Qualidade Organizacional,Qualidade Organizacional,,22.22222222222222,área
+1004,Formação,Formação,,11.11111111111111,área
+2021,Satisfação de Utentes,Satisfação de Utentes,Desempenho,10.0,subárea
+2022,Formação Externa,Formação Externa,Formação,2.0,subárea
+2023,Autoria de Artigos Escritos,Autoria de Artigos Escritos,Atividade Científica,5.0,subárea
+2024,Trabalhos de Investigação,Trabalhos de Investigação,Atividade Científica,5.0,subárea
+2049,Serviços de Carácter Assistencial,Serviços de Carácter Assistencial,Serviços Assistenciais,8.0,dimensão
+2050,Acesso MCQ,Acesso MCQ,Melhoria Contínua,2.0,dimensão
+2051,Atendimento Telefónico,Atendimento Telefónico,Acesso,1.0,dimensão
+2052,Trajeto do Utente na Unidade Funcional,Trajeto do Utente na Unidade Funcional,Acesso,1.0,dimensão
+2053,Prescrição de Cuidados,Prescrição de Cuidados,Qualificação da Prescrição,2.0,dimensão
+2054,Outras Atividades não Assistenciais,Outras Atividades não Assistenciais,Serviços não Assistenciais,0.4,dimensão
+2055,Segurança de Profissionais,Segurança de Profissionais,Segurança,2.4,dimensão
+2056,Gestão do Risco,Gestão do Risco,Segurança,2.4,dimensão
+1,Proporção de consultas realizadas pelo MF,1 - Proporção de consultas realizadas pelo MF,Personalização,0.0,indicador
+3,Taxa de domicílios médicos por 1.000 inscritos,3 - Taxa de domicílios médicos por 1.000 inscritos,Cobertura ou Utilização,0.0,indicador
+5,Proporção de consultas realizadas pelo EF,5 - Proporção de consultas realizadas pelo EF,Personalização,0.0,indicador
+6,Taxa de utilização de consultas médicas - 3 anos,6 - Taxa de utilização de consultas médicas - 3 anos,Cobertura ou Utilização,0.0,indicador
+8,Taxa de utilização de consultas de PF (méd./enf.),8 - Taxa de utilização de consultas de PF (méd./enf.),Saúde da Mulher,0.0,indicador
+11,Proporção gráv. c/ consulta méd. vigil. 1º trim.,11 - Proporção gráv. c/ consulta méd. vigil. 1º trim.,Saúde da Mulher,0.0,indicador
+18,Proporção de hipertensos com IMC (12 meses),18 - Proporção de hipertensos com IMC (12 meses),Hipertensão Arterial,0.0,indicador
+20,"Proporção hipertensos < 65 A, com PA < 150/90","20 - Proporção hipertensos < 65 A, com PA < 150/90",Hipertensão Arterial,0.0,indicador
+23,Proporção hipertensos com risco CV (3 A),23 - Proporção hipertensos com risco CV (3 A),Hipertensão Arterial,0.0,indicador
+30,"Proporção idosos ou doença crónica, c/ vac. gripe","30 - Proporção idosos ou doença crónica, c/ vac. gripe",Saúde do Idoso,0.0,indicador
+34,"Proporção obesos >=14A, c/ cons. vigil. obesid. 2A","34 - Proporção obesos >=14A, c/ cons. vigil. obesid. 2A",Saúde do Adulto,0.0,indicador
+36,Proporção utentes DM com registo de GRT,36 - Proporção utentes DM com registo de GRT,Diabetes Mellitus,0.0,indicador
+37,Proporção DM c/ cons. enf. vigil. DM último ano,37 - Proporção DM c/ cons. enf. vigil. DM último ano,Diabetes Mellitus,0.0,indicador
+39,"Proporção DM c/ última HbA1c <= 8,0%","39 - Proporção DM c/ última HbA1c <= 8,0%",Diabetes Mellitus,0.0,indicador
+45,Prop. mulheres 25-60 anos c/ rastr. c. colo út.,45 - Prop. mulheres 25-60 anos c/ rastr. c. colo út.,Saúde da Mulher,0.0,indicador
+46,"Proporção utentes [50; 75[A, c/ rastreio cancro CR","46 - Proporção utentes [50; 75[A, c/ rastreio cancro CR",Saúde do Adulto,0.0,indicador
+49,"Proporção utentes c/ DPOC, c/ FeV1 em 3 anos","49 - Proporção utentes c/ DPOC, c/ FeV1 em 3 anos",Doenças Aparelho Respiratório,0.0,indicador
+53,"Proporção utentes >=14A, c/ registo consumo álcool","53 - Proporção utentes >=14A, c/ registo consumo álcool",Saúde do Adulto,0.0,indicador
+54,"Proporção utentes consum. álcool, c/ consulta 3A","54 - Proporção utentes consum. álcool, c/ consulta 3A",Saúde do Adulto,0.0,indicador
+63,"Proporção crianças 7A, c/ cons. méd. vig. e PNV","63 - Proporção crianças 7A, c/ cons. méd. vig. e PNV",Saúde Infantil e Juvenil,0.0,indicador
+95,"Proporção jovens 14A, c/ PNV cumprido ou execução","95 - Proporção jovens 14A, c/ PNV cumprido ou execução",Saúde Infantil e Juvenil,0.0,indicador
+98,"Proporção utentes >= 25 A, c/ vacina tétano","98 - Proporção utentes >= 25 A, c/ vacina tétano",Saúde do Adulto,0.0,indicador
+99,Taxa utilização consultas de enfermagem - 3 anos,99 - Taxa utilização consultas de enfermagem - 3 anos,Cobertura ou Utilização,0.0,indicador
+255,Propor. quinolonas entre antib. fatur. (embal.),255 - Propor. quinolonas entre antib. fatur. (embal.),Prescrição Farmacoterapêutica,0.0,indicador
+257,Propor. cefalosp. entre antib. fatur. (embal.),257 - Propor. cefalosp. entre antib. fatur. (embal.),Prescrição Farmacoterapêutica,0.0,indicador
+259,Proporção coxibes entre AINEs faturados (DDD),259 - Proporção coxibes entre AINEs faturados (DDD),Prescrição Farmacoterapêutica,0.0,indicador
+261,Proporção utentes DM c/ aval. risco úlcera pé,261 - Proporção utentes DM c/ aval. risco úlcera pé,Diabetes Mellitus,0.0,indicador
+262,Proporção utentes com avaliação risco DM2 (3A),262 - Proporção utentes com avaliação risco DM2 (3A),Saúde do Adulto,0.0,indicador
+269,Índice de acompanham. adequado s. infantil 2º ano,269 - Índice de acompanham. adequado s. infantil 2º ano,Saúde Infantil e Juvenil,0.0,indicador
+274,"Propor. DM2 c/ indic. insul., em terap. adequada","274 - Propor. DM2 c/ indic. insul., em terap. adequada",Diabetes Mellitus,0.0,indicador
+275,Proporção novos DM2 em terap. c/ metform. monot.,275 - Proporção novos DM2 em terap. c/ metform. monot.,Diabetes Mellitus,0.0,indicador
+276,Rácio DDD prescrita DPP-4 e antidiabét. orais,276 - Rácio DDD prescrita DPP-4 e antidiabét. orais,Prescrição Farmacoterapêutica,0.0,indicador
+294,Taxa domicílios enferm. p/ 1000 inscritos idosos,294 - Taxa domicílios enferm. p/ 1000 inscritos idosos,Saúde do Idoso,0.0,indicador
+295,Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP,295 - Propor. puérp. 5+ cons. vig. enf. grav. e c/ RP,Saúde da Mulher,0.0,indicador
+297,Prop. idosos s/ presc. prol. ansiol/sedat/hipnót,297 - Prop. idosos s/ presc. prol. ansiol/sedat/hipnót,Saúde do Idoso,0.0,indicador
+300,"Nº médio prescr. consulta fisiatria, p/ utiliz.","300 - Nº médio prescr. consulta fisiatria, p/ utiliz.",Prescrição MCDT,0.0,indicador
+302,Índice de acompanham. adequado s. infantil 1º ano,302 - Índice de acompanham. adequado s. infantil 1º ano,Saúde Infantil e Juvenil,0.0,indicador
+306,Propor. ute. s/ rastr. VIH/SIDA que o efetuaram,306 - Propor. ute. s/ rastr. VIH/SIDA que o efetuaram,Saúde do Adulto,0.0,indicador
+308,Proporção grávidas com ecografia 2º trimestre,308 - Proporção grávidas com ecografia 2º trimestre,Saúde da Mulher,0.0,indicador
+310,Índice realização exames laborat. 1º trim. grav.,310 - Índice realização exames laborat. 1º trim. grav.,Saúde da Mulher,0.0,indicador
+311,Índice realização exames laborat. 2º trim. grav.,311 - Índice realização exames laborat. 2º trim. grav.,Saúde da Mulher,0.0,indicador
+312,Índice realização exames laborat. 3º trim. grav.,312 - Índice realização exames laborat. 3º trim. grav.,Saúde da Mulher,0.0,indicador
+314,Proporção DM com PA >= 140/90 mmHg,314 - Proporção DM com PA >= 140/90 mmHg,Diabetes Mellitus,0.0,indicador
+315,Proporção DM com C-LDL < 100 mg/dl,315 - Proporção DM com C-LDL < 100 mg/dl,Diabetes Mellitus,0.0,indicador
+330,Índice de utilização anual de consultas médicas,330 - Índice de utilização anual de consultas médicas,Cobertura ou Utilização,0.0,indicador
+331,Índice de utilização anual de consultas enferm.,331 - Índice de utilização anual de consultas enferm.,Cobertura ou Utilização,0.0,indicador
+335,Prop. cons. ind. receit. c/ resposta 3 dias úteis,335 - Prop. cons. ind. receit. c/ resposta 3 dias úteis,Tempos Máximos de Resposta Garantidos,0.0,indicador
+339,Taxa anual ajustada episódios urgência hospitalar,339 - Taxa anual ajustada episódios urgência hospitalar,Consulta no Próprio Dia,0.0,indicador
+341,Despesa PVP medic. pres. compart. p/ insc. padrão,341 - Despesa PVP medic. pres. compart. p/ insc. padrão,Prescrição Farmacoterapêutica,0.0,indicador
+342,Proporção consul. méd. inic. ut. <= 15 dias úteis,342 - Proporção consul. méd. inic. ut. <= 15 dias úteis,Tempos Máximos de Resposta Garantidos,0.0,indicador
+344,Propor. consultas médicas realiz. no dia agendam.,344 - Propor. consultas médicas realiz. no dia agendam.,Consulta no Próprio Dia,0.0,indicador
+345,Propor. consul. enfer. realiz. no dia do agendam.,345 - Propor. consul. enfer. realiz. no dia do agendam.,Consulta no Próprio Dia,0.0,indicador
+346,Propor. consul. realiz. intervalo [8; 11[h (Q1),346 - Propor. consul. realiz. intervalo [8; 11[h (Q1),Distribuição das Consultas Presenciais no Dia,0.0,indicador
+349,Propor. consul. realiz. intervalo [17; 20]h (Q4),349 - Propor. consul. realiz. intervalo [17; 20]h (Q4),Distribuição das Consultas Presenciais no Dia,0.0,indicador
+350,Custo c/ terapêut. do doente c/ Diabetes Mellitus,350 - Custo c/ terapêut. do doente c/ Diabetes Mellitus,Diabetes Mellitus,0.0,indicador
+351,Custo c/ terap. doente c/ Diab. Mell. controlado,351 - Custo c/ terap. doente c/ Diab. Mell. controlado,Diabetes Mellitus,0.0,indicador
+352,Custo c/ terapêut. do doente c/ HTA,352 - Custo c/ terapêut. do doente c/ HTA,Hipertensão Arterial,0.0,indicador
+353,Custo c/ terapêut. do doente c/ HTA controlada,353 - Custo c/ terapêut. do doente c/ HTA controlada,Hipertensão Arterial,0.0,indicador
+354,Despesa MCDT prescr. p/ insc. padrão (p. conv.),354 - Despesa MCDT prescr. p/ insc. padrão (p. conv.),Prescrição MCDT,0.0,indicador
+365,Taxa internam. evitáveis popul. adulta (ajust.),365 - Taxa internam. evitáveis popul. adulta (ajust.),Multimorbilidade e Outros Tipos de Doenças,0.0,indicador
+372,Taxa de intern. por fratura do colo do fémur,372 - Taxa de intern. por fratura do colo do fémur,Saúde do Idoso,0.0,indicador
+378,Propor. PVP medicam. prescr. MF contexto privado,378 - Propor. PVP medicam. prescr. MF contexto privado,Prescrição Farmacoterapêutica,0.0,indicador
+380,"Prop. adultos c/ asma/DPOC/bronq. cr., com diagn.","380 - Prop. adultos c/ asma/DPOC/bronq. cr., com diagn.",Doenças Aparelho Respiratório,0.0,indicador
+381,"Prop. adultos c/ depressão/ansiedade, com diagn.","381 - Prop. adultos c/ depressão/ansiedade, com diagn.",Saúde do Adulto,0.0,indicador
+382,"Prop. adultos com DM, com diagn.","382 - Prop. adultos com DM, com diagn.",Diabetes Mellitus,0.0,indicador
+383,"Prop. adultos com HTA, com diagnóstico","383 - Prop. adultos com HTA, com diagnóstico",Hipertensão Arterial,0.0,indicador
+384,Propor. RN cuja mãe tem registo de gravidez,384 - Propor. RN cuja mãe tem registo de gravidez,Saúde da Mulher,0.0,indicador
+389,"Score dimensão ""serviços de caráter assistencial""","389 - Score dimensão ""serviços de caráter assistencial""",Serviços de Carácter Assistencial,8.0,indicador
+390,"Score dimensão ""serv. não assis. gov. clín. ACES""","390 - Score dimensão ""serv. não assis. gov. clín. ACES""",Governação Clínica,0.0,indicador
+391,"Score dimensão ""melhoria cont. qualid. acesso""","391 - Score dimensão ""melhoria cont. qualid. acesso""",Acesso MCQ,2.0,indicador
+392,"IDS da dimensão ""melhoria cont. qualid. e PAI""","392 - IDS da dimensão ""melhoria cont. qualid. e PAI""",Prog. Melh. Contínua Qual. e Proc. Assist. Integr.,0.0,indicador
+393,"Score dimensão ""formação equipa multiprofis.""","393 - Score dimensão ""formação equipa multiprofis.""",Formação da Equipa Multiprofissional,0.0,indicador
+394,"Score dimensão ""formação internos e alunos""","394 - Score dimensão ""formação internos e alunos""",Formação de Internos e Alunos,0.0,indicador
+395,"Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A","395 - Prop. uten. >= 15 anos, c/ reg. hábit. tabág. 3A",Saúde do Adulto,0.0,indicador
+397,Prop. fumador c/ int. breve ou muito breve 1 ano,397 - Prop. fumador c/ int. breve ou muito breve 1 ano,Saúde do Adulto,0.0,indicador
+398,Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT,398 - Prop. gráv. fumad. c/ int. breve ou mt. breve 1ºT,Saúde da Mulher,0.0,indicador
+404,Incidência anual de pessoas em abstin. tabág. 12M,404 - Incidência anual de pessoas em abstin. tabág. 12M,Saúde do Adulto,0.0,indicador
+409,Prop ute s/ prescr prolo ansio/seda/hipn (ajust),409 - Prop ute s/ prescr prolo ansio/seda/hipn (ajust),Prescrição Farmacoterapêutica,0.0,indicador
+410,Taxa anual ajustada utiliz. freq. urgência hospit.,410 - Taxa anual ajustada utiliz. freq. urgência hospit.,Consulta no Próprio Dia,0.0,indicador
+412,[Cons. dia UF inscr.] / ([cons. dia] + [urgênc.]),412 - [Cons. dia UF inscr.] / ([cons. dia] + [urgênc.]),Consulta no Próprio Dia,0.0,indicador
+428,"Score dimensão ""segurança de utentes""","428 - Score dimensão ""segurança de utentes""",Segurança de Utentes,0.0,indicador
+430,"Score dimensão ""participação do cidadão""","430 - Score dimensão ""participação do cidadão""",Participação do Cidadão,0.0,indicador

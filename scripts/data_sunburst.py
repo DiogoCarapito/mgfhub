@@ -1,6 +1,4 @@
 import pandas as pd
-
-
 import numpy as np
 
 
@@ -224,9 +222,7 @@ df_indicadores["value"] = lista
 
 
 df_sunburst = pd.concat([df_area, df_subarea, df_dimensao, df_indicadores])
-# df_sunburst = pd.concat([df_area,df_subarea,df_dimensao])
-# df_sunburst = pd.concat([df_area,df_subarea])
-# df_sunburst = df_area
+
 
 df_sunburst = df_sunburst.set_index("id_indicador")
 print(df_sunburst)

@@ -1,12 +1,12 @@
 import pandas as pd
-
-
 import numpy as np
 
 
-df_todos_indicadores = pd.read_csv("data/scrapped_indicadores.csv")
+CONTRATUALIZADO = True
 
-usf_ucsp_para_idg = pd.read_csv("data/usf_ucsp_indicadores_2022_comimpactoIDG.csv")
+df_todos_indicadores = pd.read_csv("../data/scrapped_indicadores.csv")
+
+usf_ucsp_para_idg = pd.read_csv("../data/usf_ucsp_indicadores_2022_comimpactoIDG.csv")
 
 df_todos_indicadores_filtrado = df_todos_indicadores[
     df_todos_indicadores["id"].isin(usf_ucsp_para_idg["indicador"].values.tolist())
@@ -38,17 +38,24 @@ df_area = pd.DataFrame(
         "tipo": ["área" for each in df.area.drop_duplicates()],
     }
 )
-df_area_2 = pd.DataFrame(
-    {
-        "id_indicador": [1005],
-        "id": ["Atividade Científica"],
-        "label": ["Atividade Científica"],
-        "parent": [np.nan],
-        "value": [10],
-        "tipo": ["área"],
-    }
-)
-df_area = pd.concat([df_area, df_area_2])
+if CONTRATUALIZADO:
+    df_area["value"] = df_area["value"] / 0.9
+else:
+    df_area_2 = pd.DataFrame(
+        {
+            "id_indicador": [1005],
+            "id": ["Atividade Científica"],
+            "label": ["Atividade Científica"],
+            "parent": [np.nan],
+            "value": [10],
+            "tipo": ["área"],
+        }
+    )
+
+    df_area = pd.concat([df_area, df_area_2])
+
+print("AREA")
+print(df_area)
 
 df_subarea = pd.DataFrame(
     {
@@ -60,6 +67,14 @@ df_subarea = pd.DataFrame(
         "tipo": ["subárea" for each in df.subarea.drop_duplicates().index],
     }
 )
+if CONTRATUALIZADO:
+    df_subarea["value"] = df_subarea["value"] / 0.9
+    # devide just indicador 2008 value bu 0.9 again and change in df_subarea
+    df_subarea.loc[df_subarea["id_indicador"] == 2008, "value"] = (
+        df_subarea.loc[df_subarea["id_indicador"] == 2008, "value"] / 0.8
+    )
+
+
 df_subarea_2 = pd.DataFrame(
     {
         "id": [
@@ -85,8 +100,16 @@ df_subarea_2 = pd.DataFrame(
         "tipo": ["subárea", "subárea", "subárea", "subárea"],
     }
 )
+if CONTRATUALIZADO:
+    # drop all indicadores expect 2021
+    df_subarea = df_subarea[df_subarea["id_indicador"] == 2021]
+    # change value of 2021
+    df_subarea.loc[df_subarea["id_indicador"] == 2021, "value"] = 10 / 0.9
+
 df_subarea = pd.concat([df_subarea, df_subarea_2])
 
+print("SUBAREA")
+print(df_subarea)
 
 df_dimensao = pd.DataFrame(
     {
@@ -184,6 +207,11 @@ df_dimensao_3 = pd.DataFrame(
     },
     index=[0, 0, 0, 0, 0, 0],
 )
+# drop all indicadores expect 2055
+df_dimensao = df_dimensao[df_dimensao["id_indicador"] == 2055]
+# change value of 2055
+# df_dimensao.loc[df_dimensao['id_indicador'] == 2055, 'value'] = 2.4/0.9
+
 df_dimensao = pd.concat([df_dimensao, df_dimensao_2, df_dimensao_3])
 
 print(df_dimensao)
@@ -204,18 +232,19 @@ df_indicadores = pd.DataFrame(
     }
 )
 
-
+# calcular automaticamente cada valor de indicador dependendo do valor da dimensão a que pertence
 lista = []
 for each, item in df_indicadores.iterrows():
-    # print(item['parent'])
     denominador = df_indicadores[df_indicadores["parent"] == item["parent"]][
         "parent"
     ].count()
+    print(denominador)
     try:
         numerador = float(
             df_dimensao[df_dimensao["label"] == item["parent"]]["value"].values
         )
-    except (ValueError, KeyError) as e:
+        print(numerador)
+    except:
         numerador = 0
     valor = numerador / denominador
     lista.append(valor)
@@ -224,10 +253,10 @@ df_indicadores["value"] = lista
 
 
 df_sunburst = pd.concat([df_area, df_subarea, df_dimensao, df_indicadores])
-# df_sunburst = pd.concat([df_area,df_subarea,df_dimensao])
-# df_sunburst = pd.concat([df_area,df_subarea])
-# df_sunburst = df_area
+
 
 df_sunburst = df_sunburst.set_index("id_indicador")
-print(df_sunburst)
-df_sunburst.to_csv("../data/sunburst_data.csv", index=True)
+
+# print(df_sunburst.head())
+
+df_sunburst.to_csv("sunburst_data_contrat.csv", index=True)

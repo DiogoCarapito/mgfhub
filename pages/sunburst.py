@@ -19,10 +19,10 @@ dash.register_page(
     order=3,
 )
 
-df_sunburst = pd.read_csv("data/sunburst_data_operacionalizado.csv")
+df_sunburst = pd.read_csv("scripts/sunburst_data_contrat.csv")
 
 # lines where operacionalizar is false
-df_sunburst = df_sunburst[df_sunburst["operacionalizar"] == True]
+# df_sunburst = df_sunburst[df_sunburst["operacionalizar"] == True]
 
 # create figure
 fig_sunburst_indicadores = go.Figure()
