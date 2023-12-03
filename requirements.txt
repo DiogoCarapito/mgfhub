@@ -6,4 +6,4 @@ black==23.9.1
 
 streamlit==1.28.0
 pandas==2.1.3
-watchdog
+watchdog==3.0.0
