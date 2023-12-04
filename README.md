@@ -15,6 +15,8 @@ Um projeto em desenvolvimento
 Disponível em [mgfhub.com](mgfhub.com)
 
 
+
+
 ## cheat sheet
 
 ### venv
