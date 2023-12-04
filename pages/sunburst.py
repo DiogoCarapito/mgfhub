@@ -4,8 +4,10 @@ from dash import html, dcc
 # callback, Output, Input
 import dash_bootstrap_components as dbc
 import pandas as pd
+
 import plotly.graph_objects as go
 import plotly.io as pio
+
 
 pio.templates.default = "seaborn"
 # seaborn
