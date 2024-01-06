@@ -1,6 +1,7 @@
 import pandas as pd
 import os
-import streamlit as st
+from unidecode import unidecode
+from rapidfuzz import process, fuzz
 
 
 def func():
@@ -28,24 +29,27 @@ def upsave_data_source(source):
     print(f"{source} saved successfully!")
 
 
-def button_link(label):
-    st.markdown(
-        f'<a href={label} target="_self">'
-        f'<button style="color: white; background-color: #0000F5; border: none; cursor: pointer; '
-        f"padding: 10px 24px; text-align: center; text-decoration: none; display: inline-block; "
-        f"border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; "
-        f'font-size: 16px; margin: 4px 2px; -webkit-transition-duration: 0.4s; transition-duration: 0.4s;">'
-        f"Ir para {label}"
-        f"</button></a>",
-        unsafe_allow_html=True,
-    )
+def filter_df(df, pesquisa, filtros):
+    if filtros == "IDE":
+        df = df[df["Tipo"] == "IDE"]
+    elif filtros == "IDG":
+        df = df[df["Tipo"] == "IDG"]
+    else:
+        pass
 
+    pesquisa = unidecode(pesquisa.lower())
 
-def web_link(label, link, icon):
-    st.markdown(
-        f'<a href={link} target="_self">'
-        f'<img src={icon} alt="linkedin" width="16" height="16">'
-        f"{label}"
-        f"</a>",
-        unsafe_allow_html=True,
-    )
+    if pesquisa == "":
+        return df
+    else:
+        # fuzzy search com score cutoff de 59, comparando com indexing
+        search_list = process.extract(
+            pesquisa,
+            df["Designação"],
+            scorer=fuzz.WRatio,
+            score_cutoff=59,
+            limit=50,
+        )
+        df = df.filter([id[2] for id in search_list], axis=0)
+
+        return df

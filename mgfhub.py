@@ -1,49 +1,58 @@
 import streamlit as st
-from utils.utils import button_link
+from utils.components import button_link
+from utils.style import main_title
 
 
 def main():
     st.set_page_config(
-        page_title="mgfhub 2.0",
+        page_title="mgfhub",
         page_icon="assets/favicon.ico",
         layout="wide",
         initial_sidebar_state="expanded",
     )
 
-    st.title("mgfhub 2.0")
+    main_title("mgfhub")
 
-    st.divider()
+    st.markdown("")
+    st.markdown("")
+
+    st.markdown(
+        "##### O mgfhub é uma plataforma de acesso aberto que disponibiliza informação sobre os indicadores de monitorização e avaliação dos Cuidados de Saúde Primários Portugueses."
+    )
+
+    st.markdown("")
+    st.markdown("")
 
     col_1, col_2 = st.columns(2)
     with col_1:
         with st.container():
             st.header("Indicadores")
             st.write("Aqui vai o texto de apresentação dos indicadores")
-            # st.link_button("Ir para Indicadores", "Indicadores")
+            # st.image("assets/indicadores.png")
             button_link("Indicadores")
 
     with col_2:
         with st.container():
             st.header("Sunburst")
             st.write("Aqui vai o texto de apresentação do sunburst")
+            button_link("Sunburst")
 
-    st.divider()
+    st.markdown("")
+    st.markdown("")
 
     col_3, col_4 = st.columns(2)
 
     with col_3:
         with st.container():
-            st.header("Relatório")
+            st.header("Relatórios")
             st.write("Aqui vai o texto de apresentação do relatório")
-            st.link_button("Ir para Relatório", "Relatorio")
+            button_link("Relatórios")
 
     with col_4:
         with st.container():
             st.header("FAQs")
             st.write("Aqui vai o texto de apresentação do FAQs")
-            st.link_button("Ir para FAQs", "FAQ")
-
-    st.divider()
+            button_link("FAQs")
 
 
 if __name__ == "__main__":

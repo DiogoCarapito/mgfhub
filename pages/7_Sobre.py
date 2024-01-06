@@ -1,19 +1,20 @@
 import streamlit as st
-from utils.utils import web_link
+from utils.style import web_link
 
 st.title("Sobre")
 
-# link to gihub, personal website, twitter and linkedin
-web_link(
-    "Github",
-    "https://github.com/DiogoCarapito",
-    "https://icons.getbootstrap.com/assets/icons/github.svg",
-)
 
+# link to gihub, personal website, twitter and linkedin
 web_link(
     "diogocarapito.com",
     "https://diogocarapito.com/",
     "https://raw.githubusercontent.com/DiogoCarapito/blog/main/static/favicon.ico",
+)
+
+web_link(
+    "Github",
+    "https://github.com/DiogoCarapito",
+    "https://icons.getbootstrap.com/assets/icons/github.svg",
 )
 
 web_link(
