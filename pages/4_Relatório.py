@@ -11,3 +11,6 @@ with st.sidebar:
         st.write(uploaded_file)
     else:
         st.write("Please upload a file!")
+
+    with st.expander("Ajuda", expanded=False):
+        st.write("Aqui vai o texto de ajuda do upload")

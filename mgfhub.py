@@ -1,4 +1,5 @@
 import streamlit as st
+from utils.utils import button_link
 
 
 def main():
@@ -10,6 +11,7 @@ def main():
     )
 
     st.title("mgfhub 2.0")
+
     st.divider()
 
     col_1, col_2 = st.columns(2)
@@ -17,13 +19,13 @@ def main():
         with st.container():
             st.header("Indicadores")
             st.write("Aqui vai o texto de apresentação dos indicadores")
-            # st.link_button("Pesquisa", "/indicadores")
+            # st.link_button("Ir para Indicadores", "Indicadores")
+            button_link("Indicadores")
 
     with col_2:
         with st.container():
             st.header("Sunburst")
             st.write("Aqui vai o texto de apresentação do sunburst")
-            # st.link_button("Sunburst", "/3_Sunburst.py")
 
     st.divider()
 
@@ -33,13 +35,13 @@ def main():
         with st.container():
             st.header("Relatório")
             st.write("Aqui vai o texto de apresentação do relatório")
-            # st.link_button("Relatório", "/4_Relatório.py")
+            st.link_button("Ir para Relatório", "Relatorio")
 
     with col_4:
         with st.container():
             st.header("FAQs")
             st.write("Aqui vai o texto de apresentação do FAQs")
-            # st.link_button("FAQs", "/5_FAQ.py")
+            st.link_button("Ir para FAQs", "FAQ")
 
     st.divider()
 
