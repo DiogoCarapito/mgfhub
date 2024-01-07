@@ -22,7 +22,7 @@ with col2:
     filtros = st.radio(
         "Filtros",
         ["IDE", "IDG", "Todos"],
-        index=2,
+        index=0,
         horizontal=True,
         # help="Filtrar por tipo de indicadores"
     )
