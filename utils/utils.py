@@ -22,14 +22,11 @@ def data_source(source):
         return pd.read_csv(url, index_col=0)
 
 
-
-
-
 def filter_df(df, pesquisa, filtros):
     if filtros == "IDE":
-        df = df[df["Tipo"] == "IDE"]
+        df = df[df["ide"] == 1]
     elif filtros == "IDG":
-        df = df[df["Tipo"] == "IDG"]
+        df = df[df["idg"] == 1]
     else:
         pass
 

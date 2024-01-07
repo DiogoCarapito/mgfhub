@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+from utils.utils import download_update_data
 
 
 def data_source(source):
@@ -12,5 +13,5 @@ def data_source(source):
         return pd.read_csv("./data/" + source, index_col=0)
 
     else:
-        url = "https://github.com/DiogoCarapito/datasets_indicadores/raw/main/datasets/indicadores_sdm.csv"
-        return pd.read_csv(url, index_col=0)
+        download_update_data(source)
+        return pd.read_csv("./data/" + source, index_col=0)

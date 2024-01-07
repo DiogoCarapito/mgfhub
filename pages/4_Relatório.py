@@ -1,6 +1,7 @@
 import streamlit as st
+from utils.style import main_title
 
-st.title("Relatório")
+main_title("Relatório")
 
 with st.sidebar:
     st.title("📄 Upload")

@@ -1,6 +1,6 @@
 import streamlit as st
-from utils.components import button_link
-from utils.style import main_title
+
+from utils.style import main_title, intro, card_container, button_link, double_space
 
 
 def main():
@@ -8,51 +8,54 @@ def main():
         page_title="mgfhub",
         page_icon="assets/favicon.ico",
         layout="wide",
-        initial_sidebar_state="expanded",
+        initial_sidebar_state="auto",
     )
-
+    # main title
     main_title("mgfhub")
+    double_space()
 
-    st.markdown("")
-    st.markdown("")
+    col1, col2, col3 = st.columns([1,10,1])
+    with col1: ""
+    with col2:
 
-    st.markdown(
-        "##### O mgfhub é uma plataforma de acesso aberto que disponibiliza informação sobre os indicadores de monitorização e avaliação dos Cuidados de Saúde Primários Portugueses."
-    )
+         # introduction
+        intro(
+            "O mgfhub é uma plataforma de acesso aberto que disponibiliza informação sobre os indicadores de monitorização e avaliação dos Cuidados de Saúde Primários Portugueses."
+        )
+        double_space()
+            
+        card_container(
+            title="Indicadores",
+            text="Ferramenta de pesquisa de indicadores, com possibilidade de filtrar por com impacto no IDE ou IDG.",
+            image=None,
+            link="Indicadores",
+        )
+        double_space()
 
-    st.markdown("")
-    st.markdown("")
+        card_container(
+            title="Sunburst",
+            text="Visualização da distribuição dos indicadores pelo seu impacto no IDE e IDG. permite compreeender a distribuição dos indicadores pelas diferentes àreas e dimensões.",
+            image=None,
+            link="Sunburst",
+        )
+        double_space()
 
-    col_1, col_2 = st.columns(2)
-    with col_1:
-        with st.container():
-            st.header("Indicadores")
-            st.write("Aqui vai o texto de apresentação dos indicadores")
-            # st.image("assets/indicadores.png")
-            button_link("Indicadores")
+        card_container(
+            title="Relatórios",
+            text="Ferramenta de analise automatica da performance dos indicadores de uma unidade ou de um profissional, com base no upload de uma tabela proveniente do BI-CSP.",
+            image=None,
+            link="Relatórios",
+        )
 
-    with col_2:
-        with st.container():
-            st.header("Sunburst")
-            st.write("Aqui vai o texto de apresentação do sunburst")
-            button_link("Sunburst")
+        double_space()
 
-    st.markdown("")
-    st.markdown("")
-
-    col_3, col_4 = st.columns(2)
-
-    with col_3:
-        with st.container():
-            st.header("Relatórios")
-            st.write("Aqui vai o texto de apresentação do relatório")
-            button_link("Relatórios")
-
-    with col_4:
-        with st.container():
-            st.header("FAQs")
-            st.write("Aqui vai o texto de apresentação do FAQs")
-            button_link("FAQs")
+        card_container(
+            title="FAQs",
+            text="Perguntas frequentes sobre o mgfhub, funcionamento dos indicadores e sua interpretação.",
+            image=None,
+            link="FAQs",
+        )
+    with col3: ""  
 
 
 if __name__ == "__main__":

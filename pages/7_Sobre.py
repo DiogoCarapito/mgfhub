@@ -1,7 +1,8 @@
 import streamlit as st
 from utils.style import web_link
+from utils.style import main_title
 
-st.title("Sobre")
+main_title("Sobre")
 
 
 # link to gihub, personal website, twitter and linkedin

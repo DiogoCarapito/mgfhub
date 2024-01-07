@@ -1,3 +1,4 @@
 import streamlit as st
+from utils.style import main_title
 
-st.title("Perguntas Frequentes")
+main_title("Perguntas Frequentes")

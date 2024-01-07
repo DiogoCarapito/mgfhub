@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 from utils.utils import data_source
 from utils.utils import filter_df
+from utils.style import main_title
 
-st.title("Indicadores")
+main_title("Indicadores")
 
 # user interface
 col1, col2 = st.columns([3, 1])
@@ -27,7 +28,7 @@ with col2:
     )
 
 
-df = data_source("indicadores_sdm.csv")
+df = data_source("indicadores_sdm_complete.csv")
 
 
 filtered_df = filter_df(df, pesquisa, filtros)
