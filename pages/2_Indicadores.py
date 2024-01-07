@@ -6,7 +6,7 @@ from utils.utils import filter_df
 st.title("Indicadores")
 
 # user interface
-col1, col2 = st.columns([3, 2])
+col1, col2 = st.columns([3, 1])
 
 with col1:
     # campo de pesquisa

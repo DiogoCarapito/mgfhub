@@ -22,11 +22,7 @@ def data_source(source):
         return pd.read_csv(url, index_col=0)
 
 
-def upsave_data_source(source):
-    url = "https://github.com/DiogoCarapito/datasets_indicadores/raw/main/datasets/indicadores_sdm.csv"
-    df = pd.read_csv(url, index_col=0)
-    df.to_csv("./data/" + source)
-    print(f"{source} saved successfully!")
+
 
 
 def filter_df(df, pesquisa, filtros):
