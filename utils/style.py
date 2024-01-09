@@ -82,3 +82,14 @@ def web_link(label, link, icon):
         "</a>",
         unsafe_allow_html=True,
     )
+
+def cartao_indicador(id, row):
+    st.markdown(f'<h3>{id}</h3>', unsafe_allow_html=True)
+    st.markdown(row["Designação"])
+    #st.markdown(
+    #    f'<div style="text-align: center;">'
+    #    f'<h1>{id}</h1>'
+    #    f'<p style="font-size: 19px;">{kwargs["Designação"]}</p>'
+    #    "</div>",
+    #    unsafe_allow_html=True,
+    #)

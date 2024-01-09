@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
-from utils.utils import data_source
-from utils.utils import filter_df
-from utils.style import main_title
+from utils.utils import data_source, filter_df
+from utils.style import main_title, cartao_indicador
 
 main_title("Indicadores")
 
@@ -39,13 +38,19 @@ num_indicatores = len(filtered_df)
 st.metric("Número de Indicadores", num_indicatores)
 
 # data display
+#cards, table = st.tabs(["Cartões", "Tabela"])
 table, cards = st.tabs(["Tabela", "Cartões"])
 
 with table:
     # dataframe
     st.dataframe(filtered_df)
-
+    
 with cards:
     # loop over all rows in df
-    for index, row in df.iterrows():
-        st.write(row.iloc[0])
+    for index, row in filtered_df.iterrows():
+        #cartao_indicador(index, row.to_dict())
+        cartao_indicador(index, row.to_dict())
+
+
+
+
