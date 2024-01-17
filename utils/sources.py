@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from utils.utils import download_update_data
+from utils.load_data import download_update_data
 
 
 def data_source(source):

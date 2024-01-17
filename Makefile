@@ -9,7 +9,7 @@ format:
 	black . *.py
 
 lint:
-	pylint --disable=R,C *.py utils/*.py
+	pylint --disable=R,C,W0622 *.py utils/*.py
 
 run:
 	streamlit run mgfhub.py

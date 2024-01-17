@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.style import main_title
+from utils.style import main_title, em_desenvolvimento
 
 main_title("Relatório")
 
@@ -15,3 +15,5 @@ with st.sidebar:
 
     with st.expander("Ajuda", expanded=False):
         st.write("Aqui vai o texto de ajuda do upload")
+
+em_desenvolvimento()

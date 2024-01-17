@@ -1,12 +1,19 @@
 import streamlit as st
 import re
+from utils.utils import num_denom_paragraph
+
 
 def mgfhub_style(text):
     # if "mgfhub" apperars in the text, then the text will be styled
     # if "mgfhub" appears in the text, then the text will be styled
     if "mgfhub" in text.lower():
         # replace all occurrences of "mgfhub" with the styled version
-        text = re.sub(r"(mgfhub)", r'<span style="background: linear-gradient(to right, #588EF9, #BE1CF3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">\1</span>', text, flags=re.I)
+        text = re.sub(
+            r"(mgfhub)",
+            r'<span style="background: linear-gradient(to right, #588EF9, #BE1CF3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">\1</span>',
+            text,
+            flags=re.I,
+        )
         return text
     else:
         return text
@@ -71,7 +78,7 @@ def card_container(title, text, image, link):
         )
         if image:
             st.image(image, use_column_width=True)
-        button_link(link)
+        st.switch_page(link)
 
 
 def web_link(label, link, icon):
@@ -83,13 +90,52 @@ def web_link(label, link, icon):
         unsafe_allow_html=True,
     )
 
+
 def cartao_indicador(id, row):
-    st.markdown(f'<h3>{id}</h3>', unsafe_allow_html=True)
-    st.markdown(row["Designação"])
-    #st.markdown(
+    #descricao = num_denom_paragraph(row["Descrição do Indicador"])
+
+    # print(len(descricao))
+
+    st.markdown(
+        f'<table style="width:100%; border:0; border-collapse: collapse;">'
+        f"<tr>"
+        f'<td style="width:10%; border:0; vertical-align: top;"><a href="https://sdm.min-saude.pt/BI.aspx?id={id}" style="color: #6B8BF5; font-size: 24px; font-family: \'IBM Plex Sans\', sans-serif; text-decoration: none;">{id}</a></td>'
+        f'<td style="width:90%; border:0;">'
+        f'<div style="display: flex; align-items: center; height: 100%;">'
+        f'<div style="font-size: 22px; font-weight: 600; margin: 0 0 4px 0;">{row["Designação"]}</div>'
+        f"</div>"
+        f'<div style="display: flex; align-items: center; height: 100%;">'
+        f'<div style="font-size: 16px; font-weight: 550; margin: 0 0 4px 0;">{row["Área clínica"]}</div>'
+        f"</div>"
+        # f'<div style="display: flex; align-items: center; height: 100%;">'
+        # f"<p{descricao[0]}</p>"
+        # f"</div>"
+        # f'<div style="display: flex; align-items: center; height: 100%;">'
+        # f"<p>NUMERADOR: {descricao[1]}</p>"
+        # f"</div>"
+        # f'<div style="display: flex; align-items: center; height: 100%;">'
+        # f"<p>DENOMINADOR: {descricao[2]}</p>"
+        # f"</div>"
+        f"</td>"
+        f"</tr>"
+        f"</table>",
+        unsafe_allow_html=True,
+    )
+
+    # st.markdown(
     #    f'<div style="text-align: center;">'
     #    f'<h1>{id}</h1>'
     #    f'<p style="font-size: 19px;">{kwargs["Designação"]}</p>'
     #    "</div>",
     #    unsafe_allow_html=True,
-    #)
+    # )
+
+
+def em_desenvolvimento():
+    st.markdown(
+        '<div style="text-align: center;">'
+        "<h1>Em Desenvolvimento</h1>"
+        '<p style="font-size: 19px;">Esta página está em desenvolvimento.</p>'
+        "</div>",
+        unsafe_allow_html=True,
+    )

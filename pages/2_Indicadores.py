@@ -1,12 +1,11 @@
 import streamlit as st
-import pandas as pd
 from utils.utils import data_source, filter_df
 from utils.style import main_title, cartao_indicador
 
 main_title("Indicadores")
 
 # user interface
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([5, 2])
 
 with col1:
     # campo de pesquisa
@@ -32,6 +31,10 @@ df = data_source("indicadores_sdm_complete.csv")
 
 filtered_df = filter_df(df, pesquisa, filtros)
 
+showable_df = filtered_df.drop(columns=["search_indexes", "ide", "idg", "Área | Subárea | Dimensão"])
+#showable_df = filtered_df.drop(columns=["ide", "idg", "Área | Subárea | Dimensão"])
+#showable_df.set_index("id", inplace=True)
+
 num_indicatores = len(filtered_df)
 
 # Numero de indicadores
@@ -43,14 +46,30 @@ table, cards = st.tabs(["Tabela", "Cartões"])
 
 with table:
     # dataframe
-    st.dataframe(filtered_df)
+    st.dataframe(
+        showable_df,
+        column_config={
+            "link_sdm":st.column_config.LinkColumn(
+                label="Link",
+                display_text="SDM",
+            )
+        },
+        use_container_width=False,
+        hide_index=True,
+        column_order=[
+            "id",
+            "link_sdm",
+            "Designação",
+            "Área clínica",
+            "Intervalo Aceitável",
+            "Intervalo Esperado",
+            ],
+        
+    )
     
+
 with cards:
     # loop over all rows in df
     for index, row in filtered_df.iterrows():
-        #cartao_indicador(index, row.to_dict())
+        # cartao_indicador(index, row.to_dict())
         cartao_indicador(index, row.to_dict())
-
-
-
-

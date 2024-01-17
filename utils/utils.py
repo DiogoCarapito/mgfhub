@@ -38,7 +38,7 @@ def filter_df(df, pesquisa, filtros):
         # fuzzy search com score cutoff de 59, comparando com indexing
         search_list = process.extract(
             pesquisa,
-            df["Designação"],
+            df["search_indexes"],
             scorer=fuzz.WRatio,
             score_cutoff=59,
             limit=50,
@@ -46,3 +46,13 @@ def filter_df(df, pesquisa, filtros):
         df = df.filter([id[2] for id in search_list], axis=0)
 
         return df
+
+
+def num_denom_paragraph(text):
+    try:
+        text_after_split = text.split("Numerador: ")
+        text_after_split_2 = text_after_split[1].split("Denominador: ")
+        text = [text_after_split[0], text_after_split_2[0], text_after_split_2[1]]
+        return text
+    except IndexError:
+        return [text, "", ""]
