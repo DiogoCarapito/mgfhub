@@ -1,6 +1,7 @@
 import streamlit as st
 import re
-from utils.utils import num_denom_paragraph
+
+# from utils.utils import num_denom_paragraph
 
 
 def mgfhub_style(text):
@@ -92,7 +93,7 @@ def web_link(label, link, icon):
 
 
 def cartao_indicador(id, row):
-    #descricao = num_denom_paragraph(row["Descrição do Indicador"])
+    # descricao = num_denom_paragraph(row["Descrição do Indicador"])
 
     # print(len(descricao))
 
@@ -116,9 +117,7 @@ def cartao_indicador(id, row):
         # f'<div style="display: flex; align-items: center; height: 100%;">'
         # f"<p>DENOMINADOR: {descricao[2]}</p>"
         # f"</div>"
-        f"</td>"
-        f"</tr>"
-        f"</table>",
+        f"</td>" f"</tr>" f"</table>",
         unsafe_allow_html=True,
     )
 

@@ -31,9 +31,11 @@ df = data_source("indicadores_sdm_complete.csv")
 
 filtered_df = filter_df(df, pesquisa, filtros)
 
-showable_df = filtered_df.drop(columns=["search_indexes", "ide", "idg", "Área | Subárea | Dimensão"])
-#showable_df = filtered_df.drop(columns=["ide", "idg", "Área | Subárea | Dimensão"])
-#showable_df.set_index("id", inplace=True)
+showable_df = filtered_df.drop(
+    columns=["search_indexes", "ide", "idg", "Área | Subárea | Dimensão"]
+)
+# showable_df = filtered_df.drop(columns=["ide", "idg", "Área | Subárea | Dimensão"])
+# showable_df.set_index("id", inplace=True)
 
 num_indicatores = len(filtered_df)
 
@@ -41,7 +43,7 @@ num_indicatores = len(filtered_df)
 st.metric("Número de Indicadores", num_indicatores)
 
 # data display
-#cards, table = st.tabs(["Cartões", "Tabela"])
+# cards, table = st.tabs(["Cartões", "Tabela"])
 table, cards = st.tabs(["Tabela", "Cartões"])
 
 with table:
@@ -49,7 +51,7 @@ with table:
     st.dataframe(
         showable_df,
         column_config={
-            "link_sdm":st.column_config.LinkColumn(
+            "link_sdm": st.column_config.LinkColumn(
                 label="Link",
                 display_text="SDM",
             )
@@ -63,10 +65,9 @@ with table:
             "Área clínica",
             "Intervalo Aceitável",
             "Intervalo Esperado",
-            ],
-        
+        ],
     )
-    
+
 
 with cards:
     # loop over all rows in df

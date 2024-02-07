@@ -1,22 +1,35 @@
 import pandas as pd
 
+
 def pre_process(source):
     # read csv
     df = pd.read_csv("./data/" + source)
-    
-    #make id the index
-    #df.set_index("id", inplace=True)
-   
+
+    # make id the index
+    # df.set_index("id", inplace=True)
+
     # save  original to ./data folder
     df.to_csv("./data/original_" + source)
-    
-    #search_indexes
-    df["search_indexes"] = df["id"].astype(str) + " " + df["Nome abreviado"] + " " + df["Designação"] + " " + df["Descrição do Indicador"] + " " + df["Área clínica"] + " " + df["Área | Subárea | Dimensão"]
+
+    # search_indexes
+    df["search_indexes"] = (
+        df["id"].astype(str)
+        + " "
+        + df["Nome abreviado"]
+        + " "
+        + df["Designação"]
+        + " "
+        + df["Descrição do Indicador"]
+        + " "
+        + df["Área clínica"]
+        + " "
+        + df["Área | Subárea | Dimensão"]
+    )
     # df["id"].astype(str) + " " +
-    
+
     df["link_sdm"] = "https://sdm.min-saude.pt/BI.aspx?id=" + df["id"].astype(str)
-    #+ df["id"].astype(str)
-    
+    # + df["id"].astype(str)
+
     # drop columns
     df.drop(
         columns=[
@@ -34,13 +47,14 @@ def pre_process(source):
             "Estado do indicador",
             "Tipo de Indicador",
             "Inclusão de utentes no indicador",
-            "Prazo para Registos"
-        ], inplace=True,
+            "Prazo para Registos",
+        ],
+        inplace=True,
     )
 
     # save to ./data folder
     return df.to_csv("./data/" + source)
-    
+
 
 def download_update_data(source):
     # url from github's datasets_indicadores repo
