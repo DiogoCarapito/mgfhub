@@ -6,10 +6,10 @@ test:
 	pytest -vv --cov=mgfhub --cov=utils --cov=pages tests/test_*.py
 
 format:
-	black . *.py
+	black . *.py utils/*.py pages/*.py tests/*.py
 
 lint:
-	pylint --disable=R,C,W0622 *.py utils/*.py
+	pylint --disable=R,C,W0622 *.py utils/*.py pages/*.py tests/*.py
 
 run:
 	streamlit run mgfhub.py

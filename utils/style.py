@@ -68,7 +68,7 @@ def intro(text):
     )
 
 
-def card_container(title, text, image, link):
+def card_container(title, text, image, link, icon):
     with st.container():
         st.markdown(
             f'<div style="text-align: center;">'
@@ -77,9 +77,11 @@ def card_container(title, text, image, link):
             "</div>",
             unsafe_allow_html=True,
         )
+
         if image:
             st.image(image, use_column_width=True)
-        st.switch_page(link)
+
+        st.page_link(link, label=f"Ir para {icon} {title}")
 
 
 def web_link(label, link, icon):

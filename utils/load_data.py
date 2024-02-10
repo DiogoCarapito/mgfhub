@@ -34,7 +34,7 @@ def pre_process(source):
     df.drop(
         columns=[
             "Código SIARS",
-            "Nome abreviado",
+            # "Nome abreviado",
             "Objetivo",
             "Descrição do Indicador",
             "Regras de cálculo",

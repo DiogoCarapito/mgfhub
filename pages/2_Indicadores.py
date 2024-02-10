@@ -5,25 +5,28 @@ from utils.style import main_title, cartao_indicador
 main_title("Indicadores")
 
 # user interface
-col1, col2 = st.columns([5, 2])
+col_pesquisa_1, col_pesquisa_2 = st.columns([5, 1])
 
-with col1:
+with col_pesquisa_1:
     # campo de pesquisa
     pesquisa = st.text_input(
-        "Pesquisa",
-        "",
-        # help="Pesquisa por nome, código ou conjunto de palavras"
+        label="Pesquisa",
+        value="",
+        label_visibility="collapsed",
+        help="Pesquisa por nome, código ou conjunto de palavras",
     )
 
-with col2:
-    # radio de filtros
-    filtros = st.radio(
-        "Filtros",
-        ["IDE", "IDG", "Todos"],
-        index=0,
-        horizontal=True,
-        # help="Filtrar por tipo de indicadores"
-    )
+with col_pesquisa_2:
+    st.button("Pesquisar", disabled=True)
+
+# radio de filtros
+filtros = st.radio(
+    "Filtros",
+    ["IDE", "IDG", "Todos"],
+    index=0,
+    horizontal=True,
+    # help="Filtrar por tipo de indicadores",
+)
 
 
 df = data_source("indicadores_sdm_complete.csv")

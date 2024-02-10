@@ -1,7 +1,9 @@
 import streamlit as st
 from utils.style import main_title  # , em_desenvolvimento
-from utils.etl import etl_bicsp
-from utils.calc import calcular_idg, calcular_idg_maximo
+
+# imports that came from mgfhub2 project
+# from utils.etl import etl_bicsp
+# from utils.calc import calcular_idg, calcular_idg_maximo
 
 main_title("Relatório")
 
@@ -49,37 +51,37 @@ if st.session_state["uploaded_file_bicsp"] is None:
             st.write(
                 "#### 2. Ir ao separador dos **Indicadores | IDG** e selecionar o **IDG das Unidades Funcioinais**"
             )
-            st.image("tutorial/tutorial_bicsp_1.png", use_column_width=True)
+            st.image("assets/tutorial/tutorial_bicsp_1.png", use_column_width=True)
             st.divider()
 
             st.write("#### 3. Selecionar o separador **UF - IDG - Indicadores**")
-            st.image("tutorial/tutorial_bicsp_2.png", use_column_width=True)
+            st.image("assets/tutorial/tutorial_bicsp_2.png", use_column_width=True)
             st.divider()
 
             st.write("#### 4. Selecionar o **Mês** e a **Nome Unidade**")
-            st.image("tutorial/tutorial_bicsp_3.png", use_column_width=True)
+            st.image("assets/tutorial/tutorial_bicsp_3.png", use_column_width=True)
             st.divider()
 
             st.write(
                 "#### 5. Selecionar o botão **More Options** no canto superior direito da tabela pirncipal"
             )
-            st.image("tutorial/tutorial_bicsp_4.png", use_column_width=True)
+            st.image("assets/tutorial/tutorial_bicsp_4.png", use_column_width=True)
             st.divider()
 
             st.write("#### 6. Selecionar primeira opção **Export data**")
-            st.image("tutorial/tutorial_bicsp_5.png", use_column_width=True)
+            st.image("assets/tutorial/tutorial_bicsp_5.png", use_column_width=True)
             st.divider()
 
             st.write(
                 "#### 7. Selecionar a 3ª opção **Underlying data** e selecionar o botão **Export**"
             )
-            st.image("tutorial/tutorial_bicsp_6.png", use_column_width=True)
+            st.image("assets/tutorial/tutorial_bicsp_6.png", use_column_width=True)
             st.divider()
 
             st.write(
                 "#### 8. Fazert o uload do ficheiro excel gerado (pasta de transferencias) neste site no local destinado a upload"
             )
-            st.image("tutorial/tutorial_bicsp_7.png", use_column_width=True)
+            st.image("assets/tutorial/tutorial_bicsp_7.png", use_column_width=True)
         with col3:
             pass
 else:
