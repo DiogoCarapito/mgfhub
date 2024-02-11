@@ -12,6 +12,7 @@ Um projeto em desenvolvimento
 
 Disponível em [mgfhub.com](mgfhub.com)
 
+Nova versão em desenvolvimento
 
 ## cheat sheet
 
