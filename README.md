@@ -16,8 +16,6 @@ Disponível em [mgfhub.com](mgfhub.com)
 Nova versão em desenvolvimento em [https://mfghub-streamlit.onrender.com](https://mfghub-streamlit.onrender.com)
 
 
-
-
 ## cheat sheet
 
 ### venv
