@@ -4,6 +4,16 @@ import re
 # from utils.utils import num_denom_paragraph
 
 
+def sidebar_about():
+    # st.sidebar.image("assets/logo.png", use_column_width=True)
+    st.sidebar.page_link("https://diogocarapito.com/", label="diogocarapito.com")
+    st.sidebar.page_link("https://github.com/DiogoCarapito,", label="Github")
+    st.sidebar.page_link("https://twitter.com/DiogoCarapito", label="Twitter")
+    st.sidebar.page_link(
+        "https://www.linkedin.com/in/diogo-carapito-564a51262/", label="LinkedIn"
+    )
+
+
 def mgfhub_style(text):
     # if "mgfhub" apperars in the text, then the text will be styled
     # if "mgfhub" appears in the text, then the text will be styled

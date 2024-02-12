@@ -1,6 +1,6 @@
 import streamlit as st
 
-from utils.style import main_title, intro, card_container, double_space
+from utils.style import main_title, intro, card_container, double_space, sidebar_about
 
 
 def main():
@@ -10,6 +10,8 @@ def main():
         layout="wide",
         initial_sidebar_state="auto",
     )
+
+    sidebar_about()
 
     # main title
     main_title("mgfhub")
@@ -26,6 +28,7 @@ def main():
         )
         double_space()
 
+        # cards with links to the different pages
         card_container(
             title="Indicadores",
             text="Ferramenta de pesquisa de indicadores, com possibilidade de filtrar por com impacto no IDE ou IDG.",

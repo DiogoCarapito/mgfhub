@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.style import main_title  # , em_desenvolvimento
+from utils.style import main_title, sidebar_about, em_desenvolvimento
 
 # imports that came from mgfhub2 project
 # from utils.etl import etl_bicsp
@@ -31,6 +31,9 @@ with st.sidebar:
     with st.expander("Ajuda", expanded=False):
         st.write("Aqui vai o texto de ajuda do upload")
 
+    st.divider()
+
+sidebar_about()
 
 # em_desenvolvimento()
 
@@ -86,3 +89,6 @@ if st.session_state["uploaded_file_bicsp"] is None:
             pass
 else:
     st.write(st.session_state["uploaded_file_bicsp"])
+
+
+em_desenvolvimento()

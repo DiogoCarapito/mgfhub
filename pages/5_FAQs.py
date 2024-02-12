@@ -1,7 +1,9 @@
 import streamlit as st
-from utils.style import main_title, em_desenvolvimento
+from utils.style import main_title, em_desenvolvimento, sidebar_about
 
 main_title("Perguntas Frequentes")
+
+sidebar_about()
 
 st.subheader("1. qual a diferença entre IDE e IDG?")
 st.write("Explicação...")
