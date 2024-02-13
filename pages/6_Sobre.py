@@ -17,7 +17,7 @@ main_title("Sobre")
 st.write("")
 
 # open content/socials.csv and read the content with pandas
-socials = pd.read_csv("content/socials.csv")
+socials = pd.read_csv("content/socials_diogo.csv")
 
 # open content/sobre_o_projeto.txt
 sobre_o_projeto = open("content/sobre_o_projeto.md", "r", encoding="utf-8").read()
@@ -36,6 +36,7 @@ centered_text(sobre_o_projeto)
 st.divider()
 
 centered_title("Sociais")
+st.write("")
 
 col_socials_1, col_socials_2 = st.columns([1, 1])
 with col_socials_1:
@@ -49,6 +50,7 @@ with col_socials_2:
 st.divider()
 
 centered_title("Outros Projetos")
+st.write("")
 
 for each in outros_projetos.values:
     outros_projetos_card(each[0], each[1], each[2])
@@ -57,7 +59,6 @@ for each in outros_projetos.values:
 st.divider()
 
 centered_title("Changelog")
-st.write("")
 st.write("")
 
 for each in changelog.values:
