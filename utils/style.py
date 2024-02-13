@@ -125,12 +125,11 @@ def card_container(title, text, image, link, em_construcao):
 
     with st.container():
         st.markdown(
-            f'<div style="text-align: center; border: 1px solid #ddd; border-radius: 10px; padding: 10px 20px 10px 20px;">'
+            f'<div style="text-align: center; border: 0px solid #ddd; border-radius: 10px; padding: 10px 20px 10px 20px; background: linear-gradient(45deg, rgba(88, 142, 249, 0.1), rgba(190, 28, 243, 0.1));">'
             f'<a href="{link}" target="_self" style="text-decoration: none; color: inherit;">'
             f"<h2>{title}</h2>"
             f'<p style="font-size: 19px;">{msg_construcao}</p>'
             f'<p style="font-size: 19px;">{text}</p>'
-            "</a>"
             "</a>"
             "</div>",
             unsafe_allow_html=True,
