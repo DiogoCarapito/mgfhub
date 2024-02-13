@@ -7,7 +7,7 @@ from utils.style import page_config, main_title, em_desenvolvimento
 
 page_config()
 
-main_title("Relatório")
+main_title("Relatórios")
 
 em_desenvolvimento()
 
@@ -29,7 +29,7 @@ with st.sidebar:
     st.subheader("Upload excel proveniente do MIMUF")
 
     st.session_state["uploaded_file_mimuf"] = st.file_uploader(
-        "Upload excel proveniente do MIMUF",
+        "Upload excel proveniente do MIM@UF",
         type=["xlsx"],
         accept_multiple_files=False,
         # help="Ajuda MIMUF",
@@ -41,7 +41,7 @@ with st.sidebar:
     st.title("ℹ️ Ajuda")
 
     with st.expander(
-        "Como estrair o fichero excel necessário do BI-CSP?", expanded=False
+        "Como extrair o ficheiro excel necessário do BI-CSP?", expanded=False
     ):
         # col1, col2, col3 = st.columns([1, 3, 1])
         # with col1:

@@ -117,6 +117,7 @@ def on_click():
     # log the search to supabase
     supabase_insert(st.session_state["pesquisa"], st.session_state["filtros"])
 
+
 # user interface
 col_pesquisa_1, col_pesquisa_2 = st.columns([5, 1])
 

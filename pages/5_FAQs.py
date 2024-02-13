@@ -12,7 +12,7 @@ em_desenvolvimento()
 st.subheader("1. Qual a diferença entre IDE e IDG?")
 st.write("Explicação...")
 
-st.subheader("2. Qual a difernça entre indicador Fixo e Flutuante?")
+st.subheader("2. Qual a diferença entre indicador Fixo e Flutuante?")
 st.write("Explicação...")
 
 st.subheader("3. Como é que se calcula o IDE?")

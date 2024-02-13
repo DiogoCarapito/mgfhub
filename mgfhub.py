@@ -34,7 +34,7 @@ def main():
         bem_vindos_2("Bem vind@ à nova versão 2.0 🎉")
 
         intro(
-            "O mgfhub é uma ferramenta que disponibiliza informação e relatórios automáticos sobre os indicadores dos Cuidados de Saúde Primários Portugueses."
+            "O mgfhub é uma ferramenta que disponibiliza informação e relatórios automáticos sobre os indicadores dos Cuidados de Saúde Primários portugueses"
         )
 
         double_space()

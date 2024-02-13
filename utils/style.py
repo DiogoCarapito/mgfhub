@@ -119,7 +119,7 @@ def intro(text):
 
 def card_container(title, text, image, link, em_construcao):
     if em_construcao:
-        msg_construcao = "🏗️ Em Desenvolvimento 🏗️"
+        msg_construcao = "🏗️ Em Construção 🏗️"
     else:
         msg_construcao = ""
 
@@ -207,7 +207,7 @@ def em_desenvolvimento():
     with st.container(border=True):
         st.markdown(
             '<div style="text-align: center;">'
-            "<h1>🏗️ Em Desenvolvimento 🏗️</h1>"
+            "<h1>🏗️ Em construção 🏗️</h1>"
             '<p style="font-size: 19px;">Esta página está em desenvolvimento.</p>'
             "</div>",
             unsafe_allow_html=True,
