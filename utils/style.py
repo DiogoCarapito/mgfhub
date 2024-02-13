@@ -144,7 +144,7 @@ def cartao_indicador(id, row):
     st.markdown(
         f'<table style="width:100%; border:0; border-collapse: collapse;">'
         f"<tr>"
-        f'<td style="width:10%; border:0; vertical-align: top;"><a href="https://sdm.min-saude.pt/BI.aspx?id={id}" style="color: #6B8BF5; font-size: 24px; font-family: \'IBM Plex Sans\', sans-serif; text-decoration: underline;">{id}</a></td>'
+        f'<td style="width:10%; border:0; vertical-align: top;"><a href="https://sdm.min-saude.pt/BI.aspx?id={id}" style="color: #758AF1; font-size: 24px; font-family: \'IBM Plex Sans\', sans-serif; text-decoration: underline;">{id}</a></td>'
         f'<td style="width:90%; border:0;">'
         f'<div style="display: flex; align-items: center; height: 100%;">'
         f'<div style="font-size: 22px; font-weight: 600; margin: 0 0 4px 0;">{row["Designação"]}</div>'

@@ -30,10 +30,14 @@ st.session_state["filtros"] = radio_optioins[radio_starting_index]
 # (mesmo quando o Enter é clicado no st.text_input)
 def on_click():
     # função para filtrar o dataframe com base na pesquisa e nos filtros
-    st.session_state["filtered_df"] = filter_df(
-        st.session_state["df"],
-        st.session_state["pesquisa"],
-        st.session_state["filtros"],
+    st.session_state["filtered_df"] = (
+        filter_df(
+            st.session_state["df"],
+            st.session_state["pesquisa"],
+            st.session_state["filtros"],
+        )
+        .set_index("id")
+        .sort_index()
     )
 
     # dataframe com os indicadores para visualização, filtrando as colunas que não são necessárias
@@ -65,7 +69,7 @@ def on_click():
                 },
                 use_container_width=False,
                 # esconder o index
-                hide_index=True,
+                hide_index=False,
                 # ordem das colunas
                 column_order=[
                     "id",
