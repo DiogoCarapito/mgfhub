@@ -8,6 +8,9 @@ test:
 format:
 	black . *.py utils/*.py pages/*.py tests/*.py
 
+run:
+	python main.py
+
 lint:
 	pylint --disable=R,C,W0622 *.py utils/*.py pages/*.py tests/*.py
 

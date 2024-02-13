@@ -15,6 +15,7 @@ Disponível 1.0 em [mgfhub.com](mgfhub.com)
 
 Nova versão 2.0 em desenvolvimento em [https://mfghub-streamlit.onrender.com](https://mfghub-streamlit.onrender.com)
 
+Nova versão em desenvolvimento
 
 ## cheat sheet
 
