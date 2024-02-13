@@ -75,16 +75,15 @@ def on_click():
     # tab com 2 opções de visualização dos indicadores encontrados: tabela e cartões
     table, cards = st.tabs(["Tabela", "Cartões"])
 
+    # log the search to supabase
+    supabase_insert(st.session_state["pesquisa"], st.session_state["filtros"])
+
     # se não houver indicadores encontrados, mensagem de aviso
     if len(st.session_state["filtered_df"]) == 0:
         # mensagem de aviso
         st.warning("Nenhum indicador encontrado")
 
     else:
-        # log the search to supabase
-        if st.session_state["pesquisa"] != "":
-            supabase_insert(st.session_state["pesquisa"], st.session_state["filtros"])
-
         with table:
             # dataframe com os indicadores para visualização
             st.dataframe(
