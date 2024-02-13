@@ -4,6 +4,13 @@ import re
 # from utils.utils import num_denom_paragraph
 
 
+def gradient_text(text):
+    st.markdown(
+        f'<span style="background: linear-gradient(to right, #588EF9, #BE1CF3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; font-size: 22px;">{text}</span>',
+        unsafe_allow_html=True,
+    )
+
+
 def page_config():
     st.set_page_config(
         page_title="mgfhub",
@@ -110,28 +117,40 @@ def intro(text):
     )
 
 
-def card_container(title, text, image, link, icon):
+def card_container(title, text, image, link, em_construcao):
+    if em_construcao:
+        msg_construcao = "🏗️ Em Desenvolvimento 🏗️"
+    else:
+        msg_construcao = ""
+
     with st.container():
         st.markdown(
-            f'<div style="text-align: center;">'
+            f'<div style="text-align: center; border: 1px solid #ddd; border-radius: 10px; padding: 10px 20px 10px 20px;">'
+            f'<a href="{link}" target="_self" style="text-decoration: none; color: inherit;">'
             f"<h2>{title}</h2>"
+            f'<p style="font-size: 19px;">{msg_construcao}</p>'
             f'<p style="font-size: 19px;">{text}</p>'
+            "</a>"
+            "</a>"
             "</div>",
             unsafe_allow_html=True,
         )
 
         if image:
-            st.image(image, use_column_width=True)
-
-        st.page_link(link, label=f"Ir para {icon} {title}")
+            st.markdown(
+                f'<a href="{link}">' f'<img src="{image}" style="width: 100%;">' "</a>",
+                unsafe_allow_html=True,
+            )
 
 
 def web_link(label, link, icon):
     st.markdown(
-        f'<a href="{link}" target="_self" style="text-decoration: none; color: #7568F3; font-size: 16px;">'
-        f'<img src="{icon}" alt="icon" width="16" height="16" style="vertical-align: middle; margin-right: 5px;">'
+        f"<div>"
+        f'<a href="{link}" target="_self" style="text-decoration: underline; font-size: 18px;">'
+        f'<img src="{icon}" alt="icon" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">'
         f"{label}"
-        "</a>",
+        "</a>"
+        "</div>",
         unsafe_allow_html=True,
     )
 

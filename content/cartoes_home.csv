@@ -1,0 +1,6 @@
+title,text,image,link,icon,em_construcao
+Indicadores,"Ferramenta de pesquisa de indicadores, com possibilidade de filtrar por com impacto no IDE ou IDG.",None,"Indicadores",🔎,False
+Relatórios,"Ferramenta de análise automatica da performance dos indicadores de uma unidade ou de um profissional, com base no upload de uma tabela proveniente do BI-CSP e do MIM@UF.",None,"Relatorios",📊,True
+Sunburst,"Visualização da distribuição dos indicadores pelo seu impacto no IDE e IDG. permite compreeender a distribuição dos indicadores pelas diferentes àreas e dimensões.",None,"Sunburst",🌞,True
+FAQs,"Perguntas frequentes sobre o mgfhub, funcionamento dos indicadores e sua interpretação.",None,"FAQs",❓,True
+Sobre,"Informações sobre o mgfhub, sua equipa e o seu desenvolvimento.",None,"Sobre",ℹ️,False

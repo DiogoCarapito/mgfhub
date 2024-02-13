@@ -7,11 +7,13 @@ from utils.style import (
     changelog_card,
     centered_title,
     centered_text,
+    gradient_text,
 )
 
 page_config()
 
 main_title("Sobre")
+st.write("")
 
 # open content/socials.csv and read the content with pandas
 socials = pd.read_csv("content/socials.csv")
@@ -25,15 +27,20 @@ changelog = pd.read_csv("content/changelog.csv")
 # order changelog by date, from the most recent to the oldest
 changelog = changelog.sort_values(by="date", ascending=False)
 
-
-for each in socials.values:
-    web_link(each[0], each[1], each[2])
-
-centered_title("Sobre o projeto")
-
-st.write("")
-st.write("")
 centered_text(sobre_o_projeto)
+
+st.divider()
+
+centered_title("Sociais")
+
+col_socials_1, col_socials_2 = st.columns([1, 1])
+with col_socials_1:
+    gradient_text("Diogo Carapito")
+    for each in socials.values:
+        web_link(each[0], each[1], each[2])
+
+with col_socials_2:
+    st.empty()
 
 st.divider()
 
