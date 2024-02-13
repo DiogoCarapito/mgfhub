@@ -3,14 +3,18 @@ install:
 		pip install -r requirements.txt
 
 test:
-	pytest -vv --cov=main --cov=utils --cov=scripts --cov=pages tests/test_*.py
+	pytest -vv --cov=mgfhub --cov=utils --cov=pages tests/test_*.py
 
 format:
-	black . *.py
+	black . *.py utils/*.py pages/*.py tests/*.py
 
 run:
 	python main.py
 
 lint:
-	pylint --disable=R,C *.py utils/*.py tests/*.py pages/*.py
-all: install lint test format 
+	pylint --disable=R,C,W0622 *.py utils/*.py pages/*.py tests/*.py
+
+run:
+	streamlit run mgfhub.py
+
+all: install lint test format

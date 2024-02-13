@@ -1,16 +1,19 @@
+[![Github Actions Workflow](https://github.com/DiogoCarapito/mgfhub/actions/workflows/main.yaml/badge.svg)](https://github.com/DiogoCarapito/mgfhub/actions/workflows/main.yaml)
+
 # mgfhub
 Ferramenta de pesquisa de indicadores de cuidados de saúde primarios 
 
 Inclui:
 
-- pesquisa por palavras chave da descricao do indicador ou código do indic
-- filtrar por com impacto no IDG, sem impacto no IDG ou todos
+- pesquisa por palavras chave da descricao do indicador ou código do indicador
+- filtrar por com impacto no IDE, IDG ou todos
 - visualização em tabela ou cartões 
-- visualização de indicadores com impacto do IDG em sunburst
+- visualização de indicadores com impacto do IDE ou IDG
+- Relatórios de analise
 
-Um projeto em desenvolvimento
+Disponível 1.0 em [mgfhub.com](mgfhub.com)
 
-Disponível em [mgfhub.com](mgfhub.com)
+Nova versão 2.0 em desenvolvimento em [https://mfghub-streamlit.onrender.com](https://mfghub-streamlit.onrender.com)
 
 Nova versão em desenvolvimento
 
@@ -22,13 +25,24 @@ create venv
 python3 -m venv .venv
 ```
 
-activate venv
+### activate venv
 ```bash
 source .venv/bin/activate
 ```
 
-### Docker
-build docker image
+### Dockerfile
+
+#### build
 ```bash
-docker build -t main:latest .
-```
+docker build -t Home:latest .
+````
+
+#### check image id
+```bash
+docker images
+````
+
+#### run with image id
+```bash
+docker run -p 8501:8501 Home:latest
+````
