@@ -1,8 +1,6 @@
 import streamlit as st
 import re
 
-# from utils.utils import num_denom_paragraph
-
 
 def gradient_text(text):
     st.markdown(
@@ -154,10 +152,6 @@ def web_link(label, link, icon):
 
 
 def cartao_indicador(id, row):
-    # descricao = num_denom_paragraph(row["Descrição do Indicador"])
-
-    # print(len(descricao))
-
     st.markdown(
         f'<table style="width:100%; border:0; border-collapse: collapse;">'
         f"<tr>"
@@ -182,26 +176,11 @@ def cartao_indicador(id, row):
         f'<div style="display: flex; align-items: center; height: 100%;">'
         f'<div style="font-size: 14px; font-weight: 450; margin: 0 0 4px 0;"> {row["Intervalo Esperado"]}</div>'
         f"</div>"
-        # f'<div style="display: flex; align-items: center; height: 100%;">'
-        # f"<p{descricao[0]}</p>"
-        # f"</div>"
-        # f'<div style="display: flex; align-items: center; height: 100%;">'
-        # f"<p>NUMERADOR: {descricao[1]}</p>"
-        # f"</div>"
-        # f'<div style="display: flex; align-items: center; height: 100%;">'
-        # f"<p>DENOMINADOR: {descricao[2]}</p>"
-        # f"</div>"
-        f"</td>" f"</tr>" f"</table>",
+        f"</td>"
+        f"</tr>"
+        f"</table>",
         unsafe_allow_html=True,
     )
-
-    # st.markdown(
-    #    f'<div style="text-align: center;">'
-    #    f'<h1>{id}</h1>'
-    #    f'<p style="font-size: 19px;">{kwargs["Designação"]}</p>'
-    #    "</div>",
-    #    unsafe_allow_html=True,
-    # )
 
 
 def em_desenvolvimento():
