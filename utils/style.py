@@ -141,7 +141,7 @@ def card_container(title, text, image, link, em_construcao):
 
 def web_link(label, link, icon):
     st.markdown(
-        f"<div>"
+        f'<div style="margin: 5px 0;">'
         f'<a href="{link}" target="_self" style="text-decoration: underline; font-size: 18px;">'
         f'<img src="{icon}" alt="icon" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">'
         f"{label}"
