@@ -1,17 +1,19 @@
 import streamlit as st
 
-from utils.style import main_title, intro, card_container, double_space, sidebar_about
+from utils.style import (
+    main_title,
+    intro,
+    card_container,
+    double_space,
+    # sidebar_about,
+    page_config,
+)
 
 
 def main():
-    st.set_page_config(
-        page_title="mgfhub",
-        page_icon="assets/favicon.ico",
-        layout="wide",
-        initial_sidebar_state="auto",
-    )
+    page_config()
 
-    sidebar_about()
+    # sidebar_about()
 
     # main title
     main_title("mgfhub")
@@ -36,6 +38,15 @@ def main():
             link="pages/2_Indicadores.py",
             icon="🔎",
         )
+        double_space()
+
+        card_container(
+            title="Relatórios",
+            text="Ferramenta de analise automatica da performance dos indicadores de uma unidade ou de um profissional, com base no upload de uma tabela proveniente do BI-CSP.",
+            image=None,
+            link="pages/3_Relatorios.py",
+            icon="📊",
+        )
 
         double_space()
 
@@ -43,17 +54,8 @@ def main():
             title="Sunburst",
             text="Visualização da distribuição dos indicadores pelo seu impacto no IDE e IDG. permite compreeender a distribuição dos indicadores pelas diferentes àreas e dimensões.",
             image=None,
-            link="pages/3_Sunburst.py",
+            link="pages/4_Sunburst.py",
             icon="🌞",
-        )
-        double_space()
-
-        card_container(
-            title="Relatórios",
-            text="Ferramenta de analise automatica da performance dos indicadores de uma unidade ou de um profissional, com base no upload de uma tabela proveniente do BI-CSP.",
-            image=None,
-            link="pages/4_Relatorios.py",
-            icon="📊",
         )
 
         double_space()

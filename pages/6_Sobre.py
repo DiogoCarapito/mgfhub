@@ -1,32 +1,45 @@
-# import streamlit as st
-from utils.style import web_link, main_title, sidebar_about
+import streamlit as st
+import pandas as pd
+from utils.style import (
+    page_config,
+    web_link,
+    main_title,
+    changelog_card,
+    centered_title,
+    centered_text,
+)
+
+page_config()
 
 main_title("Sobre")
 
-sidebar_about()
+# open content/socials.csv and read the content with pandas
+socials = pd.read_csv("content/socials.csv")
+
+# open content/sobre_o_projeto.txt
+sobre_o_projeto = open("content/sobre_o_projeto.md", "r", encoding="utf-8").read()
+
+# open content/changelog.csv and read the content with pandas
+changelog = pd.read_csv("content/changelog.csv")
+
+# order changelog by date, from the most recent to the oldest
+changelog = changelog.sort_values(by="date", ascending=False)
 
 
-# link to gihub, personal website, twitter and linkedin
-web_link(
-    "diogocarapito.com",
-    "https://diogocarapito.com/",
-    "https://raw.githubusercontent.com/DiogoCarapito/blog/main/static/favicon.ico",
-)
+for each in socials.values:
+    web_link(each[0], each[1], each[2])
 
-web_link(
-    "Github",
-    "https://github.com/DiogoCarapito",
-    "https://icons.getbootstrap.com/assets/icons/github.svg",
-)
+centered_title("Sobre o projeto")
 
-web_link(
-    "Twitter",
-    "https://twitter.com/DiogoCarapito",
-    "https://icons.getbootstrap.com/assets/icons/twitter-x.svg",
-)
+st.write("")
+st.write("")
+centered_text(sobre_o_projeto)
 
-web_link(
-    "LinkedIn",
-    "https://www.linkedin.com/in/diogo-carapito-564a51262/",
-    "https://icons.getbootstrap.com/assets/icons/linkedin.svg",
-)
+st.divider()
+
+centered_title("Changelog")
+st.write("")
+st.write("")
+
+for each in changelog.values:
+    changelog_card(each[0], each[1], each[2])

@@ -1,6 +1,14 @@
 import streamlit as st
 from utils.utils import data_source, filter_df
-from utils.style import main_title, cartao_indicador, sidebar_about
+from utils.style import page_config, main_title, cartao_indicador
+
+page_config()
+
+# titulo principal estilizado com a função main_title
+main_title("Indicadores")
+
+# sidebar com os links sociais predefinido
+# sidebar_about()
 
 # carregar o dataframe com os indicadores
 st.session_state["df"] = data_source("indicadores_sdm_complete.csv")
@@ -30,7 +38,8 @@ def on_click():
 
     # dataframe com os indicadores para visualização, filtrando as colunas que não são necessárias
     st.session_state["showable_df"] = st.session_state["filtered_df"].drop(
-        columns=["search_indexes", "ide", "idg", "Área | Subárea | Dimensão"]
+        # columns=["search_indexes", "ide", "idg", "Área | Subárea | Dimensão"]
+        columns=["ide", "idg", "Área | Subárea | Dimensão"]
     )
 
     # tab com 2 opções de visualização dos indicadores encontrados: tabela e cartões
@@ -76,12 +85,6 @@ def on_click():
                 cartao_indicador(index, row.to_dict())
 
 
-# titulo principal estilizado com a função main_title
-main_title("Indicadores")
-
-# sidebar com os links sociais predefinido
-sidebar_about()
-
 # user interface
 col_pesquisa_1, col_pesquisa_2 = st.columns([5, 1])
 
@@ -108,6 +111,7 @@ with col_filtros_1:
     # radio de filtros para afunilar a pesquisa
     st.session_state["filtros"] = st.radio(
         "Filtros",
+        options=radio_optioins,
         index=radio_starting_index,
         horizontal=True,
         # help="Filtrar por tipo de indicadores",
@@ -123,3 +127,5 @@ num_indicatores = len(st.session_state["filtered_df"])
 with col_filtros_2:
     # Numero de indicadores
     st.metric("Número de Indicadores", num_indicatores)
+
+# st.dataframe(st.session_state["filtered_df"]["search_indexes"])

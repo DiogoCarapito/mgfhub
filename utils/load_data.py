@@ -19,13 +19,23 @@ def pre_process(source):
         + " "
         + df["Designação"]
         + " "
-        + df["Descrição do Indicador"]
-        + " "
+        # + df["Descrição do Indicador"]
+        # + " "
         + df["Área clínica"]
         + " "
         + df["Área | Subárea | Dimensão"]
     )
     # df["id"].astype(str) + " " +
+
+    df["search_indexes"] = df["search_indexes"].str.lower()
+
+    # remove accents
+    df["search_indexes"] = (
+        df["search_indexes"]
+        .str.normalize("NFKD")
+        .str.encode("ascii", errors="ignore")
+        .str.decode("utf-8")
+    )
 
     df["link_sdm"] = "https://sdm.min-saude.pt/BI.aspx?id=" + df["id"].astype(str)
     # + df["id"].astype(str)
@@ -36,7 +46,7 @@ def pre_process(source):
             "Código SIARS",
             # "Nome abreviado",
             "Objetivo",
-            "Descrição do Indicador",
+            # "Descrição do Indicador",
             "Regras de cálculo",
             "Observações Gerais",
             "Observações Sobre Software",
@@ -53,7 +63,9 @@ def pre_process(source):
     )
 
     # save to ./data folder
-    return df.to_csv("./data/" + source)
+    df.to_csv("./data/" + source)
+
+    print(f"{source} pre-processed successfully!")
 
 
 def download_update_data(source):
