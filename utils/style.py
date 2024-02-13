@@ -271,3 +271,26 @@ def bem_vindos_2(text):
         f'<p style="text-align: center; font-size: 22px; font-weight: bold;">{text}</p>',
         unsafe_allow_html=True,
     )
+
+
+def outros_projetos_card(name, link, description):
+    with st.container():
+        col1, col2 = st.columns([1, 3])
+
+        with col1:
+            st.markdown(
+                f'<div style="text-align: left;">'
+                f'<a href="{link}"><p style="font-size: 20px;">{name}</p></a>'
+                "</div>",
+                unsafe_allow_html=True,
+            )
+
+        with col2:
+            st.markdown(
+                mgfhub_style(description),
+                # f'<div style="text-align: left;">'
+                # f'<p style="font-size: 16px;">{description}</p>'
+                # "</div>",
+                unsafe_allow_html=True,
+            )
+        st.write("")

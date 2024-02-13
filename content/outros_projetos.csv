@@ -1,0 +1,3 @@
+titulo,link,descricao
+datasets_indicadores,"https://github.com/DiogoCarapito/datasets_indicadores","Scripts de download e processamento automático de indicadores a partir do site do SDM e documentos de contratualização para utilização em outros projetos ou disponiveis para download"
+mimufs,"https://github.com/DiogoCarapito/mimufs","Biblioteca de Python com ferramentas de data science para ETL (extract, transform, load) de dados do MIM@UF e BI-CSP"
