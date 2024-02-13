@@ -20,15 +20,16 @@ url: str = os.environ.get("SUPABASE_URL")
 key: str = os.environ.get("SUPABASE_KEY")
 supabase: Client = create_client(url, key)
 
+
 # Function to insert data into Supabase
-def supabase_insert(input_text,filtro):
+def supabase_insert(input_text, filtro):
     # Get current datetime
     date_time = datetime.now().isoformat()
-    
+
     # Create the data in a format to be inserted into Supabase
     sb_insert = {"created_at": date_time, "query": input_text, "filter": filtro}
-    
-    # Insert data into Supabase    
+
+    # Insert data into Supabase
     supabase.table("mgfhub_queries").insert(sb_insert).execute()
 
 
@@ -80,11 +81,10 @@ def on_click():
         st.warning("Nenhum indicador encontrado")
 
     else:
-        
-        #log the search to supabase
+        # log the search to supabase
         if st.session_state["pesquisa"] != "":
-            supabase_insert(st.session_state["pesquisa"],st.session_state["filtros"])
-        
+            supabase_insert(st.session_state["pesquisa"], st.session_state["filtros"])
+
         with table:
             # dataframe com os indicadores para visualização
             st.dataframe(
