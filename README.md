@@ -1,7 +1,7 @@
 [![Github Actions Workflow](https://github.com/DiogoCarapito/mgfhub/actions/workflows/main.yaml/badge.svg)](https://github.com/DiogoCarapito/mgfhub/actions/workflows/main.yaml)
 
 # mgfhub
-Ferramenta de pesquisa de indicadores de cuidados de saúde primarios 
+Ferramenta de pesquisa e análise de indicadores de cuidados de saúde primarios 
 
 Inclui:
 
@@ -11,11 +11,7 @@ Inclui:
 - visualização de indicadores com impacto do IDE ou IDG
 - Relatórios de analise
 
-Disponível 1.0 em [mgfhub.com](mgfhub.com)
-
-Nova versão 2.0 em desenvolvimento em [https://mfghub-streamlit.onrender.com](https://mfghub-streamlit.onrender.com)
-
-Nova versão em desenvolvimento
+Nova versão 2.0 disponível em [mgfhub.com](mgfhub.com)
 
 ## cheat sheet
 
