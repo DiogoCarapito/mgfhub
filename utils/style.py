@@ -264,3 +264,9 @@ def centered_text(text):
         # "</div>",
         unsafe_allow_html=True,
     )
+
+def bem_vindos_2(text):
+    st.markdown(
+        f'<p style="text-align: center; font-size: 22px; font-weight: bold;">{text}</p>',
+        unsafe_allow_html=True,
+    )

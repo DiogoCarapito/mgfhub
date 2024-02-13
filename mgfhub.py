@@ -8,6 +8,7 @@ from utils.style import (
     double_space,
     # sidebar_about,
     page_config,
+    bem_vindos_2,
 )
 
 
@@ -30,10 +31,10 @@ def main():
 
     with col2:
         # introduction
-        intro("Bem vind@ à nova versão 2.0 🎉")
+        bem_vindos_2("Bem vind@ à nova versão 2.0 🎉")
 
         intro(
-            "O mgfhub é uma plataforma de acesso aberto que disponibiliza informação e relatórios automáticos sobre os indicadores de monitorização dos Cuidados de Saúde Primários Portugueses."
+            "O mgfhub é uma ferramenta que disponibiliza informação e relatórios automáticos sobre os indicadores dos Cuidados de Saúde Primários Portugueses."
         )
 
         double_space()
