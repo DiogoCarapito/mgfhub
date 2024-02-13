@@ -75,9 +75,6 @@ def on_click():
     # tab com 2 opções de visualização dos indicadores encontrados: tabela e cartões
     table, cards = st.tabs(["Tabela", "Cartões"])
 
-    # log the search to supabase
-    supabase_insert(st.session_state["pesquisa"], st.session_state["filtros"])
-
     # se não houver indicadores encontrados, mensagem de aviso
     if len(st.session_state["filtered_df"]) == 0:
         # mensagem de aviso
@@ -117,6 +114,8 @@ def on_click():
                 # função para criar os cartões predifinida
                 cartao_indicador(index, row.to_dict())
 
+    # log the search to supabase
+    supabase_insert(st.session_state["pesquisa"], st.session_state["filtros"])
 
 # user interface
 col_pesquisa_1, col_pesquisa_2 = st.columns([5, 1])
