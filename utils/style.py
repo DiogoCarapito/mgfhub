@@ -125,16 +125,18 @@ def card_container(title, text, image, link, em_construcao):
 
     with st.container():
         st.markdown(
+            f'<a href="{link}" style="text-decoration: none; color: inherit;">'
             f'<div style="text-align: center; border: 0px solid #ddd; border-radius: 10px; padding: 10px 20px 10px 20px; background: linear-gradient(135deg, rgba(88, 142, 249, 0.07), rgba(190, 28, 243, 0.07));">'
             f"<h2>{title}</h2>"
             f'<p style="font-size: 19px;">{msg_construcao}</p>'
             f'<p style="font-size: 19px;">{mgfhub_style(text)}</p>'
-            "</div>",
+            "</div>"
+            "</a>",
             unsafe_allow_html=True,
         )
         if image:
             st.markdown(
-                f'<a href="{link}">' f'<img src="{image}" style="width: 100%;">' "</a>",
+                f'<img src="{image}" style="width: 100%;">',
                 unsafe_allow_html=True,
             )
 
