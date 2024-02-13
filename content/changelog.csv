@@ -1,5 +1,5 @@
 version,date,text
-0.0.1,2022-11-01,"Criação do projeto no [bi-indicadores](https://github.com/DiogoCarapito/bi_indicadores), com base em Dash, percursor do mgfhub"
+0.0.1,2022-11-01,"Criação do projeto no [bi-indicadores](https://github.com/DiogoCarapito/bi_indicadores), utilizando o framework Dash em python. Percursor do mgfhub"
 0.1.0,2022-12-16,"Piloto completo, pronto a apresentar, implementando no [pythonanywhere.com](pythonanywhere.com)"
 0.2.0,2023-02-24,"Mudança de nome do projeto para mgfhub"
 1.0.0,2023-04-28,"Deploy na plataforma [render](render.com) da primeira versão de produção do [mgfhub.com](mgfhub.com)"
