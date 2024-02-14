@@ -48,10 +48,6 @@ def mgfhub_style(text):
         return text
 
 
-def double_space():
-    return None
-
-
 def button_link(label):
     st.markdown(
         f'<div style="text-align: center;">'

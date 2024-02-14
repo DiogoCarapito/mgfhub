@@ -5,8 +5,6 @@ from utils.style import (
     main_title,
     intro,
     card_container,
-    double_space,
-    # sidebar_about,
     page_config,
     bem_vindos_2,
 )
@@ -22,7 +20,6 @@ def main():
 
     # main title
     main_title("mgfhub")
-    double_space()
 
     # style columns
     col1, col2, col3 = st.columns([1, 6, 1])
@@ -37,8 +34,6 @@ def main():
             "O mgfhub é uma ferramenta que disponibiliza informação e relatórios automáticos sobre os indicadores dos Cuidados de Saúde Primários portugueses"
         )
 
-        double_space()
-
         for each in cartoes_home.values:
             card_container(
                 title=each[0],
@@ -48,7 +43,6 @@ def main():
                 # icon=each[4],
                 em_construcao=each[5],
             )
-            double_space()
 
     with col3:
         st.empty()
