@@ -1,5 +1,6 @@
 import streamlit as st
 from utils.style import page_config, main_title, em_desenvolvimento
+import pandas as pd
 
 # imports that came from mgfhub2 project
 # from utils.etl import etl_bicsp
@@ -16,6 +17,8 @@ with st.sidebar:
 
     # upload de xlsx de bicsp
     st.subheader("Upload excel proveniente do BI-CSP")
+
+    # Upload de ficheiro excel do BI-CSP
     st.session_state["uploaded_file_bicsp"] = st.file_uploader(
         "Upload excel proveniente do BI-CSP",
         type=["xlsx"],
@@ -24,10 +27,9 @@ with st.sidebar:
         label_visibility="collapsed",
     )
 
-    # upload de xlsx de mimuf
-
     st.subheader("Upload excel proveniente do MIMUF")
 
+    # Upload de ficheiro excel do MIMUF
     st.session_state["uploaded_file_mimuf"] = st.file_uploader(
         "Upload excel proveniente do MIM@UF",
         type=["xlsx"],
@@ -89,12 +91,16 @@ with st.sidebar:
     # with col3:
     #    pass
 
-
-# sidebar_about()
-
-
+# BICSP file
 if st.session_state["uploaded_file_bicsp"] is None:
-    st.warning("Nenhum ficheiro carregado")
+    st.warning("Ficheiro BI-CSP não carregado")
 
 else:
-    st.write(st.session_state["uploaded_file_bicsp"])
+    st.write(pd.read_excel(st.session_state["uploaded_file_bicsp"], engine="openpyxl"))
+
+# MIMUF file
+if st.session_state["uploaded_file_mimuf"] is None:
+    st.warning("Ficheiro MIM@UF não carregado")
+
+else:
+    st.write(pd.read_excel(st.session_state["uploaded_file_mimuf"], engine="openpyxl"))

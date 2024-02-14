@@ -239,7 +239,7 @@ def centered_text(text):
 
 def bem_vindos_2(text):
     st.markdown(
-        f'<p style="text-align: center; font-size: 22px; font-weight: bold;">{text}</p>',
+        f'<p style="text-align: center; font-size: 22px;">{text}</p>',
         unsafe_allow_html=True,
     )
 
