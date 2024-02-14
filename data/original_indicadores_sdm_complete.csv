@@ -37989,7 +37989,272 @@ O SClínico permite o agendamento e efetivação de consulta.","INDICADOR CALCUL
 - Denominador (variável ""inscrição ativa""): Coincidente com a data de referência do indicador;
 - Denominador (variável ""registo de [primeira consulta]""): Duração de 12 meses, terminando na data de referência do indicador;
 - Denominador (variável "" Realizada por profissionais técnicos superiores de saúde (ou equivalentes) da área de ""nutrição”): Duração de 12 meses, terminando na data de referência do indicador.",AA / BB x 100,%,Proporção de consultas,Com dados desde Janeiro de 2023,---,---,---,Processo,Transversal,Utentes inscritos à data de referência do indicador,5 dias,,
-406,49,2013.049.01,"Proporção utentes c/ DPOC, c/ FeV1 em 3 anos","Proporção de utentes com DPOC, com pelo menos um registo de avaliação de FeV1 nos últimos 3 anos","Monitorizar o programa de acompanhamento de doenças respiratórias. Parâmetro ""FeV1 nos doentes cm DPOC"".","Indicador que exprime a proporção de doentes com DPOC, com pelo menos um registo de FeV1 nos últimos 3 anos.
+406,482,2024.482.01,Avaliação da Satisfação dos Utentes,Monitorização da Satisfação dos Utentes dos Cuidados de Saúde Primários.,Monitorizar a implementação de questionários de satisfação de utentes e avaliar o grau de satisfação dos utentes dos cuidados de saúde primários.,"Este score avalia, para cada ano de contratualização, em que medida a unidade funcional divulga e/ou promove a auscultação dos utentes sobre a sua satisfação com os serviços prestados, o nível de satisfação obtido e a discussão dos resultados obtidos.","A avaliação da satisfação dos utentes é uma ferramenta importante de gestão quer das UF, quer da ULS. A implementação de questionários de satisfação é da responsabilidade da ULS, no entanto, a UF
+é responsável pela sua divulgação, pela análise e discussão de resultados, implementação de medidas de melhoria e pela divulgação dos resultados.
+FÓRMULA:
+A fórmula de cálculo deste score é baseada numa
+checklist
+de autopreenchimento pela UF, entrando em linha de conta com 
+    os seguintes aspetos:
+1. A existência de evidências de monitorização da satisfação de utentes e respectiva divulgação;
+2. A existência de evidências de discussão dos resultados na UF e implementação de mudanças decorrentes dessa 
+    monitorização;
+3. A existência de uma ponderação para cada área de avaliação.
+A fórmula de cálculo é a seguinte:
+Resultado (em percentagem) = 100 x (A01 + A02 + A03 + A04 + A05) / 100
+Score (numa escala contínua de 0 a 2) = 2 x (A01 + A02 + A03 + A04 + A05) / 100
+CHECKLIST
+DE AUTOPREENCHIMENTO PARA AS UNIDADES FUNCIONAIS
+Para cada item da
+checklist
+a unidade deve ter a possibilidade de submeter evidências que permitam ao conselho de administração da respetiva ULS proceder à respetiva validação.
+COD
+Área de Avaliação
+Critérios de Cumprimento
+Observações
+Valorização (%)
+Validade
+A01
+A unidade funcional divulga junto dos seus utentes a existência e a política de avaliação da satisfação dos utentes e da sua importância para a melhoria contínua da UF
+Valoriza-se 10% caso existam evidências de que a unidade funcional divulga junto dos seus utentes a existência e a política de avaliação da satisfação dos utentes e da sua importância para a melhoria contínua da UF.
+É cada vez mais importante que a prestação de cuidados satisfaça as necessidades subjetivas dos doentes utilizadores. A avaliação da satisfação dos utilizadores, apara além do reconhecido valor a adicionar a outras medidas de resultado como o estado de saúde ou a qualidade de vida, é também hoje considerada uma componente indispensável para a avaliação da qualidade dos cuidados. Existe mesmo evidência da sua correlação com os próprios resultados clínicos. Uma avaliação da satisfação dos utilizadores permite identificar o que pode ser melhorado nos serviços de cuidados de saúde, tendo em vista as necessidades ou expetativas não atendidas dos utilizadores, ou quais são as medidas ou estratégias adequadas para melhorar a qualidade dos serviços e cuidados de saúde.
+Esta perceção de valor da avaliação da satisfação dos utentes por parte de cada UF, deve passar para os utentes e promover a participação continua dos mesmos na avaliação.
+Desta forma, as UF, devem divulgar em local próprio a existência e a própria política de avaliação da satisfação dos utentes implementada na UF.
+Critério aplicável a todos os tipos de unidades funcionais do ACES com contratualização.
+10
+Inicio: 01-01-2024;
+Fim: --
+A02
+A entidade competente implementou a recolha e avaliação da satisfação dos utentes
+Valoriza-se 10% caso existam evidências de que a unidade funcional divulga junto dos seus utentes a existência e a política de avaliação da satisfação dos utentes e da sua importância para a melhoria contínua da UF.
+No caso da ULS não implementar em tempo útil o questionário de satisfação dos utentes, a UF fica responsável pela sua implementação.
+Nas USF e UCSP, para que este critério seja considerado cumprido é necessário ter recolhido, nos últimos 12 meses, pelo menos 150 questionários realizados a utentes, distribuídos igualmente pelas listas de cada profissional (medido em equivalentes em tempo completo) que integre a equipa (não necessariamente no mesmo dia).
+No caso das UCC, para que este critério seja considerado cumprido é necessário ter recolhido, ao longo do ano de contratualização, pelo menos 150 questionários realizados a utentes, envolvendo equitativamente utentes nas principais atividades realizadas na UCC.
+Nas USP, para que este critério seja considerado cumprido é necessário ter recolhido, ao longo do ano de contratualização, pelo menos 100 questionários realizados a utentes, distribuídos por cada profissional (medido em equivalentes em tempo completo) que integre a equipa (não necessariamente no mesmo dia).
+Os questionários para serem considerados válidos, deverão ser aplicados pelas ULS ou entidade nacional (por exemplo ACSS, DE-SNS ou SPMS). A aplicação pode ser feita de forma presencial, ou não presencial, por exemplo através do envio de SMS ou email aos utentes após a utilização.
+
+O questionário de satisfação deverá ter no mínimo um total de 5 questões, escolhidas do banco de questões disponíveis neste BI. A especificação do número mínimo de questões por dimensão está especificada junto do banco de questões. 
+O questionário final a aplicar deve estar aprovado pelo respetivo conselho de administração.
+No caso da ULS não implementar em tempo útil o questionário de satisfação dos utentes, a UF fica responsável pela sua implementação.
+Critério aplicável a todos os tipos de unidades funcionais do ACES com contratualização.
+10
+Inicio: 01-01-2024;
+Fim: --
+A03
+Satisfação dos utentes
+O resultado é média aritmética do resultado dos inquéritos de satisfação respondidos, calculado tendo por base a ponderação simples das questões.
+A valorização é a seguinte, dependente da média apurada:
+Média de Satisfação %
+Valorização
+< 50 %
+0
+>= 50% e < 75%
+Direta proporção do resultado médio da satisfação apurado na totalidade dos questionários, até ao máximo de 30
+>= 50% e < 75%
+60
+Critério aplicável a todos os tipos de unidades funcionais do ACES com contratualização.
+Máximo 60
+Inicio: 01-01-2024;
+Fim: --
+A04
+A unidade funcional analisou as sugestões
+Para que este critério seja considerado cumprido é necessário ter discutido o relatório com análise descritiva das sugestões entregueses (realizado pela ULS) em Conselho Geral.
+Critério aplicável a todos os tipos de unidades funcionais do ACES com contratualização.
+10
+Inicio: 01-01-2024;
+Fim: --
+A05
+Divulgação dos resultados do questionário de satisfação
+Para que este critério seja considerado cumprido é necessário existir evidência da divulgação dos resultados da avaliação da satisfação dos utentes em local acessível aos utentes.
+Critério aplicável a todos os tipos de unidades funcionais dos CSP.
+10
+Inicio: 01-01-2024;
+Fim: --","Construção do Questionário de Satisfação dos utentes dos CSP.
+Cada unidade funcional seleciona no
+mínimo 5 questões
+, não contabilizando com o perfil dos utentes nem com a pergunta de resposta aberta.
+1-	Incluir do COD S01
+2-	Pelo menos 1 questão do COD S02
+3-	Pelo menos 2 questões do COD S03
+4-	Pelo menos 1 questão do COD S04
+5-	Pelo menos 1 questão do COD S05
+6-	Incluir 1 questão de resposta aberta (COD S06)
+7-	Podem ser incluídas outras questões no banco de questões.
+COD
+Área da Questão
+Questões
+Número de Questões a selecionar
+S01
+Perfil do Utente
+Caso entenda, poderá preencher os dados seguintes que servem para nos ajudar a perceber um pouco melhor as características dos utentes que usaram os serviços.
+Ano de nascimento: ______
+Sexo:
+1 - Fem.
+2 - Masc.
+Escolaridade (anos): _____
+Profissão: _____________
+1
+S02
+Questões de Caracter Geral
+Questão 1
+Como avalia a sua satisfação global em relação à [NOME ABREVIADO DA UNIDADE DE SAÚDE]?
+(Utilizando uma escala de 1 a 10, em que 1 corresponde a ""muito insatisfeito"" e 10 a ""muito satisfeito"")
+1 - Muito insatisfeito
+2 -
+3 -
+4 -
+5 -
+6 -
+7 -
+8 -
+9 -
+10 - Muito satisfeito
+Questão 2
+Como avalia sua satisfação com a [NOME ABREVIADO DA UNIDADE DE SAÚDE], relativamente há 1 ano atrás.
+1 - Muito insatisfeito
+2 -
+3 -
+4 -
+5 -
+6 -
+7 -
+8 -
+9 -
+10 - Muito satisfeito
+Questão 3
+Recomendaria a [NOME ABREVIADO DA UNIDADE DE SAÚDE] aos seus familiares e amigos?
+1 - Sim, com toda a certeza
+2 - Provavelmente sim
+3 - Provavelmente não
+4 - Não
+5 - Não sei / Não respondo
+1
+S03
+Questões de Avaliação da Satisfação na área do acesso
+Questão 4
+Como avalia a facilidade em contactar telefonicamente com a [NOME ABREVIADO DA UNIDADE DE SAÚDE]?
+1 - Muito fácil
+2 - Fácil
+3 - Difícil
+4 - Muito difícil
+5 - Não sei / Não respondo
+Questão 5
+Como avalia a sua satisfação com o horário proposto pela [NOME ABREVIADO DA UNIDADE DE SAÚDE] para os serviços que lhe são prestados?
+1 - Muito satisfeito
+2 - Satisfeito
+3 - Pouco satisfeito
+4 - Nada satisfeito
+5 - Não sei / Não respondo
+Questão 6
+Como avalia a resposta da [NOME ABREVIADO DA UNIDADE DE SAÚDE] aos utilizadores com necessidades especiais (por exemplo, de crianças, grávidas, idosos e portadores de deficiência)?
+1 - Muito boa
+2 - Boa
+3 - Razoável
+4 - Inexistente
+5 - Não sei / Não respondo
+Questão 7
+Como classifica a forma como a [NOME ABREVIADO DA UNIDADE DE SAÚDE] divulga os tipos de cuidados que oferece (por exemplo vacinação, consultas médicas, consultas de enfermagem, rastreio de certos tipos de cancro, cuidados a grávidas, cuidados a crianças e domicílios)?
+1 - Muito clara
+2 - Clara
+3 - Pouco clara
+4 - Confusa
+5 - Não sei / Não respondo
+Questão 8
+Como avalia a sua satisfação em relação ao tempo que decorre até ao agendamento e realização das consultas por si solicitadas?
+1 - Muito satisfeito
+2 - Satisfeito
+3 - Pouco satisfeito
+4 - Nada satisfeito
+5 - Não sei / Não respondo
+Questão 9
+Como avalia a sua satisfação em relação à pontualidade com que foi atendido pelos serviços clínicos?
+1 - Muito satisfeito
+2 - Satisfeito
+3 - Pouco satisfeito
+4 - Nada satisfeito
+5 - Não sei / Não respondo
+2
+S04
+Avaliação da Satisfação em Relação ao Atendimento do Secretariado Clínico
+Questão 10
+Como avalia sua satisfação com a [NOME ABREVIADO DA UNIDADE DE SAÚDE], o atendimento no secretariado clínico.
+1 - Muito insatisfeito
+2 -
+3 -
+4 -
+5 -
+6 -
+7 -
+8 -
+9 -
+10 - Muito satisfeito
+Questão 11
+Como classifica a informação fornecida pelo secretariado clínico da [NOME ABREVIADO DA UNIDADE DE SAÚDE]?
+1 - Muito clara
+2 - Clara
+3 - Pouco clara
+4 - Confusa
+5 - Não sei / Não respondo
+1
+S05
+Avaliação da Satisfação em Relação ao Atendimento do Profissional de Saúde
+Questão 12
+Como avalia a sua satisfação relativamente ao tempo e atenção que o profissional de saúde (médico, enfermeiro ou outro) dedicou ao seu atendimento?
+1 - Muito satisfeito
+2 - Satisfeito
+3 - Pouco satisfeito
+4 - Nada satisfeito
+5 - Não sei / Não respondo
+Questão 13
+Como avalia a sua satisfação relativamente à qualidade dos cuidados clínicos recebidos (prestados por médico, enfermeiros ou outro)?
+1 - Muito satisfeito
+2 - Satisfeito
+3 - Pouco satisfeito
+4 - Nada satisfeito
+5 - Não sei / Não respondo
+Questão 14
+Como classifica a informação clínica que lhe foi fornecida sobre os cuidados a ter com a sua saúde?
+1 - Muito útil
+2 - Útil
+3 - Pouco útil
+4 - Inútil
+5 - Não sei / Não respondo
+Questão 15
+Como avalia a sua satisfação em relação à forma como foi envolvido(a) nas decisões sobre os cuidados a ter com a sua saúde?
+1 - Muito satisfeito
+2 - Satisfeito
+3 - Pouco satisfeito
+4 - Nada satisfeito
+5 - Não sei / Não respondo
+Questão 16
+Como avalia o modo como os profissionais de saúde zelam pela sua privacidade?
+1 - Muito bom
+2 - Bom
+3 - Razoável
+4 - Mau
+5 - Não sei / Não respondo
+Questão 17
+Se foi atendido por um interno de medicina geral e familiar, como avalia a sua satisfação com o atendimento?
+1 - Muito insatisfeito
+2 -
+3 -
+4 -
+5 -
+6 -
+7 -
+8 -
+9 -
+10 - Muito satisfeito
+1
+S05
+Questões abertas
+Questão 18
+Na sua opinião, como poderíamos melhorar os nossos serviços?
+1 - ______________________________________________________________
+2 - ______________________________________________________________
+3 - ______________________________________________________________
+1",,,2 x (A01 + A02 + A03 + A04 + A05) / 100,Score,Em desenvolvimento,,---,---,---,Resultado,Não aplicável,Não aplicável,90 dias,,
+407,49,2013.049.01,"Proporção utentes c/ DPOC, c/ FeV1 em 3 anos","Proporção de utentes com DPOC, com pelo menos um registo de avaliação de FeV1 nos últimos 3 anos","Monitorizar o programa de acompanhamento de doenças respiratórias. Parâmetro ""FeV1 nos doentes cm DPOC"".","Indicador que exprime a proporção de doentes com DPOC, com pelo menos um registo de FeV1 nos últimos 3 anos.
 Numerador: Contagem de doentes com DPOC e com pelo menos um registo de FeV1 nos últimos 3 anos.
 Denominador: Contagem de doentes com DPOC.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -38025,7 +38290,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador (variável ""DPOC na lista de problemas""): Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes com FeV1,Com dados desde Junho de 2014,Desempenho | Gestão da Doença | Doenças Aparelho Respiratório,"Ano de 2023: [60; 100]
 Ano de 2024: [60; 100]","Ano de 2023: [30; 100]
 Ano de 2024: [30; 100]",Processo,Respiratório,Utentes inscritos à data de referência do indicador,30 dias,1.0,1.0
-407,5,2013.005.01,Proporção de consultas realizadas pelo EF,Proporção de consultas realizadas pelo respetivo enfermeiro de família,Monitorizar o acesso dos utentes ao seu próprio enfermeiro de família e a capacidade de intersubstituição dos enfermeiros da unidade de saúde.,"Indicador que exprime a proporção de consultas que cada enfermeiro realiza aos utentes da respetiva lista.
+408,5,2013.005.01,Proporção de consultas realizadas pelo EF,Proporção de consultas realizadas pelo respetivo enfermeiro de família,Monitorizar o acesso dos utentes ao seu próprio enfermeiro de família e a capacidade de intersubstituição dos enfermeiros da unidade de saúde.,"Indicador que exprime a proporção de consultas que cada enfermeiro realiza aos utentes da respetiva lista.
 Numerador: Contagem de consultas presenciais realizadas pelo próprio enfermeiro de família.
 Denominador: Contagem de consultas presenciais realizadas por qualquer enfermeiro da unidade de saúde.","NUMERADOR (AA):
 Contagem de contactos em que a expressão [A e B] é verdadeira:
@@ -38063,7 +38328,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB x 100,%,Proporção de contactos,Com dados desde Dezembro de 2012,Desempenho | Acesso | Personalização,"Ano de 2023: [70; 88]
 Ano de 2024: [70; 88]","Ano de 2023: [65; 92]
 Ano de 2024: [60; 92]",Processo,Transversal,Utentes inscritos em pelo menos um dia do período em análise,5 dias,,1.0
-408,50,2013.050.01,Proporção grávidas c/ consulta RP efetuada,Proporção de grávidas com consulta de revisão de puerpério efetuada,"Monitorização do programa de vigilância em saúde materna. Parâmetro ""consulta médica de revisão do puerpério"".","Indicador que exprime a proporção de puérperas com pelo menos uma consulta médica de revisão do puerpério.
+409,50,2013.050.01,Proporção grávidas c/ consulta RP efetuada,Proporção de grávidas com consulta de revisão de puerpério efetuada,"Monitorização do programa de vigilância em saúde materna. Parâmetro ""consulta médica de revisão do puerpério"".","Indicador que exprime a proporção de puérperas com pelo menos uma consulta médica de revisão do puerpério.
 Numerador: Contagem de puérperas com pelo menos uma consulta médica de revisão do puerpério.
 Denominador: Contagem de puérperas.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -38110,7 +38375,7 @@ B. O [aborto] pode ser registado no módulo de saúde materna (por baixo da zona
 - O denominador tem um período em análise de 12 meses, terminando na data de referência do indicador. O indicador com data de referência a 31 de dezembro inicia o período em análise do denominador a 1 de janeiro do mesmo ano. O indicador com data de referência a 30 de novembro inicia o período em análise a 1 de dezembro do ano anterior.
 - A principal variável de ""ancoragem"" de cada grávida a este indicador é o facto de o 42º dia de puerpério pertencer ou não ao período em análise do denominador, anteriormente definido.
 - Para cada utente incluída no denominador, o período em análise inicia-se na [data de fim da gravidez] e termina no 42º dia do puerpério.",AA / BB x 100,%,Proporção de grávidas,Com dados desde Dezembro de 2012,---,---,---,Processo,Saúde Materna,Utentes inscritos durante pelo menos um dia do acontecimento monitorizado,5 dias,,
-409,51,2013.051.01,"Proporção de grávidas, com acompanhamento adequado","Proporção de grávidas, com acompanhamento adequado",Monitorizar o programa de saúde materna.,"Indicador que exprime a proporção de grávidas, com acompanhamento de acordo com as normas da DGS.
+410,51,2013.051.01,"Proporção de grávidas, com acompanhamento adequado","Proporção de grávidas, com acompanhamento adequado",Monitorizar o programa de saúde materna.,"Indicador que exprime a proporção de grávidas, com acompanhamento de acordo com as normas da DGS.
 Numerador: Contagem de grávidas com acompanhamento adequado.
 Denominador: Contagem de grávidas.","NUMERADOR (AA):
 Válido para indicadores com data de referência igual ou superior a janeiro de 2019.
@@ -38228,7 +38493,7 @@ E. A datação da gravidez no 1º trimestre não entra em linha de conta com a D
 - O denominador tem um período em análise de 12 meses, terminando na data de referência do indicador. O indicador com data de referência a 31 de dezembro inicia o período em análise do denominador a 1 de janeiro do mesmo ano. O indicador com data de referência a 30 de novembro inicia o período em análise a 1 de dezembro do ano anterior.
 - A principal variável de ""ancoragem"" de cada grávida a este indicador é o facto de o 42º dia de puerpério pertencer ou não ao período em análise do denominador, anteriormente definido.
 - Os períodos em análise das restantes variáveis do denominador e de cada variável do numerador dependem do período da gestação ou do puerpério em que devem ser realizados.",AA / BB x 100,%,Proporção de grávidas,Com dados desde Março de 2013,---,---,---,Processo,Saúde Materna,Utentes inscritos durante um mínimo de N meses do acontecimento monitorizado,30 dias,,
-410,52,2013.052.01,"Proporção MIF, com acompanhamento adequado em PF","Proporção de mulheres em idade fértil, com acompanhamento adequado na área do planeamento familiar",Monitorizar o programa de planeamento familiar.,"Indicador que exprime a proporção de MIF com idade no intervalo [15; 50[ anos, com acompanhamento de acordo com as normas da DGS.
+411,52,2013.052.01,"Proporção MIF, com acompanhamento adequado em PF","Proporção de mulheres em idade fértil, com acompanhamento adequado na área do planeamento familiar",Monitorizar o programa de planeamento familiar.,"Indicador que exprime a proporção de MIF com idade no intervalo [15; 50[ anos, com acompanhamento de acordo com as normas da DGS.
 Numerador: Contagem de MIF com acompanhamento adequado.
 Denominador: Contagem de MIF com idade no intervalo [15; 50[ anos.","NUMERADOR (AA):
 Válido para indicadores com data de referência igual ou superior a janeiro de 2019.
@@ -38342,7 +38607,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""colpocitologia em meio líquido""): Duração de 49 a 60 meses. Tem início a 1 de janeiro do ano N-4 e termina na data de referência do indicador.
 - Numerador (variável ""Pesquisa de DNA do HPV por PCR""): Duração de 49 a 60 meses. Tem início a 1 de janeiro do ano N-4 e termina na data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de MIFs,Com dados desde Março de 2013,---,---,---,Processo,Planeamento Familiar,Utentes inscritos à data de referência do indicador,30 dias,,
-411,53,2013.053.01,"Proporção utentes >=14A, c/ registo consumo álcool","Proporção de utentes com idade igual ou superior a 14 anos, com quantificação do consumo de álcool, registado nos últimos 3 anos","Monitorizar o programa de saúde juvenil e de adultos. Parâmetro ""registo do consumo de álcool"".","Indicador que exprime a proporção de utentes inscritos com idade igual ou superior a 14 anos, com pelo menos um registo dos ""consumos de álcool"", realizado nos últimos 3 anos.
+412,53,2013.053.01,"Proporção utentes >=14A, c/ registo consumo álcool","Proporção de utentes com idade igual ou superior a 14 anos, com quantificação do consumo de álcool, registado nos últimos 3 anos","Monitorizar o programa de saúde juvenil e de adultos. Parâmetro ""registo do consumo de álcool"".","Indicador que exprime a proporção de utentes inscritos com idade igual ou superior a 14 anos, com pelo menos um registo dos ""consumos de álcool"", realizado nos últimos 3 anos.
 Numerador: Contagem de utentes inscritos com pelo menos um registo dos ""consumos de álcool"", realizado nos últimos 3 anos.
 Denominador: Contagem de utentes inscritos com idade igual ou superior a 14 anos.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -38376,7 +38641,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Com dados desde Dezembro de 2012,Desempenho | Gestão da Saúde | Saúde do Adulto,"Ano de 2023: [70; 100]
 Ano de 2024: [70; 100]","Ano de 2023: [46; 100]
 Ano de 2024: [46; 100]",Processo,Saúde Mental,Utentes inscritos à data de referência do indicador,5 dias,,1.0
-412,54,2013.054.01,"Proporção utentes consum. álcool, c/ consulta 3A","Proporção de utentes com 14 ou mais anos e com o problema de ""consumo excessivo de álcool"", a quem foi realizada pelo menos uma consulta relacionada nos últimos 3 anos","Monitorizar o programa de saúde juvenil e de adultos. Parâmetro ""consulta relacionada com consumo excessivo de álcool"".","Indicador que exprime a proporção de utentes inscritos com idade igual ou superior a 14 anos e com o problema de ""consumo excessivo de álcool"", a quem foi realizada consulta relacionada com esse problema, nos últimos 3 anos.
+413,54,2013.054.01,"Proporção utentes consum. álcool, c/ consulta 3A","Proporção de utentes com 14 ou mais anos e com o problema de ""consumo excessivo de álcool"", a quem foi realizada pelo menos uma consulta relacionada nos últimos 3 anos","Monitorizar o programa de saúde juvenil e de adultos. Parâmetro ""consulta relacionada com consumo excessivo de álcool"".","Indicador que exprime a proporção de utentes inscritos com idade igual ou superior a 14 anos e com o problema de ""consumo excessivo de álcool"", a quem foi realizada consulta relacionada com esse problema, nos últimos 3 anos.
 Os utentes com ""consumo excessivo de álcool"" deveriam ser identificados nos sistemas de registo clínico a partir da informação existente sobre a quantificação dos respetivos consumos semanais. No entanto, os registos sobre ""consumos de álcool"" existentes nos sistemas informáticos de registo clínico em uso nos cuidados de saúde primários não se encontram padronizados, designadamente em relação às unidades de consumo de álcool usadas. Assim, optou-se por identificar utentes com ""consumo excessivo de álcool"" através de um ""equivalente de registo"". Trata-se do registo realizado por médicos (habitualmente os médicos de família), na lista de problemas do doente, de pelo menos um problema de saúde ativo, codificado pelas rubricas da ICPC-2 P15 (Abuso crónico do álcool) ou P16 (Abuso agudo do álcool).
 Numerador: Contagem utentes inscritos com idade igual ou superior a 14 anos e com o problema de ""consumo excessivo de álcool"", a quem foi realizada consulta médica ou de enfermagem relacionada com esse problema de saúde, nos últimos 3 anos.
 Denominador: Contagem utentes inscritos com idade igual ou superior a 14 anos e com o problema de ""consumo excessivo de álcool"".","NUMERADOR (AA):
@@ -38426,7 +38691,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Com dados desde Dezembro de 2012,Desempenho | Gestão da Saúde | Saúde do Adulto,"Ano de 2023: [60; 100]
 Ano de 2024: [60; 100]","Ano de 2023: [40; 100]
 Ano de 2024: [40; 100]",Processo,Saúde Mental,Utentes inscritos à data de referência do indicador,5 dias,1.0,1.0
-413,55,2013.055.01,"Proporção adultos c/ depres., c/ terap. anti-depr.","Proporção de utentes com idade igual ou superior a 18 anos e diagnóstico de depressão, a quem foi prescrita terapêutica anti-depressiva","Monitorizar o programa de saúde mental. Parâmetro ""Prescrição de terapêutica anti-depressiva em adultos com depressão"".","Indicador que exprime a proporção de adultos com idade igual ou superior a 18 anos e diagnóstico de depressão, a quem foi prescrita terapêutica antidepressiva.
+414,55,2013.055.01,"Proporção adultos c/ depres., c/ terap. anti-depr.","Proporção de utentes com idade igual ou superior a 18 anos e diagnóstico de depressão, a quem foi prescrita terapêutica anti-depressiva","Monitorizar o programa de saúde mental. Parâmetro ""Prescrição de terapêutica anti-depressiva em adultos com depressão"".","Indicador que exprime a proporção de adultos com idade igual ou superior a 18 anos e diagnóstico de depressão, a quem foi prescrita terapêutica antidepressiva.
 Numerador: Contagem de adultos com idade igual ou superior a 18 anos e diagnóstico de depressão e a quem foi prescrita terapêutica antidepressiva.
 Denominador: Contagem de adultos com idade igual ou superior a 18 anos e diagnóstico de depressão.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B e C] é verdadeira:
@@ -38485,7 +38750,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""registo de medicamento na terapêutica crónica""): Coincidente com a data de referência do indicador.
 - Numerador (variável ""prescrição de medicamento""): Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Com dados desde Dezembro de 2012,---,---,---,Processo,Saúde Mental,Utentes inscritos à data de referência do indicador,5 dias,,
-414,56,2013.056.01,"Proporção idosos, sem ansiol. / sedat. / hipnót.","Proporção de utentes com idade igual ou superior a 65 anos, a quem não foram prescritos ansiolíticos, nem sedativos, nem hipnóticos, no período em análise","Monitorizar o programa de saúde mental. Parâmetro ""Prescrição de ansiolíticos, sedativos e hipnóticos em idosos"".","Indicador que exprime a proporção de utentes inscritos com idade igual ou superior a 65 anos a quem não foram prescritos ansiolíticos, nem sedativos, nem hipnóticos, no período em análise.
+415,56,2013.056.01,"Proporção idosos, sem ansiol. / sedat. / hipnót.","Proporção de utentes com idade igual ou superior a 65 anos, a quem não foram prescritos ansiolíticos, nem sedativos, nem hipnóticos, no período em análise","Monitorizar o programa de saúde mental. Parâmetro ""Prescrição de ansiolíticos, sedativos e hipnóticos em idosos"".","Indicador que exprime a proporção de utentes inscritos com idade igual ou superior a 65 anos a quem não foram prescritos ansiolíticos, nem sedativos, nem hipnóticos, no período em análise.
 Numerador: Contagem de utentes inscritos a quem não foram prescritos ansiolíticos, nem sedativos, nem hipnóticos.
 Denominador: Contagem de utentes inscritos com idade igual ou superior a 65 anos.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B e C] é verdadeira:
@@ -38513,7 +38778,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""registo de medicamento na terapêutica crónica""): Coincidente com a data de referência do indicador.
 - Numerador (variável ""prescrição de medicamento""): Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Descontinuado em Dezembro de 2016,---,---,---,Processo,Saúde Mental,Utentes inscritos à data de referência do indicador,5 dias,,
-415,57,2013.057.01,Proporção RN com TSHPKU realizado até ao 6º dia,"Proporção de recém-nascidos, com diagnóstico precoce (TSHPKU) realizado até ao sexto dia de vida","Monitorizar o programa de saúde infantil. Parâmetro ""realização de diagnóstico precoce"".","Indicador que exprime a proporção de recém-nascidos com diagnóstico precoce (TSHPKU) realizado até ao sexto dia de vida.
+416,57,2013.057.01,Proporção RN com TSHPKU realizado até ao 6º dia,"Proporção de recém-nascidos, com diagnóstico precoce (TSHPKU) realizado até ao sexto dia de vida","Monitorizar o programa de saúde infantil. Parâmetro ""realização de diagnóstico precoce"".","Indicador que exprime a proporção de recém-nascidos com diagnóstico precoce (TSHPKU) realizado até ao sexto dia de vida.
 Numerador: Contagem de recém-nascidos com diagnóstico precoce (TSHPKU) realizado até ao sexto dia de vida.
 Denominador: Contagem de recém-nascidos.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -38567,7 +38832,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FLUTUANTE""
 - Numerador: Para cada criança incluída no denominador, o período em análise para deteção de TSHKPU inicia-se com o nascimento e termina 30 dias após a data de referência do indicador.",AA / BB x 100,%,Proporção de recém-nascidos,Com dados desde Dezembro de 2012,Desempenho | Gestão da Saúde | Saúde Infantil e Juvenil,"Ano de 2023: [94; 100]
 Ano de 2024: [94; 100]","Ano de 2023: [83; 100]
 Ano de 2024: [83; 100]",Processo,Saúde Infantil e Juvenil,Utentes inscritos durante pelo menos um dia do acontecimento monitorizado,30 dias,,
-416,58,2013.058.01,"Proporção crianças 1 ano, c/ acompanham. adequado",Proporção de crianças com 1 ano de vida com acompanhamento adequado na área da saúde infantil durante o 1º ano de vida,"Monitorizar o programa de saúde infantil, 1º ano de vida.","Indicador que exprime a proporção de crianças com 1 ano de vida, com acompanhamento de acordo com as normas da DGS.
+417,58,2013.058.01,"Proporção crianças 1 ano, c/ acompanham. adequado",Proporção de crianças com 1 ano de vida com acompanhamento adequado na área da saúde infantil durante o 1º ano de vida,"Monitorizar o programa de saúde infantil, 1º ano de vida.","Indicador que exprime a proporção de crianças com 1 ano de vida, com acompanhamento de acordo com as normas da DGS.
 Numerador: Contagem de crianças com acompanhamento adequado.
 Denominador: Contagem de crianças com 1 ano de vida.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B e C e D e E e F] é verdadeira:
@@ -38687,7 +38952,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - A principal variável de ""ancoragem"" de cada criança a este indicador é o facto completar 1 ano de vida no ano civil em curso.
 - Para cada criança incluída no denominador, o período em análise para deteção de consultas ou procedimentos inicia-se com o nascimento e termina ao 330º dia de vida.
 - Denominador (variável ""idade""): A 31 de dezembro do ano em curso, cada criança tem [1, 2[ anos de idade.",AA / BB x 100,%,Proporção de crianças,Descontinuado em Dezembro de 2016,---,---,---,Processo,Saúde Infantil e Juvenil,Utentes inscritos durante um mínimo de N meses do acontecimento monitorizado,5 dias,,
-417,59,2013.059.01,"Proporção crianças 2 anos, c/ peso e altura 1 ano","Proporção de crianças com 2 anos, com peso e altura registado no último ano","Monitorizar o programa de saúde infantil, 2º ano de vida, parâmetro ""registo de peso e altura"".","Indicador que exprime a proporção de crianças com peso e altura avaliados no intervalo [1; 2[ anos (entre as que completam 2 anos).
+418,59,2013.059.01,"Proporção crianças 2 anos, c/ peso e altura 1 ano","Proporção de crianças com 2 anos, com peso e altura registado no último ano","Monitorizar o programa de saúde infantil, 2º ano de vida, parâmetro ""registo de peso e altura"".","Indicador que exprime a proporção de crianças com peso e altura avaliados no intervalo [1; 2[ anos (entre as que completam 2 anos).
 Numerador: Contagem de crianças com peso e altura avaliados no intervalo [1; 2[ anos.
 Denominador: Contagem de crianças que completam 2 anos.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B e C] é verdadeira:
@@ -38716,7 +38981,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador (variável ""idade""): A 31 de dezembro do ano em curso, cada criança tem [2, 3[ anos de idade.",AA / BB x 100,%,Proporção de crianças,Com dados desde Dezembro de 2012,Desempenho | Gestão da Saúde | Saúde Infantil e Juvenil,"Ano de 2023: [95.5; 100]
 Ano de 2024: [95.5; 100]","Ano de 2023: [80; 100]
 Ano de 2024: [80; 100]",Processo,Saúde Infantil e Juvenil,Utentes inscritos à data de referência do indicador,5 dias,,
-418,6,2013.006.01,Taxa de utilização de consultas médicas - 3 anos,Taxa de utilização global de consultas médicas nos últimos 3 anos,Avaliar o acesso a consultas médicas pela população inscrita.,"Indicador que exprime a proporção de utentes inscritos que tiveram consulta médica, de qualquer tipo, nos últimos 3 anos.
+419,6,2013.006.01,Taxa de utilização de consultas médicas - 3 anos,Taxa de utilização global de consultas médicas nos últimos 3 anos,Avaliar o acesso a consultas médicas pela população inscrita.,"Indicador que exprime a proporção de utentes inscritos que tiveram consulta médica, de qualquer tipo, nos últimos 3 anos.
 Numerador: Contagem de utentes inscritos com pelo menos uma consulta médica presencial ou não presencial, nos últimos 3 anos.
 Denominador: Contagem de utentes inscritos.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -38763,7 +39028,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Com dados desde Dezembro de 2012,Desempenho | Acesso | Cobertura ou Utilização,"Ano de 2023: [88; 100]
 Ano de 2024: [88; 100]","Ano de 2023: [75; 100]
 Ano de 2024: [75; 100]",Processo,Transversal,Utentes inscritos à data de referência do indicador,5 dias,,1.0
-419,60,2013.060.01,"Proporção crianças 2 anos, c/ acompanham. adequado","Proporção de crianças com 2 anos de vida, com acompanhamento adequado na área da saúde infantil durante o 2º ano de vida","Monitorizar o programa de saúde infantil, 2º ano de vida.","Indicador que exprime a proporção de crianças com 2 anos de vida, com acompanhamento de acordo com as normas da DGS.
+420,60,2013.060.01,"Proporção crianças 2 anos, c/ acompanham. adequado","Proporção de crianças com 2 anos de vida, com acompanhamento adequado na área da saúde infantil durante o 2º ano de vida","Monitorizar o programa de saúde infantil, 2º ano de vida.","Indicador que exprime a proporção de crianças com 2 anos de vida, com acompanhamento de acordo com as normas da DGS.
 Numerador: Contagem de crianças com 2 anos de vida, que cumpriram a totalidade dos requisitos definidos para a vigilância durante o 2º ano de vida.
 Denominador: Contagem de crianças com 2 anos de vida.","NUMERADOR: (AA)
 Válido para indicadores com data de referência igual ou superior a janeiro de 2019.
@@ -38902,7 +39167,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - A principal variável de ""ancoragem"" de cada criança a este indicador é o facto completar 2 anos de vida no ano civil em curso.
 - Para cada criança incluída no denominador, o período em análise para deteção de consultas e procedimentos coincide com o intervalo etário [330; 700[ dias de vida.
 - Denominador (variável ""idade""): A 31 de dezembro do ano em curso, cada criança tem [2, 3[ anos de idade.",AA / BB x 100,%,Proporção de crianças,Com dados desde Março de 2013,---,---,---,Processo,Saúde Infantil e Juvenil,Utentes inscritos durante um mínimo de N meses do acontecimento monitorizado,5 dias,,
-420,61,2013.061.01,"Proporção crianças 6A, livres cárie dentária",Proporção de crianças com 6 anos livres de cárie dentária,"Monitorizar o programa de saúde infantil. Parâmetro ""ausência de cárie dentária"".","Indicador que exprime a proporção de crianças livres de cárie dentária, entre as que completam 6 anos.
+421,61,2013.061.01,"Proporção crianças 6A, livres cárie dentária",Proporção de crianças com 6 anos livres de cárie dentária,"Monitorizar o programa de saúde infantil. Parâmetro ""ausência de cárie dentária"".","Indicador que exprime a proporção de crianças livres de cárie dentária, entre as que completam 6 anos.
 Numerador: Contagem de crianças livres de cárie dentária.
 Denominador: Contagem de crianças que completam 6 anos.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -38926,7 +39191,7 @@ A. O MedicineOne permite o registo de alterações nos dentes em [Módulo de sa�
 - Denominador (variável ""inscrição ativa""): Coincidente com a data de referência do indicador.
 - Denominador (variável ""idade""): na data de referência do indicador, cada criança tem [6; 7[ anos de idade.
 - Denominador (variável ""Avaliação dos dentes""): Coincidente com o intervalo etário [5; 6[ anos de cada criança.",AA / BB x 100,%,Proporção de crianças,Com dados desde Janeiro de 2019,---,---,---,Ganhos em Saúde,Saúde Infantil e Juvenil,Utentes inscritos à data de referência do indicador,5 dias,,
-421,62,2013.062.01,"Propor. crianças 1A, c/ aleit. mat. exclus. até 4M","Proporção de crianças que completam 1 ano, com aleitamento materno exclusivo até aos 4 meses de idade",Monitorizar os resultados das práticas de promoção e suporte ao aleitamento materno dos profissionais das diferentes unidades funcionais.,"Indicador que exprime a proporção de crianças com aleitamento materno exclusivo até aos 4 meses de idade, entre as que completam 1 ano de vida no período em análise.
+422,62,2013.062.01,"Propor. crianças 1A, c/ aleit. mat. exclus. até 4M","Proporção de crianças que completam 1 ano, com aleitamento materno exclusivo até aos 4 meses de idade",Monitorizar os resultados das práticas de promoção e suporte ao aleitamento materno dos profissionais das diferentes unidades funcionais.,"Indicador que exprime a proporção de crianças com aleitamento materno exclusivo até aos 4 meses de idade, entre as que completam 1 ano de vida no período em análise.
 Numerador: Contagem de crianças com aleitamento materno exclusivo até aos 4 meses de idade.
 Denominador: Contagem de crianças com 1 ano de vida.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -39013,7 +39278,7 @@ B. Indicador apenas calculado para UCC com SClínico. Não calculado para UCC co
 - Denominador (variável ""idade""): na data de referência do indicador, cada criança tem [12, 24[ meses de idade.",AA / BB x 100,%,Proporção de crianças,Com dados desde Janeiro de 2019,Desempenho | Gestão da Saúde | Saúde Reprodutiva,"Ano de 2023: [67; 100]
 Ano de 2024: [65; 100]","Ano de 2023: [50; 100]
 Ano de 2024: [50; 100]",Resultado,Saúde Infantil e Juvenil,Utentes inscritos à data de referência do indicador,5 dias,,
-422,63,2013.063.01,"Proporção crianças 7A, c/ cons. méd. vig. e PNV","Proporção de crianças com 7 anos, com consulta médica de vigilância realizada no intervalo [5; 7[ anos e PNV totalmente cumprido até ao 7º aniversário","Monitorizar o programa de saúde infantil (coorte dos 7 anos). Parâmetros ""consulta médica de vigilância"" e ""PNV cumprido","Indicador que exprime a proporção de crianças com consulta médica de vigilância realizada entre [5; 7[ anos e com PNV totalmente cumprido na data do 7º aniversário (entre as que completam 7 anos).
+423,63,2013.063.01,"Proporção crianças 7A, c/ cons. méd. vig. e PNV","Proporção de crianças com 7 anos, com consulta médica de vigilância realizada no intervalo [5; 7[ anos e PNV totalmente cumprido até ao 7º aniversário","Monitorizar o programa de saúde infantil (coorte dos 7 anos). Parâmetros ""consulta médica de vigilância"" e ""PNV cumprido","Indicador que exprime a proporção de crianças com consulta médica de vigilância realizada entre [5; 7[ anos e com PNV totalmente cumprido na data do 7º aniversário (entre as que completam 7 anos).
 Numerador: Contagem de crianças com consulta médica de vigilância realizada entre [5; 7[ anos e com PNV totalmente cumprido na data do 7º aniversário.
 Denominador: Contagem de crianças que completam 7 anos.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B e C] é verdadeira:
@@ -39195,7 +39460,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador (variável ""idade""): A 31 de dezembro do ano em curso tem [7; 8[ anos.",AA / BB x 100,%,Proporção de crianças,Com dados desde Dezembro de 2012,Desempenho | Gestão da Saúde | Saúde Infantil e Juvenil,"Ano de 2023: [85; 100]
 Ano de 2024: [80; 100]","Ano de 2023: [65; 100]
 Ano de 2024: [65; 100]",Processo,Saúde Infantil e Juvenil,Utentes inscritos à data de referência do indicador,5 dias,1.0,1.0
-423,64,2013.064.01,"Proporção jovens 14A, c/ cons. méd. vig. e PNV",Proporção de jovens com 14 anos com consulta médica de vigilância realizada no intervalo [11; 14[ anos e PNV totalmente cumprido até ao 14º aniversário,"Monitorizar o programa de saúde infantil (coorte dos 14 anos). Parâmetros ""consulta médica de vigilância"" e ""PNV cumprido","Indicador que exprime a proporção de jovens com consulta médica de vigilância realizada entre [11; 14[ anos e com PNV totalmente cumprido na data do 14º aniversário (entre os que completam 14 anos).
+424,64,2013.064.01,"Proporção jovens 14A, c/ cons. méd. vig. e PNV",Proporção de jovens com 14 anos com consulta médica de vigilância realizada no intervalo [11; 14[ anos e PNV totalmente cumprido até ao 14º aniversário,"Monitorizar o programa de saúde infantil (coorte dos 14 anos). Parâmetros ""consulta médica de vigilância"" e ""PNV cumprido","Indicador que exprime a proporção de jovens com consulta médica de vigilância realizada entre [11; 14[ anos e com PNV totalmente cumprido na data do 14º aniversário (entre os que completam 14 anos).
 Numerador: Contagem de jovens com consulta médica de vigilância realizada entre [11; 14[ anos e com PNV totalmente cumprido na data do 14º aniversário.
 Denominador: Contagem de jovens que completam 14 anos.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B e C] é verdadeira:
@@ -39356,7 +39621,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""inoculação de vacinas""): Coincidente com o intervalo etário [0; 14[ anos de cada criança incluída no denominador.
 - Denominador (variável ""inscrição ativa""): Coincidente com a data de referência do indicador.
 - Denominador (variável ""idade""): A 31 de dezembro do ano em curso tem [14, 15[ anos (já fez 14 e ainda não fez 15 anos).",AA / BB x 100,%,Proporção de jovens,Com dados desde Dezembro de 2012,---,---,---,Processo,Saúde Infantil e Juvenil,Utentes inscritos à data de referência do indicador,5 dias,,
-424,65,2013.065.01,"Proporção utentes >= 75 A, c/ presc. cró. < 5 fár.","Proporção de utentes com idade igual ou superior a 75 anos, com prescrição crónica inferior a cinco fármacos","Monitorizar o programa de saúde de adultos. Parâmetro ""prescrição crónica inferior a cinco fármacos em grandes idosos"".","Indicador que exprime a proporção de utentes com 75 ou mais anos de idade, com prescrição crónica inferior a 5 fármacos.
+425,65,2013.065.01,"Proporção utentes >= 75 A, c/ presc. cró. < 5 fár.","Proporção de utentes com idade igual ou superior a 75 anos, com prescrição crónica inferior a cinco fármacos","Monitorizar o programa de saúde de adultos. Parâmetro ""prescrição crónica inferior a cinco fármacos em grandes idosos"".","Indicador que exprime a proporção de utentes com 75 ou mais anos de idade, com prescrição crónica inferior a 5 fármacos.
 Numerador: Contagem de utentes inscritos com prescrição crónica inferior a 5 fármacos.
 Denominador: Contagem de utentes inscritos com 75 ou mais anos de idade.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -39406,7 +39671,7 @@ A. Os medicamentos registados na terapêutica crónica têm uma [data de fim], q
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""registo de medicamento na terapêutica crónica""): Coincidente com a data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Descontinuado em Dezembro de 2016,---,---,---,Processo,Saúde Idoso,Utentes inscritos à data de referência do indicador,5 dias,,
-425,66,2013.066.01,"Proporção medicam. faturados, que são genéricos","Proporção de embalagens de medicamentos faturados, que são genéricos","Monitorizar programa de prescrição de fármacos. Parâmetro ""proporção de embalagens de genéricos""","Indicador que exprime a proporção de embalagens de medicamentos faturados, que são genéricos.
+426,66,2013.066.01,"Proporção medicam. faturados, que são genéricos","Proporção de embalagens de medicamentos faturados, que são genéricos","Monitorizar programa de prescrição de fármacos. Parâmetro ""proporção de embalagens de genéricos""","Indicador que exprime a proporção de embalagens de medicamentos faturados, que são genéricos.
 Numerador: Contagem de embalagens de medicamentos genéricos faturados.
 Denominador: Contagem de embalagens faturadas.","NUMERADOR (AA):
 Contagem de embalagens de medicamentos prescritos em que a expressão [A e B] é verdadeira:
@@ -39440,7 +39705,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB x 100,%,Proporção de embalagens,Com dados desde Dezembro de 2012,---,"Ano de 2023: [50; 100]
 Ano de 2024: [50; 100]","Ano de 2023: [47.5; 100]
 Ano de 2024: [47.5; 100]",Processo,Transversal,Utentes utilizadores durante o período em análise,30 dias,,
-426,67,2013.067.01,"Proporção idosos, sem prescrição trimetaz. (1 ano)","Proporção de utentes com idade igual ou superior a 65 anos, sem nenhuma prescrição de trimetazidina no último ano","Monitorizar o programa de saúde adultos. Parâmetro ""Prescrição de trimetazidina em idosos"".","Indicador que exprime a proporção de utentes com 65 ou mais anos de idade, sem prescrição de trimetazidina no último ano.
+427,67,2013.067.01,"Proporção idosos, sem prescrição trimetaz. (1 ano)","Proporção de utentes com idade igual ou superior a 65 anos, sem nenhuma prescrição de trimetazidina no último ano","Monitorizar o programa de saúde adultos. Parâmetro ""Prescrição de trimetazidina em idosos"".","Indicador que exprime a proporção de utentes com 65 ou mais anos de idade, sem prescrição de trimetazidina no último ano.
 Numerador: Contagem de utentes inscritos sem prescrição de trimetazidina no último ano.
 Denominador: Contagem de utentes inscritos com 65 ou mais anos de idade.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B e C] é verdadeira:
@@ -39470,7 +39735,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""registo de medicamento na terapêutica crónica""): Coincidente com a data de referência do indicador.
 - Numerador (variável ""prescrição de medicamento""): Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utilizadores,Com dados desde Dezembro de 2012,---,---,---,Processo,Saúde Idoso,Utentes inscritos à data de referência do indicador,5 dias,,
-427,68,2013.068.01,"Despesa medic. faturados, por utiliz. (PVP)","Despesa média de medicamentos faturados, por utente utilizador (baseado no PVP)","Monitorizar programa de prescrição de fármacos. Parâmetro ""despesa de medicamentos faturados, baseada no PVP""","Indicador que exprime a despesa média de medicamentos faturados, por utente utilizador, baseado no PVP.
+428,68,2013.068.01,"Despesa medic. faturados, por utiliz. (PVP)","Despesa média de medicamentos faturados, por utente utilizador (baseado no PVP)","Monitorizar programa de prescrição de fármacos. Parâmetro ""despesa de medicamentos faturados, baseada no PVP""","Indicador que exprime a despesa média de medicamentos faturados, por utente utilizador, baseado no PVP.
 Numerador: Somatório do PVP de medicamentos faturados.
 Denominador: Contagem de utentes utilizadores.","NUMERADOR (AA):
 Somatório do PVP dos medicamentos em que a expressão [A e (B ou C ou D) e E] é verdadeira:
@@ -39533,7 +39798,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB,€ / UTI,Despesa com medicamentos,Com dados desde Dezembro de 2012,Desempenho | Qualificação da Prescrição | Prescrição Farmacoterapêutica,"Ano de 2023: [115; 155]
 Ano de 2024: [115; 155]","Ano de 2023: [115; 160]
 Ano de 2024: [115; 160]",Resultado,Transversal,Utentes utilizadores durante o período em análise,30 dias,,
-428,69,2013.069.01,Despesa MCDT fatur. p/ util. SNS (p. conv. s/ TM),"Despesa média de MCDT faturados, por utente utilizador do SNS (baseado no preço convencionado líquido da taxa moderadora)","Monitorizar programa de prescrição de MCDT. Parâmetro ""despesa em MCDT faturados, por utilizador do SNS""","Indicador que exprime a despesa média de MCDT faturados, por utente utilizador do SNS, baseado no [preço convencionado líquido da taxa moderadora].
+429,69,2013.069.01,Despesa MCDT fatur. p/ util. SNS (p. conv. s/ TM),"Despesa média de MCDT faturados, por utente utilizador do SNS (baseado no preço convencionado líquido da taxa moderadora)","Monitorizar programa de prescrição de MCDT. Parâmetro ""despesa em MCDT faturados, por utilizador do SNS""","Indicador que exprime a despesa média de MCDT faturados, por utente utilizador do SNS, baseado no [preço convencionado líquido da taxa moderadora].
 Numerador: Somatório do [no preço convencionado líquido da taxa moderadora] dos MCDT faturados por entidades convencionadas.
 Denominador: Contagem de utentes utilizadores pertencentes ao SNS.","NUMERADOR (AA):
 Somatório do [preço convencionado líquido da taxa moderadora] dos MCDT em que a expressão [A e (B ou C ou D) e E] é verdadeira (ver alíneas L e M de OBSERVAÇÕES GERAIS):
@@ -39608,7 +39873,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB,€ / UTI,Despesa com MCDT,Com dados desde Dezembro de 2012,---,"Ano de 2023: [40; 50]
 Ano de 2024: [40; 50]","Ano de 2023: [40; 57]
 Ano de 2024: [40; 57]",Resultado,Transversal,Utentes utilizadores durante o período em análise,30 dias,,
-429,7,2013.007.01,Proporção utiliz. referenciados p/ consulta hosp.,Proporção de utilizadores referenciados para consulta hospitalar,Monitorizar a taxa de referenciação hospitalar de unidades de saúde,"Indicador que exprime a proporção de utentes utilizadores que são referenciados por ano para consulta hospitalar.
+430,7,2013.007.01,Proporção utiliz. referenciados p/ consulta hosp.,Proporção de utilizadores referenciados para consulta hospitalar,Monitorizar a taxa de referenciação hospitalar de unidades de saúde,"Indicador que exprime a proporção de utentes utilizadores que são referenciados por ano para consulta hospitalar.
 Numerador: Contagem de utilizadores com pelo menos uma referenciação hospitalar.
 Denominador: Contagem de utilizadores de consultas médicas presenciais ou não presenciais.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -39653,7 +39918,7 @@ A. Indicador incompatível com o software MedicineOne.","INDICADOR CALCULADO PEL
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB x 100,%,Proporção de utilizadores,Com dados desde Dezembro de 2012,---,---,---,Processo,Transversal,Utentes utilizadores durante o período em análise,5 dias,,
-430,70,2013.070.01,Despesa (PVP) medic. prescr. compart. p/ utiliz.,"Despesa média (PVP) de medicamentos prescritos e comparticipados, por utente utilizador","Monitorizar programa de prescrição de fármacos. Parâmetro ""despesa em medicamentos prescritos, comparticipados""","Indicador que exprime a despesa média de medicamentos prescritos, comparticipados pelo SNS, por utente utilizador, baseado no preço de venda ao público.
+431,70,2013.070.01,Despesa (PVP) medic. prescr. compart. p/ utiliz.,"Despesa média (PVP) de medicamentos prescritos e comparticipados, por utente utilizador","Monitorizar programa de prescrição de fármacos. Parâmetro ""despesa em medicamentos prescritos, comparticipados""","Indicador que exprime a despesa média de medicamentos prescritos, comparticipados pelo SNS, por utente utilizador, baseado no preço de venda ao público.
 Numerador: Somatório do PVP de medicamentos prescritos, comparticipados pelo SNS.
 Denominador: Contagem de utentes utilizadores.","NUMERADOR (AA):
 Somatório do [PVP equivalente] dos medicamentos comparticipados pelo SNS (ver alíneas A, B, C, D, E e H de OBSERVAÇÕES GERAIS) em que a expressão [A e (B ou C ou D)] é verdadeira:
@@ -39719,7 +39984,7 @@ b) os que pertencem a um CNPEM em que a totalidade (100%) dos medicamentos lá i
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB,€ / UTI,Despesa com medicamentos,Com dados desde Dezembro de 2013,---,---,---,Resultado,Transversal,Utentes utilizadores durante o período em análise,30 dias,,
-431,71,2013.071.01,"Despesa MCDT prescrit., por utiliz. (p. conv.)","Despesa média, baseada no preço convencionado de MCDT prescritos, por utente utilizador","Monitorizar programa de prescrição de MCDT. Parâmetro ""despesa em MCDT prescritos""","Indicador que exprime a despesa média de MCDT prescritos, por utente utilizador, baseado no [preço].
+432,71,2013.071.01,"Despesa MCDT prescrit., por utiliz. (p. conv.)","Despesa média, baseada no preço convencionado de MCDT prescritos, por utente utilizador","Monitorizar programa de prescrição de MCDT. Parâmetro ""despesa em MCDT prescritos""","Indicador que exprime a despesa média de MCDT prescritos, por utente utilizador, baseado no [preço].
 Numerador: Somatório do [preço] dos MCDT prescritos.
 Denominador: Contagem de utentes utilizadores.","NUMERADOR (AA):
 Somatório do [preço] dos MCDT (ver alínea A de OBSERVAÇÕES GERAIS) em que a expressão [A e (B ou C ou D)] é verdadeira:
@@ -39774,7 +40039,7 @@ B. Não são contabilizados os exames requisitados fora da UF, desde que os resp
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB,€ / UTI,Despesa com MCDT,Com dados desde Dezembro de 2012,---,---,---,Resultado,Transversal,Utentes utilizadores durante o período em análise,5 dias,,
-432,73,---,"Núm. dias c/ reclam. por fechar, por 1000 cons.","Número de dias com reclamações por fechar, por cada 1000 consultas médicas ou de enfermagem realizadas",Monitorizar a satisfação dos utentes que utilizam os serviços de saúde; Monitorizar a velocidade de resposta dos serviços às reclamações.,"Indicador que exprime a razão entre o somatório do número de dias necessários para encerrar cada reclamação e cada 1.000 consultas médicas ou de enfermagem realizadas.
+433,73,---,"Núm. dias c/ reclam. por fechar, por 1000 cons.","Número de dias com reclamações por fechar, por cada 1000 consultas médicas ou de enfermagem realizadas",Monitorizar a satisfação dos utentes que utilizam os serviços de saúde; Monitorizar a velocidade de resposta dos serviços às reclamações.,"Indicador que exprime a razão entre o somatório do número de dias necessários para encerrar cada reclamação e cada 1.000 consultas médicas ou de enfermagem realizadas.
 Numerador: somatório do número de dias necessários para encerrar cada reclamação.
 Denominador: Contagem de consultas médicas ou de enfermagem, presenciais ou não presenciais","NUMERADOR (AA):
 Somatório do [número de dias] que medeia entre a [data de entrada da reclamação nos serviços] e a [data de fecho da reclamação por parte dos serviços], para cada uma das reclamações em que a expressão [A e B e (C ou D ou E) e F] é verdadeira (ver alíneas A, B, C e D de OBSERVAÇÕES GERAIS):
@@ -39841,7 +40106,7 @@ C011
 | Consulta enfermagem com a presença do utente (direta) - MedicineOne",,"INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FLUTUANTE""
 - Numerador: Duração de 12 meses, terminando na data de referência do indicador.
 - Denominador: Duração de 12 meses, terminando na data de referência do indicador.",AA / BB x 1.000,DIAS / 1.000 CONS,Número de dias de reclamações por fechar por mil consultas realizadas,Em desenvolvimento,---,---,---,Resultado,Transversal,Utentes utilizadores durante o período em análise,30 dias,,
-433,74,2013.074.01,"Proporção cons. méd. presenciais, com ICPC-2",Proporção de consultas médicas presenciais que deram origem a pelo menos uma classificação pela ICPC-2,"Monitorizar a qualidade dos registos clínicos. Parâmetro ""Classificação de problemas de saúde na consulta, pela ICPC-2""","Indicador que exprime a proporção de consultas médicas presenciais que possuem pelo menos um problema de saúde da consulta classificado pela ICPC-2.
+434,74,2013.074.01,"Proporção cons. méd. presenciais, com ICPC-2",Proporção de consultas médicas presenciais que deram origem a pelo menos uma classificação pela ICPC-2,"Monitorizar a qualidade dos registos clínicos. Parâmetro ""Classificação de problemas de saúde na consulta, pela ICPC-2""","Indicador que exprime a proporção de consultas médicas presenciais que possuem pelo menos um problema de saúde da consulta classificado pela ICPC-2.
 Numerador: Contagem de consultas médicas presenciais com pelo menos um problema de saúde da consulta classificado pela ICPC-2.
 Denominador: Contagem de consultas médicas presenciais.","NUMERADOR (AA):
 Contagem de contactos em que a expressão [A e B] é verdadeira:
@@ -39875,7 +40140,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB x 100,%,Proporção de consultas,Com dados desde Dezembro de 2012,---,"Ano de 2023: [96; 100]
 Ano de 2024: [96; 100]","Ano de 2023: [92; 100]
 Ano de 2024: [92; 100]",Processo,Transversal,Utentes utilizadores durante o período em análise,5 dias,,
-434,75,2013.075.01,Proporção de DM2 com compromisso de vigilância,Proporção de utentes com diabetes tipo 2 com compromisso de vigilância,"Monitorizar o programa de diabetes. Parâmetro ""utentes com diabetes tipo 2 vigiados na unidade de saúde"".","Indicador que exprime a proporção de utentes com diabetes tipo 2 assinalados como vigiados no programa de diabetes à data de referência do indicador.
+435,75,2013.075.01,Proporção de DM2 com compromisso de vigilância,Proporção de utentes com diabetes tipo 2 com compromisso de vigilância,"Monitorizar o programa de diabetes. Parâmetro ""utentes com diabetes tipo 2 vigiados na unidade de saúde"".","Indicador que exprime a proporção de utentes com diabetes tipo 2 assinalados como vigiados no programa de diabetes à data de referência do indicador.
 Numerador: Contagem de utentes inscritos com diabetes tipo 2 assinalados como vigiados no programa de diabetes.
 Denominador: Contagem de utentes inscritos com diabetes tipo 2.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -39906,7 +40171,7 @@ C. O registo da informação do nome e local de trabalho do médico responsável
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""registo de vigilância no programa de diabetes""): Coincidente com a data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes com Diabetes Mellitus,Com dados desde Dezembro de 2012,---,---,---,Estrutura,Diabetes Mellitus,Utentes inscritos à data de referência do indicador,5 dias,,
-435,76,2013.076.01,Proporção hipertensos com compromisso vigilância,"Proporção de utentes com hipertensão arterial, com compromisso de vigilância","Monitorizar o programa de hipertensão. Parâmetro ""utentes com hipertensão arterial vigiados na unidade de saúde""","Indicador que exprime a proporção de utentes com hipertensão arterial assinalados como vigiados no programa de hipertensão (à data de referência do indicador).
+436,76,2013.076.01,Proporção hipertensos com compromisso vigilância,"Proporção de utentes com hipertensão arterial, com compromisso de vigilância","Monitorizar o programa de hipertensão. Parâmetro ""utentes com hipertensão arterial vigiados na unidade de saúde""","Indicador que exprime a proporção de utentes com hipertensão arterial assinalados como vigiados no programa de hipertensão (à data de referência do indicador).
 Numerador: Contagem de utentes inscritos com hipertensão arterial assinalados como vigiados no programa de hipertensão .
 Denominador: Contagem de utentes inscritos com hipertensão arterial.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -39937,7 +40202,7 @@ C. O registo da informação do nome e local de trabalho do médico responsável
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""registo de vigilância no programa de HTA""): Coincidente com a data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes com hipertensão arterial,Com dados desde Dezembro de 2012,---,---,---,Estrutura,Hipertensão Arterial,Utentes inscritos à data de referência do indicador,5 dias,,
-436,77,2013.077.01,Proporção de utentes com diagnóstico de asma,Proporção de utentes com diagnóstico de asma,"Monitorizar o programa de cuidados respiratórios. Parâmetro ""prevalência de asma entre a população inscrita""","Indicador que exprime a proporção de utentes inscritos que têm o diagnóstico de asma registado na lista de problemas (à data de referência do indicador).
+437,77,2013.077.01,Proporção de utentes com diagnóstico de asma,Proporção de utentes com diagnóstico de asma,"Monitorizar o programa de cuidados respiratórios. Parâmetro ""prevalência de asma entre a população inscrita""","Indicador que exprime a proporção de utentes inscritos que têm o diagnóstico de asma registado na lista de problemas (à data de referência do indicador).
 Numerador: Contagem de utentes inscritos que têm o diagnóstico de asma registado na lista de problemas.
 Denominador: Contagem de utentes inscritos.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -39954,7 +40219,7 @@ A. O diagnóstico de asma pode estar inserido quer na [lista de problemas] quer 
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Coincidente com a data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Descontinuado em Dezembro de 2015,---,---,---,Estrutura,Respiratório,Utentes inscritos à data de referência do indicador,5 dias,,
-437,78,2013.078.01,Proporção de utentes com diagnóstico DPOC,Proporção de utentes com diagnóstico de doença pulmonar obstrutiva crónica (DPOC),"Monitorizar o programa de cuidados respiratórios. Parâmetro ""prevalência de DPOC entre a população inscrita""","Indicador que exprime a proporção de utentes inscritos que têm o diagnóstico de DPOC registado na lista de problemas (à data de referência do indicador).
+438,78,2013.078.01,Proporção de utentes com diagnóstico DPOC,Proporção de utentes com diagnóstico de doença pulmonar obstrutiva crónica (DPOC),"Monitorizar o programa de cuidados respiratórios. Parâmetro ""prevalência de DPOC entre a população inscrita""","Indicador que exprime a proporção de utentes inscritos que têm o diagnóstico de DPOC registado na lista de problemas (à data de referência do indicador).
 Numerador: Contagem de utentes inscritos que têm o diagnóstico de DPOC registado na lista de problemas.
 Denominador: Contagem de utentes inscritos.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -39971,7 +40236,7 @@ A. O diagnóstico de DPOC pode estar inserido quer na [lista de problemas] quer 
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Coincidente com a data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Descontinuado em Dezembro de 2015,---,---,---,Estrutura,Respiratório,Utentes inscritos à data de referência do indicador,5 dias,,
-438,79,2013.079.01,Número UCs hipertensos (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de utentes com hipertensão arterial (atividades específicas),"Monitorizar o programa de hipertensão e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de utentes com hipertensão arterial (atividades específicas).
+439,79,2013.079.01,Número UCs hipertensos (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de utentes com hipertensão arterial (atividades específicas),"Monitorizar o programa de hipertensão e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de utentes com hipertensão arterial (atividades específicas).
 Numerador: Produto entre o [número de utentes com hipertensão arterial com acompanhamento adequado] e o [fator de ponderação 2].
 Denominador: Contagem de médicos da unidade.","UTENTES COM HIPERTENSÃO ARTERIAL COM ACOMPANHAMENTO ADEQUADO (AA):
 Contagem de utentes em que a expressão [A e B e C e D e E e (F ou G)] é verdadeira:
@@ -40036,7 +40301,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Variável ""inscrição ativa na unidade de saúde"": Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Variável ""HTA na lista de problemas"": Coincidente com a data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA x 2 / BB,UC,Score: Unidade de contratualização,Com dados desde Dezembro de 2009,---,---,---,Processo,Hipertensão Arterial,Utentes inscritos em pelo menos um dia do período em análise,30 dias,,
-439,8,2013.008.01,Taxa de utilização de consultas de PF (méd./enf.),Taxa de utilização de consultas de planeamento familiar (médicas ou de enfermagem),Monitorizar a utilização das consultas de saúde reprodutiva e planeamento familiar (PF) pelas mulheres em idade fértil (MIF),"Indicador que exprime a proporção de MIF, que tiveram pelo menos uma consulta médica ou de enfermagem de planeamento familiar nos últimos 12 meses.
+440,8,2013.008.01,Taxa de utilização de consultas de PF (méd./enf.),Taxa de utilização de consultas de planeamento familiar (médicas ou de enfermagem),Monitorizar a utilização das consultas de saúde reprodutiva e planeamento familiar (PF) pelas mulheres em idade fértil (MIF),"Indicador que exprime a proporção de MIF, que tiveram pelo menos uma consulta médica ou de enfermagem de planeamento familiar nos últimos 12 meses.
 Numerador: Contagem de MIF que tiveram uma consulta médica ou de enfermagem de planeamento familiar, nos últimos 12 meses.
 Denominador: Contagem de MIF.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e (B ou C)] é verdadeira:
@@ -40085,7 +40350,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de mulheres,Com dados desde Dezembro de 2012,Desempenho | Gestão da Saúde | Saúde da Mulher,"Ano de 2023: [60; 100]
 Ano de 2024: [60; 100]","Ano de 2023: [38; 100]
 Ano de 2024: [38; 100]",Processo,Planeamento Familiar,Utentes inscritos à data de referência do indicador,5 dias,1.0,1.0
-440,80,2013.080.01,Número UCs diabéticos (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de utentes com diabetes (atividades específicas),"Monitorizar o programa de diabetes e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de utentes com diabetes (atividades específicas).
+441,80,2013.080.01,Número UCs diabéticos (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de utentes com diabetes (atividades específicas),"Monitorizar o programa de diabetes e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de utentes com diabetes (atividades específicas).
 Numerador: Produto entre o [número de utentes com diabetes com acompanhamento adequado] e o [fator de ponderação 4].
 Denominador: Contagem de médicos da unidade.","UTENTES COM DIABETES COM ACOMPANHAMENTO ADEQUADO (AA):
 Contagem de utentes em que a expressão [A e B e C e D e E e F e G e H] é verdadeira:
@@ -40162,7 +40427,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - variável ""colesterol total, colesterol HDL e triglicéridos"": Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Variável ""inscrição ativa na unidade de saúde"": Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA x 4 / BB,UC,Score: Unidade de contratualização,Com dados desde Dezembro de 2009,---,---,---,Processo,Diabetes Mellitus,Utentes inscritos em pelo menos um dia do período em análise,30 dias,,
-441,81,2013.081.01,Número UCs grávidas (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de grávidas (atividades específicas),"Monitorizar o programa de saúde materna e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de grávidas(atividades específicas).
+442,81,2013.081.01,Número UCs grávidas (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de grávidas (atividades específicas),"Monitorizar o programa de saúde materna e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de grávidas(atividades específicas).
 Numerador: Produto entre o [número de grávidas com acompanhamento adequado] e o [fator de ponderação 8].
 Denominador: Contagem de médicos da unidade.","GRÁVIDAS COM ACOMPANHAMENTO ADEQUADO (AA):
 Contagem de utentes em que a expressão [A e B e C e D e E e F e G e H e I e J e (K ou L)] é verdadeira:
@@ -40251,7 +40516,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - A principal variável de ""ancoragem"" de cada grávida a este indicador é o facto de o 42º dia de puerpério pertencer ou não ao período em análise.
 - Os períodos em análise das restantes variáveis do numerador dependem do período da gestação ou do puerpério em que devem ser realizados.
 - Denominador: O período em análise coincide com a data de referência do indicador.",AA x 8 / BB,UC,Score: Unidade de contratualização,Com dados desde Dezembro de 2009,---,---,---,Processo,Saúde Materna,Utentes inscritos em pelo menos um dia do período em análise,30 dias,,
-442,82,2013.082.01,Número UCs PF (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância em planeamento familiar nas mulheres em idade fértil (atividades específicas),"Monitorizar o programa de planeamento familiar e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada em planeamento familiar nas mulheres em idade fértil (atividades específicas).
+443,82,2013.082.01,Número UCs PF (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância em planeamento familiar nas mulheres em idade fértil (atividades específicas),"Monitorizar o programa de planeamento familiar e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada em planeamento familiar nas mulheres em idade fértil (atividades específicas).
 Numerador: Produto entre o [número de mulheres em idade fértil com acompanhamento adequado relacionado com ""planeamento familiar""] e o [fator de ponderação 1].
 Denominador: Contagem de médicos da unidade.","MULHERES EM IDADE FÉRTIL COM ACOMPANHAMENTO ADEQUADO EM PF (AA):
 Contagem de utentes em que a expressão [A e B e C e D e (E ou F ou G)] é verdadeira:
@@ -40317,7 +40582,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Variável ""idade"": Medida em relação a 31 de dezembro do ano em curso
 - Variável ""inscrição ativa na unidade de saude"": Duração de 12 meses, terminando na data de referência do indicador.
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB,UC,Score: Unidade de contratualização,Com dados desde Dezembro de 2009,---,---,---,Processo,Planeamento Familiar,Utentes inscritos em pelo menos um dia do período em análise,30 dias,,
-443,83,2013.083.01,Número UCs s. infantil 1º ano (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de crianças no 1º ano de vida (atividades específicas),"Monitorizar o programa de saúde infantil (1º ano de vida) e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de crianças durante o seu 1º ano de vida (atividades específicas).
+444,83,2013.083.01,Número UCs s. infantil 1º ano (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de crianças no 1º ano de vida (atividades específicas),"Monitorizar o programa de saúde infantil (1º ano de vida) e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de crianças durante o seu 1º ano de vida (atividades específicas).
 Numerador: Produto entre o [número de crianças com acompanhamento adequado em saúde infantil durante o 1º ano de vida] e o [fator de ponderação 7].
 Denominador: Contagem de médicos da unidade.","CRIANÇAS COM ACOMPANHAMENTO ADEQUADO EM SAÚDE INFANTIL NO 1º ANO DE VIDA (AA):
 Contagem de utentes em que a expressão [A e B e C e D e E] é verdadeira:
@@ -40356,7 +40621,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Para cada criança incluída no denominador, o período em análise para deteção de consultas ou procedimentos inicia-se com o nascimento e termina ao 330º dia de vida.
 - Variável ""idade"": A 31 de dezembro do ano em curso, cada criança tem [1, 2[ anos de idade.
 - Denominador: Coincidente com a data de referência do indicador.",AA x 7 / BB,UC,Score: Unidade de contratualização,Com dados desde Dezembro de 2009,---,---,---,Processo,Saúde Infantil e Juvenil,Utentes inscritos em pelo menos um dia do período em análise,5 dias,,
-444,84,2013.084.01,Número UCs s. infantil 2º ano (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de crianças no 2º ano de vida (atividades específicas),"Monitorizar o programa de saúde infantil (2º ano de vida) e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de crianças durante o seu 2º ano de vida (atividades específicas).
+445,84,2013.084.01,Número UCs s. infantil 2º ano (ativ. específ.),Número de unidades de contratualização relacionadas com vigilância de crianças no 2º ano de vida (atividades específicas),"Monitorizar o programa de saúde infantil (2º ano de vida) e cálculo do número de UCs a pagar mensalmente aos médicos das USF modelo B por ""atividades específicas"".","Score que exprime o número de unidades de contratualização relacionadas com vigilância adequada de crianças durante o seu 2º ano de vida (atividades específicas).
 Numerador: Produto entre o [número de crianças com acompanhamento adequado em saúde infantil durante o 2º ano de vida] e o [fator de ponderação 3].
 Denominador: Contagem de médicos da unidade.","CRIANÇAS COM ACOMPANHAMENTO ADEQUADO EM SAÚDE INFANTIL NO 2º ANO DE VIDA (AA):
 Contagem de utentes em que a expressão [A e B e C e D] é verdadeira:
@@ -40398,7 +40663,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Para cada criança incluída no denominador, o período em análise para deteção de consultas e procedimentos coincide com o intervalo etário [330; 700[ dias de vida.
 - Variável ""idade"": A 31 de dezembro do ano em curso, cada criança tem [2, 3[ anos de idade.
 - Denominador: Coincidente com a data de referência do indicador.",AA x 3 / BB,UC,Score: Unidade de contratualização,Com dados desde Dezembro de 2009,---,---,---,Processo,Saúde Infantil e Juvenil,Utentes inscritos em pelo menos um dia do período em análise,5 dias,,
-445,85,2016.085.01,"Incid. amputações major Minf. (DM), em residentes","Incidência de amputações major de membro inferior em utentes com diabetes, entre utentes residentes","Monitorizar a efetividade dos cuidados prestados pelos CSP a utentes com Diabetes Mellitus, na prevenção de complicações da doença, usando como medida a ""incidência de amputações major de membro inferior"". Ver alíneas D, E e F de OBSERVAÇÕES GERAIS.","Indicador que exprime a razão entre o número de episódios internamento hospitalar com realização de amputação major de membro inferior em utentes com diabetes, por cada 10.000 residentes, no período de tempo considerado.
+446,85,2016.085.01,"Incid. amputações major Minf. (DM), em residentes","Incidência de amputações major de membro inferior em utentes com diabetes, entre utentes residentes","Monitorizar a efetividade dos cuidados prestados pelos CSP a utentes com Diabetes Mellitus, na prevenção de complicações da doença, usando como medida a ""incidência de amputações major de membro inferior"". Ver alíneas D, E e F de OBSERVAÇÕES GERAIS.","Indicador que exprime a razão entre o número de episódios internamento hospitalar com realização de amputação major de membro inferior em utentes com diabetes, por cada 10.000 residentes, no período de tempo considerado.
 Numerador: Contagem episódios de internamento hospitalar com realização de amputação major de membro inferior em utentes com diabetes.
 Denominador: Contagem de utentes residentes.","NUMERADOR (AA):
 Contagem de episódos de internamento hospitalar em que a expressão [A e B e C e D e E e F] é verdadeira:
@@ -40474,7 +40739,7 @@ H. Apenas se consideram os episódios de internamento válidos para faturação 
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Coincidente com a data da última estimativa de residentes disponível (anterior à data de referência do indicador).",AA / BB x 10.000,por 10.000,Taxa internamento (por 10.000 residentes por ano),Descontinuado em Dezembro de 2017,---,---,---,Ganhos em Saúde,Diabetes Mellitus,Utentes residentes - informação INE,90 dias,,
-446,86,2016.086.01,"Proporção de RN de termo, de baixo peso","Proporção de recém-nascidos de termo, de baixo peso","Monitorizar a efetividade dos cuidados prestados pelos CSP no âmbito do programa de saúde materna, na prevenção de complicações fetais e neonatais, usando como medida a ""proporção de recém-nascidos de termo e com baixo peso"".","Indicador que exprime a proporção de recém-nascidos de baixo peso (<2500 gramas) ao nascer, entre os recém-nascidos de termo nascidos no período de tempo considerado.
+447,86,2016.086.01,"Proporção de RN de termo, de baixo peso","Proporção de recém-nascidos de termo, de baixo peso","Monitorizar a efetividade dos cuidados prestados pelos CSP no âmbito do programa de saúde materna, na prevenção de complicações fetais e neonatais, usando como medida a ""proporção de recém-nascidos de termo e com baixo peso"".","Indicador que exprime a proporção de recém-nascidos de baixo peso (<2500 gramas) ao nascer, entre os recém-nascidos de termo nascidos no período de tempo considerado.
 Numerador: Contagem de recém-nascidos de termo e de baixo peso.
 Denominador: Contagem de recém-nascidos de termo.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -40555,7 +40820,7 @@ H. Apenas se consideram os episódios de internamento válidos para faturação 
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB x 100,%,Proporção de recém-nascidos,Descontinuado em Dezembro de 2017,---,---,---,Ganhos em Saúde,Saúde Materna,Utentes residentes - informação INE,90 dias,,
-447,87,2016.087.01,"Taxa internam. DCV, entre residentes < 65 A","Taxa de internamentos por doença cerebrovascular, entre residentes com menos de 65 anos","Monitorizar a efetividade dos cuidados prestados pelos CSP na prevenção da doença cerebrovascular, usando como medida a ""taxa de internamentos por doença cerebrovascular em residentes com menos de 65 anos"". Ver alíneas B, C e D de OBSERVAÇÕES GERAIS","Indicador que exprime a razão entre o número de internamentos por ano com doença cerebrovascular e o número de utentes residentes com menos de 65 anos.
+448,87,2016.087.01,"Taxa internam. DCV, entre residentes < 65 A","Taxa de internamentos por doença cerebrovascular, entre residentes com menos de 65 anos","Monitorizar a efetividade dos cuidados prestados pelos CSP na prevenção da doença cerebrovascular, usando como medida a ""taxa de internamentos por doença cerebrovascular em residentes com menos de 65 anos"". Ver alíneas B, C e D de OBSERVAÇÕES GERAIS","Indicador que exprime a razão entre o número de internamentos por ano com doença cerebrovascular e o número de utentes residentes com menos de 65 anos.
 Numerador: Contagem de episódios de internamento hospitalar com doença cerebrovascular em doentes com menos de 65 anos.
 Denominador: Contagem de utentes residentes com menos de 65 anos.","NUMERADOR (AA):
 Contagem episódios de internamento hospitalar em que a expressão [A e B e C e D] é verdadeira:
@@ -40771,7 +41036,7 @@ F. Trata-se de um indicador de base populacional pois no denominador está a pop
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Coincidente com a data da última estimativa de residentes disponível (anterior à data de referência do indicador).",AA / BB x 10.000,por 10.000,Taxa internamento (por 10.000 residentes por ano),Descontinuado em Dezembro de 2017,---,---,---,Ganhos em Saúde,Cardiovascular,Utentes residentes - informação INE,90 dias,,
-448,88,2013.088.01,Proporção DM c/ registo HbA1c 6 meses,"Proporção de utentes com diabetes, com pelo menos 1 HbA1c no último semestre","Monitorizar o programa de diabetes. Parâmetro ""registo de resultado de HbA1c"".","Indicador que exprime a proporção de utentes com diabetes com pelo menos 1 HbA1c no último semestre.
+449,88,2013.088.01,Proporção DM c/ registo HbA1c 6 meses,"Proporção de utentes com diabetes, com pelo menos 1 HbA1c no último semestre","Monitorizar o programa de diabetes. Parâmetro ""registo de resultado de HbA1c"".","Indicador que exprime a proporção de utentes com diabetes com pelo menos 1 HbA1c no último semestre.
 Numerador: Contagem de utentes inscritos com diabetes com pelo menos 1 HbA1c no último semestre.
 Denominador: Contagem de utentes inscritos com diabetes.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -40797,7 +41062,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""registo de resultado de HbA1c""): Duração de 1 a 6 meses. Quando a data de referência do indicador pertence ao 1º semestre, o período em análise tem inicio a 1 de janeiro do ano em curso e fim na data de referência do indicador. Quando a data de referência do indicador pertence ao 2º semestre, o período em análise tem inicio a 1 de Julho do ano em curso e fim na data de referência do indicador.
 - Denominador (variável ""inscrição ativa na unidade de saúde""): Coincidente com a data de referência do indicador.
 - Denominador (variável ""Diabetes na lista de problemas""): Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes com Diabetes Mellitus,Com dados desde Dezembro de 2012,---,---,---,Processo,Diabetes Mellitus,Utentes inscritos à data de referência do indicador,30 dias,,
-449,89,2013.089.01,Proporção hipertensos c/ PA 6 meses,"Proporção de utentes com hipertensão arterial, com registo de pressão arterial no último semestre",Monitorizar o acompanhamento dos utentes com hipertensão arterial - parâmetro registo de pressão arterial.,"Indicador que exprime a proporção de utentes com hipertensão arterial com registo de pelo menos 1 registo de pressão arterial no último semestre.
+450,89,2013.089.01,Proporção hipertensos c/ PA 6 meses,"Proporção de utentes com hipertensão arterial, com registo de pressão arterial no último semestre",Monitorizar o acompanhamento dos utentes com hipertensão arterial - parâmetro registo de pressão arterial.,"Indicador que exprime a proporção de utentes com hipertensão arterial com registo de pelo menos 1 registo de pressão arterial no último semestre.
 Numerador: Contagem de utentes inscritos com hipertensão arterial com registo de pelo menos 1 registo de pressão arterial no último semestre.
 Denominador: Contagem de utentes inscritos com hipertensão arterial.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -40828,7 +41093,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""registo de pressão arterial""): Duração de 1 a 6 meses. Quando a data de referência do indicador pertence ao 1º semestre, o período em análise tem inicio a 1 de janeiro do ano em curso e fim na data de referência do indicador. Quando a data de referência do indicador pertence ao 2º semestre, o período em análise tem inicio a 1 de Julho do ano em curso e fim na data de referência do indicador.
 - Denominador (variável ""inscrição ativa na unidade de saúde""): Coincidente com a data de referência do indicador.
 - Denominador (variável ""HTA na lista de problemas""): Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes com hipertensão arterial,Com dados desde Dezembro de 2012,---,---,---,Processo,Hipertensão Arterial,Utentes inscritos à data de referência do indicador,5 dias,,
-450,9,2013.009.01,Taxa de utilização de consultas de PF (enf.),Taxa de utilização de consultas de enfermagem de planeamento familiar,Monitorizar a utilização das consultas de enfermagem de saúde reprodutiva e planeamento familiar (PF) pelas mulheres em idade fértil (MIF),"Indicador que exprime a proporção de MIF, que tiveram uma consulta de enfermagem de planeamento familiar nos últimos 12 meses.
+451,9,2013.009.01,Taxa de utilização de consultas de PF (enf.),Taxa de utilização de consultas de enfermagem de planeamento familiar,Monitorizar a utilização das consultas de enfermagem de saúde reprodutiva e planeamento familiar (PF) pelas mulheres em idade fértil (MIF),"Indicador que exprime a proporção de MIF, que tiveram uma consulta de enfermagem de planeamento familiar nos últimos 12 meses.
 Numerador: Contagem de MIF que tiveram pelo menos uma consulta de enfermagem de planeamento familiar nos últimos 12 meses.
 Denominador: Contagem de MIF.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -40859,7 +41124,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de mulheres,Com dados desde Dezembro de 2012,Desempenho | Gestão da Saúde | Saúde da Mulher,"Ano de 2023: [42; 75]
 Ano de 2024: [42; 75]","Ano de 2023: [25; 80]
 Ano de 2024: [25; 80]",Processo,Planeamento Familiar,Utentes inscritos à data de referência do indicador,5 dias,,
-451,90,2013.090.01,"Despesa medic. fatur., por utiliz. (v. compart.)","Despesa média de medicamentos faturados, por utente utilizador (baseado no valor comparticipado pelo SNS)","Monitorizar programa de prescrição de fármacos. Parâmetro ""despesa em medicamentos faturados, baseado no valor comparticipado pelo SNS""","Indicador que exprime a despesa média de medicamentos faturados, por utente utilizador, baseado no valor comparticipado pelo SNS.
+452,90,2013.090.01,"Despesa medic. fatur., por utiliz. (v. compart.)","Despesa média de medicamentos faturados, por utente utilizador (baseado no valor comparticipado pelo SNS)","Monitorizar programa de prescrição de fármacos. Parâmetro ""despesa em medicamentos faturados, baseado no valor comparticipado pelo SNS""","Indicador que exprime a despesa média de medicamentos faturados, por utente utilizador, baseado no valor comparticipado pelo SNS.
 Numerador: Somatório da despesa com comparticipações de medicamentos faturados.
 Denominador: Contagem de utentes utilizadores.","NUMERADOR (AA):
 Somatório do valor comparticipado pelo estado dos medicamentos em que a expressão [A e (B ou C ou D) e E] é verdadeira:
@@ -40922,7 +41187,7 @@ P. É natural que o denominador deste indicador dê resultados ligeiramente supe
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador: Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB,€ / UTI,Despesa com medicamentos,Com dados desde Dezembro de 2012,---,---,---,Resultado,Transversal,Utentes utilizadores durante o período em análise,30 dias,,
-452,91,2013.091.01,"Proporção DM < 65 A, c/ HbA1c <= 6,5 %","Proporção de utentes com diabetes, com idade inferior a 65 anos, com o último registo de HbA1c igual ou inferior a 6,5 %","Monitorizar o programa de diabetes. Parâmetro ""resultado da HbA1c"".","Indicador que exprime a proporção de utentes com diabetes e idade inferior a 65 anos, com último resultado de HbA1c igual ou inferior a 6,5%.
+453,91,2013.091.01,"Proporção DM < 65 A, c/ HbA1c <= 6,5 %","Proporção de utentes com diabetes, com idade inferior a 65 anos, com o último registo de HbA1c igual ou inferior a 6,5 %","Monitorizar o programa de diabetes. Parâmetro ""resultado da HbA1c"".","Indicador que exprime a proporção de utentes com diabetes e idade inferior a 65 anos, com último resultado de HbA1c igual ou inferior a 6,5%.
 Numerador: Contagem de utentes inscritos com diabetes e idade inferior a 65 anos, com último resultado de HbA1c igual ou inferior a 6,5%.
 Denominador: Contagem de utentes inscritos com diabetes com idade inferior a 65 anos.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B e C] é verdadeira:
@@ -40952,7 +41217,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes com Diabetes Mellitus,Com dados desde Dezembro de 2012,Desempenho | Gestão da Doença | Diabetes Mellitus,"Ano de 2023: [33; 55]
 Ano de 2024: [33; 55]","Ano de 2023: [20; 70]
 Ano de 2024: [20; 70]",Resultado,Diabetes Mellitus,Utentes inscritos à data de referência do indicador,30 dias,,
-453,92,2013.092.01,Proporção hipocoagulados controlados na unidade,Proporção de doentes hipocoagulados que são controlados na unidade de saúde,"Monitorizar o programa de saúde de adultos. Parâmetro ""realização do controlo da hipocoagulação na unidade de saúde""","Indicador que exprime a proporção de utentes hipocoagulados que efetuam controlo na unidade de saúde
+454,92,2013.092.01,Proporção hipocoagulados controlados na unidade,Proporção de doentes hipocoagulados que são controlados na unidade de saúde,"Monitorizar o programa de saúde de adultos. Parâmetro ""realização do controlo da hipocoagulação na unidade de saúde""","Indicador que exprime a proporção de utentes hipocoagulados que efetuam controlo na unidade de saúde
 Numerador: Contagem de utentes inscritos com pelo menos 6 resultados de INR nos últimos 12 meses.
 Denominador: Contagem de utentes inscritos hipocoagulados.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -40990,7 +41255,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador (variável ""prescrição de anticoagulante oral""): Duração de 12 meses, terminando na data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Com dados desde Dezembro de 2012,Desempenho | Acesso | Cobertura ou Utilização,"Ano de 2023: [60; 100]
 Ano de 2024: [60; 100]","Ano de 2023: [50; 100]
 Ano de 2024: [50; 100]",Processo,Saúde de adultos,Utentes inscritos à data de referência do indicador,30 dias,,
-454,93,2013.093.01,"Proporção crianças 2A, c/ PNV cumprido ou execução","Proporção de crianças com 2 anos, com PNV cumprido ou em execução à data de referência do indicador",Monitorizar o cumprimento do Programa Nacional de Vacinação (PNV) nos utentes com inscrição ativa - coorte dos 2 anos.,"Indicador que exprime a proporção de crianças que na data de referência do indicador possuem o PNV cumprido ou em execução, entre as que completam 2 anos.
+455,93,2013.093.01,"Proporção crianças 2A, c/ PNV cumprido ou execução","Proporção de crianças com 2 anos, com PNV cumprido ou em execução à data de referência do indicador",Monitorizar o cumprimento do Programa Nacional de Vacinação (PNV) nos utentes com inscrição ativa - coorte dos 2 anos.,"Indicador que exprime a proporção de crianças que na data de referência do indicador possuem o PNV cumprido ou em execução, entre as que completam 2 anos.
 Numerador: Contagem de crianças que na data de referência do indicador possuem o PNV cumprido ou em execução.
 Denominador: Contagem de crianças que completam 2 anos.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -41110,7 +41375,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador (variável ""residência""): Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de crianças,Com dados desde Junho de 2014,Desempenho | Gestão da Saúde | Saúde Infantil e Juvenil,"Ano de 2023: [95; 100]
 Ano de 2024: [95; 100]","Ano de 2023: [95; 100]
 Ano de 2024: [95; 100]",Processo,Saúde Infantil e Juvenil,Utentes inscritos à data de referência do indicador,5 dias,,
-455,94,2013.094.01,"Proporção crianças 7A, c/ PNV cumprido ou execução","Proporção de crianças com 7 anos, com PNV cumprido ou em execução à data de referência do indicador",Monitorizar o cumprimento do Programa Nacional de Vacinação (PNV) nos utentes com inscrição ativa - coorte dos 7 anos.,"Indicador que exprime a proporção de crianças que na data de referência do indicador possuem o PNV cumprido ou em execução, entre as que completam 7 anos.
+456,94,2013.094.01,"Proporção crianças 7A, c/ PNV cumprido ou execução","Proporção de crianças com 7 anos, com PNV cumprido ou em execução à data de referência do indicador",Monitorizar o cumprimento do Programa Nacional de Vacinação (PNV) nos utentes com inscrição ativa - coorte dos 7 anos.,"Indicador que exprime a proporção de crianças que na data de referência do indicador possuem o PNV cumprido ou em execução, entre as que completam 7 anos.
 Numerador: Contagem de crianças que na data de referência do indicador possuem o PNV cumprido ou em execução.
 Denominador: Contagem de crianças que completam 7 anos.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -41289,7 +41554,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador (variável ""residência""): Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de crianças,Com dados desde Junho de 2014,Desempenho | Gestão da Saúde | Saúde Infantil e Juvenil,"Ano de 2023: [95; 100]
 Ano de 2024: [95; 100]","Ano de 2023: [95; 100]
 Ano de 2024: [95; 100]",Processo,Saúde Infantil e Juvenil,Utentes inscritos à data de referência do indicador,5 dias,,
-456,95,2013.095.01,"Proporção jovens 14A, c/ PNV cumprido ou execução","Proporção de jovens com 14 anos, com PNV cumprido ou em execução à data de referência do indicador",Monitorizar o cumprimento do Programa Nacional de Vacinação (PNV) nos utentes com inscrição ativa - coorte dos 14 anos.,"Indicador que exprime a proporção de jovens que na data de referência do indicador possuem o PNV cumprido ou em execução, entre os que completam 14 anos.
+457,95,2013.095.01,"Proporção jovens 14A, c/ PNV cumprido ou execução","Proporção de jovens com 14 anos, com PNV cumprido ou em execução à data de referência do indicador",Monitorizar o cumprimento do Programa Nacional de Vacinação (PNV) nos utentes com inscrição ativa - coorte dos 14 anos.,"Indicador que exprime a proporção de jovens que na data de referência do indicador possuem o PNV cumprido ou em execução, entre os que completam 14 anos.
 Numerador: Contagem de jovens que na data de referência do indicador possuem o PNV cumprido ou em execução.
 Denominador: Contagem de jovens que completam 14 anos.","NUMERADOR: (AA)
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -41444,7 +41709,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador (variável ""residência""): Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de jovens,Com dados desde Junho de 2014,Desempenho | Gestão da Saúde | Saúde Infantil e Juvenil,"Ano de 2023: [95; 100]
 Ano de 2024: [95; 100]","Ano de 2023: [95; 100]
 Ano de 2024: [90; 100]",Processo,Saúde Infantil e Juvenil,Utentes inscritos à data de referência do indicador,5 dias,1.0,1.0
-457,96,2013.096.01,Rácio despesa fatur. DPP-4 e antidiab. não insul.,"Rácio entre a despesa faturada com inibidores DPP-4 e a faturada com antidiabéticos não insulínicos, em doentes com Diabetes Mellitus tipo 2","Monitorizar o programa de diabetes. Parâmetro ""Rácio de despesa faturada com terapêutica com inibidores DPP-4"".","Indicador que exprime o rácio entre a despesa faturada com inibidores DPP-4 e a despesa faturada com antidiabéticos não insulínicos, em doentes com Diabetes Mellitus tipo 2.
+458,96,2013.096.01,Rácio despesa fatur. DPP-4 e antidiab. não insul.,"Rácio entre a despesa faturada com inibidores DPP-4 e a faturada com antidiabéticos não insulínicos, em doentes com Diabetes Mellitus tipo 2","Monitorizar o programa de diabetes. Parâmetro ""Rácio de despesa faturada com terapêutica com inibidores DPP-4"".","Indicador que exprime o rácio entre a despesa faturada com inibidores DPP-4 e a despesa faturada com antidiabéticos não insulínicos, em doentes com Diabetes Mellitus tipo 2.
 Numerador: Somatório da despesa faturada com inibidores DPP-4 em doentes com Diabetes Mellitus tipo 2.
 Denominador: Somatório da despesa faturada com antidiabéticos não insulínicos, em doentes com Diabetes Mellitus tipo 2.","NUMERADOR (AA):
 Somatório do PVP dos medicamentos em que a expressão [A e B] é verdadeira:
@@ -41501,7 +41766,7 @@ A. O diagnóstico de diabetes pode estar inserido quer na [lista de problemas] q
 INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Numerador (variável ""despesa com inibidores de DPP-4 faturados""): Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.
 - Denominador (variável ""despesa com antidiabéticos não insulínicos""): Duração de 1 a 12 meses. Tem início a 1 de janeiro do ano em curso e termina na data de referência do indicador.",AA / BB x 100,%,Rácio de despesas,Com dados desde Dezembro de 2012,---,---,---,Processo,Diabetes Mellitus,Utentes inscritos em pelo menos um dia do período em análise,30 dias,,
-458,97,2013.097.01,Proporção DM c/ microalbum. último ano,"Proporção de utentes com diabetes, com microalbuminúria no último ano","Monitorizar o programa de diabetes. Parâmetro ""registo de resultado da microalbuminúria"".","Indicador que exprime a proporção de utentes com diabetes com pelo menos 1 microalbuminúria no último ano.
+459,97,2013.097.01,Proporção DM c/ microalbum. último ano,"Proporção de utentes com diabetes, com microalbuminúria no último ano","Monitorizar o programa de diabetes. Parâmetro ""registo de resultado da microalbuminúria"".","Indicador que exprime a proporção de utentes com diabetes com pelo menos 1 microalbuminúria no último ano.
 Numerador: Contagem de utentes inscritos com diabetes com pelo menos 1 microalbuminúria no último ano.
 Denominador: Contagem de utentes inscritos com diabetes.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
@@ -41527,7 +41792,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FIXO""
 - Denominador (variável ""Diabetes na lista de problemas""): Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes com Diabetes Mellitus,Com dados desde Dezembro de 2012,Desempenho | Gestão da Doença | Diabetes Mellitus,"Ano de 2023: [80; 100]
 Ano de 2024: [80; 100]","Ano de 2023: [50; 100]
 Ano de 2024: [50; 100]",Processo,Diabetes Mellitus,Utentes inscritos durante um mínimo de N meses do período em análise,30 dias,,
-459,98,2013.098.01,"Proporção utentes >= 25 A, c/ vacina tétano","Proporção de utentes com 25 ou mais anos, que têm a vacina antitetânica atualizada","Monitorizar o cumprimento do Programa Nacional de Vacinação (PNV) nos utentes com inscrição ativa: parâmetro ""vacina antitetânica""","Indicador que exprime a proporção de utentes com 25 ou mais anos, com vacina antitetânica atualizada.
+460,98,2013.098.01,"Proporção utentes >= 25 A, c/ vacina tétano","Proporção de utentes com 25 ou mais anos, que têm a vacina antitetânica atualizada","Monitorizar o cumprimento do Programa Nacional de Vacinação (PNV) nos utentes com inscrição ativa: parâmetro ""vacina antitetânica""","Indicador que exprime a proporção de utentes com 25 ou mais anos, com vacina antitetânica atualizada.
 Numerador: Contagem de utentes inscritos com 25 ou mais anos e com vacina antitetânica atualizada.
 Denominador: Contagem de utentes inscritos com 25 ou mais anos.","NUMERADOR (AA):
 Válido para indicadores com data de referência igual ou superior a janeiro de 2018.
@@ -41591,7 +41856,7 @@ INDICADOR CALCULADO PELO MÉTODO DE ""PERÍODO EM ANÁLISE FLUTUANTE"", ATÉ DEZ
 - Denominador: Coincidente com a data de referência do indicador.",AA / BB x 100,%,Proporção de utentes,Com dados desde Dezembro de 2012,Desempenho | Gestão da Saúde | Saúde do Adulto,"Ano de 2023: [93; 100]
 Ano de 2024: [93; 100]","Ano de 2023: [85; 100]
 Ano de 2024: [80; 100]",Processo,Saúde de adultos,Utentes inscritos à data de referência do indicador,5 dias,1.0,1.0
-460,99,2013.099.01,Taxa utilização consultas de enfermagem - 3 anos,Taxa de utilização global de consultas de enfermagem nos últimos 3 anos,Avaliar o acesso a consultas de enfermagem pela população inscrita.,"Indicador que exprime a proporção de utentes inscritos que tiveram consulta de enfermagem, de qualquer tipo, nos últimos 3 anos.
+461,99,2013.099.01,Taxa utilização consultas de enfermagem - 3 anos,Taxa de utilização global de consultas de enfermagem nos últimos 3 anos,Avaliar o acesso a consultas de enfermagem pela população inscrita.,"Indicador que exprime a proporção de utentes inscritos que tiveram consulta de enfermagem, de qualquer tipo, nos últimos 3 anos.
 Numerador: Contagem de utentes inscritos com pelo menos uma consulta de enfermagem presencial ou não presencial, nos últimos 3 anos.
 Denominador: Contagem de utentes inscritos.","NUMERADOR (AA):
 Contagem de utentes em que a expressão [A e B] é verdadeira:
