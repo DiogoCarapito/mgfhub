@@ -49,9 +49,7 @@ def mgfhub_style(text):
 
 
 def double_space():
-    st.markdown("")
-    st.markdown("")
-    st.markdown("")
+    return None
 
 
 def button_link(label):
