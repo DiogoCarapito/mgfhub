@@ -265,3 +265,12 @@ def outros_projetos_card(name, link, description):
                 unsafe_allow_html=True,
             )
         st.write("")
+        
+def novidade(text):
+    st.divider()
+    st.markdown(
+        '<h2 style="text-align: center;">Novidades</h2>'
+        f'<p style="text-align: center; font-size: 20px;">{text}</p>',
+        unsafe_allow_html=True,
+    )
+    st.divider()

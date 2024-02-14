@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 
 def pre_process(source):
@@ -80,6 +81,11 @@ def download_update_data(source):
     print(f"{source} saved successfully!")
 
 
+def delete_file(file_path):
+    os.remove(file_path)
+    print(f"{file_path} deleted successfully!")
+
+
 if __name__ == "__main__":
     # download/update all data
     # main csv file with all indicadores
@@ -93,3 +99,5 @@ if __name__ == "__main__":
 
     # pre-processed data for table
     pre_process("indicadores_sdm_complete.csv")
+
+    delete_file("data/original_indicadores_sdm_complete.csv")
