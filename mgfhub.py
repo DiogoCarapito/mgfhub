@@ -15,11 +15,16 @@ def main():
     page_config()
 
     # open intro.md and read the content
-    with open("content/intro.md", "r") as file:
+    with open("content/intro.md", "r", encoding="utf-8") as file:
         indroducao = file.read()
 
     # open content/novidades.csv and pick the most recent one from date column
-    ultima_novidade = pd.read_csv("content/novidades.csv").sort_values("date", ascending=False).head(1)["text"].values[0]
+    ultima_novidade = (
+        pd.read_csv("content/novidades.csv")
+        .sort_values("date", ascending=False)
+        .head(1)["text"]
+        .values[0]
+    )
 
     # open content/cartoes_home.csv and read the content with pandas
     cartoes_home = pd.read_csv("content/cartoes_home.csv")
@@ -37,9 +42,8 @@ def main():
         bem_vindos_2("Bem vind@ à nova versão 2.0 🎉")
 
         intro(indroducao)
-        
+
         novidade(ultima_novidade)
-        
 
         for each in cartoes_home.values:
             card_container(

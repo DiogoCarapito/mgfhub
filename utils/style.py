@@ -265,7 +265,8 @@ def outros_projetos_card(name, link, description):
                 unsafe_allow_html=True,
             )
         st.write("")
-        
+
+
 def novidade(text):
     st.divider()
     st.markdown(
