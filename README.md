@@ -1,15 +1,14 @@
 [![Github Actions Workflow](https://github.com/DiogoCarapito/mgfhub/actions/workflows/main.yaml/badge.svg)](https://github.com/DiogoCarapito/mgfhub/actions/workflows/main.yaml)
 
 # mgfhub
-Ferramenta de pesquisa e análise de indicadores de cuidados de saúde primarios 
+Ferramenta de pesquisa e análise de indicadores dos Cuidados de Saúde Primarios portugueses
 
 Inclui:
 
-- pesquisa por palavras chave da descricao do indicador ou código do indicador
-- filtrar por com impacto no IDE, IDG ou todos
-- visualização em tabela ou cartões 
-- visualização de indicadores com impacto do IDE ou IDG
-- Relatórios de analise
+- pesquisa por palavras chave da descricao ou número do indicador
+- filtrar por indicadores do IDE, IDG ou todos
+- visualização em tabela ou cartões
+- Relatórios de analise de desempenho da unidade e por equipa
 
 Nova versão 2.0 disponível em [mgfhub.com](mgfhub.com)
 
