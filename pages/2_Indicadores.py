@@ -83,8 +83,7 @@ def on_click():
     else:
         with table:
             # dataframe com os indicadores para visualização
-            
-            
+
             st.dataframe(
                 # dataframe com os indicadores para visualização
                 st.session_state["showable_df"],
@@ -104,14 +103,13 @@ def on_click():
                     "link_sdm",
                     "Nome abreviado",
                     "Área clínica",
-                    #"Intervalo Aceitável",
-                    #"Intervalo Esperado",
-                    #"anos_disponiveis",
+                    # "Intervalo Aceitável",
+                    # "Intervalo Esperado",
+                    # "anos_disponiveis",
                     "aceitavel_2024",
                     "esperado_2024",
                     "aceitavel_2023",
                     "esperado_2023",
-                    
                 ],
             )
 
@@ -127,7 +125,7 @@ def on_click():
 
 
 # user interface
-#col_pesquisa_1, col_pesquisa_2 = st.columns([5, 1])
+# col_pesquisa_1, col_pesquisa_2 = st.columns([5, 1])
 col_pesquisa_1, col_pesquisa_2 = st.columns([11, 1])
 
 with col_pesquisa_1:
