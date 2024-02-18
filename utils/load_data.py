@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 
-def pre_process(source):
+def pre_process_sdm(source):
     # read csv
     df = pd.read_csv("./data/" + source)
 
@@ -63,8 +63,112 @@ def pre_process(source):
         inplace=True,
     )
 
+    # change column names
+    df.rename(
+        columns={
+            "anos_disponiveis": "Anos Disponíveis",
+            "aceitavel_2023": "Intervalo Aceitável 2023",
+            "min_aceitavel_2023": "Mínimo Aceitável 2023",
+            "max_aceitavel_2023": "Máximo Aceitável 2023",
+            "aceitavel_2024": "Intervalo Aceitável 2024",
+            "min_aceitavel_2024": "Mínimo Aceitável 2024",
+            "max_aceitavel_2024": "Máximo Aceitável 2024",
+            "esperado_2023": "Intervalo Esperado 2023",
+            "min_esperado_2023": "Mínimo Esperado 2023",
+            "max_esperado_2023": "Máximo Esperado 2023",
+            "esperado_2024": "Intervalo Esperado 2024",
+            "min_esperado_2024": "Mínimo Esperado 2024",
+            "max_esperado_2024": "Máximo Esperado 2024",
+        },
+        inplace=True,
+    )
+
     # save to ./data folder
-    df.to_csv("./data/" + source)
+    df.to_csv(f"./data/{source}")
+
+    print(f"{source} pre-processed successfully!")
+
+
+def pre_process_portaria_sunburst(source):
+    # read csv
+    df = pd.read_csv("./data/" + source)
+
+    df_sdm = pd.read_csv("./data/indicadores_sdm_complete.csv")
+
+    # df_sdm = df_sdm[[
+    #     "id",
+    #     "Nome abreviado",
+    #     "Anos Disponíveis",
+    #     "Intervalo Aceitável 2023",
+    #     "Minimo Aceitável 2023",
+    #     "Máximo Aceitável 2023",
+    #     "Intervalo Aceitável 2024",
+    #     "Minimo Aceitável 2024",
+    #     "Máximo Aceitável 2024",
+    #     "Intervalo Esperado 2023",
+    #     "Minimo Esperado 2023",
+    #     "Máximo Esperado 2023",
+    #     "Intervalo Esperado 2024",
+    #     "Minimo Esperado 2024",
+    #     "Máximo Esperado 2024",
+    # ]]
+
+    df = df.merge(
+        df_sdm[
+            [
+                "id",
+                "Nome abreviado",
+                "Anos Disponíveis",
+                "Intervalo Aceitável 2023",
+                "Mínimo Aceitável 2023",
+                "Máximo Aceitável 2023",
+                "Intervalo Aceitável 2024",
+                "Mínimo Aceitável 2024",
+                "Máximo Aceitável 2024",
+                "Intervalo Esperado 2023",
+                "Mínimo Esperado 2023",
+                "Máximo Esperado 2023",
+                "Intervalo Esperado 2024",
+                "Mínimo Esperado 2024",
+                "Máximo Esperado 2024",
+            ]
+        ],
+        on="id",
+        how="left",
+    )
+
+    # get the unique values of the columns "Dimensão" and create a new lines for each one, where "Ponderaão"  is the sum of all the lines that have that "Dimensão"
+    df_dimensao = df.groupby(["Dimensão"]).sum().reset_index()
+
+    # make "Nome" the name of the "Dimensão"
+    df_dimensao["Nome"] = df_dimensao["Dimensão"]
+
+    # remove the values of the columns that dont make sense
+    df_dimensao[
+        [
+            "Dimensão",
+            "id",
+            "Intervalo esperado",
+            "Intervalo aceitável",
+            "min_esperado",
+            "max_esperado",
+            "min_aceitavel",
+            "max_aceitavel",
+            "Nome abreviado",
+        ]
+    ] = None
+
+    df_dimensao["Dimensão"] = "IDE"
+
+    df_dimensao["Lable"] = df_dimensao["Nome"]
+
+    df["Nome"] = df["id"].astype(str) + " - " + df["Nome abreviado"]
+
+    # append the two dataframes
+    df = pd.concat([df_dimensao, df], ignore_index=True)
+
+    # save to ./data folder
+    df.to_csv(f"./data/sunburst_{source}")
 
     print(f"{source} pre-processed successfully!")
 
@@ -97,7 +201,14 @@ if __name__ == "__main__":
     # list of IDG indicadores
     download_update_data("indicadores_idg.csv")
 
-    # pre-processed data for table
-    pre_process("indicadores_sdm_complete.csv")
+    # download dados portaria 411a 2023
+    download_update_data("portaria_411a_2023.csv")
 
+    # pre-processed data for table
+    pre_process_sdm("indicadores_sdm_complete.csv")
+
+    # create sunburst data for ide
+    pre_process_portaria_sunburst("portaria_411a_2023.csv")
+
+    # remover o original
     delete_file("data/original_indicadores_sdm_complete.csv")

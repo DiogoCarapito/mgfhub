@@ -94,7 +94,7 @@ def on_click():
                         display_text="SDM",
                     )
                 },
-                use_container_width=False,
+                use_container_width=True,
                 # esconder o index
                 hide_index=False,
                 # ordem das colunas
@@ -108,8 +108,16 @@ def on_click():
                     # "anos_disponiveis",
                     "aceitavel_2024",
                     "esperado_2024",
+                    # "min_aceitavel_2024",
+                    # "max_aceitavel_2024",
+                    # "min_esperado_2024",
+                    # "max_esperado_2024",
                     "aceitavel_2023",
                     "esperado_2023",
+                    # "min_aceitavel_2023",
+                    # "max_aceitavel_2023",
+                    # "min_esperado_2023",
+                    # "max_esperado_2023",
                 ],
             )
 

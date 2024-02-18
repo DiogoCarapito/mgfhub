@@ -1,0 +1,44 @@
+Dimensão,id,Nome,Ponderação,Intervalo esperado,Intervalo aceitável,min_esperado,max_esperado,min_aceitavel,max_aceitavel
+Acesso,8,Utilização de consultas de planeamento familiar,4.0,[60;100],[38;60[U]100;100],60.0,100,38.0,100
+Acesso,294,Domicílios de enfermagem.,4.0,[500;1500],[150;500[U]1500;1500],500.0,1500,150.0,1500
+Acesso,330,Utilização de consultas médicas ,5.0,"[0,82;2]","[0,7;0,82[U]2;2]",0.82,2,0.7,2
+Acesso,331,Utilização de consultas de enfermagem.,5.0,"[0,76;2]","[0,6;0,76[U]2;2]",0.76,2,0.6,2
+Acesso,335,Renovação do receituário crónico em 3 dias úteis.,2.0,[85;100],[80;85[U]100;100],85.0,100,80.0,100
+Gestão da Saúde,11,Consulta de vigilância da gravidez no 1.o trimestre,1.2,[91;100],[85;91[U]100;100],91.0,100,85.0,100
+Gestão da Saúde,34,Realização de consulta em utentes com obesidade ,1.2,[72;100],[55;72[U]100;100],72.0,100,55.0,100
+Gestão da Saúde,45,Rastreio do cancro colo do útero,1.2,[60;100],[37;60[U]100;100],60.0,100,37.0,100
+Gestão da Saúde,46,Rastreio do cancro do cólon e reto.,1.2,[65;100],[45;65[U]100;100],65.0,100,45.0,100
+Gestão da Saúde,54,Realização de consulta em utentes com alcoolismo,1.2,[60;100],[40;60[U]100;100],60.0,100,40.0,100
+Gestão da Saúde,63,Plano Nacional de Vacinação e consulta de vigilância aos 7 anos ,1.2,[80;100],[65;80[U]100;100],80.0,100,65.0,100
+Gestão da Saúde,95,Plano Nacional de Vacinação e consulta de vigilância aos 14 anos ,1.2,[95;100],[90;95[U]100;100],95.0,100,90.0,100
+Gestão da Saúde,98,Proporção utentes com vacina tétano ,1.2,[93;100],[80;93[U]100;100],93.0,100,80.0,100
+Gestão da Saúde,269,Vigilância saúde infantil 2.o ano de vida,1.2,"[0,87;1]","[0,7;0,87[U]1;1]",0.87,1,0.7,1
+Gestão da Saúde,295,Realização de consultas de enfermagem durante gravidez e puerpério,1.2,[77;100],[51;77[U]100;100],77.0,100,51.0,100
+Gestão da Saúde,302,Vigilância saúde infantil 1.o ano de vida,1.2,"[0,93;1]","[0,82;0,93[U]1;1]",0.93,1,0.82,1
+Gestão da Saúde,308,Ecografia morfológica na gravidez,1.2,[80;100],[60;80[U]100;100],80.0,100,60.0,100
+Gestão da Saúde,310,Exames laboratoriais no 1.o trimestre da gravidez,1.2,"[0,79;1]","[0,62;0,79[U]1;1]",0.79,1,0.62,1
+Gestão da Saúde,311,Exames laboratoriais no 2.o trimestre da gravidez,1.2,"[0,54;1]","[0,4;0,54[U]1;1]",0.54,1,0.4,1
+Gestão da Saúde,312,Exames laboratoriais no 3.o trimestre da gravidez,1.2,"[0,43;1]","[0,3;0,43[U]1;1]",0.43,1,0.3,1
+Gestão da Saúde,384,Recém- nascidos cuja mãe tem registo de gravidez.,1.2,[90;100],[80;90[U]100;100],90.0,100,80.0,100
+Gestão da Saúde,397,Fumadores com interações breves ou muito breves,1.2,[25;100],[15;25[U]100;100],25.0,100,15.0,100
+Gestão da Saúde,404,Pessoas com abstinência tabágica ,1.2,[60;10000],[20;60[U]10000;10000],60.0,10000,20.0,10000
+Gestão da Saúde,435,Utentes com vacina da gripe ,1.2,[66;100],[62;66[U]100;100],66.0,100,62.0,100
+Gestão da Saúde,409,"Utentes sem prescrição prolongada de ansiolíticos, sedativos e hipnóticos ajustada",1.2,"[91,5;100]","[89;91,5[U]100;100]",91.5,100,89.0,100
+Gestão da Doença,20,Utentes com hipertensão com pressão arterial controlada ,1.5,[67;100],[45;67[U]100;100],67.0,100,45.0,100
+Gestão da Doença,23,Utentes com hipertensão com registo de risco cardiovascular ,1.5,[80;100],[60;80[U]100;100],80.0,100,60.0,100
+Gestão da Doença,36,Utentes com diabetes com registo de Gestão de Regime Terapêutico,1.5,[75;100],[60;75[U]100;100],75.0,100,60.0,100
+Gestão da Doença,37,Utentes com diabetes com consulta de enfermagem de vigilância,1.5,[87;100],[70;87[U]100;100],87.0,100,70.0,100
+Gestão da Doença,39,Utentes com diabetes com última HbA1c controlada.,1.5,[70;100],[50;70[U]100;100],70.0,100,50.0,100
+Gestão da Doença,49,Utentes com doença pulmonar obstrutiva crónica com espirometria.,1.5,[60;100],[30;60[U]100;100],60.0,100,30.0,100
+Gestão da Doença,274,"Utentes com diabetes tipo 2 e indicação para insulinoterapia, a fazer terapêutica",1.5,[82;100],[65;82[U]100;100],82.0,100,65.0,100
+Gestão da Doença,275,Novos utentes com diabetes tipo 2 em terapêutica com metformina em mono-,1.5,[70;100],[50;70[U]100;100],70.0,100,50.0,100
+Gestão da Doença,314,Utentes com diabetes com pressão arterial controlada,1.5,[0;15],[0;0[U]15;28],0.0,15,0.0,28
+Gestão da Doença,315,Utentes com diabetes com valores controlados de colesterol LDL,1.5,[48;100],[33;48[U]100;100],48.0,100,33.0,100
+Gestão da Doença,380,"Utentes adultos com evidência de asma ou DPOC ou bronquite crónica, com",1.5,[81;100],[74;81[U]100;100],81.0,100,74.0,100
+Gestão da Doença,436,Utentes com DPOC com consulta de vigilância.,1.5,[70;100],[35;70[U]100;100],70.0,100,35.0,100
+Gestão da Doença,437,"Utentes com asma, com consulta de vigilância",1.5,[49;100],[35;49[U]100;100],49.0,100,35.0,100
+Qualificação da Prescrição,341,Prescrição de medicamentos por utente padrão,8.0,[0;133],[0;0[U]133;163],0.0,133,0.0,163
+Qualificação da Prescrição,354,Prescrição de MCDT por utente padrão.,10.0,[0;47],[0;0[U]47;57],0.0,47,0.0,57
+Integração de Cuidados,365,Internamentos evitáveis,7.0,[0;480],[0;0[U]480;620],0.0,480,0.0,620
+Integração de Cuidados,412,Resolutividade da unidade funcional para doença aguda,10.0,[60;85],[40;60[U]85;95],60.0,85,40.0,95
+Gestão da Doença,261,Utentes com avaliação do risco de úlcera de pé,1.5,[87;100],[70;87[U]100;100],87.0,100,70.0,100
