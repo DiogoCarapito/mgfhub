@@ -95,24 +95,6 @@ def pre_process_portaria_sunburst(source):
 
     df_sdm = pd.read_csv("./data/indicadores_sdm_complete.csv")
 
-    # df_sdm = df_sdm[[
-    #     "id",
-    #     "Nome abreviado",
-    #     "Anos Disponíveis",
-    #     "Intervalo Aceitável 2023",
-    #     "Minimo Aceitável 2023",
-    #     "Máximo Aceitável 2023",
-    #     "Intervalo Aceitável 2024",
-    #     "Minimo Aceitável 2024",
-    #     "Máximo Aceitável 2024",
-    #     "Intervalo Esperado 2023",
-    #     "Minimo Esperado 2023",
-    #     "Máximo Esperado 2023",
-    #     "Intervalo Esperado 2024",
-    #     "Minimo Esperado 2024",
-    #     "Máximo Esperado 2024",
-    # ]]
-
     df = df.merge(
         df_sdm[
             [
@@ -166,6 +148,26 @@ def pre_process_portaria_sunburst(source):
 
     # append the two dataframes
     df = pd.concat([df_dimensao, df], ignore_index=True)
+
+    # add a new row wirh Nome = "IDE" with all blank values
+    new_row = pd.DataFrame(
+        {
+            "Nome": ["IDE"],
+            "Dimensão": [None],
+            "Lable": ["IDE"],
+            "id": [None],
+            "Ponderação": [100],
+            "Intervalo esperado": [None],
+            "Intervalo aceitável": [None],
+            "min_esperado": [None],
+            "max_esperado": [None],
+            "min_aceitavel": [None],
+            "max_aceitavel": [None],
+            "Nome abreviado": [None],
+        }
+    )
+
+    df = pd.concat([df, new_row], ignore_index=True)
 
     # save to ./data folder
     df.to_csv(f"./data/sunburst_{source}")

@@ -1,20 +1,16 @@
 import streamlit as st
 from utils.style import page_config, main_title, em_desenvolvimento, centered_title
-import pandas as pd
 
 from utils.etl_relatorios import etl_bicsp
 from utils.vis_relatorios import sunburst_bicsp
-
-# imports that came from mgfhub2 project
-# from utils.etl import etl_bicsp
-# from utils.calc import calcular_idg, calcular_idg_maximo
 
 page_config()
 
 main_title("Relatórios")
 
-st.session_state["df_bicsp"] = None
-st.session_state["df_mimuf"] = None
+st.session_state["df_bicsp"] = {}
+st.session_state["df_mimuf"] = {}
+
 
 with st.sidebar:
     st.title("📄 Upload")
@@ -26,9 +22,9 @@ with st.sidebar:
     st.session_state["uploaded_file_bicsp"] = st.file_uploader(
         "Upload excel proveniente do BI-CSP",
         type=["xlsx"],
-        accept_multiple_files=False,
         # help="Ajuda BI-CSP",
         label_visibility="collapsed",
+        accept_multiple_files=True,
     )
 
     st.subheader("Upload excel proveniente do MIMUF")
@@ -37,9 +33,9 @@ with st.sidebar:
     st.session_state["uploaded_file_mimuf"] = st.file_uploader(
         "Upload excel proveniente do MIM@UF",
         type=["xlsx"],
-        accept_multiple_files=False,
         # help="Ajuda MIMUF",
         label_visibility="collapsed",
+        accept_multiple_files=True,
     )
 
     st.divider()
@@ -84,34 +80,29 @@ with st.sidebar:
 
 
 # BICSP file
+# if there is a file or files uploaded, process it/them
 if st.session_state["uploaded_file_bicsp"] is not None:
-    st.session_state["df_bicsp"] = etl_bicsp(
-        pd.read_excel(st.session_state["uploaded_file_bicsp"], engine="openpyxl")
-    )
-    # st.write(df_bicsp)
+    st.session_state["df_bicsp"] = etl_bicsp(st.session_state["uploaded_file_bicsp"])
 
+# if empty
 else:
-    st.warning("Ficheiro BI-CSP não carregado")
+    st.warning("<-- Ficheiro BI-CSP não carregado")
     st.empty()
 
 # MIMUF file
+# if there is a file or files uploaded, process it/them
 if st.session_state["uploaded_file_mimuf"] is not None:
-    st.session_state["df_mimuf"] = etl_bicsp(
-        pd.read_excel(st.session_state["uploaded_file_mimuf"], engine="openpyxl")
-    )
-    # st.write(df_mimuf)
+    st.session_state["df_mimuf"] = etl_bicsp(st.session_state["uploaded_file_mimuf"])
 
+# if empty
 else:
-    st.warning("Ficheiro MIM@UF não carregado")
+    st.warning("<-- Ficheiro MIM@UF não carregado")
     st.empty()
 
-
+# select modelo contratual
 modelo_contratual = st.radio(
     "Modelo Contratual",
-    [
-        "IDE",
-        "IDG",
-    ],
+    ["IDE", "IDG", "Todos os indicadores"],
     horizontal=True,
 )
 
@@ -127,26 +118,43 @@ tab_uni_geral, tab_uni_indic, tab_prof_geral, tab_prof_indi = st.tabs(
 with tab_uni_geral:
     centered_title("Unidade - Visão Geral")
 
-    col_uni_geral_1, col_uni_geral_2 = st.columns([2, 1])
-    with col_uni_geral_1:
-        # sunburst
-        st.plotly_chart(
-            sunburst_bicsp(st.session_state["df_bicsp"]), use_container_width=True
+    if not st.session_state["df_bicsp"]:
+        st.warning("Ficheiro BI-CSP não carregado")
+    else:
+        escolha = st.selectbox(
+            "Escolha a Unidade ano e mês", st.session_state["df_bicsp"]
         )
 
-    with col_uni_geral_2:
-        st.metric(modelo_contratual, 100)
+        st.plotly_chart(
+            sunburst_bicsp(
+                st.session_state["df_bicsp"][escolha]["data"],
+                st.session_state["df_bicsp"][escolha]["ano"],
+            ),
+            use_container_width=True,
+        )
 
-    st.write("texto")
+        # col_uni_geral_1, col_uni_geral_2 = st.columns([2, 1])
+
+        # with col_uni_geral_1:
+        #     # sunburst
+
+        # with col_uni_geral_2:
+        #     #st.metric(modelo_contratual, 100)
+        #     st.empty()
+
+        # # #st.write("texto")
 
 with tab_uni_indic:
     centered_title("Unidade - Indicadores")
 
+    em_desenvolvimento()
+
 with tab_prof_geral:
     centered_title("Profissional - Visão Geral")
+
+    em_desenvolvimento()
 
 with tab_prof_indi:
     centered_title("Profissional - Indicadores")
 
-
-em_desenvolvimento()
+    em_desenvolvimento()

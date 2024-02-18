@@ -1,6 +1,5 @@
 title,text,image,link,icon,em_construcao
 Indicadores,"Ferramenta de pesquisa entre os mais de 460 indicadores existentes, com possibilidade de filtrar por IDE ou IDG",None,"Indicadores",🔎,False
 Relatórios,"Ferramenta de análise automática da performance dos indicadores de uma unidade ou de um profissional, com base no upload de uma tabela proveniente do BI-CSP e outra do MIM@UF",None,"Relatorios",📊,True
-Sunburst,"Visualização da distribuição dos indicadores pelo seu impacto no IDE e IDG. Permite compreeender a distribuição dos indicadores pelas diferentes áreas e dimensões",None,"Sunburst",🌞,True
 FAQs,"Perguntas frequentes sobre o mgfhub, funcionamento dos indicadores e sua interpretação",None,"FAQs",❓,True
 Sobre,"Informações sobre o mgfhub, equipa, outros projetos e changelog",None,"Sobre",ℹ️,False
