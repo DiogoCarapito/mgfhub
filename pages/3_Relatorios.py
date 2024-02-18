@@ -1,7 +1,7 @@
 import streamlit as st
 from utils.style import page_config, main_title, em_desenvolvimento, centered_title
 
-from utils.etl_relatorios import etl_bicsp
+from utils.etl_relatorios import etl_bicsp, merge_portaria_bicsp
 from utils.vis_relatorios import sunburst_bicsp
 
 page_config()
@@ -100,11 +100,11 @@ else:
     st.empty()
 
 # select modelo contratual
-modelo_contratual = st.radio(
-    "Modelo Contratual",
-    ["IDE", "IDG", "Todos os indicadores"],
-    horizontal=True,
-)
+# modelo_contratual = st.radio(
+#     "Modelo Contratual",
+#     ["IDE", "IDG", "Todos os indicadores"],
+#     horizontal=True,
+# )
 
 tab_uni_geral, tab_uni_indic, tab_prof_geral, tab_prof_indi = st.tabs(
     [
@@ -118,31 +118,72 @@ tab_uni_geral, tab_uni_indic, tab_prof_geral, tab_prof_indi = st.tabs(
 with tab_uni_geral:
     centered_title("Unidade - Visão Geral")
 
+    # mensagem se não houver ficheiros carregados
     if not st.session_state["df_bicsp"]:
-        st.warning("Ficheiro BI-CSP não carregado")
+        st.warning("Ficheiros do BI-CSP não carregados")
+
     else:
-        escolha = st.selectbox(
-            "Escolha a Unidade ano e mês", st.session_state["df_bicsp"]
+        col_filter_1, col_filter_2, col_filter_3, col_filter_4 = st.columns(
+            [2, 1, 2, 1]
         )
 
-        st.plotly_chart(
+        with col_filter_1:
+            escolha = st.selectbox(
+                "Escolha o mês de análise", st.session_state["df_bicsp"]
+            )
+
+        df_sunburst = merge_portaria_bicsp(
+            st.session_state["df_bicsp"][escolha]["data"],
+            st.session_state["df_bicsp"][escolha]["ano"],
+        )
+        with col_filter_2:
+            st.metric(
+                "IDE",
+                df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Resultado"]
+                .values[0]
+                .round(1),
+            )
+
+        with col_filter_3:
+            if len(st.session_state["df_bicsp"]) > 1:
+                escolha_2 = st.selectbox(
+                    "Escolha o 2º gráfico", st.session_state["df_bicsp"], index=1
+                )
+
+        if len(st.session_state["df_bicsp"]) == 1:
             sunburst_bicsp(
-                st.session_state["df_bicsp"][escolha]["data"],
-                st.session_state["df_bicsp"][escolha]["ano"],
-            ),
-            use_container_width=True,
-        )
+                df_sunburst, st.session_state["df_bicsp"][escolha]["ano"], 800
+            )
 
-        # col_uni_geral_1, col_uni_geral_2 = st.columns([2, 1])
+        elif len(st.session_state["df_bicsp"]) > 1:
+            col_sun_1, col_sun_2 = st.columns(2)
 
-        # with col_uni_geral_1:
-        #     # sunburst
+            with col_sun_1:
+                sunburst_bicsp(
+                    df_sunburst, st.session_state["df_bicsp"][escolha]["ano"], 500
+                )
 
-        # with col_uni_geral_2:
-        #     #st.metric(modelo_contratual, 100)
-        #     st.empty()
+            df_sunburst_2 = merge_portaria_bicsp(
+                st.session_state["df_bicsp"][escolha_2]["data"],
+                st.session_state["df_bicsp"][escolha_2]["ano"],
+            )
 
-        # # #st.write("texto")
+            with col_sun_2:
+                sunburst_bicsp(
+                    df_sunburst_2, st.session_state["df_bicsp"][escolha_2]["ano"], 500
+                )
+        if len(st.session_state["df_bicsp"]) > 1:
+            with col_filter_4:
+                st.metric(
+                    "IDE 2º",
+                    df_sunburst_2.loc[df_sunburst_2["Nome"] == "IDE", "Resultado"]
+                    .values[0]
+                    .round(1),
+                )
+
+        if len(st.session_state["df_bicsp"]) > 1:
+            st.empty()
+
 
 with tab_uni_indic:
     centered_title("Unidade - Indicadores")

@@ -142,9 +142,14 @@ def pre_process_portaria_sunburst(source):
 
     df_dimensao["Dimensão"] = "IDE"
 
-    df_dimensao["Lable"] = df_dimensao["Nome"]
+    # add a new column "Lable" with the values of "Nome" for the "Dimensão" = "IDE"
+    df_dimensao.loc[df_dimensao["Dimensão"] == "IDE", "Lable"] = df_dimensao["Nome"]
+
+    # add a new column "Lable" with the values of "id" for the "Dimensão" != "IDE"
+    df.loc[df["Dimensão"] != "IDE", "Lable"] = df["id"].astype(str)
 
     df["Nome"] = df["id"].astype(str) + " - " + df["Nome abreviado"]
+    # df["Nome"] = df["Nome abreviado"]
 
     # append the two dataframes
     df = pd.concat([df_dimensao, df], ignore_index=True)
@@ -170,7 +175,7 @@ def pre_process_portaria_sunburst(source):
     df = pd.concat([df, new_row], ignore_index=True)
 
     # save to ./data folder
-    df.to_csv(f"./data/sunburst_{source}")
+    df.to_csv(f"./data/sunburst_{source}", index=False)
 
     print(f"{source} pre-processed successfully!")
 
