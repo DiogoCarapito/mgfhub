@@ -2,7 +2,11 @@ import streamlit as st
 from utils.style import page_config, main_title, em_desenvolvimento, centered_title
 
 from utils.etl_relatorios import etl_bicsp, merge_portaria_bicsp
-from utils.vis_relatorios import sunburst_bicsp
+from utils.vis_relatorios import (
+    sunburst_bicsp,
+    horizontal_bar_chart,
+    horizontal_bar_chart_2,
+)
 
 page_config()
 
@@ -181,8 +185,13 @@ with tab_uni_geral:
                     .round(1),
                 )
 
-        if len(st.session_state["df_bicsp"]) > 1:
-            st.empty()
+        if len(st.session_state["df_bicsp"]) >= 1:
+            horizontal_bar_chart(
+                df_sunburst,
+                st.session_state["df_bicsp"][escolha]["ano"],
+            )
+
+            horizontal_bar_chart_2(df_sunburst)
 
 
 with tab_uni_indic:
