@@ -7,6 +7,8 @@ from utils.style import (
     # bicsp_link_page,
 )
 
+from utils.tutorial import tutorial_bicsp, tutorial_mimuf
+
 from utils.etl_relatorios import etl_bicsp, merge_portaria_bicsp
 from utils.vis_relatorios import (
     sunburst_bicsp,
@@ -16,7 +18,7 @@ from utils.vis_relatorios import (
 
 page_config()
 
-main_title("Relatórios")
+main_title("IDE")
 
 st.session_state["df_bicsp"] = {}
 st.session_state["df_mimuf"] = {}
@@ -25,11 +27,9 @@ mimuf_nao_carregado = "Ficheiros do MIM@UF não carregados!"
 
 
 with st.sidebar:
-    st.title("📄 Upload")
-
     # upload de xlsx de bicsp
     st.markdown(
-        "## Upload excel proveniente do [BI-CSP](https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx)"
+        "## Upload do Excel proveniente do [BI-CSP](https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx)"
     )
 
     # Upload de ficheiro excel do BI-CSP
@@ -41,9 +41,17 @@ with st.sidebar:
         accept_multiple_files=True,
     )
 
+    st.markdown(
+        "**Nota:** Para analise comparativa, pode carregar mais do que um ficheiro do BI-CSP de periodos diferentes"
+    )
+
+    tutorial_bicsp()
+
+    st.divider()
+
     # bicsp_link_page()
 
-    st.subheader("Upload excel proveniente do MIMUF")
+    st.markdown("## Upload do Excel proveniente do MIMUF")
 
     # Upload de ficheiro excel do MIMUF
     st.session_state["uploaded_file_mimuf"] = st.file_uploader(
@@ -54,45 +62,7 @@ with st.sidebar:
         accept_multiple_files=True,
     )
 
-    st.divider()
-
-    st.title("ℹ️ Ajuda")
-
-    with st.expander(
-        "Como extrair o ficheiro excel necessário do BI-CSP?", expanded=False
-    ):
-        st.write(
-            "#### 1. Abrir o o [BI CSP](https://bicsp.min-saude.pt/pt/biselfservice/Paginas/home.aspx) e fazer login com as credenciais da ARS"
-        )
-
-        st.write(
-            "#### 2. Ir ao separador dos **Indicadores | IDG** e selecionar o **IDG das Unidades Funcioinais**"
-        )
-        st.image("assets/tutorial/tutorial_bicsp_1.png", use_column_width=True)
-
-        st.write("#### 3. Selecionar o separador **UF - IDG - Indicadores**")
-        st.image("assets/tutorial/tutorial_bicsp_2.png", use_column_width=True)
-
-        st.write("#### 4. Selecionar o **Mês** e a **Nome Unidade**")
-        st.image("assets/tutorial/tutorial_bicsp_3.png", use_column_width=True)
-
-        st.write(
-            "#### 5. Selecionar o botão **More Options** no canto superior direito da tabela pirncipal"
-        )
-        st.image("assets/tutorial/tutorial_bicsp_4.png", use_column_width=True)
-
-        st.write("#### 6. Selecionar primeira opção **Export data**")
-        st.image("assets/tutorial/tutorial_bicsp_5.png", use_column_width=True)
-
-        st.write(
-            "#### 7. Selecionar a 3ª opção **Underlying data** e selecionar o botão **Export**"
-        )
-        st.image("assets/tutorial/tutorial_bicsp_6.png", use_column_width=True)
-
-        st.write(
-            "#### 8. Fazert o uload do ficheiro excel gerado (pasta de transferencias) neste site no local destinado a upload"
-        )
-        st.image("assets/tutorial/tutorial_bicsp_7.png", use_column_width=True)
+    tutorial_mimuf()
 
 
 # BICSP file

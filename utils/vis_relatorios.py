@@ -32,6 +32,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
 
     fig.update_layout(
         title=f"{unidade} {mes}/{ano}",
+        title_font=dict(size=24),
         width=size,
         height=size,
         showlegend=True,
