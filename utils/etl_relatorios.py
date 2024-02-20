@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 # import streamlit as st
 
@@ -27,14 +28,24 @@ def etl_bicsp(list_of_files):
     if list_of_files is None:
         return None
 
-    list_of_dfs = [pd.read_excel(each, engine="openpyxl") for each in list_of_files]
-
     dict_dfs = {}
 
-    for df in list_of_dfs:
-        # processamento se  o ficherio tiver cabeçalho (summarized e underalying data)
+    dict_of_dfs = {
+        xlsx_file.name: pd.read_excel(xlsx_file, engine="openpyxl")
+        for xlsx_file in list_of_files
+    }
+
+    for file_name, df in dict_of_dfs.items():
+        # get the file name
+        unidade = file_name
+
+        # processamento se o ficherio tiver cabeçalho (summarized e underalying data)
         first_column_name = df.columns[0]
         if first_column_name.startswith("Applied"):
+            # get the text int he header of the first column
+            unidade = re.search(r"Nome UF is (.*)", first_column_name).group(1)
+
+            # remove the first row
             df = df[1:]
             df.columns = df.iloc[0]
             df = df[1:]
@@ -59,14 +70,11 @@ def etl_bicsp(list_of_files):
         ano = ano_mes[:4]
         mes = ano_mes[4:6]
 
-        unidade = "USF Maravilha"  # ainda não definido
-
         # nome = f"{unidade} {ano}/{mes}"
-        nome = f"{mes}/{ano}"
+        nome = f"{unidade} {mes}/{ano}"
 
-        # df["cor"] = df["Score"].apply(
-        #     lambda x: "green" if x == 2 else ("red" if x == 0 else "yellow")
-        # )
+        df["Resultado"] = df["Resultado"].astype(float)
+        df["Score"] = df["Score"].astype(float)
 
         # Update list_of_dfs with the new df
         dict_dfs[nome] = {
@@ -129,10 +137,13 @@ def merge_portaria_bicsp(df_bicsp, ano):
 
     df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
 
+    # make score a float
+    df["Score"] = df["Score"].astype(float)
+
     # st.write(
     #     df[["id", "Nome", "Dimensão", "Ponderação", "Resultado", "Score", "contributo"]]
     # )
 
-    # st.write(df.head(10))
+    # st.write(df[["Lable", "Score"]].dtypes)
 
     return df

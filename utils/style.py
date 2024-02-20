@@ -275,3 +275,12 @@ def novidade(text):
         unsafe_allow_html=True,
     )
     st.divider()
+
+
+def bicsp_link_page():
+    link = "https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx"
+    lable = "BI-CSP - Contratualização"
+    st.markdown(
+        f'Link para <a href="{link}" style="text-decoration: underline; color: blue;">{lable}</a>',
+        unsafe_allow_html=True,
+    )

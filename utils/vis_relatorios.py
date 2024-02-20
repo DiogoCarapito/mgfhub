@@ -1,10 +1,13 @@
 import streamlit as st
 import plotly.express as px
 
+# import plotly.graph_objects as go
+# from plotly import data
+
 from utils.etl_relatorios import etiqueta_ano
 
 
-def sunburst_bicsp(df, ano, size=800):
+def sunburst_bicsp(df, ano, mes, unidade, size=800):
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df, ano)
 
@@ -28,6 +31,7 @@ def sunburst_bicsp(df, ano, size=800):
     )
 
     fig.update_layout(
+        title=f"{unidade} {mes}/{ano}",
         width=size,
         height=size,
         showlegend=True,
@@ -60,7 +64,7 @@ def horizontal_bar_chart(
     )
 
     fig.update_traces(
-        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Esperado: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
+        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.3f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Esperado: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
         hoverlabel=dict(font=dict(size=14)),
         # hovertext on the lable og the bar
         texttemplate="%{x:.2f}",
@@ -69,6 +73,7 @@ def horizontal_bar_chart(
     )
 
     fig.update_layout(
+        title="unidade",
         showlegend=False,
         height=800,
     )
@@ -76,10 +81,89 @@ def horizontal_bar_chart(
     st.plotly_chart(fig, use_container_width=True)
 
 
-def horizontal_bar_chart_2(df):
-    st.bar_chart(
-        df,
-        x="Score",
-        y="Nome",
-        use_container_width=True,
-    )
+def dumbbell_plot():
+    # df = data.gapminder()
+    # df = df.loc[(df.continent == "Europe") & (df.year.isin([1952, 2002]))]
+
+    # countries = (
+    #     df.loc[(df.continent == "Europe") & (df.year.isin([2002]))]
+    #     .sort_values(by=["lifeExp"], ascending=True)["country"]
+    #     .unique()
+    # )
+
+    # data = {
+    #     "line_x": [],
+    #     "line_y": [],
+    #     "1952": [],
+    #     "2002": [],
+    #     "colors": [],
+    #     "years": [],
+    #     "countries": [],
+    # }
+
+    # for country in countries:
+    #     data["1952"].extend(
+    #         [df.loc[(df.year == 1952) & (df.country == country)]["lifeExp"].values[0]]
+    #     )
+    #     data["2002"].extend(
+    #         [df.loc[(df.year == 2002) & (df.country == country)]["lifeExp"].values[0]]
+    #     )
+    #     data["line_x"].extend(
+    #         [
+    #             df.loc[(df.year == 1952) & (df.country == country)]["lifeExp"].values[
+    #                 0
+    #             ],
+    #             df.loc[(df.year == 2002) & (df.country == country)]["lifeExp"].values[
+    #                 0
+    #             ],
+    #             None,
+    #         ]
+    #     )
+    #     data["line_y"].extend([country, country, None]),
+
+    # fig = go.Figure(
+    #     data=[
+    #         go.Scatter(
+    #             x=data["line_x"],
+    #             y=data["line_y"],
+    #             mode="markers+lines",
+    #             showlegend=False,
+    #             marker=dict(
+    #                 symbol="arrow",
+    #                 color="black",
+    #                 size=16,
+    #                 angleref="previous",
+    #                 standoff=8,
+    #             ),
+    #         ),
+    #         go.Scatter(
+    #             x=data["1952"],
+    #             y=countries,
+    #             name="1952",
+    #             mode="markers",
+    #             marker=dict(
+    #                 color="silver",
+    #                 size=16,
+    #             ),
+    #         ),
+    #         go.Scatter(
+    #             x=data["2002"],
+    #             y=countries,
+    #             name="2002",
+    #             mode="markers",
+    #             marker=dict(
+    #                 color="lightskyblue",
+    #                 size=16,
+    #             ),
+    #         ),
+    #     ]
+    # )
+
+    # fig.update_layout(
+    #     title="Life Expectancy in Europe: 1952 and 2002",
+    #     height=1000,
+    #     legend_itemclick=False,
+    # )
+
+    # fig.show()
+    return None

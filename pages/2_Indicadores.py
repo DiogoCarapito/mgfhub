@@ -106,14 +106,14 @@ def on_click():
                     # "Intervalo Aceitável",
                     # "Intervalo Esperado",
                     # "anos_disponiveis",
-                    "aceitavel_2024",
-                    "esperado_2024",
+                    "Intervalo Aceitável 2023",
+                    "Intervalo Esperado 2023",
                     # "min_aceitavel_2024",
                     # "max_aceitavel_2024",
                     # "min_esperado_2024",
                     # "max_esperado_2024",
-                    "aceitavel_2023",
-                    "esperado_2023",
+                    "Intervalo Aceitável 2024",
+                    "Intervalo Esperado 2024",
                     # "min_aceitavel_2023",
                     # "max_aceitavel_2023",
                     # "min_esperado_2023",
@@ -133,6 +133,8 @@ def on_click():
 
 
 # user interface
+
+
 # col_pesquisa_1, col_pesquisa_2 = st.columns([5, 1])
 col_pesquisa_1, col_pesquisa_2 = st.columns([11, 1])
 
