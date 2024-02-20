@@ -109,7 +109,7 @@ with tab_uni_geral:
             if len(st.session_state["df_bicsp"]) > 1
             else ["Sunburst", "Tabela", "Sunburst + Tabela", "Dumbbell"]
         )
-        index_visualizacao = 3 if len(st.session_state["df_bicsp"]) > 1 else 0
+        index_visualizacao = 4 if len(st.session_state["df_bicsp"]) > 1 else 0
 
         st.session_state["opcao_visualizacao"] = st.radio(
             "Visualização",

@@ -78,7 +78,7 @@ def etl_bicsp(list_of_files):
 
         # Update list_of_dfs with the new df
         dict_dfs[nome] = {
-            "data": df[["id", "Resultado", "Score"]],
+            "data": df[["id", "Resultado", "Score", "Mês Ind"]],
             "nome": nome,
             "ano": int(ano),
             "mes": int(mes),
@@ -94,7 +94,7 @@ def merge_portaria_bicsp(df_bicsp, ano):
     # df_portaria.loc[df_portaria["Nome"]=="IDE", "Ponderação"] = 100
 
     df = df_portaria.merge(
-        df_bicsp[["id", "Resultado", "Score"]],
+        df_bicsp[["id", "Resultado", "Score", "Mês Ind"]],
         on="id",
         how="left",
     )
