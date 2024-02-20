@@ -12,8 +12,8 @@ from utils.tutorial import tutorial_bicsp, tutorial_mimuf
 from utils.etl_relatorios import etl_bicsp, etl_mimuf, merge_portaria_bicsp
 from utils.vis_relatorios import (
     sunburst_bicsp,
-    horizontal_bar_chart,
-    # dumbbell_plot,
+    dumbbell_plot,
+    tabela,
 )
 
 
@@ -25,6 +25,7 @@ st.session_state["df_bicsp"] = {}
 st.session_state["df_mimuf"] = {}
 bicsp_nao_carregado = "Ficheiros do BI-CSP não carregados!"
 mimuf_nao_carregado = "Ficheiros do MIM@UF não carregados!"
+st.session_state["opcao_visualizacao"] = "Sunburst"
 
 
 with st.sidebar:
@@ -42,12 +43,6 @@ with st.sidebar:
         accept_multiple_files=True,
     )
 
-    st.markdown(
-        "**Nota:** Para analise comparativa, pode carregar mais do que um ficheiro do BI-CSP de periodos diferentes"
-    )
-
-    st.divider()
-
     # bicsp_link_page()
 
     st.markdown("## Upload do Excel proveniente do MIMUF")
@@ -59,6 +54,11 @@ with st.sidebar:
         # help="Ajuda MIMUF",
         label_visibility="collapsed",
         accept_multiple_files=True,
+    )
+
+    st.write("")
+    st.markdown(
+        "**Nota:** Para analise comparativa, pode carregar mais do que um ficheiro do BI-CSP e MIM@UF com periodos diferentes"
     )
 
 
@@ -92,13 +92,41 @@ with tab_uni_geral:
     # mensagem se não houver ficheiros carregados
     if not st.session_state["df_bicsp"]:
         st.warning(bicsp_nao_carregado)
+
+        st.write("")
+
         tutorial_bicsp()
 
     else:
+        opções_visualizacao = (
+            [
+                "Sunburst",
+                "Tabela",
+                "Sunburst + Tabela",
+                "Dumbbell",
+                "Sunburst + Sunburst",
+            ]
+            if len(st.session_state["df_bicsp"]) > 1
+            else ["Sunburst", "Tabela", "Sunburst + Tabela", "Dumbbell"]
+        )
+        index_visualizacao = 3 if len(st.session_state["df_bicsp"]) > 1 else 0
+
+        st.session_state["opcao_visualizacao"] = st.radio(
+            "Visualização",
+            opções_visualizacao,
+            horizontal=True,
+            index=index_visualizacao,
+            help="Escolha a visualização que pretende",
+            # label_visibility="collapsed",
+        )
+
+        st.divider()
+
         # filtros
         col_filter_1, col_filter_2, col_filter_3, col_filter_4 = st.columns(
             [2, 1, 2, 1]
         )
+
         # escolha do dataframe de analise
         with col_filter_1:
             escolha = st.selectbox(
@@ -119,8 +147,49 @@ with tab_uni_geral:
                 .round(1),
             )
 
-        if len(st.session_state["df_bicsp"]) > 1:
-            # escolha do dataframe de analise 2
+        # SUNBURST
+        if st.session_state["opcao_visualizacao"] == "Sunburst":
+            # if len(st.session_state["df_bicsp"]) == 1:
+            sunburst_bicsp(
+                df_sunburst,
+                st.session_state["df_bicsp"][escolha]["ano"],
+                st.session_state["df_bicsp"][escolha]["mes"],
+                st.session_state["df_bicsp"][escolha]["unidade"],
+                800,
+            )
+
+        # TABELA
+        if st.session_state["opcao_visualizacao"] == "Tabela":
+            # tabela
+            if len(st.session_state["df_bicsp"]) >= 1:
+                # st.write(df_sunburst[["Nome", "Resultado", "Score"]])
+                tabela(
+                    df_sunburst,
+                    st.session_state["df_bicsp"][escolha]["ano"],
+                    st.session_state["df_bicsp"][escolha]["nome"],
+                )
+        # SUNBURST + TABELA
+        if st.session_state["opcao_visualizacao"] == "Sunburst + Tabela":
+            col_1, col_2 = st.columns([1, 1])
+            with col_1:
+                sunburst_bicsp(
+                    df_sunburst,
+                    st.session_state["df_bicsp"][escolha]["ano"],
+                    st.session_state["df_bicsp"][escolha]["mes"],
+                    st.session_state["df_bicsp"][escolha]["unidade"],
+                    500,
+                )
+            with col_2:
+                # tabela
+                if len(st.session_state["df_bicsp"]) >= 1:
+                    # st.subheader(st.session_state["df_bicsp"][escolha]["unidade"])
+                    tabela(
+                        df_sunburst,
+                        st.session_state["df_bicsp"][escolha]["ano"],
+                        st.session_state["df_bicsp"][escolha]["nome"],
+                    )
+
+        if st.session_state["opcao_visualizacao"] == "Sunburst + Sunburst":
             with col_filter_3:
                 escolha_2 = st.selectbox(
                     "Escolha o 2º gráfico", st.session_state["df_bicsp"], index=1
@@ -140,16 +209,6 @@ with tab_uni_geral:
                     .round(1),
                 )
 
-        if len(st.session_state["df_bicsp"]) == 1:
-            sunburst_bicsp(
-                df_sunburst,
-                st.session_state["df_bicsp"][escolha]["ano"],
-                st.session_state["df_bicsp"][escolha]["mes"],
-                st.session_state["df_bicsp"][escolha]["unidade"],
-                800,
-            )
-
-        elif len(st.session_state["df_bicsp"]) > 1:
             col_sun_1, col_sun_2 = st.columns(2)
 
             with col_sun_1:
@@ -170,14 +229,39 @@ with tab_uni_geral:
                     500,
                 )
 
-        if len(st.session_state["df_bicsp"]) >= 1:
-            horizontal_bar_chart(
-                df_sunburst,
-                st.session_state["df_bicsp"][escolha]["ano"],
-            )
+        if st.session_state["opcao_visualizacao"] == "Dumbbell":
+            if len(st.session_state["df_bicsp"]) == 1:
+                dumbbell_plot(
+                    {st.session_state["df_bicsp"][escolha]["nome"]: df_sunburst},
+                    st.session_state["df_bicsp"][escolha]["ano"],
+                )
+            elif len(st.session_state["df_bicsp"]) > 1:
+                with col_filter_3:
+                    escolha_2 = st.selectbox(
+                        "Escolha o 2º gráfico", st.session_state["df_bicsp"], index=1
+                    )
 
-            # dumbbell_plot_single()
-            # dumbbell_plot_double()
+                df_sunburst_2 = merge_portaria_bicsp(
+                    st.session_state["df_bicsp"][escolha_2]["data"],
+                    st.session_state["df_bicsp"][escolha_2]["ano"],
+                )
+
+                # metrica IDE 2
+                with col_filter_4:
+                    st.metric(
+                        "IDE 2º",
+                        df_sunburst_2.loc[df_sunburst_2["Nome"] == "IDE", "Resultado"]
+                        .values[0]
+                        .round(1),
+                    )
+
+                dumbbell_plot(
+                    {
+                        st.session_state["df_bicsp"][escolha]["nome"]: df_sunburst,
+                        st.session_state["df_bicsp"][escolha_2]["nome"]: df_sunburst_2,
+                    },
+                    st.session_state["df_bicsp"][escolha]["ano"],
+                )
 
 
 # with tab_uni_indic:
@@ -197,6 +281,7 @@ with tab_prof_geral:
 
     if not st.session_state["df_mimuf"]:
         st.warning(mimuf_nao_carregado)
+        st.write("")
         tutorial_mimuf()
 
     elif len(st.session_state["df_mimuf"]) >= 1:

@@ -79,6 +79,7 @@ def etl_bicsp(list_of_files):
         # Update list_of_dfs with the new df
         dict_dfs[nome] = {
             "data": df[["id", "Resultado", "Score"]],
+            "nome": nome,
             "ano": int(ano),
             "mes": int(mes),
             "unidade": unidade,
