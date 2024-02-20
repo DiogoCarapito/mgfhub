@@ -46,8 +46,6 @@ with st.sidebar:
         "**Nota:** Para analise comparativa, pode carregar mais do que um ficheiro do BI-CSP de periodos diferentes"
     )
 
-    tutorial_bicsp()
-
     st.divider()
 
     # bicsp_link_page()
@@ -62,8 +60,6 @@ with st.sidebar:
         label_visibility="collapsed",
         accept_multiple_files=True,
     )
-
-    tutorial_mimuf()
 
 
 # BICSP file
@@ -96,6 +92,7 @@ with tab_uni_geral:
     # mensagem se não houver ficheiros carregados
     if not st.session_state["df_bicsp"]:
         st.warning(bicsp_nao_carregado)
+        tutorial_bicsp()
 
     else:
         # filtros
@@ -200,6 +197,7 @@ with tab_prof_geral:
 
     if not st.session_state["df_mimuf"]:
         st.warning(mimuf_nao_carregado)
+        tutorial_mimuf()
 
     elif len(st.session_state["df_mimuf"]) >= 1:
         for each in st.session_state["df_mimuf"].items():
