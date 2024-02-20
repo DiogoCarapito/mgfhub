@@ -9,12 +9,13 @@ from utils.style import (
 
 from utils.tutorial import tutorial_bicsp, tutorial_mimuf
 
-from utils.etl_relatorios import etl_bicsp, merge_portaria_bicsp
+from utils.etl_relatorios import etl_bicsp, etl_mimuf, merge_portaria_bicsp
 from utils.vis_relatorios import (
     sunburst_bicsp,
     horizontal_bar_chart,
     # dumbbell_plot,
 )
+
 
 page_config()
 
@@ -69,7 +70,7 @@ with st.sidebar:
 st.session_state["df_bicsp"] = etl_bicsp(st.session_state["uploaded_file_bicsp"])
 
 # MIMUF file
-st.session_state["df_mimuf"] = etl_bicsp(st.session_state["uploaded_file_mimuf"])
+st.session_state["df_mimuf"] = etl_mimuf(st.session_state["uploaded_file_mimuf"])
 
 # Seleção modelo contratual
 # modelo_contratual = st.radio(
@@ -78,12 +79,13 @@ st.session_state["df_mimuf"] = etl_bicsp(st.session_state["uploaded_file_mimuf"]
 #     horizontal=True,
 # )
 
-tab_uni_geral, tab_uni_indic, tab_prof_geral, tab_prof_indi = st.tabs(
+# tab_uni_geral, tab_uni_indic, tab_prof_geral, tab_prof_indi = st.tabs(
+tab_uni_geral, tab_prof_geral = st.tabs(
     [
-        "Unidade - Geral",
-        "Unidade - Indicadores",
-        "Profissional - Geral",
-        "Profissional - Indicadores",
+        "Unidade",
+        # "Unidade - Indicadores",
+        "Por profissional",
+        # "Profissional - Indicadores",
         # "Todos Indicadores",
     ],
 )
@@ -181,17 +183,17 @@ with tab_uni_geral:
             # dumbbell_plot_double()
 
 
-with tab_uni_indic:
-    # centered_title("Unidade - Indicadores")
+# with tab_uni_indic:
+#     # centered_title("Unidade - Indicadores")
 
-    # mensagem se não houver ficheiros carregados
-    if not st.session_state["df_bicsp"]:
-        st.warning(bicsp_nao_carregado)
+#     # mensagem se não houver ficheiros carregados
+#     if not st.session_state["df_bicsp"]:
+#         st.warning(bicsp_nao_carregado)
 
-    else:
-        pass
+#     else:
+#         st.write(st.session_state["df_bicsp"])
 
-    em_desenvolvimento()
+#     em_desenvolvimento()
 
 with tab_prof_geral:
     # centered_title("Profissional - Visão Geral")
@@ -199,18 +201,17 @@ with tab_prof_geral:
     if not st.session_state["df_mimuf"]:
         st.warning(mimuf_nao_carregado)
 
-    else:
-        pass
-
-    em_desenvolvimento()
-
-with tab_prof_indi:
-    # centered_title("Profissional - Indicadores")
-
-    if not st.session_state["df_mimuf"]:
-        st.warning(mimuf_nao_carregado)
+    elif len(st.session_state["df_mimuf"]) >= 1:
+        for each in st.session_state["df_mimuf"].items():
+            st.dataframe(each)
 
     else:
         pass
 
     em_desenvolvimento()
+
+# with tab_prof_indi:
+#     # centered_title("Profissional - Indicadores")
+
+
+#     em_desenvolvimento()

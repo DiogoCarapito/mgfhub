@@ -147,3 +147,20 @@ def merge_portaria_bicsp(df_bicsp, ano):
     # st.write(df[["Lable", "Score"]].dtypes)
 
     return df
+
+
+def etl_mimuf(list_of_files):
+    if list_of_files is None:
+        return None
+
+    dict_dfs = {}
+
+    dict_of_dfs = {
+        xlsx_file.name: pd.read_excel(xlsx_file, engine="openpyxl")
+        for xlsx_file in list_of_files
+    }
+
+    for file_name, df in dict_of_dfs.items():
+        dict_dfs[file_name] = df
+
+    return dict_dfs
