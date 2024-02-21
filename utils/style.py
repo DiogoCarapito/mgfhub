@@ -284,3 +284,9 @@ def bicsp_link_page():
         f'Link para <a href="{link}" style="text-decoration: underline; color: blue;">{lable}</a>',
         unsafe_allow_html=True,
     )
+
+
+def page_bottom():
+    st.empty()
+    st.divider()
+    st.write("mgfhub® Todos os direitos reservados")

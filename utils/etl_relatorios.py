@@ -1,7 +1,9 @@
 import pandas as pd
 import re
 
-# import streamlit as st
+import streamlit as st
+
+from mimufs.processing import medico
 
 
 def extrair_id(df, coluna):
@@ -162,14 +164,100 @@ def etl_mimuf(list_of_files):
     }
 
     # for loop to process each file
-    for file_name, df in dict_of_dfs.items():
+    for df in dict_of_dfs.values():
         # main ETL
         # if the first row begins with P02_01_R03
-        if df.columns[0].startswith("P02_01_R03"):
-            # drop the first row
-            df = df[2:]
 
-        # save as a dictionary name:df
-        dict_dfs[file_name] = df
+        st.write(df.columns.shape[0] == 10)
+
+        ano_mes = df.columns[7]
+        ano = ano_mes[:4]
+        mes = ano_mes[5:7]
+        unidade = "TOP"
+        nome = f"{unidade} {mes}/{ano}"
+
+        # remove the first row
+        df = df[1:]
+        df.reset_index(drop=True, inplace=True)
+
+        # #give name to columns
+        df.columns = [
+            "Unidade",
+            "para_remover_1",
+            "id",
+            "para_remover_2",
+            "Médico Familia",
+            "para_remover_3",
+            "para_remover_4",
+            "Numerador",
+            "Denominador",
+            "Valor",
+        ]
+
+        # drop column "Mês"
+        df.drop(
+            columns=[
+                "para_remover_1",
+                "para_remover_2",
+                "para_remover_3",
+                "para_remover_4",
+            ],
+            inplace=True,
+        )
+
+        # Uniformizar nomes de médicos
+        df = medico(df, column="Médico Familia")
+
+        # extrair id indicador
+        df["id"] = extrair_id(df, "id")
+        
+        # make id the index
+        df.set_index("id", inplace=True)
+
+
+        
+        # get sunburst_portaria csv
+        df_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
+        
+        colunas_portaria = [
+            "id",
+            "Nome",
+            "Dimensão",
+            "Ponderação",
+            
+            "Intervalo Aceitável 2023",
+            "Mínimo Aceitável 2023",
+            "Máximo Aceitável 2023",
+            
+            "Intervalo Esperado 2023",
+            "Mínimo Esperado 2023",
+            "Máximo Esperado 2023",            
+            
+            "Intervalo Aceitável 2024",
+            "Mínimo Aceitável 2024",
+            "Máximo Aceitável 2024",
+
+            "Intervalo Esperado 2024",
+            "Mínimo Esperado 2024",
+            "Máximo Esperado 2024",
+        ]
+        
+        # merge df with df_portaria
+        df = df.merge(
+            df_portaria[colunas_portaria],
+            on="id",
+            how="right",
+        )
+        # drop rows with NaN
+        df.dropna(subset=["Unidade"], inplace=True)
+        
+                # save as a dictionary name:df
+        dict_dfs[nome] = {
+            "df": df,
+            "ano": ano,
+            "mes": mes,
+            "unidade": unidade,
+            "nome": nome,
+        }
 
     return dict_dfs

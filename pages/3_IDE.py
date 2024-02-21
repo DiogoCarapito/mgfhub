@@ -286,8 +286,8 @@ with tab_prof_geral:
         tutorial_mimuf()
 
     elif len(st.session_state["df_mimuf"]) >= 1:
-        for each in st.session_state["df_mimuf"].items():
-            st.table(each)
+        for nome, each in st.session_state["df_mimuf"].items():
+            st.dataframe(each["df"])
 
     else:
         pass
