@@ -161,7 +161,15 @@ def etl_mimuf(list_of_files):
         for xlsx_file in list_of_files
     }
 
+    # for loop to process each file
     for file_name, df in dict_of_dfs.items():
+        # main ETL
+        # if the first row begins with P02_01_R03
+        if df.columns[0].startswith("P02_01_R03"):
+            # drop the first row
+            df = df[2:]
+
+        # save as a dictionary name:df
         dict_dfs[file_name] = df
 
     return dict_dfs

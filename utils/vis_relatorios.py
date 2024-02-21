@@ -9,7 +9,7 @@ from utils.etl_relatorios import etiqueta_ano
 
 
 def check_date(df):
-    #check the date of the data
+    # check the date of the data
     return df["Mês Ind"].mode()[0]
 
 
@@ -98,13 +98,14 @@ def dumbbell_plot(dict_dfs, ano):
             "Filtrar por Peso",
             min_value=0.0,
             max_value=10.0,
-            value=[0.0,10.0],
+            value=[0.0, 10.0],
             step=0.1,
-            help="Escolha o peso que pretende para a métrica",
+            # help="Escolha o peso que pretende para a métrica",
         )
     with col_filter_dumbbell_2:
-        exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], index=1)
-    
+        st.empty()
+        # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], horizontal=True, index=1, disabled=True)
+
     dict_figs = {}
 
     dfs = []
@@ -119,11 +120,13 @@ def dumbbell_plot(dict_dfs, ano):
 
     # order dfs by date
     dfs = sorted(dfs, key=lambda x: x["date"])
-    
+
     # filter by peso
     for each in dfs:
-        each["df"] = each["df"].loc[(each["df"]["Ponderação"] >= slider_peso[0]) & (each["df"]["Ponderação"] <= slider_peso[1])]
-    
+        each["df"] = each["df"].loc[
+            (each["df"]["Ponderação"] >= slider_peso[0])
+            & (each["df"]["Ponderação"] <= slider_peso[1])
+        ]
 
     if len(dict_dfs) == 2:
         # Ensure the dataframes are sorted by 'indicador'
@@ -146,30 +149,31 @@ def dumbbell_plot(dict_dfs, ano):
             score1 = dfs[0]["df"][dfs[0]["df"]["Nome"] == indicador]["Score"].values[0]
             score2 = dfs[1]["df"][dfs[1]["df"]["Nome"] == indicador]["Score"].values[0]
 
-            if score1 == score2:
+            if abs(score1 - score2) < 0.1:
                 marker_info = None
                 linecolor = None
+
             elif score1 > score2:
                 marker_info = dict(
                     symbol="arrow",
-                    #color="#FF7E79",
+                    # color="#FF7E79",
                     color="grey",
                     size=20,
                     angleref="previous",
                     standoff=8,
                 )
-                #linecolor = "#FF7E79"
+                # linecolor = "#FF7E79"
                 linecolor = "grey"
             else:
                 marker_info = dict(
                     symbol="arrow",
-                    #color="#56BA39",
+                    # color="#56BA39",
                     color="grey",
                     size=20,
                     angleref="previous",
                     standoff=8,
                 )
-                #linecolor = "#56BA39"
+                # linecolor = "#56BA39"
                 linecolor = "grey"
 
             # Create a line from score1 to score2
@@ -182,7 +186,7 @@ def dumbbell_plot(dict_dfs, ano):
                 line=dict(
                     color=linecolor,
                 ),
-                hoverinfo='none'  # disable hover
+                hoverinfo="none",  # disable hover
             )
             dict_figs[indicador] = line
 
@@ -209,9 +213,11 @@ def dumbbell_plot(dict_dfs, ano):
                 size=16,
                 color=each["df"]["Score"],  # Set color to Score
                 colorscale=["#FF7E79", "#FFD479", "#56BA39"],
-                symbol=i,  # Set symbol to i
+                symbol=i + 1,  # Set symbol to i
             ),
-            customdata=each["df"][["Nome", "Resultado", int_aceit, int_esper, "Score", "Ponderação"]].values,
+            customdata=each["df"][
+                ["Nome", "Resultado", int_aceit, int_esper, "Score", "Ponderação"]
+            ].values,
             hovertemplate="<b>%{customdata[0]}</b><br>Peso: %{customdata[5]}%<br>Score: <b>%{customdata[4]:.3f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>",
             hoverlabel=dict(font=dict(size=18)),
         )
@@ -229,18 +235,34 @@ def dumbbell_plot(dict_dfs, ano):
     fig.update_layout(
         xaxis=dict(
             range=[-0.1, 2.1],  # minimum and maximum values for the x axis
-            tickvals=[0, 0.5, 1, 1.5, 2],  # specify the values at which ticks should appear
+            tickvals=[
+                0,
+                0.5,
+                1,
+                1.5,
+                2,
+            ],  # specify the values at which ticks should appear
             ticklen=10,  # length of the ticks
             showgrid=True,  # show grid lines
-            gridcolor='#D3D3D3',  # set grid color to grey
+            gridcolor="#D3D3D3",  # set grid color to light grey
             gridwidth=1,  # set grid line width
+            tickfont=dict(size=20),  # increase the size of the x axis labels
+            side="bottom",  # position the x axis labels at the top
         ),
         yaxis=dict(
             autorange="reversed",  # reverse the order of the y axis
             tickfont=dict(size=18),  # increase the size of the y axis labels
         ),
-        height=each["df"].shape[0]*25+300,
+        height=each["df"].shape[0] * 25 + 300,
         # showlegend=False,
+        legend=dict(
+            orientation="h",  # horizontal orientation
+            yanchor="bottom",  # anchor the y position to the bottom
+            y=1.02,  # position the y just above the top of the graph
+            xanchor="right",  # anchor the x position to the right
+            x=1,  # position the x at the far right of the graph
+            font=dict(size=14),  # increase the size of the legend labels
+        ),
     )
 
     st.plotly_chart(fig, use_container_width=True)
