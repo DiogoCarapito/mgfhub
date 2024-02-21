@@ -12,6 +12,7 @@ watchdog==3.0.0
 openpyxl==3.1.2
 plotly==5.18.0
 #bokeh==3.3.4
+matplotlib==3.8.3
 
 rapidfuzz==3.5.2
 unidecode==1.3.7

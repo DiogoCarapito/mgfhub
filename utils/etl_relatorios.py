@@ -1,6 +1,5 @@
 import pandas as pd
 import re
-
 import streamlit as st
 
 from mimufs.processing import medico
@@ -10,6 +9,18 @@ def extrair_id(df, coluna):
     # extrair o id que se econtra entre dois . (pontos) e transformar em int
     # exemplo de input: "2013.001.01 FL" output 1
     return df[coluna].str.extract(r"\.(\d+)\.", expand=False).astype(int)
+
+
+def etiqueta_ano_completo(df, ano, list_texto):
+    list_etiquetas = []
+
+    for each in list_texto:
+        etiqueta = f"{each} {ano}"
+        if etiqueta not in df.columns:
+            etiqueta = f"{each} 2023"
+        list_etiquetas.append(etiqueta)
+
+    return list_etiquetas
 
 
 def etiqueta_ano(df, ano):
@@ -24,6 +35,24 @@ def etiqueta_ano(df, ano):
         int_esper = "Intervalo Esperado 2023"
 
     return int_aceit, int_esper
+
+
+def calculate_score(row):
+    if (
+        row["Valor"] > row["Máximo Aceitável 2023"]
+        or row["Valor"] < row["Mínimo Aceitável 2023"]
+    ):
+        return 0
+    elif row["Mínimo Aceitável 2023"] <= row["Valor"] < row["Mínimo Esperado 2023"]:
+        score_min = 2*(row["Valor"] - row["Mínimo Aceitável 2023"])/(row["Mínimo Esperado 2023"] - row["Mínimo Aceitável 2023"])
+        return score_min
+    elif row["Máximo Esperado 2023"] < row["Valor"] <= row["Máximo Aceitável 2023"]:
+        score_max = 2*(row["Máximo Aceitável 2023"] - row["Valor"])/(row["Máximo Aceitável 2023"] - row["Máximo Esperado 2023"])
+        return score_max
+    elif row["Mínimo Esperado 2023"] <= row["Valor"] <= row["Máximo Esperado 2023"]:
+        return 2
+    else:
+        return "Error"  # Return some value or raise an exception in case none of the conditions are met
 
 
 def etl_bicsp(list_of_files):
@@ -168,13 +197,12 @@ def etl_mimuf(list_of_files):
         # main ETL
         # if the first row begins with P02_01_R03
 
-        st.write(df.columns.shape[0] == 10)
+        if df.columns.shape[0] != 10:
+            st.warning("O ficheiro não está correcto")
 
         ano_mes = df.columns[7]
         ano = ano_mes[:4]
         mes = ano_mes[5:7]
-        unidade = "TOP"
-        nome = f"{unidade} {mes}/{ano}"
 
         # remove the first row
         df = df[1:]
@@ -194,9 +222,13 @@ def etl_mimuf(list_of_files):
             "Valor",
         ]
 
+        unidade = df["Unidade"].unique()[0]
+        nome = f"{unidade} {mes}/{ano}"
+
         # drop column "Mês"
         df.drop(
             columns=[
+                "Unidade",
                 "para_remover_1",
                 "para_remover_2",
                 "para_remover_3",
@@ -210,48 +242,109 @@ def etl_mimuf(list_of_files):
 
         # extrair id indicador
         df["id"] = extrair_id(df, "id")
-        
+
         # make id the index
         df.set_index("id", inplace=True)
 
+        etiquetas_intervalos_ano = etiqueta_ano_completo(
+            df,
+            ano,
+            [
+                "Intervalo Aceitável",
+                "Mínimo Aceitável",
+                "Máximo Aceitável",
+                "Intervalo Esperado",
+                "Mínimo Esperado",
+                "Máximo Esperado",
+            ],
+        )
 
-        
         # get sunburst_portaria csv
         df_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
-        
+
         colunas_portaria = [
             "id",
             "Nome",
             "Dimensão",
             "Ponderação",
-            
-            "Intervalo Aceitável 2023",
-            "Mínimo Aceitável 2023",
-            "Máximo Aceitável 2023",
-            
-            "Intervalo Esperado 2023",
-            "Mínimo Esperado 2023",
-            "Máximo Esperado 2023",            
-            
-            "Intervalo Aceitável 2024",
-            "Mínimo Aceitável 2024",
-            "Máximo Aceitável 2024",
-
-            "Intervalo Esperado 2024",
-            "Mínimo Esperado 2024",
-            "Máximo Esperado 2024",
+            "Lable",
         ]
-        
+
+        colunas_portaria.extend(etiquetas_intervalos_ano)
+
         # merge df with df_portaria
         df = df.merge(
             df_portaria[colunas_portaria],
             on="id",
-            how="right",
+            how="left",
         )
         # drop rows with NaN
-        df.dropna(subset=["Unidade"], inplace=True)
-        
-                # save as a dictionary name:df
+        # df.dropna(subset=["id"], inplace=True)
+
+        df.reset_index(drop=True, inplace=True)
+
+        df["Valor"] = df["Valor"].str.replace(",", ".").astype(float)
+
+        # sort by id
+        df.sort_values("id", inplace=True)
+
+        # score calculado a partir do valor do indicador e dos intervalos aceitável e esperado
+        # se acima do máximo aceitave ou abaixo do mínimo aceitavel, score = 0
+        # se entre o minimo e maxio esperado, score = 2
+        # se entre minimo aceitabel e minimo esperado ou entre maximo esperado e maximo aceitavel, score = 1
+        # se acima do maximo esperado mas abaico do maximo aceitavel, score = 1
+        # valores aceitáveis e esperados estão noutra coluna e deve ser usados o da mesma linha
+
+        df["Score"] = df.apply(calculate_score, axis=1)
+
+        # calculate the score for each dimension based on the average wheighed score
+        df["contributo"] = df["Ponderação"] * df["Score"] / 2
+
+        # list of dimensions and drop empty obnes
+        list_dimensoes = [x for x in df["Dimensão"].unique().tolist() if pd.notna(x)]
+
+        # remove IDE
+        list_dimensoes = list_dimensoes[1:]
+
+        for dim in list_dimensoes:
+            df.loc[df["Nome"] == dim, "Resultado"] = df[df["Dimensão"] == dim][
+                "contributo"
+            ].sum()
+
+        df.loc[df["Dimensão"] == "IDE", "Score"] = (
+            2
+            * df.loc[df["Dimensão"] == "IDE", "Resultado"]
+            / df.loc[df["Dimensão"] == "IDE", "Ponderação"]
+        )
+
+        # apagar intervalos que não fazem sentido
+        int_aceit, int_esper = etiqueta_ano(df, ano)
+        df.loc[df["Dimensão"] == "IDE", int_aceit] = "N/A"
+        df.loc[df["Dimensão"] == "IDE", int_esper] = "N/A"
+        df.loc[df["Nome"] == "IDE", int_aceit] = "N/A"
+        df.loc[df["Nome"] == "IDE", int_esper] = "N/A"
+
+        # IDE
+        df.loc[df["Nome"] == "IDE", "Resultado"] = df.loc[
+            df["Dimensão"] == "IDE", "Resultado"
+        ].sum()
+        df.loc[df["Nome"] == "IDE", "Score"] = (
+            2
+            * df.loc[df["Nome"] == "IDE", "Resultado"]
+            / df.loc[df["Nome"] == "IDE", "Ponderação"]
+        )
+
+        df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
+
+        # rename columns to remove year
+        # df.rename(columns=lambda x: re.sub(r" 2023", "", x), inplace=True)
+
+        # st.write(df["Médico Familia"].unique())
+        # st.write(df["Médico Familia"].unique().shape[0])
+        # st.write(df["id"].unique())
+        # st.write(df["id"].unique().shape[0])
+
+        # save as a dictionary name:df
         dict_dfs[nome] = {
             "df": df,
             "ano": ano,

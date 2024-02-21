@@ -2,7 +2,7 @@ import streamlit as st
 from utils.style import (
     page_config,
     main_title,
-    em_desenvolvimento,
+    # em_desenvolvimento,
     # centered_title,
     # bicsp_link_page,
 )
@@ -14,6 +14,8 @@ from utils.vis_relatorios import (
     sunburst_bicsp,
     dumbbell_plot,
     tabela,
+    horizontal_bar,
+    sunburst_mimuf,
 )
 
 
@@ -26,6 +28,7 @@ st.session_state["df_mimuf"] = {}
 bicsp_nao_carregado = "Ficheiros do BI-CSP não carregados!"
 mimuf_nao_carregado = "Ficheiros do MIM@UF não carregados!"
 st.session_state["opcao_visualizacao"] = "Sunburst"
+st.session_state["opcao_visualizacao_2"] = "Sunburst"
 
 
 with st.sidebar:
@@ -76,11 +79,11 @@ st.session_state["df_mimuf"] = etl_mimuf(st.session_state["uploaded_file_mimuf"]
 # )
 
 # tab_uni_geral, tab_uni_indic, tab_prof_geral, tab_prof_indi = st.tabs(
-tab_uni_geral, tab_prof_geral = st.tabs(
+tab_uni_geral, tab_equipas, tab_prof_geral = st.tabs(
     [
-        "Unidade",
-        # "Unidade - Indicadores",
-        "Por profissional",
+        "Visão de Unidade",
+        "Visão de Equipas",
+        "Visão por Profissional",
         # "Profissional - Indicadores",
         # "Todos Indicadores",
     ],
@@ -117,8 +120,8 @@ with tab_uni_geral:
             opções_visualizacao,
             horizontal=True,
             index=index_visualizacao,
-            help="Escolha a visualização que pretende",
             # label_visibility="collapsed",
+            key="opcao_visualizacao_1",
         )
 
         st.divider()
@@ -265,6 +268,38 @@ with tab_uni_geral:
                 )
 
 
+with tab_equipas:
+    if not st.session_state["df_mimuf"]:
+        st.warning(mimuf_nao_carregado)
+        st.write("")
+        tutorial_mimuf()
+
+    else:
+        if len(st.session_state["df_mimuf"]) == 1:
+            dataframe_selected = list(st.session_state["df_mimuf"].keys())[0]
+
+        elif len(st.session_state["df_mimuf"]) >= 1:
+            dataframe_selected = st.selectbox(
+                "Escolha o dataframe",
+                st.session_state["df_mimuf"],
+            )
+
+        lista_indicadores = st.session_state["df_mimuf"][dataframe_selected]["df"][
+            "Nome"
+        ].unique()
+        filtro_indicador = st.selectbox(
+            "Indicador",
+            (lista_indicadores[1:]),
+        )
+
+        horizontal_bar(
+            st.session_state["df_mimuf"][dataframe_selected]["df"].loc[
+                st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
+                == filtro_indicador
+            ],
+            st.session_state["df_mimuf"][dataframe_selected]["ano"],
+        )
+
 # with tab_uni_indic:
 #     # centered_title("Unidade - Indicadores")
 
@@ -286,13 +321,48 @@ with tab_prof_geral:
         tutorial_mimuf()
 
     elif len(st.session_state["df_mimuf"]) >= 1:
+        opções_visualizacao_2 = (
+            [
+                "Sunburst",
+                "Tabela",
+                "Sunburst + Tabela",
+                "Dumbbell",
+                "Sunburst + Sunburst",
+            ]
+            if len(st.session_state["df_mimuf"]) > 1
+            else ["Sunburst", "Tabela", "Sunburst + Tabela", "Dumbbell"]
+        )
+        # Dumbbell chart by default if more than one file uploaded
+        index_visualizacao_2 = 3 if len(st.session_state["df_mimuf"]) > 1 else 0
+
+        # st.session_state["opcao_visualizacao_2"] = st.radio(
+        #     "Visualização",
+        #     opções_visualizacao_2,
+        #     horizontal=True,
+        #     index=index_visualizacao_2,
+        #     key="opcao_visualizacao_2",
+        # )
+
+        st.divider()
+
+        dataframe_selected = st.selectbox(
+            "Escolha o dataframe",
+            st.session_state["df_mimuf"],
+        )
+
+        filtro_medico = st.selectbox(
+            "Médico Familia",
+            (
+                st.session_state["df_mimuf"][dataframe_selected]["df"][
+                    "Médico Familia"
+                ].unique()
+            ),
+        )
+
         for nome, each in st.session_state["df_mimuf"].items():
-            st.dataframe(each["df"])
+            sunburst_mimuf(each["df"][each["df"]["Médico Familia"]==filtro_medico], each["ano"], each["mes"], each["unidade"], 500)
 
-    else:
-        pass
 
-    em_desenvolvimento()
 
 # with tab_prof_indi:
 #     # centered_title("Profissional - Indicadores")
