@@ -481,6 +481,7 @@ def tabela(df, ano, nome):
             "Nome",
             "link_sdm",
             "Dimensão",
+            "Ponderação",
             int_aceit,
             int_esper,
             "Resultado",

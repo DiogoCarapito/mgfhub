@@ -277,14 +277,16 @@ with tab_equipas:
     else:
         # Visualizaçao
 
-        if len(st.session_state["df_bicsp"]) > 1:
-            st.session_state["opcao_visualizacao_2"] = st.radio(
-                "Visualização",
-                ["Barras + Tabela", "Barras + Barras"],
-                horizontal=True,
-            )
-
-        st.divider()
+        # if len(st.session_state["df_mimuf"]) > 1:
+        #     st.session_state["opcao_visualizacao_2"] = st.radio(
+        #         "Visualização",
+        #         ["Barras + Tabela", "Barras + Barras"],
+        #         horizontal=True,
+        #     )
+            
+        
+        # st.divider()
+    
 
         col_filtro_equipa_1, col_filtro_equipa_2 = st.columns(2)
         with col_filtro_equipa_1:
