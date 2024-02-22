@@ -5,31 +5,31 @@ def tutorial_bicsp():
     tutorial = [
         {
             "texto": "##### 1. Abrir o [BI CSP - Contratualização](https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx)",
-            "imagem": "content/tutorial/tutorial_bicsp_1.png",
+            "imagem": "content/tutorial_bicsp/tutorial_bicsp_1.png",
         },
         {
             "texto": "##### 2. Ir ao separador **UF - IDG - Indicadores**",
-            "imagem": "content/tutorial/tutorial_bicsp_2.png",
+            "imagem": "content/tutorial_bicsp/tutorial_bicsp_2.png",
         },
         {
             "texto": "##### 3. Selecionar o 'Ano/Mês' e a 'Unidade'",
-            "imagem": "content/tutorial/tutorial_bicsp_3.png",
+            "imagem": "content/tutorial_bicsp/tutorial_bicsp_3.png",
         },
         {
             "texto": "##### 4. Selecionar o **More optionss** nos ... do canto superior direito da tabela",
-            "imagem": "content/tutorial/tutorial_bicsp_4.png",
+            "imagem": "content/tutorial_bicsp/tutorial_bicsp_4.png",
         },
         {
             "texto": "##### 5. Selecionar o botão **Export data**",
-            "imagem": "content/tutorial/tutorial_bicsp_5.png",
+            "imagem": "content/tutorial_bicsp/tutorial_bicsp_5.png",
         },
         {
             "texto": "##### 6. Selecionar a 2ª ou 3ª opção, **Sumarized Data** ou **Underlying data** e selecionar o botão **Export**",
-            "imagem": "content/tutorial/tutorial_bicsp_6.png",
+            "imagem": "content/tutorial_bicsp/tutorial_bicsp_6.png",
         },
         {
             "texto": "##### 7. Depois de gravar o ficheiro, arrastar (da pasta de transferencias) para o local de upload do mgfhub",
-            "imagem": "content/tutorial/tutorial_bicsp_7.png",
+            "imagem": "content/tutorial_bicsp/tutorial_bicsp_7.png",
         },
     ]
 
@@ -55,31 +55,71 @@ def tutorial_mimuf():
     tutorial = [
         {
             "texto": "##### 1. Abrir o MIM@UF e fazer login",
-            "imagem": "content/tutorial/tutorial_bicsp_7.png",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_1.png",
         },
         {
             "texto": "##### 2. Navegar para a pasta Indicadores",
-            "imagem": "content/tutorial/tutorial_bicsp_7.png",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_2.png",
         },
         {
-            "texto": "##### 3. Selecionar o relatório P02_01_R03_ Indicadores por lista de utentes de médico**'",
-            "imagem": "content/tutorial/tutorial_bicsp_7.png",
+            "texto": "##### 3. Pasta P02.01. Indicadores USF/UCSP'",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_3.png",
         },
         {
-            "texto": "##### 4. Executar a query pelo mês de analise e ano de contratualização",
-            "imagem": "content/tutorial/tutorial_bicsp_7.png",
+            "texto": "##### 4. Selecionar o relatório P02_01_R03_ Indicadores por lista de utentes de médico",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_4.png",
+        },
+        # {
+        #     "texto": "##### 5. ...",
+        #     "imagem": "content/tutorial_mimuf/tutorial_mimuf_5.png",
+        # },
+        {
+            "texto": "##### 5. Selecionar o Mês de Analise e o Ano de Contratualização e depois Executar Relatório",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_6.png",
         },
         {
-            "texto": "##### 5. ...",
-            "imagem": "content/tutorial/tutorial_bicsp_7.png",
+            "texto": "##### 6. Executar Relatório",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_7.png",
         },
         {
-            "texto": "##### 6. ...",
-            "imagem": "content/tutorial/tutorial_bicsp_7.png",
+            "texto": "##### 7. Vão ser necessários vários passos intermédios antes de exportar a tabela",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_8.png",
         },
         {
-            "texto": "##### 7. Depois de gravar o ficheiro, arrastar (da pasta de transferencias) para o local de upload do mgfhub",
-            "imagem": "content/tutorial/tutorial_bicsp_7.png",
+            "texto": "##### 8. Mudar para indicador Flutuante",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_9.png",
+        },
+        {
+            "texto": "##### 9. Transformar o filtro Médico Familia para uma coluna na tabela, passando com rato entre as duas colunas e clicar na lupa",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_10.png",
+        },
+        {
+            "texto": "##### 10. Selecionar Médico Familia",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_11.png",
+        },
+        {
+            "texto": "##### 11. Corrigir as linas unificadas na Planilha e depois butão com colinas a amarelo",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_12.png",
+        },
+        {
+            "texto": "##### 12. Voltar ao Home e clicar no botão Exportar",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_13.png",
+        },
+        {
+            "texto": "##### 13. Selecionar Excel com texto simples e clicar em Exportar",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_14.png",
+        },
+        {
+            "texto": "##### 14. Abrir o Excel",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_15.png",
+        },
+        {
+            "texto": "##### 16. Exportar como Livro",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_16.png",
+        },
+        {
+            "texto": "##### 17. Fazer o upload do ficheiro para o mgfhub",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_17.png",
         },
     ]
 

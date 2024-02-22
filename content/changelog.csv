@@ -13,3 +13,4 @@ version,date,text
 2.0.0.dev3,2024-02-10,"Upgrade para [Streamlit](https://streamlit.io/) 1.31, com novas funcionalidades de páginas e navegação"
 2.0.0.dev4,2024-02-12,"Preparação para transferir o domínio [mgfhub.com](mgfhub.com) para o novo layout em [Streamlit](https://streamlit.io/)"
 2.0.0,2024-02-13,"Lançamento da versão mgfhub 2.0 🎉"
+2.1.0,2024-02-22,"Versão 2.1.0 🎉 - Ferramenta de analise do IDE disponivel! Permite analisar o IDE de forma mais detalhada, com gráficos e tabelas. espeficicos para a Unidade, comparador de equipas e analise para cada profissional"

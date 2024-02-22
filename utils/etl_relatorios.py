@@ -1,7 +1,6 @@
 import pandas as pd
 import re
 import streamlit as st
-
 from mimufs.processing import medico
 
 
@@ -383,6 +382,11 @@ def etl_mimuf(list_of_files):
         # valores aceitáveis e esperados estão noutra coluna e deve ser usados o da mesma linha
 
         df["Score"] = df.apply(calculate_score_mimuf, axis=1)
+
+        # Numerador need to substitute , to . and transform to float
+        df["Numerador"] = (
+            df["Numerador"].str.replace(".", "").str.replace(",", ".").astype(float)
+        )
 
         # calculate the score for each dimension based on the average wheighed score
         df["contributo"] = df["Ponderação"] * df["Score"] / 2

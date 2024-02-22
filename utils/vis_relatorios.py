@@ -35,7 +35,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
         color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"],
     )
     fig.update_traces(
-        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Esperado: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
+        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
         hoverlabel=dict(font=dict(size=18)),
         textinfo="label",
         insidetextfont=dict(size=24),
@@ -179,17 +179,22 @@ def horizontal_bar_chart(df1, ano1):
 
 def dumbbell_plot(dict_dfs, ano):
     # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], index=1)
-    col_filter_dumbbell_1, col_filter_dumbbell_2 = st.columns([1, 1])
+    col_filter_dumbbell_1, col_filter_dumbbell_2, col_filter_dumbbell_3 = st.columns(
+        [1, 2, 1]
+    )
+
     with col_filter_dumbbell_1:
+        st.empty()
+    with col_filter_dumbbell_2:
         slider_peso = st.slider(
             "Filtrar por Peso",
             min_value=0.0,
             max_value=10.0,
             value=[0.0, 10.0],
             step=0.1,
-            # help="Escolha o peso que pretende para a métrica",
+            help="Escolha o peso que pretende para a métrica de forma a reduzir o número de indicadores apresentados.",
         )
-    with col_filter_dumbbell_2:
+    with col_filter_dumbbell_3:
         st.empty()
         # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], horizontal=True, index=1, disabled=True)
 

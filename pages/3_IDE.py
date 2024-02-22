@@ -302,7 +302,7 @@ with tab_equipas:
                 (lista_indicadores[1:]),
             )
 
-        col_graph_1, col_graph_2 = st.columns([2, 1])
+        col_graph_1, col_graph_2 = st.columns([5, 3])
 
         with col_graph_1:
             horizontal_bar(
@@ -345,19 +345,19 @@ with tab_prof_geral:
         tutorial_mimuf()
 
     elif len(st.session_state["df_mimuf"]) >= 1:
-        opções_visualizacao_2 = (
-            [
-                "Sunburst",
-                "Tabela",
-                "Sunburst + Tabela",
-                "Dumbbell",
-                "Sunburst + Sunburst",
-            ]
-            if len(st.session_state["df_mimuf"]) > 1
-            else ["Sunburst", "Tabela", "Sunburst + Tabela", "Dumbbell"]
-        )
-        # Dumbbell chart by default if more than one file uploaded
-        index_visualizacao_2 = 3 if len(st.session_state["df_mimuf"]) > 1 else 0
+        # opções_visualizacao_2 = (
+        #     [
+        #         "Sunburst",
+        #         "Tabela",
+        #         "Sunburst + Tabela",
+        #         "Dumbbell",
+        #         "Sunburst + Sunburst",
+        #     ]
+        #     if len(st.session_state["df_mimuf"]) > 1
+        #     else ["Sunburst", "Tabela", "Sunburst + Tabela", "Dumbbell"]
+        # )
+        # # Dumbbell chart by default if more than one file uploaded
+        # index_visualizacao_2 = 3 if len(st.session_state["df_mimuf"]) > 1 else 0
 
         # st.session_state["opcao_visualizacao_2"] = st.radio(
         #     "Visualização",
@@ -367,30 +367,45 @@ with tab_prof_geral:
         #     key="opcao_visualizacao_2",
         # )
 
-        st.divider()
+        # st.divider()
 
-        dataframe_selected = st.selectbox(
-            "Escolha o dataframe",
-            st.session_state["df_mimuf"],
-        )
+        col_filtro_medico_1, col_filtro_medico_2 = st.columns(2)
 
-        filtro_medico = st.selectbox(
-            "Médico Familia",
-            (
-                st.session_state["df_mimuf"][dataframe_selected]["df"][
-                    "Médico Familia"
-                ].unique()
-            ),
-        )
-
-        for nome, each in st.session_state["df_mimuf"].items():
-            sunburst_mimuf(
-                each["df"][each["df"]["Médico Familia"] == filtro_medico],
-                each["ano"],
-                each["mes"],
-                each["unidade"],
-                500,
+        with col_filtro_medico_1:
+            dataframe_selected = st.selectbox(
+                "Escolha o dataframe",
+                st.session_state["df_mimuf"],
             )
+
+        with col_filtro_medico_2:
+            filtro_medico = st.selectbox(
+                "Médico Familia",
+                (
+                    st.session_state["df_mimuf"][dataframe_selected]["df"][
+                        "Médico Familia"
+                    ].unique()
+                ),
+            )
+
+        sunburst_mimuf(
+            st.session_state["df_mimuf"][dataframe_selected]["df"][
+                st.session_state["df_mimuf"][dataframe_selected]["df"]["Médico Familia"]
+                == filtro_medico
+            ],
+            st.session_state["df_mimuf"][dataframe_selected]["ano"],
+            st.session_state["df_mimuf"][dataframe_selected]["mes"],
+            st.session_state["df_mimuf"][dataframe_selected]["unidade"],
+            800,
+        )
+
+        # for nome, each in st.session_state["df_mimuf"].items():
+        #     sunburst_mimuf(
+        #         each["df"][each["df"]["Médico Familia"] == filtro_medico],
+        #         each["ano"],
+        #         each["mes"],
+        #         each["unidade"],
+        #         500,
+        #     )
 
 
 # with tab_prof_indi:

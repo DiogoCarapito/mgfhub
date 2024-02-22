@@ -39,7 +39,7 @@ def main():
 
     with col2:
         # introduction
-        bem_vindos_2("Bem vind@ à nova versão 2.0 🎉")
+        bem_vindos_2("Bem vind@ à nova versão 2.1.0 🎉")
 
         intro(indroducao)
 
