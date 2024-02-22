@@ -510,7 +510,13 @@ def horizontal_bar(df, ano):
     max_aceitavel = df[f"Máximo Aceitável {ano}"].unique()[0]
     max_esperado = df[f"Máximo Esperado {ano}"].unique()[0]
     minimo = 0
-    maximo = max([min_aceitavel, min_esperado, max_esperado, max_aceitavel])
+
+    # se é o indicador 314, defenir o máximo com 100
+    # porque o 314 é um indicador que e está mal desenhado!
+    if df["id"].unique()[0] == 314:
+        maximo = 100
+    else:
+        maximo = max([min_aceitavel, min_esperado, max_esperado, max_aceitavel])
 
     # Define the colors
     colors = ["red", "yellow", "green", "yellow", "red"]

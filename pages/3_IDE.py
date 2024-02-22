@@ -283,10 +283,8 @@ with tab_equipas:
         #         ["Barras + Tabela", "Barras + Barras"],
         #         horizontal=True,
         #     )
-            
-        
+
         # st.divider()
-    
 
         col_filtro_equipa_1, col_filtro_equipa_2 = st.columns(2)
         with col_filtro_equipa_1:
