@@ -3,6 +3,37 @@ import re
 import streamlit as st
 from mimufs.processing import medico
 
+import os
+from dotenv import load_dotenv
+from supabase import create_client, Client
+from datetime import datetime
+
+# load .env file
+load_dotenv()
+
+# Supabase configuration
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
+supabase: Client = create_client(url, key)
+
+
+# Function to insert data into Supabase
+def supabase_record(unidade, ano, mes, tipo):
+    # Get current datetime
+    date_time = datetime.now().isoformat()
+
+    # Create the data in a format to be inserted into Supabase
+    sb_insert = {
+        "created_at": date_time,
+        "unidade": unidade,
+        "ano": ano,
+        "mes": mes,
+        "tipo": tipo,
+    }
+
+    # Insert data into Supabase
+    supabase.table("ide_uploads").insert(sb_insert).execute()
+
 
 def correção_vacina_gripe_435(df):
     df.loc[df["id"] == 435, "Resultado"] = 68.3
@@ -196,6 +227,8 @@ def etl_bicsp(list_of_files):
             "mes": int(mes),
             "unidade": unidade,
         }
+
+        supabase_record(unidade, ano, mes, "bicsp")
 
     return dict_dfs
 
@@ -443,5 +476,7 @@ def etl_mimuf(list_of_files):
             "unidade": unidade,
             "nome": nome,
         }
+
+        supabase_record(unidade, ano, mes, "mimuf")
 
     return dict_dfs
