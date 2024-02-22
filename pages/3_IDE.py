@@ -28,7 +28,7 @@ st.session_state["df_mimuf"] = {}
 bicsp_nao_carregado = "Ficheiros do BI-CSP não carregados!"
 mimuf_nao_carregado = "Ficheiros do MIM@UF não carregados!"
 st.session_state["opcao_visualizacao"] = "Sunburst"
-st.session_state["opcao_visualizacao_2"] = "Sunburst"
+st.session_state["opcao_visualizacao_2"] = "Barras + Tabela"
 
 
 with st.sidebar:
@@ -275,36 +275,60 @@ with tab_equipas:
         tutorial_mimuf()
 
     else:
-        if len(st.session_state["df_mimuf"]) == 1:
-            dataframe_selected = list(st.session_state["df_mimuf"].keys())[0]
+        # Visualizaçao
 
-        elif len(st.session_state["df_mimuf"]) >= 1:
+        if len(st.session_state["df_bicsp"]) > 1:
+            st.session_state["opcao_visualizacao_2"] = st.radio(
+                "Visualização",
+                ["Barras + Tabela", "Barras + Barras"],
+                horizontal=True,
+            )
+
+        st.divider()
+
+        col_filtro_equipa_1, col_filtro_equipa_2 = st.columns(2)
+        with col_filtro_equipa_1:
             dataframe_selected = st.selectbox(
-                "Escolha o dataframe",
+                "Escolha o mês de analise",
                 st.session_state["df_mimuf"],
             )
 
-        lista_indicadores = st.session_state["df_mimuf"][dataframe_selected]["df"][
-            "Nome"
-        ].unique()
-        filtro_indicador = st.selectbox(
-            "Indicador",
-            (lista_indicadores[1:]),
-        )
+        with col_filtro_equipa_2:
+            lista_indicadores = st.session_state["df_mimuf"][dataframe_selected]["df"][
+                "Nome"
+            ].unique()
+            filtro_indicador = st.selectbox(
+                "Indicador",
+                (lista_indicadores[1:]),
+            )
 
-        horizontal_bar(
-            st.session_state["df_mimuf"][dataframe_selected]["df"].loc[
-                st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
-                == filtro_indicador
-            ],
-            st.session_state["df_mimuf"][dataframe_selected]["ano"],
-        )
+        col_graph_1, col_graph_2 = st.columns([2, 1])
+
+        with col_graph_1:
+            horizontal_bar(
+                st.session_state["df_mimuf"][dataframe_selected]["df"].loc[
+                    st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
+                    == filtro_indicador
+                ],
+                st.session_state["df_mimuf"][dataframe_selected]["ano"],
+            )
+
+        with col_graph_2:
+            st.dataframe(
+                st.session_state["df_mimuf"][dataframe_selected]["df"]
+                .loc[
+                    st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
+                    == filtro_indicador
+                ][["Médico Familia", "Numerador", "Denominador", "Valor"]]
+                .sort_values(by="Valor", ascending=False),
+                hide_index=True,
+            )
 
 # with tab_uni_indic:
 #     # centered_title("Unidade - Indicadores")
 
 #     # mensagem se não houver ficheiros carregados
-#     if not st.session_state["df_bicsp"]:
+#     if not st.session_state["df_bicsp"]:r
 #         st.warning(bicsp_nao_carregado)
 
 #     else:
@@ -360,8 +384,13 @@ with tab_prof_geral:
         )
 
         for nome, each in st.session_state["df_mimuf"].items():
-            sunburst_mimuf(each["df"][each["df"]["Médico Familia"]==filtro_medico], each["ano"], each["mes"], each["unidade"], 500)
-
+            sunburst_mimuf(
+                each["df"][each["df"]["Médico Familia"] == filtro_medico],
+                each["ano"],
+                each["mes"],
+                each["unidade"],
+                500,
+            )
 
 
 # with tab_prof_indi:

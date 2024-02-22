@@ -54,22 +54,20 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
 
 
 def sunburst_mimuf(df, ano, mes, unidade, size=800):
+    ano = 2024
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df, ano)
     df = df[df["Score"] != "Error"]
-    
-    
 
     df_portatia = pd.read_csv("data/sunburst_portaria_411a_2023.csv")
-    
-    
+
     df = df_portatia.merge(
         df[["id", "Valor", "Score", "Denominador", "Numerador"]],
         on="id",
         how="left",
     )
-    
-     # list of dimensions and drop empty obnes
+
+    # list of dimensions and drop empty obnes
     list_dimensoes = [x for x in df["Dimensão"].unique().tolist() if pd.notna(x)]
 
     # remove IDE
@@ -109,8 +107,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
     df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
 
     # make score a float
-    df["Score"] = df["Score"].astype(float) 
-    
+    df["Score"] = df["Score"].astype(float)
 
     # sunburst
     fig = px.sunburst(
@@ -444,6 +441,7 @@ def dumbbell_plot(dict_dfs, ano):
 
 
 def tabela(df, ano, nome):
+    ano = 2024
     int_aceit, int_esper = etiqueta_ano(df, ano)
 
     df = df.loc[df["Dimensão"] != "IDE"]
@@ -489,6 +487,8 @@ def tabela(df, ano, nome):
 
 
 def horizontal_bar(df, ano):
+    ano = 2024
+
     df.dropna(subset=["id"], inplace=True)
 
     df.sort_values(by="Valor", ascending=True, inplace=True)
@@ -503,17 +503,19 @@ def horizontal_bar(df, ano):
     min_esperado = df[f"Mínimo Esperado {ano}"].unique()[0]
     max_aceitavel = df[f"Máximo Aceitável {ano}"].unique()[0]
     max_esperado = df[f"Máximo Esperado {ano}"].unique()[0]
+    minimo = 0
+    maximo = max([min_aceitavel, min_esperado, max_esperado, max_aceitavel])
 
     # Define the colors
     colors = ["red", "yellow", "green", "yellow", "red"]
 
     # Define the ranges of the colors
     ranges = [
-        (0, min_aceitavel),
+        (minimo, min_aceitavel),
         (min_aceitavel, min_esperado),
         (min_esperado, max_esperado),
         (max_esperado, max_aceitavel),
-        (max_aceitavel, 100),
+        (max_aceitavel, maximo),
     ]
 
     fig, ax = plt.subplots(figsize=(8, 6))
@@ -529,9 +531,11 @@ def horizontal_bar(df, ano):
     ax.set_xlabel("Cumprimento")
     ax.set_ylabel("Médico Familia")
 
-    ax.set_xlim(0, 100)
+    ax.set_xlim(minimo, maximo)
 
-    ax.set_xticks([0, min_aceitavel, min_esperado, max_esperado, max_aceitavel, 100])
+    ax.set_xticks(
+        [minimo, min_aceitavel, min_esperado, max_esperado, max_aceitavel, maximo]
+    )
 
     for rect in bar:
         width = rect.get_width()

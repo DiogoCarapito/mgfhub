@@ -5,6 +5,12 @@ import streamlit as st
 from mimufs.processing import medico
 
 
+def correção_vacina_gripe_435(df):
+    df.loc[df["id"] == 435, "Resultado"] = 68.3
+    df.loc[df["id"] == 435, "Score"] = 2
+    return df
+
+
 def extrair_id(df, coluna):
     # extrair o id que se econtra entre dois . (pontos) e transformar em int
     # exemplo de input: "2013.001.01 FL" output 1
@@ -14,10 +20,12 @@ def extrair_id(df, coluna):
 def etiqueta_ano_completo(df, ano, list_texto):
     list_etiquetas = []
 
+    ano = 2024
+
     for each in list_texto:
         etiqueta = f"{each} {ano}"
         if etiqueta not in df.columns:
-            etiqueta = f"{each} 2023"
+            etiqueta = f"{each} 2024"
         list_etiquetas.append(etiqueta)
 
     return list_etiquetas
@@ -25,31 +33,66 @@ def etiqueta_ano_completo(df, ano, list_texto):
 
 def etiqueta_ano(df, ano):
     # cria as etiquetas para os intervalos aceitáveis e esperados com o ano correcto correspondente aos dados extraídos
+    ano = 2024
 
     int_aceit = f"Intervalo Aceitável {ano}"
     int_esper = f"Intervalo Esperado {ano}"
 
     # caso não haja intervalos para o ano dos dados, por definição usa os intervalos de 2023
     if int_aceit not in df.columns or int_esper not in df.columns:
-        int_aceit = "Intervalo Aceitável 2023"
-        int_esper = "Intervalo Esperado 2023"
+        int_aceit = "Intervalo Aceitável 2024"
+        int_esper = "Intervalo Esperado 2024"
 
     return int_aceit, int_esper
 
 
-def calculate_score(row):
+def calculate_score_mimuf(row):
     if (
-        row["Valor"] > row["Máximo Aceitável 2023"]
-        or row["Valor"] < row["Mínimo Aceitável 2023"]
+        row["Valor"] > row["Máximo Aceitável 2024"]
+        or row["Valor"] < row["Mínimo Aceitável 2024"]
     ):
         return 0
-    elif row["Mínimo Aceitável 2023"] <= row["Valor"] < row["Mínimo Esperado 2023"]:
-        score_min = 2*(row["Valor"] - row["Mínimo Aceitável 2023"])/(row["Mínimo Esperado 2023"] - row["Mínimo Aceitável 2023"])
+    elif row["Mínimo Aceitável 2024"] <= row["Valor"] < row["Mínimo Esperado 2024"]:
+        score_min = (
+            2
+            * (row["Valor"] - row["Mínimo Aceitável 2024"])
+            / (row["Mínimo Esperado 2024"] - row["Mínimo Aceitável 2024"])
+        )
         return score_min
-    elif row["Máximo Esperado 2023"] < row["Valor"] <= row["Máximo Aceitável 2023"]:
-        score_max = 2*(row["Máximo Aceitável 2023"] - row["Valor"])/(row["Máximo Aceitável 2023"] - row["Máximo Esperado 2023"])
+    elif row["Máximo Esperado 2024"] < row["Valor"] <= row["Máximo Aceitável 2024"]:
+        score_max = (
+            2
+            * (row["Máximo Aceitável 2024"] - row["Valor"])
+            / (row["Máximo Aceitável 2024"] - row["Máximo Esperado 2024"])
+        )
         return score_max
-    elif row["Mínimo Esperado 2023"] <= row["Valor"] <= row["Máximo Esperado 2023"]:
+    elif row["Mínimo Esperado 2024"] <= row["Valor"] <= row["Máximo Esperado 2024"]:
+        return 2
+    else:
+        return "Error"  # Return some value or raise an exception in case none of the conditions are met
+
+
+def calculate_score_bicsp(row):
+    if (
+        row["Resultado"] > row["Máximo Aceitável 2024"]
+        or row["Resultado"] < row["Mínimo Aceitável 2024"]
+    ):
+        return 0
+    elif row["Mínimo Aceitável 2024"] <= row["Resultado"] < row["Mínimo Esperado 2024"]:
+        score_min = (
+            2
+            * (row["Resultado"] - row["Mínimo Aceitável 2024"])
+            / (row["Mínimo Esperado 2024"] - row["Mínimo Aceitável 2024"])
+        )
+        return score_min
+    elif row["Máximo Esperado 2024"] < row["Resultado"] <= row["Máximo Aceitável 2024"]:
+        score_max = (
+            2
+            * (row["Máximo Aceitável 2024"] - row["Resultado"])
+            / (row["Máximo Aceitável 2024"] - row["Máximo Esperado 2024"])
+        )
+        return score_max
+    elif row["Mínimo Esperado 2024"] <= row["Resultado"] <= row["Máximo Esperado 2024"]:
         return 2
     else:
         return "Error"  # Return some value or raise an exception in case none of the conditions are met
@@ -104,7 +147,46 @@ def etl_bicsp(list_of_files):
         # nome = f"{unidade} {ano}/{mes}"
         nome = f"{unidade} {mes}/{ano}"
 
+        # correção_vacina_gripe_435(df)
+
         df["Resultado"] = df["Resultado"].astype(float)
+
+        sf_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
+
+        colunas_portaria = [
+            "id",
+            "Nome",
+            "Dimensão",
+            "Ponderação",
+            "Lable",
+        ]
+
+        etiquetas_intervalos_ano = etiqueta_ano_completo(
+            df,
+            ano,
+            [
+                "Intervalo Aceitável",
+                "Mínimo Aceitável",
+                "Máximo Aceitável",
+                "Intervalo Esperado",
+                "Mínimo Esperado",
+                "Máximo Esperado",
+            ],
+        )
+
+        colunas_portaria.extend(etiquetas_intervalos_ano)
+
+        df = df.merge(
+            sf_portaria[colunas_portaria],
+            on="id",
+            how="right",
+        )
+
+        df["Score"] = df.apply(calculate_score_bicsp, axis=1)
+
+        # drop the rows with Score "Error"
+        df = df[df["Score"] != "Error"]
+
         df["Score"] = df["Score"].astype(float)
 
         # Update list_of_dfs with the new df
@@ -222,6 +304,11 @@ def etl_mimuf(list_of_files):
             "Valor",
         ]
 
+        # list_medicos = df["Médico Familia"].unique()
+        # # replace the names of "Médico Familia" to a generic name "Médico 1"
+        # for index, each in enumerate(list_medicos):
+        #     df.loc[df["Médico Familia"] == each, "Médico Familia"] = f"Médico {index+1}"
+
         unidade = df["Unidade"].unique()[0]
         nome = f"{unidade} {mes}/{ano}"
 
@@ -295,7 +382,7 @@ def etl_mimuf(list_of_files):
         # se acima do maximo esperado mas abaico do maximo aceitavel, score = 1
         # valores aceitáveis e esperados estão noutra coluna e deve ser usados o da mesma linha
 
-        df["Score"] = df.apply(calculate_score, axis=1)
+        df["Score"] = df.apply(calculate_score_mimuf, axis=1)
 
         # calculate the score for each dimension based on the average wheighed score
         df["contributo"] = df["Ponderação"] * df["Score"] / 2

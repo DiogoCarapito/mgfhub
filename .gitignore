@@ -165,3 +165,5 @@ cython_debug/
 
 #macOS files
 .DS_Store
+
+data/om.csv
