@@ -243,7 +243,7 @@ def dumbbell_plot(dict_dfs, ano):
 
             if abs(score1 - score2) < 0.12:
                 marker_info = None
-                linecolor = None
+                linecolor = "grey"
 
             elif score1 > score2:
                 marker_info = dict(
