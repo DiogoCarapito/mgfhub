@@ -253,7 +253,7 @@ with tab_uni_geral:
                 # metrica IDE 2
                 with col_filter_4:
                     st.metric(
-                        "IDE 2º",
+                        "IDE nº2",
                         df_sunburst_2.loc[df_sunburst_2["Nome"] == "IDE", "Resultado"]
                         .values[0]
                         .round(1),

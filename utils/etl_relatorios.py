@@ -35,10 +35,10 @@ def supabase_record(unidade, ano, mes, tipo):
     supabase.table("ide_uploads").insert(sb_insert).execute()
 
 
-def correção_vacina_gripe_435(df):
-    df.loc[df["id"] == 435, "Resultado"] = 68.3
-    df.loc[df["id"] == 435, "Score"] = 2
-    return df
+# def correção_vacina_gripe_435(df):
+#     df.loc[df["id"] == 435, "Resultado"] = 68.3
+#     df.loc[df["id"] == 435, "Score"] = 2
+#     return df
 
 
 def extrair_id(df, coluna):
@@ -169,9 +169,14 @@ def etl_bicsp(list_of_files):
         # sort by id
         df.sort_values("id", inplace=True)
 
+        # check if df["Hierarquia Contratual - Área"] has "IDE - Desempenho" and keep only those rows
+        if df["Hierarquia Contratual - Área"].str.contains("IDE - Desempenho").any():
+            df = df[df["Hierarquia Contratual - Área"].str.contains("IDE - Desempenho")]
+
         # Eextração do mês e ano
         ano_mes = str(df["Mês Ind"].unique().max())
-        ano = ano_mes[:4]
+        ano = "2024"
+        # ano = ano_mes[:4]
         mes = ano_mes[4:6]
 
         # nome = f"{unidade} {ano}/{mes}"
@@ -221,13 +226,14 @@ def etl_bicsp(list_of_files):
 
         # Update list_of_dfs with the new df
         dict_dfs[nome] = {
-            "data": df[["id", "Resultado", "Score", "Mês Ind"]],
+            "data": df[
+                ["id", "Resultado", "Score", "Mês Ind", "Hierarquia Contratual - Área"]
+            ],
             "nome": nome,
             "ano": int(ano),
             "mes": int(mes),
             "unidade": unidade,
         }
-
         supabase_record(unidade, ano, mes, "bicsp")
 
     return dict_dfs
@@ -239,7 +245,9 @@ def merge_portaria_bicsp(df_bicsp, ano):
     # df_portaria.loc[df_portaria["Nome"]=="IDE", "Ponderação"] = 100
 
     df = df_portaria.merge(
-        df_bicsp[["id", "Resultado", "Score", "Mês Ind"]],
+        df_bicsp[
+            ["id", "Resultado", "Score", "Mês Ind", "Hierarquia Contratual - Área"]
+        ],
         on="id",
         how="left",
     )
