@@ -157,6 +157,18 @@ def etl_bicsp(list_of_files):
             # reset index
             df.reset_index(drop=True, inplace=True)
 
+        # versão PT
+        elif first_column_name.startswith("Filtros"):
+            unidade = re.search(r"Nome UF é (.*)", first_column_name).group(1)
+
+            # remove the first row
+            df = df[1:]
+            df.columns = df.iloc[0]
+            df = df[1:]
+
+            # reset index
+            df.reset_index(drop=True, inplace=True)
+
         # remove any row with "Designação Indicador (+ID)" None
         df = df[df["Designação Indicador (+ID)"].notnull()]
 
