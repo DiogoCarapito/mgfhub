@@ -1,6 +1,31 @@
 import streamlit as st
 
 
+def tutorial_loop(tutorial):
+    # loop through the content and create a card for each row
+    for i, each in enumerate(tutorial):
+        # for each in tutorial:
+        st.write(each["texto"])
+        if each["imagem"]:
+            st.image(each["imagem"], use_column_width=True)
+        # show a divider between each step, except for the last one
+        if i != len(tutorial) - 1:
+            st.write("")
+
+
+def tutorial_expander(tutorial):
+    with st.expander("Tutorial", expanded=False):
+        col_tutorial_1, col_tutorial_2, col_tutorial_3 = st.columns([1, 6, 1])
+        with col_tutorial_1:
+            st.empty()
+
+        with col_tutorial_2:
+            tutorial_loop(tutorial)
+
+        with col_tutorial_3:
+            st.empty()
+
+
 def tutorial_bicsp():
     tutorial = [
         {
@@ -32,23 +57,8 @@ def tutorial_bicsp():
             "imagem": "content/tutorial_bicsp/tutorial_bicsp_7.png",
         },
     ]
-
-    with st.expander(
-        "Como extrair o ficheiro excel necessário do BI-CSP?", expanded=False
-    ):
-        col_tutorial_1, col_tutorial_2, col_tutorial_3 = st.columns([1, 4, 1])
-        with col_tutorial_1:
-            st.empty()
-
-        with col_tutorial_2:
-            for each in tutorial:
-                st.write(each["texto"])
-                if each["imagem"]:
-                    st.image(each["imagem"], use_column_width=True)
-                st.divider()
-
-        with col_tutorial_3:
-            st.empty()
+    st.subheader("Como extrair o ficheiro excel necessário do BI-CSP?")
+    tutorial_expander(tutorial)
 
 
 def tutorial_mimuf():
@@ -66,7 +76,7 @@ def tutorial_mimuf():
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_3.png",
         },
         {
-            "texto": "##### 4. Selecionar o relatório P02_01_R03_ Indicadores por lista de utentes de médico",
+            "texto": "##### 4. Selecionar o relatório P02_01_R03. Indicadores por lista de utentes de médico",
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_4.png",
         },
         # {
@@ -94,7 +104,7 @@ def tutorial_mimuf():
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_10.png",
         },
         {
-            "texto": "##### 10. Selecionar Médico Familia",
+            "texto": "##### 10. Escrever Méd e selecionar Médico Familia",
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_11.png",
         },
         {
@@ -122,20 +132,5 @@ def tutorial_mimuf():
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_17.png",
         },
     ]
-
-    with st.expander(
-        "Como extrair o ficheiro excel necessário do MIM@UF?", expanded=False
-    ):
-        col_tutorial_1, col_tutorial_2, col_tutorial_3 = st.columns([1, 4, 1])
-        with col_tutorial_1:
-            st.empty()
-
-        with col_tutorial_2:
-            for each in tutorial:
-                st.write(each["texto"])
-                if each["imagem"]:
-                    st.image(each["imagem"], use_column_width=True)
-                st.divider()
-
-        with col_tutorial_3:
-            st.empty()
+    st.subheader("Como extrair o ficheiro excel necessário do MIM@UF?")
+    tutorial_expander(tutorial)

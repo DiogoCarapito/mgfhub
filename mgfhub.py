@@ -7,44 +7,41 @@ from utils.style import (
     card_container,
     page_config,
     bem_vindos_2,
-    novidade,
+    novidades,
 )
 
 
 def main():
     page_config()
 
-    # open intro.md and read the content
-    with open("content/intro.md", "r", encoding="utf-8") as file:
-        indroducao = file.read()
-
-    # open content/novidades.csv and pick the most recent one from date column
-    ultima_novidade = (
-        pd.read_csv("content/novidades.csv")
-        .sort_values("date", ascending=False)
-        .head(1)["text"]
-        .values[0]
-    )
-
-    # open content/cartoes_home.csv and read the content with pandas
-    cartoes_home = pd.read_csv("content/cartoes_home.csv")
-
     # main title
     main_title("mgfhub")
 
     # style columns
     col1, col2, col3 = st.columns([1, 6, 1])
+
+    # empty column to style the page
     with col1:
         st.empty()
 
+    # main content
     with col2:
-        # introduction
+        # welcome message
         bem_vindos_2("Bem vind@ à nova versão 2.1.0 🎉")
 
-        intro(indroducao)
+        # intro from content/intro.md
+        intro("content/intro.md")
 
-        novidade(ultima_novidade)
+        # novidades from content/novidades.csv
+        # it picks the most recent one
+        novidades("content/novidades.csv")
 
+        # card containers with links to other pages
+
+        # open content/cartoes_home.csv and read the content with pandas
+        cartoes_home = pd.read_csv("content/cartoes_home.csv")
+
+        # loop through the content and create a card for each row
         for each in cartoes_home.values:
             card_container(
                 title=each[0],
@@ -55,6 +52,7 @@ def main():
                 em_construcao=each[5],
             )
 
+    # empty column to style the page
     with col3:
         st.empty()
 

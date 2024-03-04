@@ -7,7 +7,6 @@ from utils.style import (
     # bicsp_link_page,
 )
 
-from utils.tutorial import tutorial_bicsp, tutorial_mimuf
 
 from utils.etl_relatorios import etl_bicsp, etl_mimuf, merge_portaria_bicsp
 from utils.vis_relatorios import (
@@ -34,7 +33,7 @@ st.session_state["opcao_visualizacao_2"] = "Barras + Tabela"
 with st.sidebar:
     # upload de xlsx de bicsp
     st.markdown(
-        "## Upload do Excel proveniente do [BI-CSP](https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx)"
+        "## Upload do excel do [BI-CSP](https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx)"
     )
 
     # Upload de ficheiro excel do BI-CSP
@@ -46,9 +45,14 @@ with st.sidebar:
         accept_multiple_files=True,
     )
 
+    st.markdown(
+        "[Como extrair o ficheiro excel do BI-CSP?](https://mgfhub.com/FAQs)",
+        unsafe_allow_html=True,
+    )
+
     # bicsp_link_page()
 
-    st.markdown("## Upload do Excel proveniente do MIMUF")
+    st.markdown("## Upload do excel do MIMUF")
 
     # Upload de ficheiro excel do MIMUF
     st.session_state["uploaded_file_mimuf"] = st.file_uploader(
@@ -59,9 +63,14 @@ with st.sidebar:
         accept_multiple_files=True,
     )
 
-    st.write("")
     st.markdown(
-        "**Nota:** Para analise comparativa, pode carregar mais do que um ficheiro do BI-CSP e MIM@UF com periodos diferentes"
+        "[Como extrair o ficheiro excel do MIM@UF?](https://mgfhub.com/FAQs)",
+        unsafe_allow_html=True,
+    )
+
+    # st.write("")
+    st.markdown(
+        "**Nota:** Podes carregar mais do que um ficheiro do BI-CSP e/ou MIM@UF com periodos diferentes. permite comparar diferentes periodos e/ou unidades."
     )
 
 
@@ -98,7 +107,13 @@ with tab_uni_geral:
 
         st.write("")
 
-        tutorial_bicsp()
+        # tutorial_bicsp()
+        st.markdown(
+            '<p style="text-align: center;">'
+            '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do BI-CSP?</a>'
+            "</p>",
+            unsafe_allow_html=True,
+        )
 
     else:
         opções_visualizacao = (
@@ -272,7 +287,13 @@ with tab_equipas:
     if not st.session_state["df_mimuf"]:
         st.warning(mimuf_nao_carregado)
         st.write("")
-        tutorial_mimuf()
+        # tutorial_mimuf()
+        st.markdown(
+            '<p style="text-align: center;">'
+            '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do MIM@UF?</a>'
+            "</p>",
+            unsafe_allow_html=True,
+        )
 
     else:
         # Visualizaçao
@@ -342,7 +363,13 @@ with tab_prof_geral:
     if not st.session_state["df_mimuf"]:
         st.warning(mimuf_nao_carregado)
         st.write("")
-        tutorial_mimuf()
+        # tutorial_mimuf()
+        st.markdown(
+            '<p style="text-align: center;">'
+            '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do MIM@UF?</a>'
+            "</p>",
+            unsafe_allow_html=True,
+        )
 
     elif len(st.session_state["df_mimuf"]) >= 1:
         # opções_visualizacao_2 = (

@@ -1,5 +1,7 @@
 import streamlit as st
 import re
+import pandas as pd
+from datetime import datetime
 
 
 def gradient_text(text):
@@ -15,6 +17,14 @@ def page_config():
         page_icon="assets/favicon.ico",
         layout="wide",
         initial_sidebar_state="auto",
+    )
+    st.markdown(
+        r"""
+        <style>
+        .stDeployButton {visibility: hidden;}
+        </style>
+        """,
+        unsafe_allow_html=True,
     )
 
 
@@ -80,6 +90,7 @@ def main_title(text):
         f'<span class="gradient-text"><span class="gradient">{text}</span></span>',
         unsafe_allow_html=True,
     )
+    st.write("")
 
 
 def main_subheader(text):
@@ -101,8 +112,15 @@ def main_subheader(text):
     )
 
 
-def intro(text):
+def intro(file):
+    # open intro.md and read the content
+    with open(file, "r", encoding="utf-8") as file:
+        text = file.read()
+
+    # restyle the text
     text = mgfhub_style(text)
+
+    # display the text
     st.markdown(
         f'<p style="text-align: center; font-size: 22px;">{text}</p>',
         unsafe_allow_html=True,
@@ -117,13 +135,10 @@ def card_container(title, text, image, link, em_construcao):
 
     with st.container():
         st.markdown(
-            f'<a href="{link}" target="_self" style="text-decoration: none; color: inherit;">'
             f'<div style="text-align: center; border: 0px solid #ddd; border-radius: 10px; padding: 10px 20px 10px 20px; background: linear-gradient(135deg, rgba(88, 142, 249, 0.07), rgba(190, 28, 243, 0.07));">'
-            f"<h2>{title}</h2>"
+            f'<h2><a href="{link}" target="_self" style="text-decoration: none; color: inherit;">{title}</a></h2>'
             f'<p style="font-size: 19px;">{msg_construcao}</p>'
-            f'<p style="font-size: 19px;">{mgfhub_style(text)}</p>'
-            "</div>"
-            "</a>",
+            f'<p style="font-size: 19px;">{mgfhub_style(text)}</p>',
             unsafe_allow_html=True,
         )
         if image:
@@ -131,6 +146,8 @@ def card_container(title, text, image, link, em_construcao):
                 f'<img src="{image}" style="width: 100%;">',
                 unsafe_allow_html=True,
             )
+        st.markdown("</div>", unsafe_allow_html=True)
+        st.empty()
 
 
 def web_link(label, link, icon):
@@ -239,7 +256,7 @@ def centered_text(text):
 
 def bem_vindos_2(text):
     st.markdown(
-        f'<p style="text-align: center; font-size: 22px;">{text}</p>',
+        f'<p style="text-align: center; font-size: 22px; font-weight: bold;">{text}</p>',
         unsafe_allow_html=True,
     )
 
@@ -267,11 +284,17 @@ def outros_projetos_card(name, link, description):
         st.write("")
 
 
-def novidade(text):
+def novidades(file):
+    # open content/novidades.csv and pick the most recent one from date column
+    latest = pd.read_csv(file).sort_values("date", ascending=False).head(1)
+    text = latest["text"].values[0]
+    date = datetime.strptime(latest["date"].values[0], "%Y-%m-%d").strftime("%d/%m/%Y")
+
+    # style the text
     st.divider()
     st.markdown(
         '<h2 style="text-align: center;">Novidades</h2>'
-        f'<p style="text-align: center; font-size: 20px;">{text}</p>',
+        f'<p style="text-align: center; font-size: 20px;"><strong>{date}</strong> - {text}</p>',
         unsafe_allow_html=True,
     )
     st.divider()
