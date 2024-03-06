@@ -562,3 +562,25 @@ def horizontal_bar(df, ano):
     # plt.savefig(f"plots/{id}_por_medicos.png", dpi=300, bbox_inches="tight")
 
     st.pyplot(fig)
+
+
+def stakced_barchart(df):
+    # df.dropna(subset=["id"], inplace=True)
+
+    med = df["Médico Familia"]
+    # denominador = df["Denominador"]
+    numerador = df["Numerador"].astype(int)
+
+    df["falta"] = df["Denominador"].astype(int) - df["Numerador"].astype(int)
+    falta = df["falta"].astype(int)
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+
+    ax.barh(med, numerador, color="green")
+    ax.barh(med, falta, left=falta, color="red")
+
+    ax.set_xlabel("Denominador")
+    ax.set_ylabel("Médico Familia")
+    ax.set_title("Denominador and Numerador by Médico Familia")
+
+    st.pyplot(fig)

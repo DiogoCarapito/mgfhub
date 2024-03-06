@@ -15,6 +15,7 @@ from utils.vis_relatorios import (
     tabela,
     horizontal_bar,
     sunburst_mimuf,
+    # stakced_barchart,
 )
 
 
@@ -351,9 +352,18 @@ with tab_equipas:
                     st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
                     == filtro_indicador
                 ][["Médico Familia", "Numerador", "Denominador", "Valor"]]
-                .sort_values(by="Valor", ascending=False),
+                .sort_values(by="Numerador", ascending=False),
                 hide_index=True,
             )
+
+        # stakced_barchart(
+        #     st.session_state["df_mimuf"][dataframe_selected]["df"]
+        #         .loc[
+        #             st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
+        #             == filtro_indicador
+        #         ][["Médico Familia", "Numerador", "Denominador", "Valor"]]
+        #         .sort_values(by="Numerador", ascending=False),
+        #     )
 
 # with tab_uni_indic:
 #     # centered_title("Unidade - Indicadores")
