@@ -492,12 +492,12 @@ def tabela(df, ano, nome):
     return None
 
 
-def horizontal_bar(df, ano):
+def horizontal_bar(df, ano, ordenar_por):
     ano = 2024
 
     df.dropna(subset=["id"], inplace=True)
 
-    df.sort_values(by="Valor", ascending=True, inplace=True)
+    df.sort_values(by=ordenar_por, ascending=True, inplace=True)
 
     freq = df["Valor"].round(1)
 

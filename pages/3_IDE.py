@@ -308,7 +308,9 @@ with tab_equipas:
 
         # st.divider()
 
-        col_filtro_equipa_1, col_filtro_equipa_2 = st.columns(2)
+        col_filtro_equipa_1, col_filtro_equipa_2, col_visualizacao = st.columns(
+            [2, 2, 2]
+        )
         with col_filtro_equipa_1:
             dataframe_selected = st.selectbox(
                 "Escolha o mês de analise",
@@ -324,6 +326,13 @@ with tab_equipas:
                 (lista_indicadores[1:]),
             )
 
+        with col_visualizacao:
+            st.session_state["opcao_visualizacao_2"] = st.radio(
+                "Ordenar por:",
+                ["Valor", "Numerador", "Denominador"],
+                horizontal=True,
+            )
+
         st.divider()
 
         col_graph_1, col_graph_2 = st.columns([5, 3])
@@ -335,6 +344,7 @@ with tab_equipas:
                     == filtro_indicador
                 ],
                 st.session_state["df_mimuf"][dataframe_selected]["ano"],
+                st.session_state["opcao_visualizacao_2"],
             )
 
         with col_graph_2:
@@ -352,7 +362,9 @@ with tab_equipas:
                     st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
                     == filtro_indicador
                 ][["Médico Familia", "Numerador", "Denominador", "Valor"]]
-                .sort_values(by="Numerador", ascending=False),
+                .sort_values(
+                    by=st.session_state["opcao_visualizacao_2"], ascending=False
+                ),
                 hide_index=True,
             )
 
