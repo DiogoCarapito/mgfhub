@@ -323,6 +323,8 @@ with tab_equipas:
                 (lista_indicadores[1:]),
             )
 
+        st.divider()
+
         col_graph_1, col_graph_2 = st.columns([5, 3])
 
         with col_graph_1:
@@ -335,6 +337,14 @@ with tab_equipas:
             )
 
         with col_graph_2:
+            # link for sdm by using th id of the indicador selected
+            # extract the initial numbers inside this string
+            filtro_indicador_id = filtro_indicador.split(" ")[0]
+            link = f"https://sdm.min-saude.pt/BI.aspx?id={filtro_indicador_id}"
+            text = f"link SDM indicador {filtro_indicador_id}"
+
+            st.markdown(f"[{text}]({link})")
+
             st.dataframe(
                 st.session_state["df_mimuf"][dataframe_selected]["df"]
                 .loc[
