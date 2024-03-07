@@ -488,6 +488,9 @@ def etl_mimuf(list_of_files):
         # st.write(df["id"].unique())
         # st.write(df["id"].unique().shape[0])
 
+        df["Denominador"] = df["Denominador"].astype(float)
+        df["Numerador"] = df["Numerador"].astype(float)
+
         # save as a dictionary name:df
         dict_dfs[nome] = {
             "df": df,

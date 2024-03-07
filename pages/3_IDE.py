@@ -309,7 +309,7 @@ with tab_equipas:
         # st.divider()
 
         col_filtro_equipa_1, col_filtro_equipa_2, col_visualizacao = st.columns(
-            [2, 2, 2]
+            [1, 3, 2]
         )
         with col_filtro_equipa_1:
             dataframe_selected = st.selectbox(
