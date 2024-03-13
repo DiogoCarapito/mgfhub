@@ -510,7 +510,7 @@ def horizontal_bar(df, ano, ordenar_por):
     max_aceitavel = df[f"Máximo Aceitável {ano}"].unique()[0]
     max_esperado = df[f"Máximo Esperado {ano}"].unique()[0]
     minimo = 0
-    
+
     maximo_medico = df.groupby("Médico Familia")["Valor"].max().max()
 
     # se é o indicador 314, defenir o máximo com 100
@@ -519,7 +519,11 @@ def horizontal_bar(df, ano, ordenar_por):
         maximo = 100
     elif df["id"].unique()[0] == 404:
         if maximo_medico > 100:
-            maximo, max_esperado, max_aceitavel = maximo_medico, maximo_medico, maximo_medico
+            maximo, max_esperado, max_aceitavel = (
+                maximo_medico,
+                maximo_medico,
+                maximo_medico,
+            )
         else:
             maximo, max_esperado, max_aceitavel = 100, 100, 100
     else:
@@ -536,7 +540,7 @@ def horizontal_bar(df, ano, ordenar_por):
         (max_esperado, max_aceitavel),
         (max_aceitavel, maximo),
     ]
-    
+
     st.write(ranges)
 
     fig, ax = plt.subplots(figsize=(8, 6))
