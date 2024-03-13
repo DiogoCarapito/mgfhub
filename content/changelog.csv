@@ -15,3 +15,4 @@ version,date,text
 2.0.0,2024-02-13,"Lançamento da versão mgfhub 2.0.0 🎉"
 2.1.0beta1,2024-02-22,"Versão 2.1.0beta1 🎉 - Ferramenta de analise do IDE disponivel em modo beta! Permite analisar o IDE de forma mais detalhada, com gráficos e tabelas. espeficicos para a Unidade, comparador de equipas e analise para cada profissional"
 2.1.0beta2,2024-03-04,"Versão 2.1.0beta2 - Melhorias no User Interface e correção de bugs na introdução de dados vindos do BI-CSP e MIM@UF. Nova localização do tutorial para extrair dados das diferentes plataformas"
+2.1.0beta3,2024-03-13,"adicionado o indicador 483 - Avaliação da Satisfação dos Utentes; Correção visualização indicador 404 na zona de equipas"
