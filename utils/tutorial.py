@@ -116,7 +116,7 @@ def tutorial_mimuf():
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_13.png",
         },
         {
-            "texto": "##### 13. Selecionar Excel com texto simples e clicar em Exportar",
+            "texto": '##### 13. Selecionar Excel com texto simples; Tirar ☑️ do "Exportar título do relatório"; Tirar ☑️ do "Exportar Informações de Pagina Por"; Tirar ☑️ do "Exportar detalhes do filtro"; Clicar em Exportar',
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_14.png",
         },
         {
