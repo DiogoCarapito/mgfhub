@@ -514,8 +514,9 @@ def horizontal_bar(df, ano, ordenar_por):
     maximo_medico = df.groupby("Médico Familia")["Valor"].max().max()
 
     # se é o indicador 314, defenir o máximo com 100
-    # porque o 314 é um indicador que e está mal desenhado!
-    if df["id"].unique()[0] == 314:
+    # porque o 314 é um indicador que e está mal desenhado! or 354
+
+    if df["id"].unique()[0] == 314 or df["id"].unique()[0] == 354:
         maximo = 100
     elif df["id"].unique()[0] == 404:
         if maximo_medico > 100:
