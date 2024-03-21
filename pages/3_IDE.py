@@ -356,7 +356,7 @@ with tab_equipas:
 
             st.markdown(f"[{text}]({link})")
 
-            st.dataframe(
+            df_num_den_med = (
                 st.session_state["df_mimuf"][dataframe_selected]["df"]
                 .loc[
                     st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
@@ -364,30 +364,41 @@ with tab_equipas:
                 ][["Médico Familia", "Numerador", "Denominador", "Valor"]]
                 .sort_values(
                     by=st.session_state["opcao_visualizacao_2"], ascending=False
-                ),
+                )
+            )
+
+            st.dataframe(
+                df_num_den_med,
                 hide_index=True,
             )
 
-        # stakced_barchart(
-        #     st.session_state["df_mimuf"][dataframe_selected]["df"]
-        #         .loc[
-        #             st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
-        #             == filtro_indicador
-        #         ][["Médico Familia", "Numerador", "Denominador", "Valor"]]
-        #         .sort_values(by="Numerador", ascending=False),
-        #     )
+        st.divider()
 
-# with tab_uni_indic:
-#     # centered_title("Unidade - Indicadores")
+        st.subheader("Cálculo de estimativas")
 
-#     # mensagem se não houver ficheiros carregados
-#     if not st.session_state["df_bicsp"]:r
-#         st.warning(bicsp_nao_carregado)
+        col_metric_1, col_metric_2, col_metric_3, col_metric_4 = st.columns(4)
 
-#     else:
-#         st.write(st.session_state["df_bicsp"])
+        numerador = df_num_den_med["Numerador"].sum().astype(int)
+        denominador = df_num_den_med["Denominador"].sum().astype(int)
 
-#     em_desenvolvimento()
+        with col_metric_1:
+            num = st.number_input(
+                "Numerador", value=numerador, key="numerador", step=10
+            )
+
+        with col_metric_2:
+            den = st.number_input(
+                "Denominador", value=denominador, key="denominador", step=10
+            )
+
+        with col_metric_3:
+            # calcular valor
+            valor = round(num / den * 100, 2)
+
+            st.metric("Valor Estimado", valor)
+
+        with col_metric_4:
+            st.metric("Valor Actual", round(numerador / denominador * 100, 2))
 
 with tab_prof_geral:
     # centered_title("Profissional - Visão Geral")

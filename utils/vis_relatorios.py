@@ -541,8 +541,6 @@ def horizontal_bar(df, ano, ordenar_por):
         (max_aceitavel, maximo),
     ]
 
-    st.write(ranges)
-
     fig, ax = plt.subplots(figsize=(8, 6))
 
     # Add the background areas
