@@ -35,12 +35,6 @@ def supabase_record(unidade, ano, mes, tipo):
     supabase.table("ide_uploads").insert(sb_insert).execute()
 
 
-# def correção_vacina_gripe_435(df):
-#     df.loc[df["id"] == 435, "Resultado"] = 68.3
-#     df.loc[df["id"] == 435, "Score"] = 2
-#     return df
-
-
 def extrair_id(df, coluna):
     # extrair o id que se econtra entre dois . (pontos) e transformar em int
     # exemplo de input: "2013.001.01 FL" output 1
