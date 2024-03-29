@@ -159,7 +159,7 @@ on_click()
 # Cálculo do numero de indicadores
 with col_filtros_3:
     num_indicatores = len(st.session_state["filtered_df"])
-    st.metric("Nº de Iidicadores", num_indicatores)
+    st.metric("Nº de indicadores", num_indicatores)
 
 
 # tab com 2 opções de visualização dos indicadores encontrados: tabela e cartões
