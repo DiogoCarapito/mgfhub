@@ -126,14 +126,14 @@ with col_pesquisa_2:
 
 
 # colunas de filtros para arrumar a interface
-col_filtros_1, col_filtros_2, col_filtros_3 = st.columns(3)
+col_filtros_1, col_filtros_2, col_filtros_3 = st.columns([2, 3, 1])
 # col_filtros_1, col_filtros_2 = st.columns([1, 2])
 
 # coluna com o radio de filtros
 with col_filtros_1:
     # radio de filtros para afunilar a pesquisa
     st.session_state["filtros"] = st.radio(
-        "Filtro contratualização",
+        "Filtro por contratualização",
         options=radio_optioins,
         index=0,
         horizontal=True,
@@ -147,8 +147,9 @@ with col_filtros_2:
     # with st.popover("Filtro área clínica"):
     # Numero de Indicadores
     st.session_state["filtro_area_clinica"] = st.multiselect(
-        "Filtro área clínica",
+        "Filtro por área clínica",
         st.session_state["filtered_df"]["Área clínica"].unique(),
+        placeholder="Selecione uma ou mais áreas clínicas",
         on_change=on_click,
         # help="Filtrar por area clínica",
     )
@@ -158,7 +159,7 @@ on_click()
 # Cálculo do numero de indicadores
 with col_filtros_3:
     num_indicatores = len(st.session_state["filtered_df"])
-    st.metric("Número de Indicadores", num_indicatores)
+    st.metric("Nº de Iidicadores", num_indicatores)
 
 
 # tab com 2 opções de visualização dos indicadores encontrados: tabela e cartões
