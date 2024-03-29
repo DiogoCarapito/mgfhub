@@ -24,13 +24,18 @@ def data_source(source):
         return df
 
 
-def filter_df(df, pesquisa, filtros):
+def filter_df(df, pesquisa, filtros, area_clinica):
     if filtros == "IDE":
         df = df[df["ide"] == 1]
+
     elif filtros == "IDG":
         df = df[df["idg"] == 1]
+
     else:
         pass
+
+    if area_clinica:
+        df = df[df["Área clínica"].isin(area_clinica)]
 
     pesquisa = unidecode(pesquisa.lower())
 

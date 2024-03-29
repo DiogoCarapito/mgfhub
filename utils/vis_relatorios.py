@@ -488,7 +488,6 @@ def horizontal_bar(df, ano, ordenar_por):
 
 
 def stakced_barchart(df):
-
     med = df["Médico Familia"]
     # denominador = df["Denominador"]
     numerador = df["Numerador"].astype(int)
