@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.utils import data_source, filter_df
-from utils.style import page_config, main_title, cartao_indicador
+from utils.style import page_config, main_title, cartao_indicador, bottom_suport_email
 
 import os
 from dotenv import load_dotenv
@@ -225,3 +225,5 @@ else:
     # st.write(st.session_state["df"].head())
     # st.write(st.session_state["filtered_df"].head())
     # st.write(st.session_state["showable_df"].head())
+
+bottom_suport_email()

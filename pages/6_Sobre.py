@@ -9,7 +9,9 @@ from utils.style import (
     centered_text,
     gradient_text,
     outros_projetos_card,
+    bottom_suport_email,
 )
+
 
 page_config()
 
@@ -63,3 +65,5 @@ st.write("")
 
 for each in changelog.values:
     changelog_card(each[0], each[1], each[2])
+
+bottom_suport_email()

@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.style import page_config, main_title, em_desenvolvimento
+from utils.style import page_config, main_title, em_desenvolvimento, bottom_suport_email
 from utils.tutorial import tutorial_bicsp, tutorial_mimuf
 
 page_config()
@@ -33,3 +33,5 @@ with tab_indicadores:
 
     st.subheader("5. Quando é que é melhor usar um indicador Flutuante?")
     st.write("Explicação...")
+
+bottom_suport_email()

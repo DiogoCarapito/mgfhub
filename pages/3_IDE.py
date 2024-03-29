@@ -2,6 +2,7 @@ import streamlit as st
 from utils.style import (
     page_config,
     main_title,
+    bottom_suport_email,
     # em_desenvolvimento,
     # centered_title,
     # bicsp_link_page,
@@ -483,3 +484,5 @@ with tab_prof_geral:
 
 
 #     em_desenvolvimento()
+
+bottom_suport_email()

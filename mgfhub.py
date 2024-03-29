@@ -8,6 +8,7 @@ from utils.style import (
     page_config,
     bem_vindos_2,
     novidades,
+    bottom_suport_email,
 )
 
 
@@ -55,6 +56,9 @@ def main():
     # empty column to style the page
     with col3:
         st.empty()
+
+    st.write("")
+    bottom_suport_email()
 
 
 if __name__ == "__main__":

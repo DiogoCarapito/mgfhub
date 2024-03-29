@@ -313,3 +313,14 @@ def page_bottom():
     st.empty()
     st.divider()
     st.write("mgfhub® Todos os direitos reservados")
+
+
+def bottom_suport_email():
+    st.divider()
+    st.markdown(
+        '<div style="text-align: center;">'
+        '<p style="font-size: 16px;">Dúvidas, sugestões? Envia-nos um email para <a href="mailto:mgfhub.suporte@gmail.com" style="text-decoration: underline; font-size: 16px;">mgfhub.suporte@gmail.com</a></p>'
+        "© mgfhub - Todos os direitos reservados"
+        "</div>",
+        unsafe_allow_html=True,
+    )
