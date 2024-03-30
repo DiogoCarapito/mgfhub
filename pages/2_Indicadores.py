@@ -24,12 +24,17 @@ supabase: Client = create_client(url, key)
 
 
 # Function to insert data into Supabase
-def supabase_insert(input_text, filtro):
+def supabase_insert(input_text, filtro, area_clinica):
     # Get current datetime
     date_time = datetime.now().isoformat()
 
     # Create the data in a format to be inserted into Supabase
-    sb_insert = {"created_at": date_time, "query": input_text, "filter": filtro}
+    sb_insert = {
+        "created_at": date_time,
+        "query": input_text,
+        "filter": filtro,
+        "area_clinica": area_clinica,
+    }
 
     # Insert data into Supabase
     supabase.table("mgfhub_queries").insert(sb_insert).execute()
@@ -100,7 +105,11 @@ def on_click():
     )
 
     # log the search to supabase
-    supabase_insert(st.session_state["pesquisa"], st.session_state["filtros"])
+    supabase_insert(
+        st.session_state["pesquisa"],
+        st.session_state["filtros"],
+        st.session_state["filtro_area_clinica"],
+    )
 
 
 # user interface
