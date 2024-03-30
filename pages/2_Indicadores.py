@@ -43,7 +43,7 @@ st.session_state["df"] = data_source("indicadores_sdm_complete.csv")
 st.session_state["pesquisa"] = ""
 
 # opções de filtros para o radio
-radio_optioins = ["IDE", "IDG", "Todos"]
+radio_optioins = ["IDE", "IDG", "BI-CSP", "Todos"]
 
 # opção de filtro inicial
 st.session_state["filtros"] = radio_optioins[0]
@@ -126,7 +126,7 @@ with col_pesquisa_2:
 
 
 # colunas de filtros para arrumar a interface
-col_filtros_1, col_filtros_2, col_filtros_3 = st.columns([2, 3, 1])
+col_filtros_1, col_filtros_2, col_filtros_3 = st.columns([5, 5, 3])
 # col_filtros_1, col_filtros_2 = st.columns([1, 2])
 
 # coluna com o radio de filtros
@@ -138,7 +138,7 @@ with col_filtros_1:
         index=0,
         horizontal=True,
         on_change=on_click(),
-        # help="Filtrar por tipo de indicadores",
+        help="Filtrar por tipo de indicadores (IDE - Indicadores actuais; IDG - Indicadores antes de 2024; BI-CSP - 128 Indicadores disponíveis no BICSP; Todos - Todos os indicadores existentes no SDM)",
     )
 
 with col_filtros_2:
@@ -149,7 +149,7 @@ with col_filtros_2:
     st.session_state["filtro_area_clinica"] = st.multiselect(
         "Filtro por área clínica",
         st.session_state["filtered_df"]["Área clínica"].unique(),
-        placeholder="Selecione uma ou mais áreas clínicas",
+        placeholder="Selecione uma ou mais áreas clínicas. Nota: algumas areas clínicas estão erradamente classificadas na fonte (SDM)",
         on_change=on_click,
         # help="Filtrar por area clínica",
     )

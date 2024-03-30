@@ -35,7 +35,7 @@ def main():
 
         # novidades from content/novidades.csv
         # it picks the most recent one
-        novidades("content/novidades.csv")
+        novidades("content/changelog.csv")
 
         # card containers with links to other pages
 

@@ -166,4 +166,5 @@ cython_debug/
 #macOS files
 .DS_Store
 
-data/om.csv
+# ficheiro do bi-csp util para 
+offline_data/

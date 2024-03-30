@@ -83,6 +83,15 @@ def pre_process_sdm(source):
         inplace=True,
     )
 
+    # add new column bicsp to indicate if the indicador is in bicsp 128 list
+    df["bicsp"] = df["id"].isin(
+        pd.read_csv("./data/indicadores_bicsp.csv", header=None)[0]
+    )
+
+    # transform ide and idg from 1 or 0/nan to True or False
+    df["ide"] = df["ide"].apply(lambda x: True if x == 1 else False)
+    df["idg"] = df["idg"].apply(lambda x: True if x == 1 else False)
+
     # save to ./data folder
     df.to_csv(f"./data/{source}")
 
@@ -151,7 +160,11 @@ def pre_process_portaria_sunburst(source):
     df["Nome"] = df["id"].astype(str) + " - " + df["Nome abreviado"]
     # df["Nome"] = df["Nome abreviado"]
 
-    # append the two dataframes
+    # Contact
+    # Exclude empty or all-NA columns
+    df_dimensao = df_dimensao.dropna(axis=1, how="all")
+    df = df.dropna(axis=1, how="all")
+    # Append the two dataframes
     df = pd.concat([df_dimensao, df], ignore_index=True)
 
     # add a new row wirh Nome = "IDE" with all blank values
@@ -172,6 +185,12 @@ def pre_process_portaria_sunburst(source):
         }
     )
 
+    # Contact
+    # Exclude empty or all-NA columns
+    df = df.dropna(axis=1, how="all")
+    new_row = new_row.dropna(axis=1, how="all")
+
+    # Concatenate the dataframe and the new row
     df = pd.concat([df, new_row], ignore_index=True)
 
     # save to ./data folder
@@ -192,6 +211,37 @@ def download_update_data(source):
     print(f"{source} saved successfully!")
 
 
+def bicsp_list_indicadores():
+    from utils.etl_relatorios import extrair_id
+
+    # open excel file
+    df = pd.read_excel("./offline_data/bicsp.xlsx", engine="openpyxl")
+
+    # remove the first row
+    df = df[1:]
+    df.columns = df.iloc[0]
+    df = df[1:]
+
+    # reset index
+    df.reset_index(drop=True, inplace=True)
+
+    # remove any row with "Designação Indicador (+ID)" None
+    df = df[df["Designação Indicador (+ID)"].notnull()]
+
+    # extrair o id do "Cód. Indicador"
+    df["id"] = extrair_id(df, "Cód. Indicador")
+
+    # sort by id
+    df.sort_values("id", inplace=True)
+
+    df = df["id"]
+
+    df.to_csv("./data/indicadores_bicsp.csv", index=False, header=False)
+
+    # success message
+    print("indicadores_bicsp.csv saved successfully!")
+
+
 def delete_file(file_path):
     os.remove(file_path)
     print(f"{file_path} deleted successfully!")
@@ -210,6 +260,8 @@ if __name__ == "__main__":
 
     # download dados portaria 411a 2023
     download_update_data("portaria_411a_2023.csv")
+
+    bicsp_list_indicadores()
 
     # pre-processed data for table
     pre_process_sdm("indicadores_sdm_complete.csv")

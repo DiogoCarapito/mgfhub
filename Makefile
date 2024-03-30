@@ -14,7 +14,4 @@ run:
 lint:
 	pylint --disable=R,C,W0622 *.py utils/*.py pages/*.py tests/*.py
 
-run:
-	streamlit run mgfhub.py
-
 all: install lint test format

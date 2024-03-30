@@ -289,14 +289,21 @@ def novidades(file):
     latest = pd.read_csv(file).sort_values("date", ascending=False).head(1)
     text = latest["text"].values[0]
     date = datetime.strptime(latest["date"].values[0], "%Y-%m-%d").strftime("%d/%m/%Y")
+    version = latest["version"].values[0]
 
     # style the text
     st.divider()
     st.markdown(
         '<h2 style="text-align: center;">Novidades</h2>'
-        f'<p style="text-align: center; font-size: 20px;"><strong>{date}</strong> - {text}</p>',
+        f'<p style="text-align: center; font-size: 20px;"><strong>{date}</strong> - Versão {version} - {text}</p>',
         unsafe_allow_html=True,
     )
+
+    # expander_novidades = st.expander("Ver mais as novidades", expanded=False)
+
+    # with expander_novidades:
+    #     st.write("")
+
     st.divider()
 
 

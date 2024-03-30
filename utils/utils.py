@@ -31,6 +31,9 @@ def filter_df(df, pesquisa, filtros, area_clinica):
     elif filtros == "IDG":
         df = df[df["idg"] == 1]
 
+    elif filtros == "BI-CSP":
+        df = df[df["bicsp"] == 1]
+
     else:
         pass
 
