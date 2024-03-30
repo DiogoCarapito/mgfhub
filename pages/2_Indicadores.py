@@ -158,9 +158,9 @@ with col_filtros_2:
     st.session_state["filtro_area_clinica"] = st.multiselect(
         "Filtro por área clínica",
         st.session_state["filtered_df"]["Área clínica"].unique(),
-        placeholder="Selecione uma ou mais áreas clínicas. Nota: algumas areas clínicas estão erradamente classificadas na fonte (SDM)",
+        placeholder="Selecione uma ou mais áreas clínicas",
         on_change=on_click,
-        # help="Filtrar por area clínica",
+        help="Podes selecionar mais do que um filtro. Nota - algumas áreas clínicas estão erradamente classificadas na fonte dos dados (exemplo: Resporatório tem indicadores de Saúde Mental) ",
     )
 
 on_click()
