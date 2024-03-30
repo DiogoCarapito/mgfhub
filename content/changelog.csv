@@ -17,4 +17,4 @@ version,date,text
 2.1.1,2024-03-04,"2.1.1 - Melhorias no User Interface e correção de bugs na introdução de dados vindos do BI-CSP e MIM@UF. Nova localização do tutorial para extrair dados das diferentes plataformas"
 2.1.2,2024-03-13,"2.1.2 - Adicionado o indicador 483 - Avaliação da Satisfação dos Utentes; Correção visualização indicador 404 na zona de equipas"
 2.1.3,2024-03-21,"2.1.3 - Adicionada calculadora de estimativa de melhoria do indicador na Visão de Equipa"
-2.1.4,2024-03-21,"2.1.4 - Novo filtro na pesquisa de indicadores: Filtro por área clínica. Agora visão por cartões é a predefinida"
+2.1.4,2024-03-29,"2.1.4 - Novo filtro na pesquisa de indicadores: Filtro por área clínica. Agora visão por cartões é a predefinida"
