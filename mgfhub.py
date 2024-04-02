@@ -28,7 +28,7 @@ def main():
     # main content
     with col2:
         # welcome message
-        bem_vindos_2("Bem vind@ à nova versão 2.1.0 🎉")
+        bem_vindos_2("Bem vind@ à nova versão 2.1 🎉")
 
         # intro from content/intro.md
         intro("content/intro.md")
