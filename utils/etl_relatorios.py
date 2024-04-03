@@ -71,26 +71,22 @@ def etiqueta_ano(df, ano):
 
 
 def calculate_score_mimuf(row):
-    if (
-        row["Valor"] > row["Máximo Aceitável 2024"]
-        or row["Valor"] < row["Mínimo Aceitável 2024"]
-    ):
+    # Convert the values to floats
+    valor = float(row["Valor"])
+    min_aceitavel = float(row["Mínimo Aceitável 2024"])
+    min_esperado = float(row["Mínimo Esperado 2024"])
+    max_esperado = float(row["Máximo Esperado 2024"])
+    max_aceitavel = float(row["Máximo Aceitável 2024"])
+
+    if valor > max_aceitavel or valor < min_aceitavel:
         return 0
-    elif row["Mínimo Aceitável 2024"] <= row["Valor"] < row["Mínimo Esperado 2024"]:
-        score_min = (
-            2
-            * (row["Valor"] - row["Mínimo Aceitável 2024"])
-            / (row["Mínimo Esperado 2024"] - row["Mínimo Aceitável 2024"])
-        )
+    elif min_aceitavel <= valor < min_esperado:
+        score_min = 2 * (valor - min_aceitavel) / (min_esperado - min_aceitavel)
         return score_min
-    elif row["Máximo Esperado 2024"] < row["Valor"] <= row["Máximo Aceitável 2024"]:
-        score_max = (
-            2
-            * (row["Máximo Aceitável 2024"] - row["Valor"])
-            / (row["Máximo Aceitável 2024"] - row["Máximo Esperado 2024"])
-        )
+    elif max_esperado < valor <= max_aceitavel:
+        score_max = 2 * (max_aceitavel - valor) / (max_aceitavel - max_esperado)
         return score_max
-    elif row["Mínimo Esperado 2024"] <= row["Valor"] <= row["Máximo Esperado 2024"]:
+    elif min_esperado <= valor <= max_esperado:
         return 2
     else:
         return "Error"  # Return some value or raise an exception in case none of the conditions are met
@@ -309,6 +305,19 @@ def merge_portaria_bicsp(df_bicsp, ano):
     return df
 
 
+def localizacao_coluna_medico(df):
+    index = df.columns.get_loc("Médico Familia") - 3
+    list_text = [
+        "para_remover_2",
+        "para_remover_3",
+        "para_remover_4",
+    ]
+
+    list_text.insert(index, "Médico Familia")
+
+    return list_text
+
+
 def etl_mimuf(list_of_files):
     if list_of_files is None:
         return None
@@ -336,19 +345,18 @@ def etl_mimuf(list_of_files):
         df = df[1:]
         df.reset_index(drop=True, inplace=True)
 
+        nome_colunas = localizacao_coluna_medico(df)
+
         # #give name to columns
-        df.columns = [
-            "Unidade",
-            "para_remover_1",
-            "id",
-            "para_remover_2",
-            "Médico Familia",
-            "para_remover_3",
-            "para_remover_4",
-            "Numerador",
-            "Denominador",
-            "Valor",
-        ]
+        df.columns = (
+            ["Unidade", "para_remover_1", "id"]
+            + nome_colunas
+            + [
+                "Numerador",
+                "Denominador",
+                "Valor",
+            ]
+        )
 
         # list_medicos = df["Médico Familia"].unique()
         # # replace the names of "Médico Familia" to a generic name "Médico 1"
@@ -411,12 +419,47 @@ def etl_mimuf(list_of_files):
             on="id",
             how="left",
         )
+
         # drop rows with NaN
         # df.dropna(subset=["id"], inplace=True)
 
         df.reset_index(drop=True, inplace=True)
 
-        df["Valor"] = df["Valor"].str.replace(",", ".").astype(float)
+        # fill NA
+        df["Valor"] = df["Valor"].fillna(0)
+        df["Denominador"] = df["Denominador"].fillna(0)
+        df["Numerador"] = df["Numerador"].fillna(0)
+
+        df["Valor"] = (
+            df["Valor"]
+            .apply(
+                lambda x: x.replace(".", "").replace(",", ".")
+                if isinstance(x, str)
+                else x
+            )
+            .astype(float)
+        )
+        df["Numerador"] = (
+            df["Numerador"]
+            .apply(
+                lambda x: x.replace(".", "").replace(",", ".")
+                if isinstance(x, str)
+                else x
+            )
+            .astype(float)
+        )
+        df["Denominador"] = (
+            df["Denominador"]
+            .apply(
+                lambda x: x.replace(".", "").replace(",", ".")
+                if isinstance(x, str)
+                else x
+            )
+            .astype(float)
+        )
+
+        # drop lines were "Médico Familia" is Sem Médico
+        # df = df[df["Médico Familia"] != "Sem Médico"]
 
         # sort by id
         df.sort_values("id", inplace=True)
@@ -429,11 +472,6 @@ def etl_mimuf(list_of_files):
         # valores aceitáveis e esperados estão noutra coluna e deve ser usados o da mesma linha
 
         df["Score"] = df.apply(calculate_score_mimuf, axis=1)
-
-        # Numerador need to substitute , to . and transform to float
-        df["Numerador"] = (
-            df["Numerador"].str.replace(".", "").str.replace(",", ".").astype(float)
-        )
 
         # calculate the score for each dimension based on the average wheighed score
         df["contributo"] = df["Ponderação"] * df["Score"] / 2
