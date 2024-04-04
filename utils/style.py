@@ -74,11 +74,15 @@ def button_link(label):
 
 
 def main_title(text):
+    if len(text) > 25:
+        fontsize = "2.5em"
+    else:
+        fontsize = "4em"
     st.markdown(
         "<style>"
         ".gradient-text {"
         "display: inline-block;"  # Changed from inline to inline-block
-        "font-size: 4em;"
+        f"font-size: {fontsize};"
         "font-weight: bold;"
         "width: 100%;"  # Added to make the span span the entire width
         "text-align: center;}"  # Added to center the text
