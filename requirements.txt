@@ -21,7 +21,7 @@ python-dotenv==1.0.0
 
 mimufs==0.1.1
 
-pyperclip
-transformers
-torch
-icd10-cm
+#pyperclip
+#transformers
+#torch
+#icd10-cm
