@@ -17,6 +17,9 @@ main_title("Indicadores")
 # load .env file
 load_dotenv()
 
+# key to know the local of the code being run
+production = os.environ.get("PRODUCTION")
+
 # get Supabase URL and Key from environment variables
 url: str = os.environ.get("SUPABASE_URL")
 key: str = os.environ.get("SUPABASE_KEY")
@@ -25,16 +28,18 @@ supabase: Client = create_client(url, key)
 
 # Function to insert data into Supabase
 def supabase_insert(input_text, filtro, area_clinica):
-    # Get current datetime
-    date_time = datetime.now().isoformat()
+    if production:
+        # Get current datetime
+        date_time = datetime.now().isoformat()
 
-    # Create the data in a format to be inserted into Supabase
-    sb_insert = {
-        "created_at": date_time,
-        "query": input_text,
-        "filter": filtro,
-        "area_clinica": area_clinica,
-    }
+        # Create the data in a format to be inserted into Supabase
+        sb_insert = {
+            "created_at": date_time,
+            "query": input_text,
+            "filter": filtro,
+            "area_clinica": area_clinica,
+            # "production": bool(environment),
+        }
 
     # Insert data into Supabase
     supabase.table("mgfhub_queries").insert(sb_insert).execute()

@@ -11,6 +11,9 @@ from datetime import datetime
 # load .env file
 load_dotenv()
 
+# key to know the local of the code being run
+production = os.environ.get("PRODUCTION")
+
 # Supabase configuration
 url: str = os.environ.get("SUPABASE_URL")
 key: str = os.environ.get("SUPABASE_KEY")
@@ -19,20 +22,22 @@ supabase: Client = create_client(url, key)
 
 # Function to insert data into Supabase
 def supabase_record(unidade, ano, mes, tipo):
-    # Get current datetime
-    date_time = datetime.now().isoformat()
+    if production:
+        # Get current datetime
+        date_time = datetime.now().isoformat()
 
-    # Create the data in a format to be inserted into Supabase
-    sb_insert = {
-        "created_at": date_time,
-        "unidade": unidade,
-        "ano": ano,
-        "mes": mes,
-        "tipo": tipo,
-    }
+        # Create the data in a format to be inserted into Supabase
+        sb_insert = {
+            "created_at": date_time,
+            "unidade": unidade,
+            "ano": ano,
+            "mes": mes,
+            "tipo": tipo,
+            # "production": bool(environment),
+        }
 
-    # Insert data into Supabase
-    supabase.table("ide_uploads").insert(sb_insert).execute()
+        # Insert data into Supabase
+        supabase.table("ide_uploads").insert(sb_insert).execute()
 
 
 def extrair_id(df, coluna):
