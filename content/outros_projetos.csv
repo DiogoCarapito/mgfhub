@@ -1,3 +1,4 @@
 titulo,link,descricao
 datasets_indicadores,"https://github.com/DiogoCarapito/datasets_indicadores","Scripts de download e processamento automático de indicadores a partir do site do SDM e documentos de contratualização para utilização em outros projetos ou disponiveis para download"
 mimufs,"https://github.com/DiogoCarapito/mimufs","Biblioteca de Python com ferramentas de data science para ETL (extract, transform, load) de dados do MIM@UF e BI-CSP"
+text-to-icpc2,"https://github.com/DiogoCarapito/text-to-icpc2","Projeto de NLP para classificação de texto clínico em códigos ICPC-2 para facilitar a codificação de diagnósticos em sistemas de informação em saúde no SClínico"

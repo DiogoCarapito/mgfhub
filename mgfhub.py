@@ -48,7 +48,7 @@ def main():
                 title=each[0],
                 text=each[1],
                 image=None,
-                link=each[3],
+                # link=each[3],
                 # icon=each[4],
                 em_construcao=each[5],
             )

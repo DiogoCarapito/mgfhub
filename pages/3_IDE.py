@@ -46,8 +46,8 @@ with st.sidebar:
         "[Como extrair o ficheiro excel do BI-CSP?](https://mgfhub.com/FAQs)",
         unsafe_allow_html=True,
     )
-    
-    st.write ("")
+
+    st.write("")
 
     # upload de xlsx de mimuf
     st.markdown("## Upload do excel do MIMUF")
@@ -105,7 +105,6 @@ with tab_uni_geral:
         # col_nao_carregado_1, col_nao_carregado_2 = st.columns(2)
 
         # with col_nao_carregado_1:
-            
 
         # with col_nao_carregado_2:
         #     st.write("")
@@ -306,14 +305,14 @@ with tab_uni_geral:
 with tab_equipas:
     if not st.session_state["df_mimuf"]:
         st.warning(mimuf_nao_carregado)
-        st.write("")
-        # tutorial_mimuf()
-        st.markdown(
-            '<p style="text-align: center;">'
-            '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do MIM@UF?</a>'
-            "</p>",
-            unsafe_allow_html=True,
-        )
+        # st.write("")
+        # # tutorial_mimuf()
+        # st.markdown(
+        #     '<p style="text-align: center;">'
+        #     '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do MIM@UF?</a>'
+        #     "</p>",
+        #     unsafe_allow_html=True,
+        # )
 
     else:
         # Visualizaçao
@@ -424,14 +423,14 @@ with tab_prof_geral:
 
     if not st.session_state["df_mimuf"]:
         st.warning(mimuf_nao_carregado)
-        st.write("")
-        # tutorial_mimuf()
-        st.markdown(
-            '<p style="text-align: center;">'
-            '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do MIM@UF?</a>'
-            "</p>",
-            unsafe_allow_html=True,
-        )
+        # st.write("")
+        # # tutorial_mimuf()
+        # st.markdown(
+        #     '<p style="text-align: center;">'
+        #     '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do MIM@UF?</a>'
+        #     "</p>",
+        #     unsafe_allow_html=True,
+        # )
 
     elif len(st.session_state["df_mimuf"]) >= 1:
         # opções_visualizacao_2 = (

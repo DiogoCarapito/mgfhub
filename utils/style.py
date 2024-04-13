@@ -131,7 +131,8 @@ def intro(file):
     )
 
 
-def card_container(title, text, image, link, em_construcao):
+def card_container(title, text, image, em_construcao):
+    # def card_container(title, text, image, link, em_construcao):
     if em_construcao:
         msg_construcao = "🏗️ Em Construção 🏗️"
     else:
@@ -140,17 +141,23 @@ def card_container(title, text, image, link, em_construcao):
     with st.container():
         st.markdown(
             f'<div style="text-align: center; border: 0px solid #ddd; border-radius: 10px; padding: 10px 20px 10px 20px; background: linear-gradient(135deg, rgba(88, 142, 249, 0.07), rgba(190, 28, 243, 0.07));">'
-            f'<h2><a href="{link}" target="_self" style="text-decoration: none; color: inherit;">{title}</a></h2>'
+            f"<h2>{title}</h2>"
             f'<p style="font-size: 19px;">{msg_construcao}</p>'
-            f'<p style="font-size: 19px;">{mgfhub_style(text)}</p>',
+            f'<p style="font-size: 19px;">{mgfhub_style(text)}</p>'
+            f'<a href="{title}" style="text-decoration: underline; font-size: 19px;">Ir para {title}</a>',
             unsafe_allow_html=True,
         )
+
         if image:
             st.markdown(
                 f'<img src="{image}" style="width: 100%;">',
                 unsafe_allow_html=True,
             )
+
         st.markdown("</div>", unsafe_allow_html=True)
+
+        # st.page_link(link, label=f"Ir para {title}")
+
         st.empty()
 
 
@@ -328,10 +335,12 @@ def page_bottom():
 
 def bottom_suport_email():
     st.divider()
+
+    text = mgfhub_style("© mgfhub 2024 - Todos os direitos reservados")
     st.markdown(
         '<div style="text-align: center;">'
         '<p style="font-size: 16px;">Dúvidas, sugestões? Envia-nos um email para <a href="mailto:mgfhub.suporte@gmail.com" style="text-decoration: underline; font-size: 16px;">mgfhub.suporte@gmail.com</a></p>'
-        "© mgfhub - Todos os direitos reservados"
+        f"{text}"
         "</div>",
         unsafe_allow_html=True,
     )

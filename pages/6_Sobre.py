@@ -51,7 +51,7 @@ with col_socials_2:
 
 st.divider()
 
-centered_title("Outros Projetos")
+centered_title("Outros projetos")
 st.write("")
 
 for each in outros_projetos.values:
