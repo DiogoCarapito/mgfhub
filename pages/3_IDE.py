@@ -1,13 +1,7 @@
 import streamlit as st
-from utils.style import (
-    page_config,
-    main_title,
-    bottom_suport_email,
-    # em_desenvolvimento,
-    # centered_title,
-    # bicsp_link_page,
-)
+from utils.style import page_config, main_title, bottom_suport_email, em_desenvolvimento
 
+import pandas as pd
 
 from utils.etl_relatorios import etl_bicsp, etl_mimuf, merge_portaria_bicsp
 from utils.vis_relatorios import (
@@ -16,7 +10,6 @@ from utils.vis_relatorios import (
     tabela,
     horizontal_bar,
     sunburst_mimuf,
-    # stakced_barchart,
 )
 
 
@@ -24,6 +17,7 @@ page_config()
 
 main_title("IDE")
 
+# variaveis iniciais
 st.session_state["df_bicsp"] = {}
 st.session_state["df_mimuf"] = {}
 bicsp_nao_carregado = "Ficheiros do BI-CSP não carregados!"
@@ -32,6 +26,7 @@ st.session_state["opcao_visualizacao"] = "Sunburst"
 st.session_state["opcao_visualizacao_2"] = "Barras + Tabela"
 
 
+# Sidebar
 with st.sidebar:
     # upload de xlsx de bicsp
     st.markdown(
@@ -51,9 +46,10 @@ with st.sidebar:
         "[Como extrair o ficheiro excel do BI-CSP?](https://mgfhub.com/FAQs)",
         unsafe_allow_html=True,
     )
+    
+    st.write ("")
 
-    # bicsp_link_page()
-
+    # upload de xlsx de mimuf
     st.markdown("## Upload do excel do MIMUF")
 
     # Upload de ficheiro excel do MIMUF
@@ -70,10 +66,15 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-    # st.write("")
-    st.markdown(
-        "**Nota:** Podes carregar mais do que um ficheiro do BI-CSP e/ou MIM@UF com periodos diferentes. permite comparar diferentes periodos e/ou unidades."
-    )
+    st.write("")
+
+    with st.expander("Dicas"):
+        st.markdown(
+            "**1 -** Podes carregar mais do que um ficheiro do BI-CSP e/ou MIM@UF com periodos diferentes. Permite comparar diferentes periodos e/ou unidades."
+        )
+        st.markdown(
+            "**2 -** Depois de extrarir uma vez os ficheitos do BI-CSP/MIM@UF no mês, podes guardar nas pastas partilhadas da unidade para utlilizar novamente, uma vez que os dados não ficam guardados no servidor do mgfhub."
+        )
 
 
 # BICSP file
@@ -82,19 +83,14 @@ st.session_state["df_bicsp"] = etl_bicsp(st.session_state["uploaded_file_bicsp"]
 # MIMUF file
 st.session_state["df_mimuf"] = etl_mimuf(st.session_state["uploaded_file_mimuf"])
 
-# Seleção modelo contratual
-# modelo_contratual = st.radio(
-#     "Modelo Contratual",
-#     ["IDE", "IDG", "Todos os indicadores"],
-#     horizontal=True,
-# )
 
 # tab_uni_geral, tab_uni_indic, tab_prof_geral, tab_prof_indi = st.tabs(
-tab_uni_geral, tab_equipas, tab_prof_geral = st.tabs(
+tab_uni_geral, tab_equipas, tab_prof_geral, tab_nao_ide = st.tabs(
     [
         "Visão de Unidade",
         "Visão de Equipas",
         "Visão por Profissional",
+        " Indicadores não-IDE"
         # "Profissional - Indicadores",
         # "Todos Indicadores",
     ],
@@ -106,16 +102,38 @@ with tab_uni_geral:
     # mensagem se não houver ficheiros carregados
     if not st.session_state["df_bicsp"]:
         st.warning(bicsp_nao_carregado)
+        # col_nao_carregado_1, col_nao_carregado_2 = st.columns(2)
 
-        st.write("")
+        # with col_nao_carregado_1:
+            
 
-        # tutorial_bicsp()
-        st.markdown(
-            '<p style="text-align: center;">'
-            '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do BI-CSP?</a>'
-            "</p>",
-            unsafe_allow_html=True,
-        )
+        # with col_nao_carregado_2:
+        #     st.write("")
+        #     st.markdown(
+        #         '<p style="text-align: center;">'
+        #         '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do BI-CSP?</a>'
+        #         "</p>",
+        #         unsafe_allow_html=True,
+        #     )
+
+        # st.write("")
+
+        # # tutorial_bicsp()
+        # st.markdown(
+        #     '<p style="text-align: center;">'
+        #     '<a href="https://mgfhub.com/FAQs">Como extrair o ficheiro excel do BI-CSP?</a>'
+        #     "</p>",
+        #     unsafe_allow_html=True,
+        # )
+
+        st.divider()
+
+        # load a dummy sunburst with score 1 in all parameters
+
+        bicsp_score_1 = pd.read_csv("data/sunburst_score_1.csv", sep=";")
+        # st.write(bicsp_score_1)
+
+        sunburst_bicsp(bicsp_score_1, 2000, "Janeiro", "USF ?", 800)
 
     else:
         opções_visualizacao = (
@@ -469,20 +487,15 @@ with tab_prof_geral:
             800,
         )
 
-        # for nome, each in st.session_state["df_mimuf"].items():
-        #     sunburst_mimuf(
-        #         each["df"][each["df"]["Médico Familia"] == filtro_medico],
-        #         each["ano"],
-        #         each["mes"],
-        #         each["unidade"],
-        #         500,
-        #     )
 
+with tab_nao_ide:
+    em_desenvolvimento()
 
-# with tab_prof_indi:
-#     # centered_title("Profissional - Indicadores")
+    st.write("")
+    st.subheader(
+        "Futura visualização de indicadores que não contam para o IDE mas podem ser relevantes monitorizar para auditorias internas ou para preparar mudanças no IDE"
+    )
+    st.write("")
 
-
-#     em_desenvolvimento()
 
 bottom_suport_email()

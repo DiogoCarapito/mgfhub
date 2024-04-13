@@ -119,7 +119,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
         color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"],
     )
     fig.update_traces(
-        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.2f}</b><br>Intervalo Esperado: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
+        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.2f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
         hoverlabel=dict(font=dict(size=18)),
         textinfo="label",
         insidetextfont=dict(size=24),
