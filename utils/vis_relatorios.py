@@ -178,24 +178,24 @@ def horizontal_bar_chart(df1, ano1):
 
 def dumbbell_plot(dict_dfs, ano):
     # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], index=1)
-    col_filter_dumbbell_1, col_filter_dumbbell_2, col_filter_dumbbell_3 = st.columns(
-        [1, 2, 1]
-    )
+    # col_filter_dumbbell_1, col_filter_dumbbell_2, col_filter_dumbbell_3 = st.columns(
+    #     [1, 2, 1]
+    # )
 
-    with col_filter_dumbbell_1:
-        st.empty()
-    with col_filter_dumbbell_2:
-        slider_peso = st.slider(
-            "Filtrar por Peso",
-            min_value=0.0,
-            max_value=10.0,
-            value=[0.0, 10.0],
-            step=0.1,
-            help="Escolha o peso que pretende para a métrica de forma a reduzir o número de indicadores apresentados.",
-        )
-    with col_filter_dumbbell_3:
-        st.empty()
-        # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], horizontal=True, index=1, disabled=True)
+    # with col_filter_dumbbell_1:
+    #     st.empty()
+    # with col_filter_dumbbell_2:
+    #     slider_peso = st.slider(
+    #         "Filtrar por Peso",
+    #         min_value=0.0,
+    #         max_value=10.0,
+    #         value=[0.0, 10.0],
+    #         step=0.1,
+    #         help="Escolha o peso que pretende para a métrica de forma a reduzir o número de indicadores apresentados.",
+    #     )
+    # with col_filter_dumbbell_3:
+    #     st.empty()
+    #     # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], horizontal=True, index=1, disabled=True)
 
     dict_figs = {}
 
@@ -212,12 +212,12 @@ def dumbbell_plot(dict_dfs, ano):
     # order dfs by date
     dfs = sorted(dfs, key=lambda x: x["date"])
 
-    # filter by peso
-    for each in dfs:
-        each["df"] = each["df"].loc[
-            (each["df"]["Ponderação"] >= slider_peso[0])
-            & (each["df"]["Ponderação"] <= slider_peso[1])
-        ]
+    # # filter by peso
+    # for each in dfs:
+    #     each["df"] = each["df"].loc[
+    #         (each["df"]["Ponderação"] >= slider_peso[0])
+    #         & (each["df"]["Ponderação"] <= slider_peso[1])
+    #     ]
 
     if len(dict_dfs) == 2:
         # Ensure the dataframes are sorted by 'indicador'
@@ -240,7 +240,7 @@ def dumbbell_plot(dict_dfs, ano):
             score1 = dfs[0]["df"][dfs[0]["df"]["Nome"] == indicador]["Score"].values[0]
             score2 = dfs[1]["df"][dfs[1]["df"]["Nome"] == indicador]["Score"].values[0]
 
-            if abs(score1 - score2) < 0.12:
+            if abs(score1 - score2) < 0.06:
                 marker_info = None
                 linecolor = "grey"
 
@@ -249,7 +249,7 @@ def dumbbell_plot(dict_dfs, ano):
                     symbol="arrow",
                     # color="#FF7E79",
                     color="grey",
-                    size=20,
+                    size=18,
                     angleref="previous",
                     standoff=8,
                 )
@@ -260,7 +260,7 @@ def dumbbell_plot(dict_dfs, ano):
                     symbol="arrow",
                     # color="#56BA39",
                     color="grey",
-                    size=20,
+                    size=18,
                     angleref="previous",
                     standoff=8,
                 )
@@ -301,8 +301,8 @@ def dumbbell_plot(dict_dfs, ano):
             mode="markers",
             name=each["nome"],
             marker=dict(
-                #size=16,
-                size = 10 * np.sqrt(each["df"]["Ponderação"]),
+                # size=16,
+                size=10 * np.sqrt(each["df"]["Ponderação"]),
                 color=each["df"]["Score"],  # Set color to Score
                 colorscale=["#FF7E79", "#FFD479", "#56BA39"],
                 symbol=i + 0,  # Set symbol to i

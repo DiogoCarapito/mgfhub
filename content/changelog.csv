@@ -20,4 +20,4 @@ version,date,text
 2.1.4,2024-03-29,"Novo filtro na pesquisa de indicadores: Filtro por área clínica. Agora visão por cartões é a predefinida"
 2.1.5,2024-03-30,"Adicionado novo filtro na pesquisa de indicadores - BI-CSP. Permite filtar por indicadores que estão em utilização e o seu valor está disponível no BI-CSP"
 2.1.6,2024-04-03,"Correções de erros no processamento de ficheiros do MIM@UF"
-2.1.7,2024-04-13,"Melhorias gráficas na pagina IDE e pagina inical"
+2.1.7,2024-04-13,"Melhorias gráficas na pagina inicial e IDE - dumbell plot melhorado na visualização de evolução temporal"

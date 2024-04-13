@@ -302,7 +302,7 @@ def merge_portaria_bicsp(df_bicsp, ano):
     df["Score"] = df["Score"].astype(float)
 
     # remove id column
-    #df.drop(columns=["id"], inplace=True)
+    # df.drop(columns=["id"], inplace=True)
 
     # st.write(
     #     df[["id", "Nome", "Dimensão", "Ponderação", "Resultado", "Score", "contributo"]]

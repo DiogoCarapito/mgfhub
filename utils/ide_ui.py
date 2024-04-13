@@ -32,8 +32,11 @@ def ide_sidebar():
             "[Como extrair o ficheiro excel do BI-CSP?](https://mgfhub.com/FAQs)",
             unsafe_allow_html=True,
         )
+        st.markdown(
+            '(Já é possível extrair o ficheiro do BI-CSP na nova secção do [IDE](https://bicsp.min-saude.pt/pt/contratualizacao/ide/Paginas/default.aspx), separador "Dimensões e Indicadores IDE")'
+        )
 
-        st.write("")
+        # st.write("")
 
         # upload de xlsx de mimuf
         st.markdown("## Upload do excel do MIMUF")
@@ -96,15 +99,11 @@ def tab_visao_unidade():
     st.divider()
 
     # filtros
-    col_filter_1, col_filter_2, col_filter_3, col_filter_4 = st.columns(
-        [2, 1, 2, 1]
-    )
+    col_filter_1, col_filter_2, col_filter_3, col_filter_4 = st.columns([2, 1, 2, 1])
 
     # escolha do dataframe de analise
     with col_filter_1:
-        escolha = st.selectbox(
-            "Escolha o mês de análise", st.session_state["df_bicsp"]
-        )
+        escolha = st.selectbox("Escolha o mês de análise", st.session_state["df_bicsp"])
     # processamento do dataframe
     df_sunburst = merge_portaria_bicsp(
         st.session_state["df_bicsp"][escolha]["data"],
@@ -235,12 +234,30 @@ def tab_visao_unidade():
                 },
                 st.session_state["df_bicsp"][escolha]["ano"],
             )
+        st.write("Interpretação/dicas")
+        st.write("- Passa o rato por cima para ter mais indo sobre o indicador.")
+        st.write(
+            "- O tamanho do círculo/quadrado representa o peso do indicador - indicadores com mais impacto do IDE serão representados com um tamanho maior."
+        )
+        st.write(
+            "- A cor representa o score do indicador, entre 0-2 num gradiente vermelho -> amarelo -> verde."
+        )
+        st.write(
+            "- Quando é introduzido uma segundo xlsx, é calculada a diferença entre os dois periodos para permitir avaliar a evolução temporal. Automaticamente o dados mais antigos serão circulos e o mais recente quadrados (mesmo que em cima fique trocado). Fica ordenado pelos dados antigos."
+        )
+        st.write(
+            "- A linha representa a variação do indicador entre os dois periodos, quando a diferença é significativa aparece a seta que indica a direção da variação."
+        )
+        st.write(
+            "- Se o indicador se mantiver no mesmo valor, o circulo e o quadrado ficam sobrepostos."
+        )
+        st.write(
+            "- Para visualizar com mais detalhe, clica no botão de ecrã inteiro no canto superior direito do gráfico."
+        )
+
 
 def tab_visao_equipas():
-    
-    col_filtro_equipa_1, col_filtro_equipa_2, col_visualizacao = st.columns(
-        [1, 3, 2]
-    )
+    col_filtro_equipa_1, col_filtro_equipa_2, col_visualizacao = st.columns([1, 3, 2])
     with col_filtro_equipa_1:
         dataframe_selected = st.selectbox(
             "Escolha o mês de analise",
@@ -292,9 +309,7 @@ def tab_visao_equipas():
                 st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
                 == filtro_indicador
             ][["Médico Familia", "Numerador", "Denominador", "Valor"]]
-            .sort_values(
-                by=st.session_state["opcao_visualizacao_2"], ascending=False
-            )
+            .sort_values(by=st.session_state["opcao_visualizacao_2"], ascending=False)
         )
 
         st.dataframe(
@@ -312,9 +327,7 @@ def tab_visao_equipas():
     denominador = df_num_den_med["Denominador"].sum().astype(int)
 
     with col_metric_1:
-        num = st.number_input(
-            "Numerador", value=numerador, key="numerador", step=10
-        )
+        num = st.number_input("Numerador", value=numerador, key="numerador", step=10)
 
     with col_metric_2:
         den = st.number_input(
@@ -329,7 +342,8 @@ def tab_visao_equipas():
 
     with col_metric_4:
         st.metric("Valor Actual", round(numerador / denominador * 100, 2))
-        
+
+
 def tab_visao_profissional():
     col_filtro_medico_1, col_filtro_medico_2 = st.columns(2)
 

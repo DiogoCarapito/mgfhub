@@ -1,6 +1,11 @@
 import streamlit as st
 from utils.style import page_config, main_title, bottom_suport_email, em_desenvolvimento
-from utils.ide_ui import ide_sidebar, tab_visao_unidade, tab_visao_equipas, tab_visao_profissional
+from utils.ide_ui import (
+    ide_sidebar,
+    tab_visao_unidade,
+    tab_visao_equipas,
+    tab_visao_profissional,
+)
 
 import pandas as pd
 
@@ -37,10 +42,8 @@ tab_unidade, tab_equipas, tab_prof_geral, tab_nao_ide = st.tabs(
 )
 
 with tab_unidade:
-
     # mensagem se não houver ficheiros carregados
     if not st.session_state["df_bicsp"]:
-        
         # warning message
         st.warning(bicsp_nao_carregado)
 
@@ -52,7 +55,6 @@ with tab_unidade:
 
     else:
         tab_visao_unidade()
-        
 
 
 with tab_equipas:
@@ -61,7 +63,7 @@ with tab_equipas:
 
     else:
         tab_visao_equipas()
-        
+
 
 with tab_prof_geral:
     # centered_title("Profissional - Visão Geral")
