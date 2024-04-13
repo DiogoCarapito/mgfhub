@@ -138,21 +138,22 @@ def card_container(title, text, image, em_construcao):
     else:
         msg_construcao = ""
 
+    if image:
+        image_markdown = f'<img src="{image}" style="width: 100%;">'
+    else:
+        image_markdown = ""
+
     with st.container():
         st.markdown(
             f'<div style="text-align: center; border: 0px solid #ddd; border-radius: 10px; padding: 10px 20px 10px 20px; background: linear-gradient(135deg, rgba(88, 142, 249, 0.07), rgba(190, 28, 243, 0.07));">'
             f"<h2>{title}</h2>"
             f'<p style="font-size: 19px;">{msg_construcao}</p>'
             f'<p style="font-size: 19px;">{mgfhub_style(text)}</p>'
-            f'<a href="{title}" style="text-decoration: underline; font-size: 19px;">Ir para {title}</a>',
+            f"<div>{image_markdown}</div>"
+            f'<a href="{title}" style="text-decoration: underline; font-size: 19px;">Ir para {title}</a>'
+            f"<p></p>",
             unsafe_allow_html=True,
         )
-
-        if image:
-            st.markdown(
-                f'<img src="{image}" style="width: 100%;">',
-                unsafe_allow_html=True,
-            )
 
         st.markdown("</div>", unsafe_allow_html=True)
 

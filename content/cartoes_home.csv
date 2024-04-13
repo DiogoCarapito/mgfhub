@@ -1,5 +1,5 @@
 title,text,image,link,icon,em_construcao
-Indicadores,"Ferramenta de pesquisa entre os mais de 460 indicadores existentes, com possibilidade de filtrar por IDE ou IDG",None,"pages/2_Indicadores.py",🔎,False
-IDE,"Ferramenta de análise automática da performance dos indicadores do IDE de uma unidade ou de um profissional, com base no upload de uma tabela proveniente do BI-CSP e outra do MIM@UF",None,"pages/3_IDE.py",📊,False
-FAQs,"Perguntas frequentes sobre o mgfhub, funcionamento dos indicadores e sua interpretação",None,"pages/5_FAQs.py",❓,True
-Sobre,"Informações sobre o mgfhub, equipa, outros projetos e changelog",None,"pages/6_Sobre.py",ℹ️,False
+Indicadores,"Ferramenta de pesquisa entre os mais de 460 indicadores existentes, com possibilidade de filtrar por IDE ou IDG",,"pages/2_Indicadores.py",🔎,False
+IDE,"Ferramenta de análise automática da performance dos indicadores do IDE de uma unidade ou de um profissional, com base no upload de uma tabela proveniente do BI-CSP e outra do MIM@UF",,"pages/3_IDE.py",📊,False
+FAQs,"Perguntas frequentes sobre o mgfhub, funcionamento dos indicadores e sua interpretação",,"pages/5_FAQs.py",❓,True
+Sobre,"Informações sobre o mgfhub, equipa, outros projetos e changelog",,"pages/6_Sobre.py",ℹ️,False
