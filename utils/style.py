@@ -151,7 +151,7 @@ def card_container(title, text, image, em_construcao):
             f'<p style="font-size: 19px;">{mgfhub_style(text)}</p>'
             f"<div>{image_markdown}</div>"
             f'<a href="{title}" style="text-decoration: underline; font-size: 19px;">Ir para {title}</a>'
-            f"<p></p>",
+            f"<p> </p>",
             unsafe_allow_html=True,
         )
 
@@ -159,7 +159,7 @@ def card_container(title, text, image, em_construcao):
 
         # st.page_link(link, label=f"Ir para {title}")
 
-        st.empty()
+        st.write("")
 
 
 def web_link(label, link, icon):
