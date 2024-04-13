@@ -234,25 +234,16 @@ def tab_visao_unidade():
                 },
                 st.session_state["df_bicsp"][escolha]["ano"],
             )
-        st.write("Interpretação/dicas")
-        st.write("- Passa o rato por cima para ter mais indo sobre o indicador.")
         st.write(
-            "- O tamanho do círculo/quadrado representa o peso do indicador - indicadores com mais impacto do IDE serão representados com um tamanho maior."
-        )
-        st.write(
-            "- A cor representa o score do indicador, entre 0-2 num gradiente vermelho -> amarelo -> verde."
-        )
-        st.write(
-            "- Quando é introduzido uma segundo xlsx, é calculada a diferença entre os dois periodos para permitir avaliar a evolução temporal. Automaticamente o dados mais antigos serão circulos e o mais recente quadrados (mesmo que em cima fique trocado). Fica ordenado pelos dados antigos."
-        )
-        st.write(
-            "- A linha representa a variação do indicador entre os dois periodos, quando a diferença é significativa aparece a seta que indica a direção da variação."
-        )
-        st.write(
-            "- Se o indicador se mantiver no mesmo valor, o circulo e o quadrado ficam sobrepostos."
-        )
-        st.write(
-            "- Para visualizar com mais detalhe, clica no botão de ecrã inteiro no canto superior direito do gráfico."
+            """Interpretação/dicas:
+- Se passares o rato por cima do círculo/quadrado mostra mais informação sobre o indicador.
+- O tamanho do círculo/quadrado representa o peso do indicador - indicadores com mais impacto do IDE serão representados com um tamanho maior.
+- A cor representa o score do indicador, entre 0-2 num gradiente vermelho -> amarelo -> verde.
+- Quando é introduzido uma segundo ficheiro xlsx, é calculada a diferença entre os dois periodos para permitir avaliar a evolução temporal. Automaticamente o dados mais antigos serão círculos e o mais recente quadrados (mesmo que em cima fique trocado). Fica ordenado pelos dados antigos dos indicadores com pior para melhor score.
+- A linha representa a variação do indicador entre os dois periodos, quando a diferença é significativa aparece a seta a indicar a direção da variação.
+- Se o indicador se mantiver no mesmo valor, o circulo e o quadrado ficam sobrepostos.
+- Para visualizar com mais detalhe, clica no botão de ecrã inteiro no canto superior direito do gráfico para aumentar o tamanho.
+"""
         )
 
 
