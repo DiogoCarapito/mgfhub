@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 
 from utils.etl_relatorios import etiqueta_ano
@@ -300,10 +301,11 @@ def dumbbell_plot(dict_dfs, ano):
             mode="markers",
             name=each["nome"],
             marker=dict(
-                size=16,
+                #size=16,
+                size = 10 * np.sqrt(each["df"]["Ponderação"]),
                 color=each["df"]["Score"],  # Set color to Score
                 colorscale=["#FF7E79", "#FFD479", "#56BA39"],
-                symbol=i + 1,  # Set symbol to i
+                symbol=i + 0,  # Set symbol to i
             ),
             customdata=each["df"][
                 ["Nome", "Resultado", int_aceit, int_esper, "Score", "Ponderação"]
