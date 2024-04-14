@@ -13,33 +13,38 @@ page_config()
 # titulo principal estilizado com a função main_title
 main_title("Indicadores")
 
-# Supabase configuration
-# load .env file
-load_dotenv()
 
-# key to know the local of the code being run
-production = os.environ.get("PRODUCTION")
+# Load Supabase with .env file
+@st.cache_resource()
+def load_supabase():
+    # load .env file
+    load_dotenv()
 
-# get Supabase URL and Key from environment variables
-url: str = os.environ.get("SUPABASE_URL")
-key: str = os.environ.get("SUPABASE_KEY")
-supabase: Client = create_client(url, key)
+    # get Supabase URL and Key from environment variables
+    url: str = os.environ.get("SUPABASE_URL")
+    key: str = os.environ.get("SUPABASE_KEY")
+    supabase_client: Client = create_client(url, key)
+
+    return supabase_client
+
+
+# Load Supabase
+supabase = load_supabase()
 
 
 # Function to insert data into Supabase
 def supabase_insert(input_text, filtro, area_clinica):
-    if production:
-        # Get current datetime
-        date_time = datetime.now().isoformat()
+    # Get current datetime
+    date_time = datetime.now().isoformat()
 
-        # Create the data in a format to be inserted into Supabase
-        sb_insert = {
-            "created_at": date_time,
-            "query": input_text,
-            "filter": filtro,
-            "area_clinica": area_clinica,
-            # "production": bool(environment),
-        }
+    # Create the data in a format to be inserted into Supabase
+    sb_insert = {
+        "created_at": date_time,
+        "query": input_text,
+        "filter": filtro,
+        "area_clinica": area_clinica,
+        # "production": bool(environment),
+    }
 
     # Insert data into Supabase
     supabase.table("mgfhub_queries").insert(sb_insert).execute()
@@ -47,7 +52,12 @@ def supabase_insert(input_text, filtro, area_clinica):
 
 # Variaveis iniciais
 # carregar o dataframe com os indicadores
-st.session_state["df"] = data_source("indicadores_sdm_complete.csv")
+@st.cache_data()
+def load_indicadores():
+    return data_source("indicadores_sdm_complete.csv")
+
+
+st.session_state["df"] = load_indicadores()
 
 # campode pesquisa inicial
 st.session_state["pesquisa"] = ""
@@ -90,16 +100,6 @@ def update_dataframes(df, pesquisa, filtros, filtro_area_clinica):
     )
 
 
-# update_dataframes(
-#     st.session_state["df"],
-#     st.session_state["pesquisa"],
-#     st.session_state["filtros"],
-#     st.session_state["filtro_area_clinica"]
-# )
-
-
-# função para executar a pesquisa, é chamada quando o botão de pesquisa é clicado ou quando a página é aberta
-# (mesmo quando o Enter é clicado no st.text_input)
 def on_click():
     # atualizar os dataframes com base na pesquisa e nos filtros
     update_dataframes(

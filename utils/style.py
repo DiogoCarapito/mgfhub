@@ -4,6 +4,7 @@ import pandas as pd
 from datetime import datetime
 
 
+@st.cache_data
 def gradient_text(text):
     st.markdown(
         f'<span style="background: linear-gradient(to right, #588EF9, #BE1CF3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; font-size: 22px;">{text}</span>',
@@ -28,6 +29,7 @@ def page_config():
     )
 
 
+@st.cache_data
 def sidebar_about():
     # st.sidebar.image("assets/logo.png", use_column_width=True)
     st.sidebar.page_link("https://diogocarapito.com/", label="diogocarapito.com")
@@ -38,6 +40,7 @@ def sidebar_about():
     )
 
 
+@st.cache_data
 def mgfhub_style(text):
     # if "mgfhub.com" or "/mgfhub" apperars in the text, then the text will not be styled
     if "mgfhub.com" in text.lower() or "/mgfhub" in text.lower():
@@ -58,6 +61,7 @@ def mgfhub_style(text):
         return text
 
 
+@st.cache_data
 def button_link(label):
     st.markdown(
         f'<div style="text-align: center;">'
@@ -73,6 +77,7 @@ def button_link(label):
     )
 
 
+@st.cache_data
 def main_title(text):
     if len(text) > 25:
         fontsize = "2.5em"
@@ -97,6 +102,7 @@ def main_title(text):
     st.write("")
 
 
+@st.cache_data
 def main_subheader(text):
     st.markdown(
         "<style>"
@@ -116,6 +122,7 @@ def main_subheader(text):
     )
 
 
+@st.cache_data
 def intro(file):
     # open intro.md and read the content
     with open(file, "r", encoding="utf-8") as file:
@@ -131,6 +138,7 @@ def intro(file):
     )
 
 
+@st.cache_data
 def card_container(title, text, image, em_construcao):
     # def card_container(title, text, image, link, em_construcao):
     if em_construcao:
@@ -162,6 +170,7 @@ def card_container(title, text, image, em_construcao):
         st.write("")
 
 
+@st.cache_data
 def web_link(label, link, icon):
     st.markdown(
         f'<div style="margin: 5px 0;">'
@@ -174,6 +183,7 @@ def web_link(label, link, icon):
     )
 
 
+@st.cache_data
 def cartao_indicador(id, row):
     st.markdown(
         f'<table style="width:100%; border:0; border-collapse: collapse;">'
@@ -206,6 +216,7 @@ def cartao_indicador(id, row):
     )
 
 
+@st.cache_data
 def em_desenvolvimento():
     st.write("")
     with st.container(border=True):
@@ -219,6 +230,7 @@ def em_desenvolvimento():
     st.write("")
 
 
+@st.cache_data
 def changelog_card(version, date, description):
     with st.container():
         col1, col2, col3 = st.columns([1, 1, 4])
@@ -248,6 +260,7 @@ def changelog_card(version, date, description):
         st.write("")
 
 
+@st.cache_data
 def centered_title(title):
     st.markdown(
         f'<div style="text-align: center;">' f"<h2>{title}</h2>" "</div>",
@@ -255,6 +268,7 @@ def centered_title(title):
     )
 
 
+@st.cache_data
 def centered_text(text):
     text = mgfhub_style(text)
     st.markdown(
@@ -266,6 +280,7 @@ def centered_text(text):
     )
 
 
+@st.cache_data
 def bem_vindos_2(text):
     st.markdown(
         f'<p style="text-align: center; font-size: 22px; font-weight: bold;">{text}</p>',
@@ -273,6 +288,7 @@ def bem_vindos_2(text):
     )
 
 
+@st.cache_data
 def outros_projetos_card(name, link, description):
     with st.container():
         col1, col2 = st.columns([1, 3])
@@ -296,6 +312,7 @@ def outros_projetos_card(name, link, description):
         st.write("")
 
 
+@st.cache_data
 def novidades(file):
     # open content/novidades.csv and pick the most recent one from date column
     latest = pd.read_csv(file).sort_values("date", ascending=False).head(1)
@@ -319,6 +336,7 @@ def novidades(file):
     st.divider()
 
 
+@st.cache_data
 def bicsp_link_page():
     link = "https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx"
     lable = "BI-CSP - Contratualização"
@@ -328,12 +346,14 @@ def bicsp_link_page():
     )
 
 
+@st.cache_data
 def page_bottom():
     st.empty()
     st.divider()
     st.write("mgfhub® Todos os direitos reservados")
 
 
+@st.cache_data
 def bottom_suport_email():
     st.divider()
 

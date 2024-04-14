@@ -1,8 +1,10 @@
 import pandas as pd
 import os
 from utils.load_data import download_update_data
+import streamlit as st
 
 
+@st.cache_data
 def data_source(source):
     # check if source is in ./data folder
     # if not, download from github

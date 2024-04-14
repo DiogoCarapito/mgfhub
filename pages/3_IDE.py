@@ -31,6 +31,15 @@ mimuf_nao_carregado = "Ficheiros do MIM@UF não carregados!"
 # Sidebar with uplods of xlsx files after etl
 st.session_state["df_bicsp"], st.session_state["df_mimuf"] = ide_sidebar()
 
+
+@st.cache_data
+def load_data_sunburst():
+    # load a dummy sunburst with score 1 in all parameters
+    bicsp_score_1 = pd.read_csv("data/sunburst_score_1.csv", sep=";")
+
+    return bicsp_score_1
+
+
 # Tabs
 tab_unidade, tab_equipas, tab_prof_geral, tab_nao_ide = st.tabs(
     [
@@ -48,10 +57,7 @@ with tab_unidade:
         st.warning(bicsp_nao_carregado)
 
         st.divider()
-
-        # load a dummy sunburst with score 1 in all parameters
-        bicsp_score_1 = pd.read_csv("data/sunburst_score_1.csv", sep=";")
-        sunburst_bicsp(bicsp_score_1, 2000, "Janeiro", "USF ?", 800)
+        sunburst_bicsp(load_data_sunburst(), 2000, "Janeiro", "USF ?", 800)
 
     else:
         tab_visao_unidade()

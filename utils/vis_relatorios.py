@@ -8,16 +8,19 @@ import matplotlib.pyplot as plt
 from utils.etl_relatorios import etiqueta_ano
 
 
+@st.cache_data
 def check_date(df):
     # check the date of the data
     return df["Mês Ind"].mode()[0]
 
 
+@st.cache_data
 def remove_dimensao(df):
     # remove rows that have "Dimensão" == "IDE" and "Nome" == "IDE"
     return df.loc[(df["Dimensão"] != "IDE") & (df["Nome"] != "IDE")]
 
 
+@st.cache_data
 def sunburst_bicsp(df, ano, mes, unidade, size=800):
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df, ano)
@@ -52,6 +55,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
     st.plotly_chart(fig, use_container_width=True)
 
 
+@st.cache_data
 def sunburst_mimuf(df, ano, mes, unidade, size=800):
     ano = 2024
     # get column names for the intervalos aceitáveis e esperados for the selected year
@@ -138,6 +142,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
     st.plotly_chart(fig, use_container_width=True)
 
 
+@st.cache_data
 def horizontal_bar_chart(df1, ano1):
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df1, ano1)
@@ -176,6 +181,7 @@ def horizontal_bar_chart(df1, ano1):
     st.plotly_chart(fig, use_container_width=True)
 
 
+@st.cache_data
 def dumbbell_plot(dict_dfs, ano):
     # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], index=1)
     # col_filter_dumbbell_1, col_filter_dumbbell_2, col_filter_dumbbell_3 = st.columns(
@@ -360,6 +366,7 @@ def dumbbell_plot(dict_dfs, ano):
     st.plotly_chart(fig, use_container_width=True)
 
 
+@st.cache_data
 def tabela(df, ano, nome):
     ano = 2024
     int_aceit, int_esper = etiqueta_ano(df, ano)
@@ -407,6 +414,7 @@ def tabela(df, ano, nome):
     return None
 
 
+@st.cache_data
 def horizontal_bar(df, ano, ordenar_por):
     ano = 2024
 
@@ -489,6 +497,7 @@ def horizontal_bar(df, ano, ordenar_por):
     st.pyplot(fig)
 
 
+@st.cache_data
 def stakced_barchart(df):
     med = df["Médico Familia"]
     # denominador = df["Denominador"]

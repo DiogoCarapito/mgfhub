@@ -21,6 +21,7 @@ supabase: Client = create_client(url, key)
 
 
 # Function to insert data into Supabase
+@st.cache_data
 def supabase_record(unidade, ano, mes, tipo):
     if production:
         # Get current datetime
@@ -40,12 +41,14 @@ def supabase_record(unidade, ano, mes, tipo):
         supabase.table("ide_uploads").insert(sb_insert).execute()
 
 
+@st.cache_data
 def extrair_id(df, coluna):
     # extrair o id que se econtra entre dois . (pontos) e transformar em int
     # exemplo de input: "2013.001.01 FL" output 1
     return df[coluna].str.extract(r"\.(\d+)\.", expand=False).astype(int)
 
 
+@st.cache_data
 def etiqueta_ano_completo(df, ano, list_texto):
     list_etiquetas = []
 
@@ -60,6 +63,7 @@ def etiqueta_ano_completo(df, ano, list_texto):
     return list_etiquetas
 
 
+@st.cache_data
 def etiqueta_ano(df, ano):
     # cria as etiquetas para os intervalos aceitáveis e esperados com o ano correcto correspondente aos dados extraídos
     ano = 2024
@@ -75,6 +79,7 @@ def etiqueta_ano(df, ano):
     return int_aceit, int_esper
 
 
+@st.cache_data
 def calculate_score_mimuf(row):
     # Convert the values to floats
     valor = float(row["Valor"])
@@ -97,6 +102,7 @@ def calculate_score_mimuf(row):
         return "Error"  # Return some value or raise an exception in case none of the conditions are met
 
 
+@st.cache_data
 def calculate_score_bicsp(row):
     if (
         row["Resultado"] > row["Máximo Aceitável 2024"]
@@ -123,6 +129,7 @@ def calculate_score_bicsp(row):
         return "Error"  # Return some value or raise an exception in case none of the conditions are met
 
 
+@st.cache_data
 def etl_bicsp(list_of_files):
     if list_of_files is None:
         return None
@@ -246,6 +253,7 @@ def etl_bicsp(list_of_files):
     return dict_dfs
 
 
+@st.cache_data
 def merge_portaria_bicsp(df_bicsp, ano):
     df_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
 
@@ -313,6 +321,7 @@ def merge_portaria_bicsp(df_bicsp, ano):
     return df
 
 
+@st.cache_data
 def localizacao_coluna_medico(df):
     index = df.columns.get_loc("Médico Familia") - 3
     list_text = [
@@ -326,6 +335,7 @@ def localizacao_coluna_medico(df):
     return list_text
 
 
+@st.cache_data
 def etl_mimuf(list_of_files):
     if list_of_files is None:
         return None

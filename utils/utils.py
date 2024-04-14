@@ -2,12 +2,14 @@ import pandas as pd
 import os
 from unidecode import unidecode
 from rapidfuzz import process, fuzz
+import streamlit as st
 
 
 def func():
     return None
 
 
+@st.cache_data
 def data_source(source):
     # check if source is in ./data folder
     # if not, download from github
@@ -24,6 +26,7 @@ def data_source(source):
         return df
 
 
+@st.cache_data
 def filter_df(df, pesquisa, filtros, area_clinica):
     if filtros == "IDE":
         df = df[df["ide"] == 1]
@@ -58,6 +61,7 @@ def filter_df(df, pesquisa, filtros, area_clinica):
         return df
 
 
+@st.cache_data
 def num_denom_paragraph(text):
     try:
         text_after_split = text.split("Numerador: ")
