@@ -1,6 +1,7 @@
 import streamlit as st
 
 
+@st.cache_data()
 def tutorial_loop(tutorial):
     # loop through the content and create a card for each row
     for i, each in enumerate(tutorial):
@@ -13,6 +14,7 @@ def tutorial_loop(tutorial):
             st.write("")
 
 
+@st.cache_data()
 def tutorial_expander(tutorial):
     with st.expander("Tutorial", expanded=False):
         col_tutorial_1, col_tutorial_2, col_tutorial_3 = st.columns([1, 6, 1])
@@ -26,6 +28,7 @@ def tutorial_expander(tutorial):
             st.empty()
 
 
+@st.cache_data()
 def tutorial_bicsp():
     tutorial = [
         {
@@ -61,6 +64,7 @@ def tutorial_bicsp():
     tutorial_expander(tutorial)
 
 
+@st.cache_data()
 def tutorial_mimuf():
     tutorial = [
         {
