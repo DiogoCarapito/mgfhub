@@ -23,22 +23,21 @@ supabase: Client = create_client(url, key)
 # Function to insert data into Supabase
 @st.cache_data
 def supabase_record(unidade, ano, mes, tipo):
-    if production:
-        # Get current datetime
-        date_time = datetime.now().isoformat()
+    # Get current datetime
+    date_time = datetime.now().isoformat()
 
-        # Create the data in a format to be inserted into Supabase
-        sb_insert = {
-            "created_at": date_time,
-            "unidade": unidade,
-            "ano": ano,
-            "mes": mes,
-            "tipo": tipo,
-            # "production": bool(environment),
-        }
+    # Create the data in a format to be inserted into Supabase
+    sb_insert = {
+        "created_at": date_time,
+        "unidade": unidade,
+        "ano": ano,
+        "mes": mes,
+        "tipo": tipo,
+        # "production": bool(environment),
+    }
 
-        # Insert data into Supabase
-        supabase.table("ide_uploads").insert(sb_insert).execute()
+    # Insert data into Supabase
+    supabase.table("ide_uploads").insert(sb_insert).execute()
 
 
 @st.cache_data
@@ -249,7 +248,7 @@ def etl_bicsp(list_of_files):
             "unidade": unidade,
         }
 
-        # supabase_record(unidade, ano, mes, "bicsp")
+        supabase_record(unidade, ano, mes, "bicsp")
 
     return dict_dfs
 
@@ -546,6 +545,6 @@ def etl_mimuf(list_of_files):
             "nome": nome,
         }
 
-        # supabase_record(unidade, ano, mes, "mimuf")
+        supabase_record(unidade, ano, mes, "mimuf")
 
     return dict_dfs

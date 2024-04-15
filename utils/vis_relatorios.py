@@ -204,26 +204,6 @@ def horizontal_bar_chart(df1, ano1):
 
 @st.cache_data
 def dumbbell_plot(dict_dfs, ano):
-    # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], index=1)
-    # col_filter_dumbbell_1, col_filter_dumbbell_2, col_filter_dumbbell_3 = st.columns(
-    #     [1, 2, 1]
-    # )
-
-    # with col_filter_dumbbell_1:
-    #     st.empty()
-    # with col_filter_dumbbell_2:
-    #     slider_peso = st.slider(
-    #         "Filtrar por Peso",
-    #         min_value=0.0,
-    #         max_value=10.0,
-    #         value=[0.0, 10.0],
-    #         step=0.1,
-    #         help="Escolha o peso que pretende para a métrica de forma a reduzir o número de indicadores apresentados.",
-    #     )
-    # with col_filter_dumbbell_3:
-    #     st.empty()
-    #     # exclude_score_2 = st.radio("Excluir Score = 2", ["Sim", "Não"], horizontal=True, index=1, disabled=True)
-
     dict_figs = {}
 
     dfs = []
@@ -238,13 +218,6 @@ def dumbbell_plot(dict_dfs, ano):
 
     # order dfs by date
     dfs = sorted(dfs, key=lambda x: x["date"])
-
-    # # filter by peso
-    # for each in dfs:
-    #     each["df"] = each["df"].loc[
-    #         (each["df"]["Ponderação"] >= slider_peso[0])
-    #         & (each["df"]["Ponderação"] <= slider_peso[1])
-    #     ]
 
     if len(dict_dfs) == 2:
         # Ensure the dataframes are sorted by 'indicador'
@@ -340,6 +313,7 @@ def dumbbell_plot(dict_dfs, ano):
             hovertemplate="<b>%{customdata[0]}</b><br>Peso: %{customdata[5]}%<br>Score: <b>%{customdata[4]:.3f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>",
             hoverlabel=dict(font=dict(size=18)),
         )
+
         # iterador de cor
         i += 1
 
