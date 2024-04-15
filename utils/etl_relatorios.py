@@ -248,7 +248,8 @@ def etl_bicsp(list_of_files):
             "mes": int(mes),
             "unidade": unidade,
         }
-        supabase_record(unidade, ano, mes, "bicsp")
+
+        # supabase_record(unidade, ano, mes, "bicsp")
 
     return dict_dfs
 
@@ -304,7 +305,7 @@ def merge_portaria_bicsp(df_bicsp, ano):
         / df.loc[df["Nome"] == "IDE", "Ponderação"]
     )
 
-    df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
+    # df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
 
     # make score a float
     df["Score"] = df["Score"].astype(float)
@@ -444,9 +445,9 @@ def etl_mimuf(list_of_files):
         df.reset_index(drop=True, inplace=True)
 
         # fill NA
-        df["Valor"] = df["Valor"].fillna(0)
-        df["Denominador"] = df["Denominador"].fillna(0)
-        df["Numerador"] = df["Numerador"].fillna(0)
+        # df["Valor"] = df["Valor"].fillna(0)
+        # df["Denominador"] = df["Denominador"].fillna(0)
+        # df["Numerador"] = df["Numerador"].fillna(0)
 
         df["Valor"] = (
             df["Valor"]
@@ -528,15 +529,10 @@ def etl_mimuf(list_of_files):
             / df.loc[df["Nome"] == "IDE", "Ponderação"]
         )
 
-        df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
+        # df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
 
         # rename columns to remove year
         # df.rename(columns=lambda x: re.sub(r" 2023", "", x), inplace=True)
-
-        # st.write(df["Médico Familia"].unique())
-        # st.write(df["Médico Familia"].unique().shape[0])
-        # st.write(df["id"].unique())
-        # st.write(df["id"].unique().shape[0])
 
         df["Denominador"] = df["Denominador"].astype(float)
         df["Numerador"] = df["Numerador"].astype(float)
@@ -550,6 +546,6 @@ def etl_mimuf(list_of_files):
             "nome": nome,
         }
 
-        supabase_record(unidade, ano, mes, "mimuf")
+        # supabase_record(unidade, ano, mes, "mimuf")
 
     return dict_dfs

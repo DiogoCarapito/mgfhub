@@ -34,8 +34,14 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
         branchvalues="total",
         custom_data=["Nome", "Resultado", int_aceit, int_esper],
         color="Score",
-        #color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"], #3 color gradient
-        color_continuous_scale=["#FF7E79", "#F0A774", "#FFD479","#E5CB72", "#56BA39"], #5 color gradient
+        # color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"], #3 color gradient
+        color_continuous_scale=[
+            "#FF7E79",
+            "#F0A774",
+            "#FFD479",
+            "#E5CB72",
+            "#56BA39",
+        ],  # 5 color gradient
     )
     fig.update_traces(
         hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
@@ -108,7 +114,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
         / df.loc[df["Nome"] == "IDE", "Ponderação"]
     )
 
-    df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
+    # df.loc[df["Nome"] != "IDE"] = df.loc[df["Nome"] != "IDE"].fillna(0)
 
     # make score a float
     df["Score"] = df["Score"].astype(float)
@@ -122,7 +128,14 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
         branchvalues="total",
         custom_data=["Nome", "Valor", int_aceit, int_esper],
         color="Score",
-        color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"],
+        # color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"],
+        color_continuous_scale=[
+            "#FF7E79",
+            "#F0A774",
+            "#FFD479",
+            "#E5CB72",
+            "#56BA39",
+        ],  # 5 color gradient
     )
     fig.update_traces(
         hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.2f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
@@ -158,7 +171,14 @@ def horizontal_bar_chart(df1, ano1):
         y="Nome",
         orientation="h",
         color="Score",
-        color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"],
+        # color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"],
+        color_continuous_scale=[
+            "#FF7E79",
+            "#F0A774",
+            "#FFD479",
+            "#E5CB72",
+            "#56BA39",
+        ],  # 5 color gradient
         custom_data=["Nome", "Resultado", int_aceit, int_esper],
         # miminum valiu for the x axis
         range_x=[0, 2.3],
