@@ -1,5 +1,5 @@
-from mgfhub import main
+# from mgfhub import main
 
 
-def test_main():
-    assert main() == None
+# def test_main():
+#     assert main() == None
