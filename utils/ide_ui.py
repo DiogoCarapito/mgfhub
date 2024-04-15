@@ -171,9 +171,16 @@ def tab_visao_unidade(df_bicsp):
     # metrica IDE
     with col_filter_2:
         ide = (
-            df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Resultado"]
-            .values[0]
-            .round(1)
+            (
+                df_sunburst.loc[
+                    (df_sunburst["Nome"] == "IDE") & (df_sunburst["Score"].notnull()),
+                    "Resultado",
+                ]
+                .values[0]
+                .round(1)
+            )
+            if df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Score"].notnull().any()
+            else None
         )
         # max_ide = df_sunburst.loc[(df_sunburst["Nome"] == "IDE") & (df_sunburst["Score"].notnull()), "Ponderação"].sum().round(1)
         # perda_ide = max_ide - ide
@@ -365,31 +372,31 @@ def tab_visao_equipas(df_mimuf):
             hide_index=True,
         )
 
-    st.divider()
+    # st.divider()
 
-    st.subheader("Cálculo de estimativas")
+    # st.subheader("Cálculo de estimativas")
 
-    col_metric_1, col_metric_2, col_metric_3, col_metric_4 = st.columns(4)
+    # col_metric_1, col_metric_2, col_metric_3, col_metric_4 = st.columns(4)
 
-    numerador = df_num_den_med["Numerador"].sum().astype(int)
-    denominador = df_num_den_med["Denominador"].sum().astype(int)
+    # numerador = df_num_den_med["Numerador"].sum().astype(int)
+    # denominador = df_num_den_med["Denominador"].sum().astype(int)
 
-    with col_metric_1:
-        num = st.number_input("Numerador", value=numerador, key="numerador", step=10)
+    # with col_metric_1:
+    #     num = st.number_input("Numerador", value=numerador, key="numerador", step=10)
 
-    with col_metric_2:
-        den = st.number_input(
-            "Denominador", value=denominador, key="denominador", step=10
-        )
+    # with col_metric_2:
+    #     den = st.number_input(
+    #         "Denominador", value=denominador, key="denominador", step=10
+    #     )
 
-    with col_metric_3:
-        # calcular valor
-        valor = round(num / den * 100, 2)
+    # with col_metric_3:
+    #     # calcular valor
+    #     valor = round(num / den * 100, 2)
 
-        st.metric("Valor Estimado", valor)
+    #     st.metric("Valor Estimado", valor)
 
-    with col_metric_4:
-        st.metric("Valor Actual", round(numerador / denominador * 100, 2))
+    # with col_metric_4:
+    #     st.metric("Valor Actual", round(numerador / denominador * 100, 2))
 
 
 # @st.cache_data

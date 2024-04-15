@@ -119,35 +119,35 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
     # make score a float
     df["Score"] = df["Score"].astype(float)
 
-    # Add a row with Score 0
-    df = df.append(
-        {
-            "Lable": "",
-            "Dimensão": "",
-            "Ponderação": 0,
-            "Nome": "",
-            "Valor": "",
-            int_aceit: "",
-            int_esper: "",
-            "Score": 0,
-        },
-        ignore_index=True,
-    )
+    # # Add a row with Score 0
+    # df = df.append(
+    #     {
+    #         "Lable": "",
+    #         "Dimensão": "",
+    #         "Ponderação": 0,
+    #         "Nome": "",
+    #         "Valor": "",
+    #         int_aceit: "",
+    #         int_esper: "",
+    #         "Score": 0,
+    #     },
+    #     ignore_index=True,
+    # )
 
-    # Add a row with Score 2
-    df = df.append(
-        {
-            "Lable": "",
-            "Dimensão": "",
-            "Ponderação": 0,
-            "Nome": "",
-            "Valor": "",
-            int_aceit: "",
-            int_esper: "",
-            "Score": 2,
-        },
-        ignore_index=True,
-    )
+    # # Add a row with Score 2
+    # df = df.append(
+    #     {
+    #         "Lable": "",
+    #         "Dimensão": "",
+    #         "Ponderação": 0,
+    #         "Nome": "",
+    #         "Valor": "",
+    #         int_aceit: "",
+    #         int_esper: "",
+    #         "Score": 2,
+    #     },
+    #     ignore_index=True,
+    # )
 
     # sunburst
     fig = px.sunburst(

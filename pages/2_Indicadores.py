@@ -168,7 +168,7 @@ with col_filtros_2:
         help="Podes selecionar mais do que um filtro. Nota - algumas áreas clínicas estão erradamente classificadas na fonte dos dados (exemplo: Resporatório tem indicadores de Saúde Mental) ",
     )
 
-# on_click()
+on_click()
 
 # Cálculo do numero de indicadores
 with col_filtros_3:
