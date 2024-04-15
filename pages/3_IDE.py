@@ -60,7 +60,7 @@ with tab_unidade:
         sunburst_bicsp(load_data_sunburst(), 2000, "Janeiro", "USF ?", 800)
 
     else:
-        tab_visao_unidade()
+        tab_visao_unidade(st.session_state["df_bicsp"])
 
 
 with tab_equipas:
@@ -68,7 +68,7 @@ with tab_equipas:
         st.warning(mimuf_nao_carregado)
 
     else:
-        tab_visao_equipas()
+        tab_visao_equipas(st.session_state["df_mimuf"])
 
 
 with tab_prof_geral:
@@ -78,7 +78,7 @@ with tab_prof_geral:
         st.warning(mimuf_nao_carregado)
 
     elif len(st.session_state["df_mimuf"]) >= 1:
-        tab_visao_profissional()
+        tab_visao_profissional(st.session_state["df_mimuf"])
 
 
 with tab_nao_ide:

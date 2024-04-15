@@ -247,6 +247,23 @@ def delete_file(file_path):
     print(f"{file_path} deleted successfully!")
 
 
+def complete_sunburst_portaria_411a_2023():
+    df = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
+
+    # if there isnt a column "Área clínica" add it
+    if "Área clínica" in df.columns:
+        # remove the column "Área clínica"
+        df.drop(columns=["Área clínica"], inplace=True)
+
+    # get the data from indicadores_sdm_complete.csv and make "Área clínica" correspond to the id
+    df_sdm = pd.read_csv("./data/indicadores_sdm_complete.csv")
+    df_sdm = df_sdm[["id", "Área clínica"]]
+    df = df.merge(df_sdm, on="id", how="left")
+
+    # save to ./data folder
+    df.to_csv("./data/sunburst_portaria_411a_2023.csv", index=False)
+
+
 if __name__ == "__main__":
     # download/update all data
     # main csv file with all indicadores
@@ -261,7 +278,7 @@ if __name__ == "__main__":
     # download dados portaria 411a 2023
     download_update_data("portaria_411a_2023.csv")
 
-    bicsp_list_indicadores()
+    # bicsp_list_indicadores()
 
     # pre-processed data for table
     pre_process_sdm("indicadores_sdm_complete.csv")
@@ -271,3 +288,6 @@ if __name__ == "__main__":
 
     # remover o original
     delete_file("data/original_indicadores_sdm_complete.csv")
+
+    # add area clinica to sunburst_portaria_411a_2023.csv
+    complete_sunburst_portaria_411a_2023()

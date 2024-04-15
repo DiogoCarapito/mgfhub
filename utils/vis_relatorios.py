@@ -8,19 +8,19 @@ import matplotlib.pyplot as plt
 from utils.etl_relatorios import etiqueta_ano
 
 
-@st.cache_data
+@st.cache_data()
 def check_date(df):
     # check the date of the data
     return df["Mês Ind"].mode()[0]
 
 
-@st.cache_data
+@st.cache_data()
 def remove_dimensao(df):
     # remove rows that have "Dimensão" == "IDE" and "Nome" == "IDE"
     return df.loc[(df["Dimensão"] != "IDE") & (df["Nome"] != "IDE")]
 
 
-@st.cache_data
+@st.cache_data()
 def sunburst_bicsp(df, ano, mes, unidade, size=800):
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df, ano)
@@ -62,7 +62,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
     st.plotly_chart(fig, use_container_width=True)
 
 
-@st.cache_data
+# @st.cache_data()
 def sunburst_mimuf(df, ano, mes, unidade, size=800):
     ano = 2024
     # get column names for the intervalos aceitáveis e esperados for the selected year
@@ -119,6 +119,36 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
     # make score a float
     df["Score"] = df["Score"].astype(float)
 
+    # Add a row with Score 0
+    df = df.append(
+        {
+            "Lable": "",
+            "Dimensão": "",
+            "Ponderação": 0,
+            "Nome": "",
+            "Valor": "",
+            int_aceit: "",
+            int_esper: "",
+            "Score": 0,
+        },
+        ignore_index=True,
+    )
+
+    # Add a row with Score 2
+    df = df.append(
+        {
+            "Lable": "",
+            "Dimensão": "",
+            "Ponderação": 0,
+            "Nome": "",
+            "Valor": "",
+            int_aceit: "",
+            int_esper: "",
+            "Score": 2,
+        },
+        ignore_index=True,
+    )
+
     # sunburst
     fig = px.sunburst(
         df,
@@ -136,6 +166,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
             "#E5CB72",
             "#56BA39",
         ],  # 5 color gradient
+        range_color=[0, 2],
     )
     fig.update_traces(
         hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.2f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
@@ -156,7 +187,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
     st.plotly_chart(fig, use_container_width=True)
 
 
-@st.cache_data
+@st.cache_data()
 def horizontal_bar_chart(df1, ano1):
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df1, ano1)
@@ -202,7 +233,7 @@ def horizontal_bar_chart(df1, ano1):
     st.plotly_chart(fig, use_container_width=True)
 
 
-@st.cache_data
+@st.cache_data()
 def dumbbell_plot(dict_dfs, ano):
     dict_figs = {}
 
@@ -288,6 +319,9 @@ def dumbbell_plot(dict_dfs, ano):
     for each in dfs:
         int_aceit, int_esper = etiqueta_ano(each["df"], ano)
 
+        # drop rows if "Score" is  None
+        each["df"] = each["df"].dropna(subset=["Score"])
+
         each["df"]["Etiqueta"] = each["nome"]
         # remove the columns that have Nome ==_ "IDE"
         each["df"] = each["df"].loc[each["df"]["Nome"] != "IDE"]
@@ -304,7 +338,14 @@ def dumbbell_plot(dict_dfs, ano):
                 # size=16,
                 size=10 * np.sqrt(each["df"]["Ponderação"]),
                 color=each["df"]["Score"],  # Set color to Score
-                colorscale=["#FF7E79", "#FFD479", "#56BA39"],
+                # colorscale=["#FF7E79", "#FFD479", "#56BA39"],
+                colorscale=[
+                    "#FF7E79",
+                    "#F0A774",
+                    "#FFD479",
+                    "#E5CB72",
+                    "#56BA39",
+                ],  # 5 color gradient
                 symbol=i + 0,  # Set symbol to i
             ),
             customdata=each["df"][
@@ -361,7 +402,7 @@ def dumbbell_plot(dict_dfs, ano):
     st.plotly_chart(fig, use_container_width=True)
 
 
-@st.cache_data
+@st.cache_data()
 def tabela(df, ano, nome):
     ano = 2024
     int_aceit, int_esper = etiqueta_ano(df, ano)
@@ -385,7 +426,10 @@ def tabela(df, ano, nome):
     df = df[df.index.notnull()]
 
     st.subheader(nome)
-    # st.write(df)
+
+    # remove rows where Score is None
+    df = df.dropna(subset=["Score"])
+
     st.dataframe(
         df,
         column_config={
@@ -409,7 +453,7 @@ def tabela(df, ano, nome):
     return None
 
 
-@st.cache_data
+@st.cache_data()
 def horizontal_bar(df, ano, ordenar_por):
     ano = 2024
 
@@ -492,7 +536,7 @@ def horizontal_bar(df, ano, ordenar_por):
     st.pyplot(fig)
 
 
-@st.cache_data
+@st.cache_data()
 def stakced_barchart(df):
     med = df["Médico Familia"]
     # denominador = df["Denominador"]

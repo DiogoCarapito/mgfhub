@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.etl_relatorios import etl_bicsp, etl_mimuf
+from utils.etl_relatorios import etl_bicsp, etl_mimuf, extracao_areas_clinicas
 
 from utils.etl_relatorios import merge_portaria_bicsp
 from utils.vis_relatorios import (
@@ -75,7 +75,7 @@ def ide_sidebar():
 
 
 # @st.cache_data
-def tab_visao_unidade():
+def tab_visao_unidade(df_bicsp):
     opções_visualizacao = (
         [
             "Sunburst",
@@ -84,12 +84,13 @@ def tab_visao_unidade():
             "Dumbbell",
             "Sunburst + Sunburst",
         ]
-        if len(st.session_state["df_bicsp"]) > 1
+        if len(df_bicsp) > 1
         else ["Sunburst", "Tabela", "Sunburst + Tabela", "Dumbbell"]
     )
     # Dumbbell chart by default if more than one file uploaded
-    index_visualizacao = 3 if len(st.session_state["df_bicsp"]) > 1 else 0
+    index_visualizacao = 3 if len(df_bicsp) > 1 else 0
 
+    # radio escolha visualização
     st.session_state["opcao_visualizacao"] = st.radio(
         "Visualização",
         opções_visualizacao,
@@ -106,73 +107,131 @@ def tab_visao_unidade():
 
     # escolha do dataframe de analise
     with col_filter_1:
-        escolha = st.selectbox("Escolha o mês de análise", st.session_state["df_bicsp"])
+        escolha = st.selectbox("Escolha o dados para análise", df_bicsp)
+
+    if st.session_state["opcao_visualizacao"] is not "Dumbbell":
+        st.divider()
+        col_2_filter_1, col_2_filter_2, col_2_filter_3 = st.columns([2, 1, 1])
+        # filtro de areas clinicas
+        # get the unique values of "Área clínica" from the dataframe
+        areas_clinicas = extracao_areas_clinicas(df_bicsp[escolha]["data"])
+
+        with col_2_filter_1:
+            # selectbox for the "Área clínica"
+            selected_areas = st.multiselect(
+                "Área clínica", areas_clinicas, help="Filtrar por área clínica"
+            )
+
+        with col_2_filter_2:
+            score_range = st.slider(
+                "Score", 0.0, 2.0, (0.0, 2.0), 0.1, help="Filtrar por score (0-2)"
+            )
+
+        with col_2_filter_3:
+            ponderacao_range = st.slider(
+                "Peso",
+                1.2,
+                10.0,
+                (1.2, 10.0),
+                0.2,
+                help="Filtrar por peso do indicador",
+            )
+
+        # if selected_areas is not empty, filter the dataframe and update df_bicsp
+
+        for key, value in df_bicsp.items():
+            # make Score None if score not in the range
+            mask = (value["data"]["Score"] < score_range[0]) | (
+                value["data"]["Score"] > score_range[1]
+            )
+            value["data"].loc[mask, "Score"] = None
+
+            if selected_areas:
+                # substitute the value in "Score" to None if the "Área clínica" is not in the selected_areas
+                mask = value["data"]["Área clínica"].isin(selected_areas)
+                value["data"].loc[~mask, "Score"] = None
+
+            # update df_bicso with the new value
+            df_bicsp[key] = value
+
     # processamento do dataframe
     df_sunburst = merge_portaria_bicsp(
-        st.session_state["df_bicsp"][escolha]["data"],
-        st.session_state["df_bicsp"][escolha]["ano"],
+        df_bicsp[escolha]["data"],
+        df_bicsp[escolha]["ano"],
     )
+
+    if st.session_state["opcao_visualizacao"] is not "Dumbbell":
+        # Change score to None if Ponderação is not in the ponderacao_range and Hierarquia is 'IDE- Desempenho'
+        mask = (
+            (df_sunburst["Ponderação"] < ponderacao_range[0])
+            | (df_sunburst["Ponderação"] > ponderacao_range[1])
+        ) & (df_sunburst["Hierarquia Contratual - Área"] == "IDE - Desempenho")
+        df_sunburst.loc[mask, "Score"] = None
 
     # metrica IDE
     with col_filter_2:
-        st.metric(
-            "IDE",
+        ide = (
             df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Resultado"]
             .values[0]
-            .round(1),
+            .round(1)
         )
+        # max_ide = df_sunburst.loc[(df_sunburst["Nome"] == "IDE") & (df_sunburst["Score"].notnull()), "Ponderação"].sum().round(1)
+        # perda_ide = max_ide - ide
+
+        st.metric("IDE", ide)
 
     # SUNBURST
     if st.session_state["opcao_visualizacao"] == "Sunburst":
-        # if len(st.session_state["df_bicsp"]) == 1:
+        # if len(df_bicsp) == 1:
         sunburst_bicsp(
             df_sunburst,
-            st.session_state["df_bicsp"][escolha]["ano"],
-            st.session_state["df_bicsp"][escolha]["mes"],
-            st.session_state["df_bicsp"][escolha]["unidade"],
+            df_bicsp[escolha]["ano"],
+            df_bicsp[escolha]["mes"],
+            df_bicsp[escolha]["unidade"],
             800,
         )
 
     # TABELA
     if st.session_state["opcao_visualizacao"] == "Tabela":
         # tabela
-        if len(st.session_state["df_bicsp"]) >= 1:
+        if len(df_bicsp) >= 1:
             # st.write(df_sunburst[["Nome", "Resultado", "Score"]])
             tabela(
                 df_sunburst,
-                st.session_state["df_bicsp"][escolha]["ano"],
-                st.session_state["df_bicsp"][escolha]["nome"],
+                df_bicsp[escolha]["ano"],
+                df_bicsp[escolha]["nome"],
             )
+
     # SUNBURST + TABELA
     if st.session_state["opcao_visualizacao"] == "Sunburst + Tabela":
         col_1, col_2 = st.columns([1, 1])
         with col_1:
             sunburst_bicsp(
                 df_sunburst,
-                st.session_state["df_bicsp"][escolha]["ano"],
-                st.session_state["df_bicsp"][escolha]["mes"],
-                st.session_state["df_bicsp"][escolha]["unidade"],
+                df_bicsp[escolha]["ano"],
+                df_bicsp[escolha]["mes"],
+                df_bicsp[escolha]["unidade"],
                 500,
             )
         with col_2:
             # tabela
-            if len(st.session_state["df_bicsp"]) >= 1:
-                # st.subheader(st.session_state["df_bicsp"][escolha]["unidade"])
+            if len(df_bicsp) >= 1:
+                # st.subheader(df_bicsp[escolha]["unidade"])
                 tabela(
                     df_sunburst,
-                    st.session_state["df_bicsp"][escolha]["ano"],
-                    st.session_state["df_bicsp"][escolha]["nome"],
+                    df_bicsp[escolha]["ano"],
+                    df_bicsp[escolha]["nome"],
                 )
 
     if st.session_state["opcao_visualizacao"] == "Sunburst + Sunburst":
         with col_filter_3:
             escolha_2 = st.selectbox(
-                "Escolha o 2º gráfico", st.session_state["df_bicsp"], index=1
+                "Escolha o 2ºs dados para análise", df_bicsp, index=1
             )
 
         df_sunburst_2 = merge_portaria_bicsp(
-            st.session_state["df_bicsp"][escolha_2]["data"],
-            st.session_state["df_bicsp"][escolha_2]["ano"],
+            df_bicsp[escolha_2]["data"],
+            df_bicsp[escolha_2]["ano"],
         )
 
         # metrica IDE 2
@@ -189,36 +248,34 @@ def tab_visao_unidade():
         with col_sun_1:
             sunburst_bicsp(
                 df_sunburst,
-                st.session_state["df_bicsp"][escolha]["ano"],
-                st.session_state["df_bicsp"][escolha]["mes"],
-                st.session_state["df_bicsp"][escolha]["unidade"],
+                df_bicsp[escolha]["ano"],
+                df_bicsp[escolha]["mes"],
+                df_bicsp[escolha]["unidade"],
                 500,
             )
 
         with col_sun_2:
             sunburst_bicsp(
                 df_sunburst_2,
-                st.session_state["df_bicsp"][escolha_2]["ano"],
-                st.session_state["df_bicsp"][escolha_2]["mes"],
-                st.session_state["df_bicsp"][escolha_2]["unidade"],
+                df_bicsp[escolha_2]["ano"],
+                df_bicsp[escolha_2]["mes"],
+                df_bicsp[escolha_2]["unidade"],
                 500,
             )
 
     if st.session_state["opcao_visualizacao"] == "Dumbbell":
-        if len(st.session_state["df_bicsp"]) == 1:
+        if len(df_bicsp) == 1:
             dumbbell_plot(
-                {st.session_state["df_bicsp"][escolha]["nome"]: df_sunburst},
-                st.session_state["df_bicsp"][escolha]["ano"],
+                {df_bicsp[escolha]["nome"]: df_sunburst},
+                df_bicsp[escolha]["ano"],
             )
-        elif len(st.session_state["df_bicsp"]) > 1:
+        elif len(df_bicsp) > 1:
             with col_filter_3:
-                escolha_2 = st.selectbox(
-                    "Escolha o 2º gráfico", st.session_state["df_bicsp"], index=1
-                )
+                escolha_2 = st.selectbox("Escolha o 2º gráfico", df_bicsp, index=1)
 
             df_sunburst_2 = merge_portaria_bicsp(
-                st.session_state["df_bicsp"][escolha_2]["data"],
-                st.session_state["df_bicsp"][escolha_2]["ano"],
+                df_bicsp[escolha_2]["data"],
+                df_bicsp[escolha_2]["ano"],
             )
 
             # metrica IDE 2
@@ -232,10 +289,10 @@ def tab_visao_unidade():
 
             dumbbell_plot(
                 {
-                    st.session_state["df_bicsp"][escolha]["nome"]: df_sunburst,
-                    st.session_state["df_bicsp"][escolha_2]["nome"]: df_sunburst_2,
+                    df_bicsp[escolha]["nome"]: df_sunburst,
+                    df_bicsp[escolha_2]["nome"]: df_sunburst_2,
                 },
-                st.session_state["df_bicsp"][escolha]["ano"],
+                df_bicsp[escolha]["ano"],
             )
         st.write(
             """Interpretação/dicas:
@@ -251,18 +308,16 @@ def tab_visao_unidade():
 
 
 # @st.cache_data
-def tab_visao_equipas():
+def tab_visao_equipas(df_mimuf):
     col_filtro_equipa_1, col_filtro_equipa_2, col_visualizacao = st.columns([1, 3, 2])
     with col_filtro_equipa_1:
         dataframe_selected = st.selectbox(
             "Escolha o mês de analise",
-            st.session_state["df_mimuf"],
+            df_mimuf,
         )
 
     with col_filtro_equipa_2:
-        lista_indicadores = st.session_state["df_mimuf"][dataframe_selected]["df"][
-            "Nome"
-        ].unique()
+        lista_indicadores = df_mimuf[dataframe_selected]["df"]["Nome"].unique()
         filtro_indicador = st.selectbox(
             "Indicador",
             (lista_indicadores[1:]),
@@ -281,11 +336,10 @@ def tab_visao_equipas():
 
     with col_graph_1:
         horizontal_bar(
-            st.session_state["df_mimuf"][dataframe_selected]["df"].loc[
-                st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
-                == filtro_indicador
+            df_mimuf[dataframe_selected]["df"].loc[
+                df_mimuf[dataframe_selected]["df"]["Nome"] == filtro_indicador
             ],
-            st.session_state["df_mimuf"][dataframe_selected]["ano"],
+            df_mimuf[dataframe_selected]["ano"],
             st.session_state["opcao_visualizacao_2"],
         )
 
@@ -299,11 +353,10 @@ def tab_visao_equipas():
         st.markdown(f"[{text}]({link})")
 
         df_num_den_med = (
-            st.session_state["df_mimuf"][dataframe_selected]["df"]
-            .loc[
-                st.session_state["df_mimuf"][dataframe_selected]["df"]["Nome"]
-                == filtro_indicador
-            ][["Médico Familia", "Numerador", "Denominador", "Valor"]]
+            df_mimuf[dataframe_selected]["df"]
+            .loc[df_mimuf[dataframe_selected]["df"]["Nome"] == filtro_indicador][
+                ["Médico Familia", "Numerador", "Denominador", "Valor"]
+            ]
             .sort_values(by=st.session_state["opcao_visualizacao_2"], ascending=False)
         )
 
@@ -340,32 +393,27 @@ def tab_visao_equipas():
 
 
 # @st.cache_data
-def tab_visao_profissional():
+def tab_visao_profissional(df_mimuf):
     col_filtro_medico_1, col_filtro_medico_2 = st.columns(2)
 
     with col_filtro_medico_1:
         dataframe_selected = st.selectbox(
             "Escolha o dataframe",
-            st.session_state["df_mimuf"],
+            df_mimuf,
         )
 
     with col_filtro_medico_2:
         filtro_medico = st.selectbox(
             "Médico Familia",
-            (
-                st.session_state["df_mimuf"][dataframe_selected]["df"][
-                    "Médico Familia"
-                ].unique()
-            ),
+            (df_mimuf[dataframe_selected]["df"]["Médico Familia"].unique()),
         )
 
     sunburst_mimuf(
-        st.session_state["df_mimuf"][dataframe_selected]["df"][
-            st.session_state["df_mimuf"][dataframe_selected]["df"]["Médico Familia"]
-            == filtro_medico
+        df_mimuf[dataframe_selected]["df"][
+            df_mimuf[dataframe_selected]["df"]["Médico Familia"] == filtro_medico
         ],
-        st.session_state["df_mimuf"][dataframe_selected]["ano"],
-        st.session_state["df_mimuf"][dataframe_selected]["mes"],
-        st.session_state["df_mimuf"][dataframe_selected]["unidade"],
+        df_mimuf[dataframe_selected]["ano"],
+        df_mimuf[dataframe_selected]["mes"],
+        df_mimuf[dataframe_selected]["unidade"],
         800,
     )
