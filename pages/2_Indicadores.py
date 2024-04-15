@@ -15,7 +15,7 @@ main_title("Indicadores")
 
 
 # Load Supabase with .env file
-@st.cache_resource()
+#@st.cache_data
 def load_supabase():
     # load .env file
     load_dotenv()

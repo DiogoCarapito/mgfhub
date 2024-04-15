@@ -6,7 +6,7 @@ from utils.style import (
     intro,
     card_container,
     page_config,
-    bem_vindos_2,
+    #bem_vindos_2,
     novidades,
     bottom_suport_email,
 )
@@ -28,7 +28,7 @@ def main():
     # main content
     with col2:
         # welcome message
-        bem_vindos_2("Bem vind@ à nova versão 2.1 🎉")
+        #bem_vindos_2("Bem vind@ à nova versão 2.1 🎉")
 
         # intro from content/intro.md
         intro("content/intro.md")

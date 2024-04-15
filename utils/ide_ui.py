@@ -74,7 +74,7 @@ def ide_sidebar():
     return post_etl_bicsp, post_etl_mimuf
 
 
-@st.cache_data
+#@st.cache_data
 def tab_visao_unidade():
     opções_visualizacao = (
         [
@@ -250,7 +250,7 @@ def tab_visao_unidade():
         )
 
 
-@st.cache_data
+#@st.cache_data
 def tab_visao_equipas():
     col_filtro_equipa_1, col_filtro_equipa_2, col_visualizacao = st.columns([1, 3, 2])
     with col_filtro_equipa_1:
@@ -339,7 +339,7 @@ def tab_visao_equipas():
         st.metric("Valor Actual", round(numerador / denominador * 100, 2))
 
 
-@st.cache_data
+#@st.cache_data
 def tab_visao_profissional():
     col_filtro_medico_1, col_filtro_medico_2 = st.columns(2)
 
