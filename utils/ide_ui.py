@@ -100,7 +100,7 @@ def tab_visao_unidade(df_bicsp):
         key="opcao_visualizacao_1",
     )
 
-    st.divider()
+    #st.divider()
 
     # filtros
     col_filter_1, col_filter_2, col_filter_3, col_filter_4 = st.columns([2, 1, 2, 1])
@@ -110,7 +110,7 @@ def tab_visao_unidade(df_bicsp):
         escolha = st.selectbox("Escolha o dados para análise", df_bicsp)
 
     if st.session_state["opcao_visualizacao"] is not "Dumbbell":
-        st.divider()
+        #st.divider()
         col_2_filter_1, col_2_filter_2, col_2_filter_3 = st.columns([2, 1, 1])
         # filtro de areas clinicas
         # get the unique values of "Área clínica" from the dataframe

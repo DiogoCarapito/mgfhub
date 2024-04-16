@@ -1,7 +1,6 @@
 import streamlit as st
 
 
-
 def tutorial_loop(tutorial):
     # loop through the content and create a card for each row
     for i, each in enumerate(tutorial):
@@ -12,7 +11,6 @@ def tutorial_loop(tutorial):
         # show a divider between each step, except for the last one
         if i != len(tutorial) - 1:
             st.write("")
-
 
 
 def tutorial_expander(tutorial):
