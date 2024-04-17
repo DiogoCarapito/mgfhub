@@ -98,7 +98,7 @@ def calculate_score_mimuf(row):
     elif min_esperado <= valor <= max_esperado:
         return 2
     else:
-        return "Error"  # Return some value or raise an exception in case none of the conditions are met
+        return 0  # Return some value or raise an exception in case none of the conditions are met
 
 
 @st.cache_data()
