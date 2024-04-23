@@ -334,6 +334,7 @@ def tab_visao_equipas(df_mimuf):
         st.session_state["opcao_visualizacao_2"] = st.radio(
             "Ordenar por:",
             ["Valor", "Numerador", "Denominador"],
+            index=1,
             horizontal=True,
         )
 
