@@ -42,6 +42,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
             "#E5CB72",
             "#56BA39",
         ],  # 5 color gradient
+        range_color=[0,2],
     )
     fig.update_traces(
         hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
@@ -439,14 +440,14 @@ def tabela(df, ano, nome):
             )
         },
         column_order=[
-            "Nome",
             "link_sdm",
-            "Dimensão",
+            "Nome",
+            #"Dimensão",
             "Ponderação",
+            "Score",
+            "Resultado",
             int_aceit,
             int_esper,
-            "Resultado",
-            "Score",
         ],
         hide_index=False,
     )

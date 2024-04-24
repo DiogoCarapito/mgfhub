@@ -22,3 +22,4 @@ version,date,text
 2.1.6,2024-04-03,"Correções de erros no processamento de ficheiros do MIM@UF"
 2.1.7,2024-04-13,"Melhorias gráficas na pagina inicial e IDE - dumbell plot melhorado na visualização de evolução temporal"
 2.1.8,2024-04-15,"Sunburst agora têm fatias cinzento escuras se os dados não estão disponíveis (ex. 365 - Taxa internamento evitável na visão por profissional) em vez de vermelho. Adicionado novos filtros na visão de Unidade, uteis especialmente no Sunburst (ainda em testes, alguns bugs ainda para resolver relacionados com calculos de IDE e integração com o Dumbell)"
+2.1.9,2024-04-24,"Correção das cores no Sunburst - agora a escala de cores fica fixa entre 0 e 2"
