@@ -103,16 +103,29 @@ def tab_visao_unidade(df_bicsp):
     # st.divider()
 
     # filtros
-    col_filter_1, col_filter_2, col_filter_3, col_filter_4 = st.columns([2, 1, 2, 1])
+    (
+        col_filter_1,
+        col_filter_2,
+        col_filter_2_1,
+        col_filter_3,
+        col_filter_4,
+        col_filter_4_1,
+    ) = st.columns([3, 1, 1, 3, 1, 1])
 
     # escolha do dataframe de analise
     with col_filter_1:
         escolha = st.selectbox("Escolha o dados para análise", df_bicsp)
 
-    if st.session_state["opcao_visualizacao"] is not "Dumbbell":
+    if st.session_state["opcao_visualizacao"] != "Dumbbell":
         # st.divider()
-        col_2_filter_1, col_2_filter_2, col_2_filter_3 = st.columns([2, 1, 1])
+        col_2_filter_1, space_1, col_2_filter_2, space_2, col_2_filter_3 = st.columns(
+            [8, 1, 4, 1, 4]
+        )
         # filtro de areas clinicas
+        with space_1:
+            st.empty()
+        with space_2:
+            st.empty()
         # get the unique values of "Área clínica" from the dataframe
         areas_clinicas = extracao_areas_clinicas(df_bicsp[escolha]["data"])
 
@@ -141,10 +154,15 @@ def tab_visao_unidade(df_bicsp):
 
         for key, value in df_bicsp.items():
             # make Score None if score not in the range
-            mask = (value["data"]["Score"] < score_range[0]) | (
+            mask_range = (value["data"]["Score"] < score_range[0]) | (
                 value["data"]["Score"] > score_range[1]
             )
-            value["data"].loc[mask, "Score"] = None
+            value["data"].loc[mask_range, "Score"] = None
+
+            mask_poderacao = (value["data"]["Ponderação"] < ponderacao_range[0]) | (
+                value["data"]["Ponderação"] > ponderacao_range[1]
+            )
+            value["data"].loc[mask_poderacao, "Score"] = None
 
             if selected_areas:
                 # substitute the value in "Score" to None if the "Área clínica" is not in the selected_areas
@@ -160,7 +178,7 @@ def tab_visao_unidade(df_bicsp):
         df_bicsp[escolha]["ano"],
     )
 
-    if st.session_state["opcao_visualizacao"] is not "Dumbbell":
+    if st.session_state["opcao_visualizacao"] != "Dumbbell":
         # Change score to None if Ponderação is not in the ponderacao_range and Hierarquia is 'IDE- Desempenho'
         mask = (
             (df_sunburst["Ponderação"] < ponderacao_range[0])
@@ -182,10 +200,29 @@ def tab_visao_unidade(df_bicsp):
             if df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Score"].notnull().any()
             else None
         )
-        # max_ide = df_sunburst.loc[(df_sunburst["Nome"] == "IDE") & (df_sunburst["Score"].notnull()), "Ponderação"].sum().round(1)
-        # perda_ide = max_ide - ide
+
+        # sum of all "Poderação" if Score is not Null
+        max_ide = df_sunburst.loc[
+            ~df_sunburst["Dimensão"].isin(["IDE", None])
+            & df_sunburst["Score"].notnull(),
+            "Ponderação",
+        ].sum()
+        max_ide -= 100
+        max_ide = max_ide.round(1)
+
+        diference = (ide - max_ide).round(1)
+
+        # diference_percentage =diference/max_ide
 
         st.metric("IDE", ide)
+
+    with col_filter_2_1:
+        st.metric(
+            "IDE máximo",
+            max_ide,
+            -diference,
+            help="IDE máximo teórico para os filtros selecionados em baixo. O número a verde representa o potencial ganho no IDE se se cumprir com score 2 todos os indicadores incluídos no mesmo filtro",
+        )
 
     # SUNBURST
     if st.session_state["opcao_visualizacao"] == "Sunburst":
@@ -249,6 +286,12 @@ def tab_visao_unidade(df_bicsp):
                 .values[0]
                 .round(1),
             )
+
+        with col_filter_4_1:
+            st.empty()
+        #     max_ide_2 = df_sunburst_2.loc[df_sunburst_2["Nome"] == "IDE", "Peso"].values[0].round(1)
+
+        #     st.metric("IDE max 2", max_ide_2)
 
         col_sun_1, col_sun_2 = st.columns(2)
 

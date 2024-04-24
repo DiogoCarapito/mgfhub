@@ -245,6 +245,7 @@ def etl_bicsp(list_of_files):
                     "id",
                     "Resultado",
                     "Score",
+                    "Ponderação",
                     "Mês Ind",
                     "Hierarquia Contratual - Área",
                     "Área clínica",
