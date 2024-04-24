@@ -42,9 +42,17 @@ def supabase_record(unidade, ano, mes, tipo):
 
 # @st.cache_data()
 def extrair_id(df, coluna):
+    # drop rows that end in "FX"
+    df = df[~df[coluna].str.endswith("FX")]
+
     # extrair o id que se econtra entre dois . (pontos) e transformar em int
     # exemplo de input: "2013.001.01 FL" output 1
-    return df[coluna].str.extract(r"\.(\d+)\.", expand=False).astype(int)
+
+    df[coluna] = (
+        df[coluna].str.extract(r"\.(\d+)\.", expand=False).fillna(0).astype(int)
+    )
+
+    return df
 
 
 @st.cache_data()
@@ -174,7 +182,7 @@ def etl_bicsp(list_of_files):
         df = df[df["Designação Indicador (+ID)"].notnull()]
 
         # extrair o id do "Cód. Indicador"
-        df["id"] = extrair_id(df, "Cód. Indicador")
+        df = extrair_id(df, "Cód. Indicador")
 
         # make id the index
         # df.set_index("id", inplace=True)
@@ -415,8 +423,14 @@ def etl_mimuf(list_of_files):
         # Uniformizar nomes de médicos
         df = medico(df, column="Médico Familia")
 
+        # drop rows where "id" is Nan
+        df = df.dropna(subset=["id"])
+
         # extrair id indicador
-        df["id"] = extrair_id(df, "id")
+        df = extrair_id(df, "id")
+
+        # remove lines that are exact duplicates and keep only one
+        df = df.drop_duplicates()
 
         # make id the index
         df.set_index("id", inplace=True)
