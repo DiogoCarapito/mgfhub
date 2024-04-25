@@ -1,6 +1,7 @@
 #Personal gitignore file
-/legacy_files
-/extra
+legacy_files/
+extra/
+offline_data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -166,5 +167,3 @@ cython_debug/
 #macOS files
 .DS_Store
 
-# ficheiro do bi-csp util para 
-offline_data/
