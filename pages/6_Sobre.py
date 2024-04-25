@@ -10,6 +10,7 @@ from utils.style import (
     gradient_text,
     outros_projetos_card,
     bottom_suport_email,
+    em_desenvolvimento,
 )
 
 
@@ -56,6 +57,22 @@ st.write("")
 
 for each in outros_projetos.values:
     outros_projetos_card(each[0], each[1], each[2])
+
+
+st.divider()
+
+centered_title("Agradecimentos")
+st.write("")
+
+
+#st.subheader("Report de bugs e sugestões")
+em_desenvolvimento()
+#agradecimentos = pd.read_csv("content/agradecimentos.csv")
+
+#for each in agradecimentos
+
+
+
 
 
 st.divider()
