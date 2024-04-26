@@ -44,8 +44,8 @@ def supabase_record(unidade, ano, mes, tipo):
 def extrair_id(df, coluna):
     # remove columns with BA
 
-    # drop rows that end in "FX"
-    df = df[~df[coluna].str.endswith("FX")]
+    # drop rows that end in "FX", but keep "2020.435.01 FX"
+    df = df[~(df[coluna].str.endswith("FX") & (df[coluna] != "2020.435.01 FX"))]
 
     # extrair o id que se econtra entre dois . (pontos) e transformar em int
     # exemplo de input: "2013.001.01 FL" output 1
