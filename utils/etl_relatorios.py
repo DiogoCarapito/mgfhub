@@ -42,6 +42,8 @@ def supabase_record(unidade, ano, mes, tipo):
 
 # @st.cache_data()
 def extrair_id(df, coluna):
+    # remove columns with BA
+
     # drop rows that end in "FX"
     df = df[~df[coluna].str.endswith("FX")]
 
@@ -183,6 +185,9 @@ def etl_bicsp(list_of_files):
 
         # extrair o id do "Cód. Indicador"
         df = extrair_id(df, "Cód. Indicador")
+
+        # rename "Cód. Indicador" to "id"
+        df = df.rename(columns={"Cód. Indicador": "id"})
 
         # make id the index
         # df.set_index("id", inplace=True)
