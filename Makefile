@@ -27,7 +27,7 @@ docker-test:
 	curl --fail http://localhost:8501/_stcore/health
 	docker stop test-container
 
-all: install lint test format run
+all: install lint test format
 
 docker: docker-build docker-run docker-test
 

@@ -1,5 +1,14 @@
-# import streamlit as st
 from streamlit.testing.v1 import AppTest
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Now you can access the variables using os.getenv
+
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
 
 pages = [
     "mgfhub.py",
