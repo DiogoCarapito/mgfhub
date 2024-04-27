@@ -10,7 +10,7 @@ from utils.style import (
     gradient_text,
     outros_projetos_card,
     bottom_suport_email,
-    em_desenvolvimento,
+    #em_desenvolvimento,
 )
 
 
