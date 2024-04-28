@@ -2,8 +2,8 @@ from streamlit.testing.v1 import AppTest
 
 pages = [
     "mgfhub.py",
-    #"pages/2_Indicadores.py",
-    #"pages/3_IDE.py",
+    "pages/2_Indicadores.py",
+    "pages/3_IDE.py",
     "pages/5_FAQs.py",
     "pages/6_Sobre.py",
 ]
