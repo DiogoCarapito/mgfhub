@@ -22,6 +22,9 @@ jobs:
     - name: Test with pytest
       run: |
         make test
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
     - name: Format code
       run: |
         make format
