@@ -7,6 +7,9 @@ install:
 test:
 	pytest -vv --cov=mgfhub --cov=utils --cov=pages tests/test_*.py
 
+test-cov:
+	pytest -vv --cov=mgfhub --cov=utils --cov=pages tests/test_*.py --cov-report term-missing
+
 format:
 	black . *.py utils/*.py pages/*.py tests/*.py
 
