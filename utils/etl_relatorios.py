@@ -1,7 +1,8 @@
 import pandas as pd
 import re
 import streamlit as st
-from mimufs.processing import medico
+
+# from mimufs.processing import medico
 
 import os
 from dotenv import load_dotenv
@@ -38,6 +39,20 @@ def supabase_record(unidade, ano, mes, tipo):
 
     # Insert data into Supabase
     supabase.table("ide_uploads").insert(sb_insert).execute()
+
+
+# From mimufs
+def medico(df: pd.DataFrame, column="Médico Familia") -> pd.DataFrame:
+    # convert the string to title case
+    df[column] = df[column].str.title()
+
+    # remove the double spaces in the string
+    df[column] = df[column].str.replace("  ", " ")
+
+    # remove the last space in the string
+    df[column] = df[column].str.rstrip()
+
+    return df
 
 
 # @st.cache_data()

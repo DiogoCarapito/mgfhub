@@ -17,9 +17,7 @@ Nova versão 2.1 disponível em [mgfhub.com](mgfhub.com)
 
 ## cheat sheet
 
-### venv
-
-create venv
+### create venv
 
 ```bash
 python3 -m venv .venv
