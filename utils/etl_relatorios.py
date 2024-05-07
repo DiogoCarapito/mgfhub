@@ -171,6 +171,7 @@ def etl_bicsp(list_of_files):
 
         # processamento se o ficherio tiver cabeçalho (summarized e underalying data)
         first_column_name = df.columns[0]
+        # versão ENG
         if first_column_name.startswith("Applied"):
             # get the text int he header of the first column
             unidade = re.search(r"Nome UF is (.*)", first_column_name).group(1)
@@ -216,8 +217,8 @@ def etl_bicsp(list_of_files):
 
         # Eextração do mês e ano
         ano_mes = str(df["Mês Ind"].unique().max())
-        ano = "2024"
-        # ano = ano_mes[:4]
+        # ano = "2024"
+        ano = ano_mes[:4]
         mes = ano_mes[4:6]
 
         # nome = f"{unidade} {ano}/{mes}"
