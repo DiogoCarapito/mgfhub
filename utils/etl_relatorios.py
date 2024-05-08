@@ -407,7 +407,7 @@ def etl_mimuf(list_of_files):
 
         # remove the first row
         df = df[1:]
-        df.reset_index(drop=True, inplace=True)
+        df = df.reset_index(drop=True)
 
         nome_colunas = localizacao_coluna_medico(df)
 

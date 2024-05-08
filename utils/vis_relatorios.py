@@ -253,8 +253,8 @@ def dumbbell_plot(dict_dfs, ano):
 
     if len(dict_dfs) == 2:
         # Ensure the dataframes are sorted by 'indicador'
-        dfs[0]["df"].sort_values(by="Score", ascending=True, inplace=True)
-        dfs[1]["df"].sort_values(by="Score", ascending=True, inplace=True)
+        dfs[0]["df"] = dfs[0]["df"].sort_values(by="Score", ascending=True)
+        dfs[1]["df"] = dfs[1]["df"].sort_values(by="Score", ascending=True)
 
         # remove the columns that have Dimensão == "IDE"
         dfs[0]["df"] = dfs[0]["df"].loc[dfs[0]["df"]["Dimensão"] != "IDE"]
@@ -328,7 +328,7 @@ def dumbbell_plot(dict_dfs, ano):
         each["df"] = each["df"].loc[each["df"]["Nome"] != "IDE"]
         each["df"] = each["df"].loc[each["df"]["Dimensão"] != "IDE"]
 
-        each["df"].sort_values(by="Score", ascending=True, inplace=True)
+        each["df"] = each["df"].sort_values(by="Score", ascending=True)
 
         dict_figs[each["nome"]] = go.Scatter(
             x=each["df"]["Score"],
