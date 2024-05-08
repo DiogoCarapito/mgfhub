@@ -456,7 +456,7 @@ def tabela(df, ano, nome):
 
 @st.cache_data()
 def horizontal_bar(df, ano, ordenar_por):
-    ano = 2024
+    # ano = 2024
 
     df.dropna(subset=["id"], inplace=True)
 

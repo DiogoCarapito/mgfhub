@@ -44,13 +44,13 @@ def supabase_record(unidade, ano, mes, tipo):
 # From mimufs
 def medico(df: pd.DataFrame, column="Médico Familia") -> pd.DataFrame:
     # convert the string to title case
-    df[column] = df[column].str.title()
+    df.loc[:, column] = df.loc[:, column].str.title()
 
     # remove the double spaces in the string
-    df[column] = df[column].str.replace("  ", " ")
+    df.loc[:, column] = df.loc[:, column].str.replace("  ", " ")
 
     # remove the last space in the string
-    df[column] = df[column].str.rstrip()
+    df.loc[:, column] = df.loc[:, column].str.rstrip()
 
     return df
 
