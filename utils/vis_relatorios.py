@@ -252,9 +252,10 @@ def dumbbell_plot(dict_dfs, ano):
     dfs = sorted(dfs, key=lambda x: x["date"])
 
     if len(dict_dfs) == 2:
-        # Ensure the dataframes are sorted by 'indicador'
-        dfs[0]["df"] = dfs[0]["df"].sort_values(by="Score", ascending=True)
-        dfs[1]["df"] = dfs[1]["df"].sort_values(by="Score", ascending=True)
+        # Ensure the dataframes are sorted by 'score' in ascending order from the latest date
+        sort_order_2 = dfs[1]["df"]["Score"].argsort()
+        dfs[0]["df"] = dfs[0]["df"].iloc[sort_order_2]
+        dfs[1]["df"] = dfs[1]["df"].iloc[sort_order_2]
 
         # remove the columns that have Dimensão == "IDE"
         dfs[0]["df"] = dfs[0]["df"].loc[dfs[0]["df"]["Dimensão"] != "IDE"]
