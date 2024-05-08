@@ -42,6 +42,7 @@ def supabase_record(unidade, ano, mes, tipo):
 
 
 # From mimufs
+@st.cache_data()
 def medico(df: pd.DataFrame, column="Médico Familia") -> pd.DataFrame:
     # convert the string to title case
     df.loc[:, column] = df.loc[:, column].str.title()
@@ -55,7 +56,7 @@ def medico(df: pd.DataFrame, column="Médico Familia") -> pd.DataFrame:
     return df
 
 
-# @st.cache_data()
+@st.cache_data()
 def extrair_id(df, coluna):
     # remove columns with BA
 
@@ -182,7 +183,7 @@ def etl_bicsp(list_of_files):
             df = df[1:]
 
             # reset index
-            df.reset_index(drop=True, inplace=True)
+            df = df.reset_index(drop=True)
 
         # versão PT
         elif first_column_name.startswith("Filtros"):
@@ -194,7 +195,7 @@ def etl_bicsp(list_of_files):
             df = df[1:]
 
             # reset index
-            df.reset_index(drop=True, inplace=True)
+            df = df.reset_index(drop=True)
 
         # remove any row with "Designação Indicador (+ID)" None
         df = df[df["Designação Indicador (+ID)"].notnull()]
@@ -209,7 +210,7 @@ def etl_bicsp(list_of_files):
         # df.set_index("id", inplace=True)
 
         # sort by id
-        df.sort_values("id", inplace=True)
+        df = df.sort_values("id")
 
         # check if df["Hierarquia Contratual - Área"] has "IDE - Desempenho" and keep only those rows
         if df["Hierarquia Contratual - Área"].str.contains("IDE - Desempenho").any():
@@ -430,15 +431,14 @@ def etl_mimuf(list_of_files):
         nome = f"{unidade} {mes}/{ano}"
 
         # drop column "Mês"
-        df.drop(
+        df = df.drop(
             columns=[
                 "Unidade",
                 "para_remover_1",
                 "para_remover_2",
                 "para_remover_3",
                 "para_remover_4",
-            ],
-            inplace=True,
+            ]
         )
 
         # Uniformizar nomes de médicos
@@ -454,7 +454,7 @@ def etl_mimuf(list_of_files):
         df = df.drop_duplicates()
 
         # make id the index
-        df.set_index("id", inplace=True)
+        df = df.set_index("id")
 
         etiquetas_intervalos_ano = etiqueta_ano_completo(
             df,
@@ -492,7 +492,7 @@ def etl_mimuf(list_of_files):
         # drop rows with NaN
         # df.dropna(subset=["id"], inplace=True)
 
-        df.reset_index(drop=True, inplace=True)
+        df = df.reset_index(drop=True)
 
         # fill NA
         # df["Valor"] = df["Valor"].fillna(0)
@@ -531,7 +531,7 @@ def etl_mimuf(list_of_files):
         # df = df[df["Médico Familia"] != "Sem Médico"]
 
         # sort by id
-        df.sort_values("id", inplace=True)
+        df = df.sort_values("id")
 
         # score calculado a partir do valor do indicador e dos intervalos aceitável e esperado
         # se acima do máximo aceitave ou abaixo do mínimo aceitavel, score = 0

@@ -63,7 +63,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
     st.plotly_chart(fig, use_container_width=True)
 
 
-# @st.cache_data()
+@st.cache_data()
 def sunburst_mimuf(df, ano, mes, unidade, size=800):
     ano = 2024
     # get column names for the intervalos aceitáveis e esperados for the selected year
@@ -195,7 +195,7 @@ def horizontal_bar_chart(df1, ano1):
 
     df1["Lable"] = df1["Lable"].astype(str)
 
-    df1.sort_values(by="Score", ascending=False, inplace=True)
+    df1 = df1.sort_values(by="Score", ascending=False)
 
     fig = px.bar(
         df1.loc[df1["Dimensão"] != "IDE"],
@@ -421,7 +421,7 @@ def tabela(df, ano, nome):
     )
 
     # make id index
-    df.set_index("id", inplace=True)
+    df = df.set_index("id")
 
     # remove row without id
     df = df[df.index.notnull()]
