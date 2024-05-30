@@ -557,3 +557,60 @@ def stakced_barchart(df):
     ax.set_title("Denominador and Numerador by Médico Familia")
 
     st.pyplot(fig)
+
+
+def ide_bar(info_indicador=None):
+    min_aceitavel, min_esperado, max_esperado, max_aceitavel = (
+        info_indicador["min_aceitavel"],
+        info_indicador["min_esperado"],
+        info_indicador["max_esperado"],
+        info_indicador["max_aceitavel"],
+    )
+    id_indicador = info_indicador["id_indicador"]
+    nome_indicador = info_indicador["nome_indicador"]
+    valor = float(info_indicador["valor"])
+
+    # Define the colors
+    colors = ["red", "yellow", "green", "yellow", "red"]
+
+    # Define the ranges of the colors
+    ranges = [
+        (0, min_aceitavel),
+        (min_aceitavel, min_esperado),
+        (min_esperado, max_esperado),
+        (max_esperado, max_aceitavel),
+        (max_aceitavel, 100),
+    ]
+
+    # Create the figure and axis
+    fig, ax = plt.subplots(figsize=(5, 0.75))
+
+    # Add the background areas
+    for color, (start, end) in zip(colors, ranges):
+        ax.axvspan(start, end, facecolor=color, alpha=0.3)
+
+    # Plot the indicator value
+    bar = ax.barh(
+        id_indicador, valor, height=0.6, color=(46 / 255, 80 / 255, 140 / 255, 1)
+    )
+
+    # Convert the indicator ID to float for ylimit and yticks
+    id_float = float(id_indicador)
+
+    # Set the plot limits and ticks
+    ax.set_xlim(0, 100)
+    ax.set_ylim(id_float - 0.5, id_float + 0.5)
+    ax.set_yticks([])
+    ax.set_xticks([min_aceitavel, min_esperado, max_esperado, max_aceitavel])
+
+    # Set the y-label and title
+    ax.set_title(f"{nome_indicador}")
+
+    # Add the value label
+    rect = bar[0]
+    width = rect.get_width()
+    ax.text(
+        width, rect.get_y() + rect.get_height() / 2, f"{width}%", ha="left", va="center"
+    )
+
+    st.pyplot(fig)

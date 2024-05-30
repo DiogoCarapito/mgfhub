@@ -1,6 +1,7 @@
 import pandas as pd
 import re
 import streamlit as st
+import math
 
 # from mimufs.processing import medico
 
@@ -422,11 +423,6 @@ def etl_mimuf(list_of_files):
             ]
         )
 
-        # list_medicos = df["Médico Familia"].unique()
-        # # replace the names of "Médico Familia" to a generic name "Médico 1"
-        # for index, each in enumerate(list_medicos):
-        #     df.loc[df["Médico Familia"] == each, "Médico Familia"] = f"Médico {index+1}"
-
         unidade = df["Unidade"].unique()[0]
         nome = f"{unidade} {mes}/{ano}"
 
@@ -545,16 +541,20 @@ def etl_mimuf(list_of_files):
         # calculate the score for each dimension based on the average wheighed score
         df["contributo"] = df["Ponderação"] * df["Score"] / 2
 
-        # list of dimensions and drop empty obnes
+        # list of dimensions and drop empty ones
         list_dimensoes = [x for x in df["Dimensão"].unique().tolist() if pd.notna(x)]
 
         # remove IDE
         list_dimensoes = list_dimensoes[1:]
 
+        # st.write(list_dimensoes)
+
         for dim in list_dimensoes:
             df.loc[df["Nome"] == dim, "Resultado"] = df[df["Dimensão"] == dim][
                 "contributo"
             ].sum()
+
+        # st.write(df.columns)
 
         df.loc[df["Dimensão"] == "IDE", "Score"] = (
             2
@@ -604,3 +604,30 @@ def etl_mimuf(list_of_files):
 @st.cache_data()
 def extracao_areas_clinicas(df):
     return df["Área clínica"].unique().tolist()
+
+
+def process_indicador(df):
+    numerador = df["Numerador"].sum()
+    denominador = df["Denominador"].sum()
+    valor = round(numerador / denominador * 100, 1)
+    min_esperado = df["Mínimo Esperado 2024"].unique()[0]
+    min_acetavel = df["Mínimo Aceitável 2024"].unique()[0]
+    # round up to the nearest integer
+    quantos_faltam_aceitavel = -math.ceil(denominador * min_acetavel / 100 - numerador)
+    quantos_faltam_esperado = -math.ceil(denominador * min_esperado / 100 - numerador)
+
+    info_indicador = {
+        "id_indicador": df["id"].unique()[0],
+        "nome_indicador": df["Nome"].unique()[0],
+        "min_aceitavel": min_acetavel,
+        "min_esperado": min_esperado,
+        "max_esperado": df["Máximo Esperado 2024"].unique()[0],
+        "max_aceitavel": df["Máximo Aceitável 2024"].unique()[0],
+        "numerador": numerador,
+        "denominador": denominador,
+        "valor": valor,
+        "quantos_faltam_aceitavel": quantos_faltam_aceitavel,
+        "quantos_faltam_esperado": quantos_faltam_esperado,
+    }
+
+    return info_indicador

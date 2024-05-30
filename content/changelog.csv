@@ -25,4 +25,5 @@ version,date,text
 2.7.1,2024-04-24,"Correção das cores no Sunburst - agora a escala de cores fica fixa entre 0 e 2, permitindo visualização correta das cores. Filtros na Visão da Unidade agora calculam IDE máximo e simula potencial ganho no IDE"
 2.7.2,2024-04-29,"Melhorias internas: novo esquema de versão e implmentação de testes com Pytest e AppTest"
 2.7.3,2024-05-07,"Correção do ano (para anos abaixo de 2024) na Visão de Unidade. Upgrade para Python 3.12.2 e Streamlit 1.34.0"
-2.7.4,2024-05-08,"Dumbbell Plot agora está ordenado pelos dados mais recentes em vez dos mais antigos."
+2.7.4,2024-05-08,"Dumbbell Plot agora está ordenado pelos dados mais recentes em vez dos mais antigos"
+2.8.0,2024-05-30,"Adicionado cálculos de quantos cumpridores faltam para ficar a amarelo e a verde na visão de equipa e com barra de desempenho desse indicador"
