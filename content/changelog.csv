@@ -27,3 +27,4 @@ version,date,text
 2.7.3,2024-05-07,"Correção do ano (para anos abaixo de 2024) na Visão de Unidade. Upgrade para Python 3.12.2 e Streamlit 1.34.0"
 2.7.4,2024-05-08,"Dumbbell Plot agora está ordenado pelos dados mais recentes em vez dos mais antigos"
 2.8.0,2024-05-30,"Adicionado cálculos de quantos cumpridores faltam para ficar a amarelo e a verde no IDE > Visão de Equipa e com barra do valor desse indicador"
+2.9.0,2024-06-05,"Adicionado novos indicadores até ao 494 na lista de pesquisa"
