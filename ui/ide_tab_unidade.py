@@ -1,85 +1,22 @@
 import streamlit as st
 from utils.etl_relatorios import (
-    etl_bicsp,
-    etl_mimuf,
+    # etl_bicsp,
+    # etl_mimuf,
     extracao_areas_clinicas,
     merge_portaria_bicsp,
-    process_indicador,
+    # process_indicador,
 )
 from utils.vis_relatorios import (
     sunburst_bicsp,
     dumbbell_plot,
     tabela,
-    ide_bar,
-    horizontal_bar,
-    sunburst_mimuf,
+    # ide_bar,
+    # horizontal_bar,
+    # sunburst_mimuf,
 )
 
-# Sidebar with uplods of xlsx files
 
-
-def ide_sidebar():
-    with st.sidebar:
-        # upload de xlsx de bicsp
-        st.markdown(
-            "## Upload do excel do [BI-CSP](https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx)"
-        )
-
-        # Upload de ficheiro excel do BI-CSP
-        uploaded_file_bicsp = st.file_uploader(
-            "Upload excel proveniente do BI-CSP",
-            type=["xlsx"],
-            # help="Ajuda BI-CSP",
-            label_visibility="collapsed",
-            accept_multiple_files=True,
-        )
-
-        st.markdown(
-            "[Como extrair o ficheiro excel do BI-CSP?](https://mgfhub.com/FAQs)",
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            '(Já é possível extrair o ficheiro do BI-CSP na nova secção do [IDE](https://bicsp.min-saude.pt/pt/contratualizacao/ide/Paginas/default.aspx), separador "Dimensões e Indicadores IDE")'
-        )
-
-        # st.write("")
-
-        # upload de xlsx de mimuf
-        st.markdown("## Upload do excel do MIMUF")
-
-        # Upload de ficheiro excel do MIMUF
-        uploaded_file_mimuf = st.file_uploader(
-            "Upload excel proveniente do MIM@UF",
-            type=["xlsx"],
-            # help="Ajuda MIMUF",
-            label_visibility="collapsed",
-            accept_multiple_files=True,
-        )
-
-        st.markdown(
-            "[Como extrair o ficheiro excel do MIM@UF?](https://mgfhub.com/FAQs)",
-            unsafe_allow_html=True,
-        )
-
-        st.write("")
-
-        with st.expander("Dicas"):
-            st.markdown(
-                "**1 -** Podes carregar mais do que um ficheiro do BI-CSP e/ou MIM@UF com periodos diferentes. Permite comparar diferentes periodos e/ou unidades."
-            )
-            st.markdown(
-                "**2 -** Depois de extrarir uma vez os ficheitos do BI-CSP/MIM@UF no mês, podes guardar nas pastas partilhadas da unidade para utlilizar novamente, uma vez que os dados não ficam guardados no servidor do mgfhub."
-            )
-
-        post_etl_bicsp = etl_bicsp(uploaded_file_bicsp)
-
-        post_etl_mimuf = etl_mimuf(uploaded_file_mimuf)
-
-    return post_etl_bicsp, post_etl_mimuf
-
-
-# @st.cache_data
-def tab_visao_unidade(df_bicsp):
+def radio_opcao_visualizacao(df_bicsp):
     opções_visualizacao = (
         [
             "Sunburst",
@@ -91,11 +28,12 @@ def tab_visao_unidade(df_bicsp):
         if len(df_bicsp) > 1
         else ["Sunburst", "Tabela", "Sunburst + Tabela", "Dumbbell"]
     )
+
     # Dumbbell chart by default if more than one file uploaded
     index_visualizacao = 3 if len(df_bicsp) > 1 else 0
 
     # radio escolha visualização
-    st.session_state["opcao_visualizacao"] = st.radio(
+    return st.radio(
         "Visualização",
         opções_visualizacao,
         horizontal=True,
@@ -104,7 +42,10 @@ def tab_visao_unidade(df_bicsp):
         key="opcao_visualizacao_1",
     )
 
-    # st.divider()
+
+# @st.cache_data
+def tab_visao_unidade(df_bicsp):
+    st.session_state["opcao_visualizacao"] = radio_opcao_visualizacao(df_bicsp)
 
     # filtros
     (
@@ -190,43 +131,43 @@ def tab_visao_unidade(df_bicsp):
         ) & (df_sunburst["Hierarquia Contratual - Área"] == "IDE - Desempenho")
         df_sunburst.loc[mask, "Score"] = None
 
-    # metrica IDE
-    with col_filter_2:
-        ide = (
-            (
-                df_sunburst.loc[
-                    (df_sunburst["Nome"] == "IDE") & (df_sunburst["Score"].notnull()),
-                    "Resultado",
-                ]
-                .values[0]
-                .round(1)
-            )
-            if df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Score"].notnull().any()
-            else None
-        )
+    # # metrica IDE
+    # with col_filter_2:
+    #     ide = (
+    #         (
+    #             df_sunburst.loc[
+    #                 (df_sunburst["Nome"] == "IDE") & (df_sunburst["Score"].notnull()),
+    #                 "Resultado",
+    #             ]
+    #             .values[0]
+    #             .round(1)
+    #         )
+    #         if df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Score"].notnull().any()
+    #         else None
+    #     )
 
-        # sum of all "Poderação" if Score is not Null
-        max_ide = df_sunburst.loc[
-            ~df_sunburst["Dimensão"].isin(["IDE", None])
-            & df_sunburst["Score"].notnull(),
-            "Ponderação",
-        ].sum()
-        max_ide -= 100
-        max_ide = max_ide.round(1)
+    #     # sum of all "Poderação" if Score is not Null
+    #     max_ide = df_sunburst.loc[
+    #         ~df_sunburst["Dimensão"].isin(["IDE", None])
+    #         & df_sunburst["Score"].notnull(),
+    #         "Ponderação",
+    #     ].sum()
+    #     max_ide -= 100
+    #     max_ide = max_ide.round(1)
 
-        diference = (ide - max_ide).round(1)
+    #     diference = (ide - max_ide).round(1)
 
-        # diference_percentage =diference/max_ide
+    #     # diference_percentage =diference/max_ide
 
-        st.metric("IDE", ide)
+    #     st.metric("IDE", ide)
 
-    with col_filter_2_1:
-        st.metric(
-            "IDE máximo",
-            max_ide,
-            -diference,
-            help="IDE máximo teórico para os filtros selecionados em baixo. O número a verde representa o potencial ganho no IDE se se cumprir com score 2 todos os indicadores incluídos no mesmo filtro",
-        )
+    # with col_filter_2_1:
+    #     st.metric(
+    #         "IDE máximo",
+    #         max_ide,
+    #         -diference,
+    #         help="IDE máximo teórico para os filtros selecionados em baixo. O número a verde representa o potencial ganho no IDE se se cumprir com score 2 todos os indicadores incluídos no mesmo filtro",
+    #     )
 
     # SUNBURST
     if st.session_state["opcao_visualizacao"] == "Sunburst":
@@ -359,144 +300,3 @@ def tab_visao_unidade(df_bicsp):
 - Para visualizar com mais detalhe, clica no botão de ecrã inteiro no canto superior direito do gráfico para aumentar o tamanho.
 """
         )
-
-
-# @st.cache_data
-def tab_visao_equipas(df_mimuf):
-    col_filtro_equipa_1, col_filtro_equipa_2, col_visualizacao = st.columns([1, 3, 2])
-
-    with col_filtro_equipa_1:
-        dataframe_selected = st.selectbox(
-            "Escolha o mês de analise",
-            df_mimuf,
-        )
-
-    with col_filtro_equipa_2:
-        lista_indicadores = df_mimuf[dataframe_selected]["df"]["Nome"].unique()
-        filtro_indicador = st.selectbox(
-            "Indicador",
-            (lista_indicadores[1:]),
-        )
-
-    with col_visualizacao:
-        st.session_state["opcao_visualizacao_2"] = st.radio(
-            "Ordenar por:",
-            ["Valor", "Numerador", "Denominador"],
-            index=1,
-            horizontal=True,
-        )
-
-    st.divider()
-
-    # processarinfomração por médico para unidade
-    valores_indicador = process_indicador(
-        df_mimuf[dataframe_selected]["df"].loc[
-            df_mimuf[dataframe_selected]["df"]["Nome"] == filtro_indicador
-        ]
-    )
-
-    # visualização barra horizontal com os valores indicador
-    ide_bar_col_1, ide_bar_col_2, ide_bar_col_3 = st.columns([3, 1, 1])
-
-    with ide_bar_col_1:
-        ide_bar(valores_indicador)
-
-    with ide_bar_col_2:
-        st.metric(
-            "Quanto faltam até aceitável",
-            valores_indicador["quantos_faltam_aceitavel"],
-            help="Quanto falta para atingir o valor aceitável para o indicador (se positivo, já ultrapassou o valor aceitável, corresponde ao número de utentes que o valor do indicador é superior ao valor aceitável)",
-        )
-
-    with ide_bar_col_3:
-        st.metric(
-            "Quanto faltam até esperado",
-            valores_indicador["quantos_faltam_esperado"],
-            help="Quanto falta para atingir o valor esperado para o indicador (se positivo, já ultrapassou o valor esperado, corresponde ao número de utentes que o valor do indicador é superior ao valor esperado)",
-        )
-
-    col_graph_1, col_graph_2 = st.columns([5, 3])
-
-    with col_graph_1:
-        horizontal_bar(
-            df_mimuf[dataframe_selected]["df"].loc[
-                df_mimuf[dataframe_selected]["df"]["Nome"] == filtro_indicador
-            ],
-            df_mimuf[dataframe_selected]["ano"],
-            st.session_state["opcao_visualizacao_2"],
-        )
-
-    with col_graph_2:
-        # link for sdm by using th id of the indicador selected
-        # extract the initial numbers inside this string
-        filtro_indicador_id = filtro_indicador.split(" ")[0]
-        link = f"https://sdm.min-saude.pt/BI.aspx?id={filtro_indicador_id}"
-        text = f"link SDM indicador {filtro_indicador_id}"
-
-        st.markdown(f"[{text}]({link})")
-
-        df_num_den_med = (
-            df_mimuf[dataframe_selected]["df"]
-            .loc[df_mimuf[dataframe_selected]["df"]["Nome"] == filtro_indicador][
-                ["Médico Familia", "Numerador", "Denominador", "Valor"]
-            ]
-            .sort_values(by=st.session_state["opcao_visualizacao_2"], ascending=False)
-        )
-
-        st.dataframe(
-            df_num_den_med,
-            hide_index=True,
-        )
-
-    # st.divider()
-
-    # st.subheader("Cálculo de estimativas")
-
-    # col_metric_1, col_metric_2, col_metric_3, col_metric_4 = st.columns(4)
-
-    # numerador = df_num_den_med["Numerador"].sum().astype(int)
-    # denominador = df_num_den_med["Denominador"].sum().astype(int)
-
-    # with col_metric_1:
-    #     num = st.number_input("Numerador", value=numerador, key="numerador", step=10)
-
-    # with col_metric_2:
-    #     den = st.number_input(
-    #         "Denominador", value=denominador, key="denominador", step=10
-    #     )
-
-    # with col_metric_3:
-    #     # calcular valor
-    #     valor = round(num / den * 100, 2)
-
-    #     st.metric("Valor Estimado", valor)
-
-    # with col_metric_4:
-    #     st.metric("Valor Actual", round(numerador / denominador * 100, 2))
-
-
-# @st.cache_data
-def tab_visao_profissional(df_mimuf):
-    col_filtro_medico_1, col_filtro_medico_2 = st.columns(2)
-
-    with col_filtro_medico_1:
-        dataframe_selected = st.selectbox(
-            "Escolha o dataframe",
-            df_mimuf,
-        )
-
-    with col_filtro_medico_2:
-        filtro_medico = st.selectbox(
-            "Médico Familia",
-            (df_mimuf[dataframe_selected]["df"]["Médico Familia"].unique()),
-        )
-
-    sunburst_mimuf(
-        df_mimuf[dataframe_selected]["df"][
-            df_mimuf[dataframe_selected]["df"]["Médico Familia"] == filtro_medico
-        ],
-        df_mimuf[dataframe_selected]["ano"],
-        df_mimuf[dataframe_selected]["mes"],
-        df_mimuf[dataframe_selected]["unidade"],
-        800,
-    )

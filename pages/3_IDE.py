@@ -1,11 +1,12 @@
 import streamlit as st
 from utils.style import page_config, main_title, bottom_suport_email, em_desenvolvimento
-from utils.ide_ui import (
-    ide_sidebar,
-    tab_visao_unidade,
-    tab_visao_equipas,
-    tab_visao_profissional,
-)
+
+from ui.ide_sidebar import ide_sidebar
+from ui.ide_tab_unidade import tab_visao_unidade
+from ui.ide_tab_equipas import tab_visao_equipas
+from ui.ide_tab_profissional import tab_visao_profissional
+
+# from ui.ide_tab_test import test_tab
 
 import pandas as pd
 
@@ -41,14 +42,21 @@ def load_data_sunburst():
 
 
 # Tabs
+# tab_test, tab_unidade, tab_equipas, tab_prof_geral, tab_nao_ide = st.tabs(
 tab_unidade, tab_equipas, tab_prof_geral, tab_nao_ide = st.tabs(
     [
+        # "test",
         "Visão de Unidade",
         "Visão de Equipas",
         "Visão por Profissional",
         "Indicadores não-IDE",
     ],
 )
+
+# with tab_test:
+#     test_tab(st.session_state["df_bicsp"], st.session_state["df_mimuf"])
+
+st.divider()
 
 with tab_unidade:
     # mensagem se não houver ficheiros carregados
@@ -57,7 +65,8 @@ with tab_unidade:
         st.warning(bicsp_nao_carregado)
 
         st.divider()
-        sunburst_bicsp(load_data_sunburst(), 2000, "Janeiro", "USF ?", 800)
+        # Load and get a click return of which place was clicked
+        sunburst_bicsp(load_data_sunburst(), 2000, "Janeiro", "USF ?", 560)
 
     else:
         tab_visao_unidade(st.session_state["df_bicsp"])

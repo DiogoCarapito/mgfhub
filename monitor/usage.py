@@ -94,5 +94,3 @@ bar_chart = (
 )
 st.write(bar_chart)
 
-# Display the DataFrame in Streamlit
-# st.write(df)

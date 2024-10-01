@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from utils.load_data import download_update_data
+from scripts.load_data import download_update_data
 import streamlit as st
 
 

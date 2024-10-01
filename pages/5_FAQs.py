@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.style import page_config, main_title, em_desenvolvimento, bottom_suport_email
-from utils.tutorial import tutorial_bicsp, tutorial_mimuf
+from ui.tutorial import tutorial_bicsp, tutorial_mimuf
 
 page_config()
 

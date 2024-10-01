@@ -5,6 +5,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+from streamlit_plotly_events import plotly_events
+
 from utils.etl_relatorios import etiqueta_ano
 
 
@@ -20,10 +22,40 @@ def remove_dimensao(df):
     return df.loc[(df["Dimensão"] != "IDE") & (df["Nome"] != "IDE")]
 
 
-@st.cache_data()
+# @st.cache_data()
+# def sunburst_size_change(df, ano, mes, unidade, size):
+
+#     if not st.session_state["sunburst_size"]:
+#         st.session_state["sunburst_size"] = size
+
+#     if st.button("+"):
+#         st.session_state["sunburst_size"] += 100
+#         sunburst_bicsp(df, ano, mes, unidade, st.session_state["sunburst_size"])
+
+#     if st.button("-"):
+#         st.session_state["sunburst_size"] -= 100
+
+#         sunburst_bicsp(df, ano, mes, unidade, st.session_state["sunburst_size"])
+
+
+def id_table(df, event_click):
+    if event_click:
+        id_clicked = event_click[0]["pointNumber"]
+        df_clicked = df.iloc[id_clicked]
+        st.write(df_clicked["Lable"])
+        # st.write(df_clicked)
+    else:
+        st.write("IDE")
+        # st.write(df.iloc[48])
+
+
+# @st.cache_data()
 def sunburst_bicsp(df, ano, mes, unidade, size=800):
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df, ano)
+    
+    df["Impacto"] = df["Score"] * df["Ponderação"] / 2
+    print(df["Impacto"])
 
     # sunburst
     fig = px.sunburst(
@@ -32,7 +64,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
         parents="Dimensão",
         values="Ponderação",
         branchvalues="total",
-        custom_data=["Nome", "Resultado", int_aceit, int_esper],
+        custom_data=["Nome", "Resultado", int_aceit, int_esper, "Impacto"],
         color="Score",
         # color_continuous_scale=["#FF7E79", "#FFD479", "#56BA39"], #3 color gradient
         color_continuous_scale=[
@@ -44,28 +76,48 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
         ],  # 5 color gradient
         range_color=[0, 2],
     )
+
     fig.update_traces(
-        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.1f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
-        hoverlabel=dict(font=dict(size=18)),
+        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: <b>%{value}%</b><br>Score: <b>%{color:.2f}</b><br>Impacto: <b>%{customdata[4]:.2f}%</b><br>Resultado: <b>%{customdata[1]:.2f}</b><br>Intervalo Aceitável: <b>%{customdata[2]}</b><br>Intervalo Esperado: <b>%{customdata[3]}</b><extra></extra>""",
+        #hovertemplate="""<b>%{customdata[0]}</b>""",
+        hoverlabel=dict(font=dict(size=16)),
         textinfo="label",
-        insidetextfont=dict(size=24),
+        insidetextfont=dict(size=20, color="black"),
         insidetextorientation="radial",
+        textfont=dict(
+            color="black",
+        ),
     )
 
     fig.update_layout(
         title=f"{unidade} {mes}/{ano}",
-        title_font=dict(size=24),
+        title_font=dict(size=24, color="black"),
         width=size,
         height=size,
         showlegend=True,
+        legend_title_font=dict(color="black"),
+        legend_font=dict(color="black"),
     )
 
+    # col_sunburst, col_id = st.columns([3, 1])
+
+    # with col_sunburst:
+    #     with st.container():
+    #         event_click = plotly_events(fig, override_width="100%")
+    #         # event = st.plotly_chart(fig, use_container_width=True, on_select="rerun", selection_mode="points")
+
+    # with col_id:
+    #     # st.json(event)
+    #     id_table(df, event_click)
+
+    #sunburst_size_change(df, ano, mes, unidade, size)
+    
     st.plotly_chart(fig, use_container_width=True)
 
 
 @st.cache_data()
 def sunburst_mimuf(df, ano, mes, unidade, size=800):
-    ano = 2024
+    # ano = 2024
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df, ano)
     df = df[df["Score"] != "Error"]
@@ -120,6 +172,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
     # make score a float
     df["Score"] = df["Score"].astype(float)
 
+
     # # Add a row with Score 0
     # df = df.append(
     #     {
@@ -170,7 +223,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
         range_color=[0, 2],
     )
     fig.update_traces(
-        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.2f}</b><br>Resultado: <b>%{customdata[1]:.2f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
+        hovertemplate="""<b>%{customdata[0]}</b><br>Peso: %{value}%<br>Score: <b>%{color:.3f}</b><br>Resultado: <b>%{customdata[1]:.3f}</b><br>Intervalo Aceitável: %{customdata[2]}<br>Intervalo Esperado: %{customdata[3]}<extra></extra>""",
         hoverlabel=dict(font=dict(size=18)),
         textinfo="label",
         insidetextfont=dict(size=24),
@@ -185,6 +238,14 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
         showlegend=True,
     )
 
+    # # gets the event data and displays the fig as well
+    # event = plotly_events(fig, override_height=size, override_width=size)
+    # # st.plotly_chart(fig, use_container_width=True)
+
+    # if event:
+    #     selected_id = event[0]["pointNumber"]
+    #     st.write(selected_id)
+    
     st.plotly_chart(fig, use_container_width=True)
 
 
