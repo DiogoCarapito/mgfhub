@@ -520,7 +520,7 @@ def horizontal_bar(df, ano, ordenar_por):
 
     df = df.sort_values(by=ordenar_por, ascending=True)
 
-    freq = df["Valor"].round(1)
+    freq = df["Valor"].round(2)
 
     med = df["Médico Familia"]
 
@@ -536,6 +536,7 @@ def horizontal_bar(df, ano, ordenar_por):
 
     # se é o indicador 314, defenir o máximo com 100
     # porque o 314 é um indicador que e está mal desenhado! or 354
+
 
     if df["id"].unique()[0] == 314 or df["id"].unique()[0] == 354:
         maximo = 100
@@ -635,6 +636,7 @@ def ide_bar(info_indicador=None):
     id_indicador = info_indicador["id_indicador"]
     nome_indicador = info_indicador["nome_indicador"]
     valor = float(info_indicador["valor"])
+    valor = round(valor, 2)
 
     # Define the colors
     colors = ["red", "yellow", "green", "yellow", "red"]
@@ -642,6 +644,10 @@ def ide_bar(info_indicador=None):
     maximo = max(valor, info_indicador["max_aceitavel"], 100)
     if maximo > 1000:
         maximo = 300
+        
+    if id_indicador == 330 or id_indicador == 331:
+        maximo = 1
+        valor = valor/100
 
     # Define the ranges of the colors
     ranges = [
@@ -668,7 +674,7 @@ def ide_bar(info_indicador=None):
     id_float = float(id_indicador)
 
     # Set the plot limits and ticks
-    ax.set_xlim(0, 100)
+    ax.set_xlim(0, maximo)
     ax.set_ylim(id_float - 0.5, id_float + 0.5)
     ax.set_yticks([])
     ax.set_xticks([min_aceitavel, min_esperado, max_esperado, max_aceitavel])
@@ -698,6 +704,8 @@ def line_chart(df, filtro_visualização):
     max_esperado = df["max_esperado"].unique()[0]
     max_aceitavel = df["max_aceitavel"].unique()[0]
 
+    titulo = df["Nome"].unique()[0]
+
     # Define the colors
     colors = ["red", "yellow", "green", "yellow", "red"]
 
@@ -705,8 +713,12 @@ def line_chart(df, filtro_visualização):
     maximo = max(df["Valor"].max(), max_aceitavel, 100)
     if maximo > 1000:
         maximo = 300
-
-    titulo = df["Nome"].unique()[0]
+    
+    id_indicador = titulo.split(" - ")[0]
+    st.write(id_indicador)
+    if id_indicador == "330" or id_indicador == "331":
+        maximo = 1
+    
 
     # Define the ranges of the colors
     ranges = [
@@ -759,6 +771,7 @@ def line_chart(df, filtro_visualização):
                 y=df_medico["Valor"],
                 mode="lines+markers",
                 name=medico,
+                text=[f"{val:.2f}" for val in df_medico["Valor"]],  # Format values to 2 decimal placess
                 marker=dict(size=18),
             )
         )

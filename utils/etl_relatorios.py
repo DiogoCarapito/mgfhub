@@ -651,8 +651,8 @@ def process_filter_temporal(df_mimuf, filtro_indicador):
         # create a new row with the sum and average of the values of the unidade
         # add new row to the filtered_df
 
-        if id_indicador_selected == "354" or id_indicador_selected == "341":
-            valor = [round(filtered_df["Valor"].mean(), 1)]
+        if id_indicador_selected == "354" or id_indicador_selected == "341" or id_indicador_selected == "330" or id_indicador_selected == "331":
+            valor = [round(filtered_df["Valor"].mean(), 2)]
         else:
             valor = [
                 round(
