@@ -714,9 +714,11 @@ def line_chart(df, filtro_visualização):
         maximo = 300
 
     id_indicador = titulo.split(" - ")[0]
-    
+
     if id_indicador == "330" or id_indicador == "331":
         maximo = 1
+    elif id_indicador == "341":
+        maximo = max(df["Valor"].max(), 200)
 
     # Define the ranges of the colors
     ranges = [
