@@ -537,7 +537,6 @@ def horizontal_bar(df, ano, ordenar_por):
     # se é o indicador 314, defenir o máximo com 100
     # porque o 314 é um indicador que e está mal desenhado! or 354
 
-
     if df["id"].unique()[0] == 314 or df["id"].unique()[0] == 354:
         maximo = 100
     elif df["id"].unique()[0] == 404:
@@ -644,10 +643,10 @@ def ide_bar(info_indicador=None):
     maximo = max(valor, info_indicador["max_aceitavel"], 100)
     if maximo > 1000:
         maximo = 300
-        
+
     if id_indicador == 330 or id_indicador == 331:
         maximo = 1
-        valor = valor/100
+        valor = valor / 100
 
     # Define the ranges of the colors
     ranges = [
@@ -713,12 +712,11 @@ def line_chart(df, filtro_visualização):
     maximo = max(df["Valor"].max(), max_aceitavel, 100)
     if maximo > 1000:
         maximo = 300
-    
+
     id_indicador = titulo.split(" - ")[0]
-    st.write(id_indicador)
+    
     if id_indicador == "330" or id_indicador == "331":
         maximo = 1
-    
 
     # Define the ranges of the colors
     ranges = [
@@ -771,7 +769,9 @@ def line_chart(df, filtro_visualização):
                 y=df_medico["Valor"],
                 mode="lines+markers",
                 name=medico,
-                text=[f"{val:.2f}" for val in df_medico["Valor"]],  # Format values to 2 decimal placess
+                text=[
+                    f"{val:.2f}" for val in df_medico["Valor"]
+                ],  # Format values to 2 decimal placess
                 marker=dict(size=18),
             )
         )
