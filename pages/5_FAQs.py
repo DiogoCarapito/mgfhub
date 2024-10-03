@@ -11,8 +11,16 @@ main_title("Perguntas Frequentes")
 tab_mgfhub, tab_indicadores = st.tabs(["Sobre o mgfhub", "Sobre os Indicadores"])
 
 with tab_mgfhub:
-    tutorial_bicsp()
-    tutorial_mimuf()
+    selection = st.radio(
+        "Escolha o tutorial",
+        ["BI-CSP", "MIM@UF"],
+        horizontal=True,
+    )
+
+    if selection == "BI-CSP":
+        tutorial_bicsp()
+    elif selection == "MIM@UF":
+        tutorial_mimuf()
 
 with tab_indicadores:
     em_desenvolvimento()

@@ -12,6 +12,9 @@ def pre_process_sdm(source):
     # save  original to ./data folder
     df.to_csv("./data/original_" + source)
 
+    # check if Nome abreviado is empty, if yes, fill it with " "
+    df["Nome abreviado"] = df["Nome abreviado"].fillna(" ")
+
     # search_indexes
     df["search_indexes"] = (
         df["id"].astype(str)
@@ -26,7 +29,6 @@ def pre_process_sdm(source):
         + " "
         + df["Área | Subárea | Dimensão"]
     )
-    # df["id"].astype(str) + " " +
 
     df["search_indexes"] = df["search_indexes"].str.lower()
 

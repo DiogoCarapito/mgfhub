@@ -631,3 +631,113 @@ def process_indicador(df):
     }
 
     return info_indicador
+
+
+@st.cache_data()
+def process_filter_temporal(df_mimuf, filtro_indicador):
+    id_indicador_selected = filtro_indicador.split(" - ")[0]
+
+    list_dfs = list(df_mimuf.keys())
+
+    filtered_dfs = []
+
+    for each in list_dfs:
+        filtered_df = df_mimuf[each]["df"].loc[
+            df_mimuf[each]["df"]["id"] == int(id_indicador_selected)
+        ]
+        filtered_df["Mês"] = df_mimuf[each]["mes"]
+        filtered_df["Ano"] = df_mimuf[each]["ano"]
+
+        # create a new row with the sum and average of the values of the unidade
+        # add new row to the filtered_df
+
+        if id_indicador_selected == "354" or id_indicador_selected == "341":
+            valor = [round(filtered_df["Valor"].mean(), 1)]
+        else:
+            valor = [
+                round(
+                    filtered_df["Numerador"].sum()
+                    / filtered_df["Denominador"].sum()
+                    * 100,
+                    1,
+                )
+            ]
+        new_row = pd.DataFrame(
+            {
+                "id": [id_indicador_selected],
+                "Mês": [df_mimuf[each]["mes"]],
+                "Ano": [df_mimuf[each]["ano"]],
+                "Nome": [filtro_indicador],
+                "Médico Familia": ["Unidade"],
+                "Numerador": [filtered_df["Numerador"].sum()],
+                "Denominador": [filtered_df["Denominador"].sum()],
+                "Valor": valor,
+                "Score": [0],
+                "Mínimo Aceitável 2024": [filtered_df["Mínimo Aceitável 2024"].iloc[0]],
+                "Mínimo Esperado 2024": [filtered_df["Mínimo Esperado 2024"].iloc[0]],
+                "Máximo Esperado 2024": [filtered_df["Máximo Esperado 2024"].iloc[0]],
+                "Máximo Aceitável 2024": [filtered_df["Máximo Aceitável 2024"].iloc[0]],
+            }
+        )
+
+        filtered_df = pd.concat([new_row, filtered_df], ignore_index=True)
+
+        filtered_dfs.append(
+            filtered_df[
+                [
+                    "id",
+                    "Mês",
+                    "Ano",
+                    "Nome",
+                    "Médico Familia",
+                    "Numerador",
+                    "Denominador",
+                    "Valor",
+                    "Score",
+                    "Mínimo Aceitável 2024",
+                    "Mínimo Esperado 2024",
+                    "Máximo Esperado 2024",
+                    "Máximo Aceitável 2024",
+                ]
+            ]
+        )
+
+    # Concatenate all filtered DataFrames
+    concatenated_df = pd.concat(filtered_dfs, ignore_index=True)
+
+    # change the name of the columns
+    concatenated_df = concatenated_df.rename(
+        {
+            "Mínimo Aceitável 2024": "min_aceitavel",
+            "Mínimo Esperado 2024": "min_esperado",
+            "Máximo Esperado 2024": "max_esperado",
+            "Máximo Aceitável 2024": "max_aceitavel",
+        },
+        axis=1,
+    )
+
+    # order by ano and mes
+    concatenated_df = concatenated_df.sort_values(by=["Ano", "Mês", "Médico Familia"])
+
+    return concatenated_df
+
+    # data_evolucao_temporal = []
+
+    # for each in df_mimuf:
+    #     # st.write(each)
+    #     # st.write(df_mimuf[each]["df"])
+    #     # st.write(df_mimuf[each]["ano"])
+    #     # st.write(df_mimuf[each]["mes"])
+
+    #     df = df_mimuf[each]["df"]
+
+    #     df_num_den_med = (
+    #         df.loc[df["Nome"] == filtro_indicador][
+    #             ["Médico Familia", "Numerador", "Denominador", "Valor"]
+    #         ]
+    #         .sort_values(by="Valor", ascending=False)
+    #     )
+
+    #     data_evolucao_temporal.append(df_num_den_med)
+
+    # return data_evolucao_temporal

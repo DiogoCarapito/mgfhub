@@ -16,16 +16,16 @@ def tutorial_loop(tutorial):
 
 @st.cache_data()
 def tutorial_expander(tutorial):
-    with st.expander("Tutorial", expanded=False):
-        col_tutorial_1, col_tutorial_2, col_tutorial_3 = st.columns([1, 6, 1])
-        with col_tutorial_1:
-            st.empty()
+    col_tutorial_1, col_tutorial_2, col_tutorial_3 = st.columns([1, 6, 1])
 
-        with col_tutorial_2:
-            tutorial_loop(tutorial)
+    with col_tutorial_1:
+        st.write("")
 
-        with col_tutorial_3:
-            st.empty()
+    with col_tutorial_2:
+        tutorial_loop(tutorial)
+
+    with col_tutorial_3:
+        st.write("")
 
 
 @st.cache_data()
@@ -60,7 +60,9 @@ def tutorial_bicsp():
             "imagem": "content/tutorial_bicsp/tutorial_bicsp_7.png",
         },
     ]
+
     st.subheader("Como extrair o ficheiro excel necessário do BI-CSP?")
+
     tutorial_expander(tutorial)
 
 
@@ -136,5 +138,7 @@ def tutorial_mimuf():
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_17.png",
         },
     ]
+
     st.subheader("Como extrair o ficheiro excel necessário do MIM@UF?")
+
     tutorial_expander(tutorial)

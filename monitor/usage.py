@@ -93,4 +93,3 @@ bar_chart = (
     .properties(width=600, height=300)
 )
 st.write(bar_chart)
-

@@ -5,8 +5,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from streamlit_plotly_events import plotly_events
-
 from utils.etl_relatorios import etiqueta_ano
 
 
@@ -53,9 +51,8 @@ def id_table(df, event_click):
 def sunburst_bicsp(df, ano, mes, unidade, size=800):
     # get column names for the intervalos aceitáveis e esperados for the selected year
     int_aceit, int_esper = etiqueta_ano(df, ano)
-    
+
     df["Impacto"] = df["Score"] * df["Ponderação"] / 2
-    print(df["Impacto"])
 
     # sunburst
     fig = px.sunburst(
@@ -79,7 +76,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
 
     fig.update_traces(
         hovertemplate="""<b>%{customdata[0]}</b><br>Peso: <b>%{value}%</b><br>Score: <b>%{color:.2f}</b><br>Impacto: <b>%{customdata[4]:.2f}%</b><br>Resultado: <b>%{customdata[1]:.2f}</b><br>Intervalo Aceitável: <b>%{customdata[2]}</b><br>Intervalo Esperado: <b>%{customdata[3]}</b><extra></extra>""",
-        #hovertemplate="""<b>%{customdata[0]}</b>""",
+        # hovertemplate="""<b>%{customdata[0]}</b>""",
         hoverlabel=dict(font=dict(size=16)),
         textinfo="label",
         insidetextfont=dict(size=20, color="black"),
@@ -110,8 +107,8 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
     #     # st.json(event)
     #     id_table(df, event_click)
 
-    #sunburst_size_change(df, ano, mes, unidade, size)
-    
+    # sunburst_size_change(df, ano, mes, unidade, size)
+
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -171,7 +168,6 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
 
     # make score a float
     df["Score"] = df["Score"].astype(float)
-
 
     # # Add a row with Score 0
     # df = df.append(
@@ -245,7 +241,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
     # if event:
     #     selected_id = event[0]["pointNumber"]
     #     st.write(selected_id)
-    
+
     st.plotly_chart(fig, use_container_width=True)
 
 
@@ -553,7 +549,15 @@ def horizontal_bar(df, ano, ordenar_por):
         else:
             maximo, max_esperado, max_aceitavel = 100, 100, 100
     else:
-        maximo = max([min_aceitavel, min_esperado, max_esperado, max_aceitavel])
+        maximo = max(
+            [
+                min_aceitavel,
+                min_esperado,
+                max_esperado,
+                max_aceitavel,
+                df["Valor"].max(),
+            ]
+        )
 
     # Define the colors
     colors = ["red", "yellow", "green", "yellow", "red"]
@@ -620,6 +624,7 @@ def stakced_barchart(df):
     st.pyplot(fig)
 
 
+@st.cache_data()
 def ide_bar(info_indicador=None):
     min_aceitavel, min_esperado, max_esperado, max_aceitavel = (
         info_indicador["min_aceitavel"],
@@ -634,13 +639,17 @@ def ide_bar(info_indicador=None):
     # Define the colors
     colors = ["red", "yellow", "green", "yellow", "red"]
 
+    maximo = max(valor, info_indicador["max_aceitavel"], 100)
+    if maximo > 1000:
+        maximo = 300
+
     # Define the ranges of the colors
     ranges = [
         (0, min_aceitavel),
         (min_aceitavel, min_esperado),
         (min_esperado, max_esperado),
         (max_esperado, max_aceitavel),
-        (max_aceitavel, 100),
+        (max_aceitavel, maximo),
     ]
 
     # Create the figure and axis
@@ -675,3 +684,140 @@ def ide_bar(info_indicador=None):
     )
 
     st.pyplot(fig)
+
+
+@st.cache_data()
+def line_chart(df, filtro_visualização):
+    if filtro_visualização == "Unidade":
+        df = df[df["Médico Familia"] == "Unidade"]
+    else:
+        df = df[df["Médico Familia"] != "Unidade"]
+
+    min_aceitavel = df["min_aceitavel"].unique()[0]
+    min_esperado = df["min_esperado"].unique()[0]
+    max_esperado = df["max_esperado"].unique()[0]
+    max_aceitavel = df["max_aceitavel"].unique()[0]
+
+    # Define the colors
+    colors = ["red", "yellow", "green", "yellow", "red"]
+
+    minimo = 0
+    maximo = max(df["Valor"].max(), max_aceitavel, 100)
+    if maximo > 1000:
+        maximo = 300
+
+    titulo = df["Nome"].unique()[0]
+
+    # Define the ranges of the colors
+    ranges = [
+        (minimo, min_aceitavel),
+        (min_aceitavel, min_esperado),
+        (min_esperado, max_esperado),
+        (max_esperado, max_aceitavel),
+        (max_aceitavel, maximo),
+    ]
+
+    # Create a Plotly figure
+    fig = go.Figure()
+
+    fig.update_layout(
+        shapes=[
+            dict(
+                type="rect",
+                x0=0,
+                x1=1,
+                y0=0,
+                y1=1,
+                xref="paper",
+                yref="paper",
+                line=dict(color="black", width=1.5),
+            )
+        ]
+    )
+
+    # Add the background areas
+    for color, (start, end) in zip(colors, ranges):
+        fig.add_shape(
+            type="rect",
+            x0=0,
+            x1=1,
+            y0=start,
+            y1=end,
+            xref="paper",
+            yref="y",
+            fillcolor=color,
+            opacity=0.3,
+            line_width=0,
+        )
+
+    # Plot a line chart with the values for each "Médico Familia", where each "Médico Familia" has a line
+    for medico in df["Médico Familia"].unique():
+        df_medico = df.loc[df["Médico Familia"] == medico]
+        fig.add_trace(
+            go.Scatter(
+                x=df_medico["Mês"],
+                y=df_medico["Valor"],
+                mode="lines+markers",
+                name=medico,
+                marker=dict(size=18),
+            )
+        )
+
+    # Set plot title and labels
+    fig.update_layout(
+        title=dict(
+            text=titulo,
+            x=0.5,  # Center the title
+            xanchor="center",  # Anchor the title at the center
+            font=dict(size=26),  # Set font size to 30
+        ),
+        xaxis_title="Mês",
+        yaxis_title="Cumprimento",
+        xaxis=dict(
+            tickmode="array",
+            tickvals=df["Mês"].unique(),
+            ticktext=df["Mês"].unique(),
+            title_font=dict(size=24),
+            tickfont=dict(size=24),
+        ),
+        yaxis=dict(
+            tickmode="array",
+            tickvals=[
+                minimo,
+                min_aceitavel,
+                min_esperado,
+                max_esperado,
+                max_aceitavel,
+                maximo,
+            ],
+            title_font=dict(size=24),
+            tickfont=dict(size=24),
+        ),
+        legend_title="Médico Familia",
+        hoverlabel=dict(font_size=20),
+        # add a line arround the graph
+        margin=dict(l=20, r=20, t=50, b=20),
+    )
+    # Add a fine black border around the graph
+
+    # # Annotate the points
+    # for medico in df['Médico Familia'].unique():
+    #     df_medico = df.loc[df['Médico Familia'] == medico]
+    #     for i, row in df_medico.iterrows():
+    #         fig.add_annotation(
+    #             x=row['Mês'],
+    #             y=row['Valor'],
+    #             text=f"{row['Valor']:.0f}%".replace('.', ','),
+    #             showarrow=True,
+    #             arrowhead=2,
+    #             ax=0,
+    #             ay=-10,
+    #             font=dict(size=10),
+    #             align="center"
+    #         )
+
+    # Set y-axis limit to exactly 100
+    fig.update_yaxes(range=[0, maximo])
+
+    # Display the plot in Streamlit
+    st.plotly_chart(fig, use_container_width=True)

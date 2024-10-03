@@ -3,7 +3,7 @@ from utils.style import page_config, main_title, bottom_suport_email, em_desenvo
 
 from ui.ide_sidebar import ide_sidebar
 from ui.ide_tab_unidade import tab_visao_unidade
-from ui.ide_tab_equipas import tab_visao_equipas
+from ui.ide_tab_indicador import tab_visao_indicador
 from ui.ide_tab_profissional import tab_visao_profissional
 
 # from ui.ide_tab_test import test_tab
@@ -24,6 +24,7 @@ st.session_state["df_mimuf"] = {}
 # opções de visualização
 st.session_state["opcao_visualizacao"] = "Sunburst"
 st.session_state["opcao_visualizacao_2"] = "Barras + Tabela"
+st.session_state["opcao_visualizacao_tab_indicador"] = "Equipa"
 
 # mensagens de alerta de ficheiros não carregados
 bicsp_nao_carregado = "Ficheiros do BI-CSP não carregados!"
@@ -42,12 +43,12 @@ def load_data_sunburst():
 
 
 # Tabs
-# tab_test, tab_unidade, tab_equipas, tab_prof_geral, tab_nao_ide = st.tabs(
-tab_unidade, tab_equipas, tab_prof_geral, tab_nao_ide = st.tabs(
+# tab_test, tab_unidade, tab_indicador, tab_prof_geral, tab_nao_ide = st.tabs(
+tab_unidade, tab_indicador, tab_prof_geral, tab_nao_ide = st.tabs(
     [
         # "test",
         "Visão de Unidade",
-        "Visão de Equipas",
+        "Visão por Indicador",
         "Visão por Profissional",
         "Indicadores não-IDE",
     ],
@@ -55,8 +56,6 @@ tab_unidade, tab_equipas, tab_prof_geral, tab_nao_ide = st.tabs(
 
 # with tab_test:
 #     test_tab(st.session_state["df_bicsp"], st.session_state["df_mimuf"])
-
-st.divider()
 
 with tab_unidade:
     # mensagem se não houver ficheiros carregados
@@ -72,12 +71,12 @@ with tab_unidade:
         tab_visao_unidade(st.session_state["df_bicsp"])
 
 
-with tab_equipas:
+with tab_indicador:
     if not st.session_state["df_mimuf"]:
         st.warning(mimuf_nao_carregado)
 
     else:
-        tab_visao_equipas(st.session_state["df_mimuf"])
+        tab_visao_indicador(st.session_state["df_mimuf"])
 
 
 with tab_prof_geral:
@@ -87,7 +86,9 @@ with tab_prof_geral:
         st.warning(mimuf_nao_carregado)
 
     elif len(st.session_state["df_mimuf"]) >= 1:
-        tab_visao_profissional(st.session_state["df_mimuf"])
+        tab_visao_profissional(
+            st.session_state["df_mimuf"], st.session_state["df_bicsp"]
+        )
 
 
 with tab_nao_ide:

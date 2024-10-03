@@ -28,3 +28,4 @@ version,date,text
 2.7.4,2024-05-08,"Dumbbell Plot agora está ordenado pelos dados mais recentes em vez dos mais antigos"
 2.8.0,2024-05-30,"Adicionado cálculos de quantos cumpridores faltam para ficar a amarelo e a verde no IDE > Visão de Equipa e com barra do valor desse indicador"
 2.9.0,2024-06-05,"Adicionado novos indicadores até ao 494 na lista de pesquisa"
+2.10.0,2024-10-03,"Adicionada visão de evolução temporal interativa para a Unidade e Profissionais na Visão por indicador na pagina do IDE"

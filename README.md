@@ -17,15 +17,10 @@ Nova versão 2.1 disponível em [mgfhub.com](mgfhub.com)
 
 ## cheat sheet
 
-### create venv
+### create and activate .venv
 
 ```bash
 python3 -m venv .venv
-```
-
-### activate venv
-
-```bash
 source .venv/bin/activate
 ```
 
