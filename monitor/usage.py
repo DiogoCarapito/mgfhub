@@ -57,7 +57,7 @@ def get_data():
     return data
 
 
-st.title("MGFHUB IDE Usage")
+st.title("mgfhub IDE Usage")
 
 data = get_data()
 df = pd.DataFrame(data)
@@ -68,6 +68,8 @@ df["year"] = df["created_at"].dt.year
 df["month"] = df["created_at"].dt.month
 df["yearmonth"] = df["year"].astype(str) + "-" + df["month"].astype(str)
 
+# if month is less than 10, add a 0 before the month
+df["yearmonth"] = np.where(df["month"] < 10, df["year"].astype(str) + "-0" + df["month"].astype(str), df["yearmonth"])
 
 # get a frequency count of the unidade by yearmonth
 df_unidades = df.groupby(["yearmonth", "unidade"]).size().reset_index(name="count")
