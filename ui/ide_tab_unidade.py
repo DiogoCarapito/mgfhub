@@ -146,28 +146,28 @@ def tab_visao_unidade(df_bicsp):
             else None
         )
 
-    #     # sum of all "Poderação" if Score is not Null
-    #     max_ide = df_sunburst.loc[
-    #         ~df_sunburst["Dimensão"].isin(["IDE", None])
-    #         & df_sunburst["Score"].notnull(),
-    #         "Ponderação",
-    #     ].sum()
-    #     max_ide -= 100
-    #     max_ide = max_ide.round(1)
+        # sum of all "Poderação" if Score is not Null
+        max_ide = df_sunburst.loc[
+            ~df_sunburst["Dimensão"].isin(["IDE", None])
+            & df_sunburst["Score"].notnull(),
+            "Ponderação",
+        ].sum()
+        max_ide -= 100
+        max_ide = max_ide.round(1)
 
-    #     diference = (ide - max_ide).round(1)
+        diference = (ide - max_ide).round(1)
 
-    #     # diference_percentage =diference/max_ide
+        # diference_percentage =diference/max_ide
 
-    #     st.metric("IDE", ide)
+        st.metric("IDE", ide)
 
-    # with col_filter_2_1:
-    #     st.metric(
-    #         "IDE máximo",
-    #         max_ide,
-    #         -diference,
-    #         help="IDE máximo teórico para os filtros selecionados em baixo. O número a verde representa o potencial ganho no IDE se se cumprir com score 2 todos os indicadores incluídos no mesmo filtro",
-    #     )
+    with col_filter_2_1:
+        st.metric(
+            "IDE máximo",
+            max_ide,
+            -diference,
+            help="IDE máximo teórico para os filtros selecionados em baixo. O número a verde representa o potencial ganho no IDE se se cumprir com score 2 todos os indicadores incluídos no mesmo filtro",
+        )
 
     # SUNBURST
     if st.session_state["opcao_visualizacao"] == "Sunburst":
