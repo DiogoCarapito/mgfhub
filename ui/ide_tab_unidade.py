@@ -131,20 +131,20 @@ def tab_visao_unidade(df_bicsp):
         ) & (df_sunburst["Hierarquia Contratual - Área"] == "IDE - Desempenho")
         df_sunburst.loc[mask, "Score"] = None
 
-    # # metrica IDE
-    # with col_filter_2:
-    #     ide = (
-    #         (
-    #             df_sunburst.loc[
-    #                 (df_sunburst["Nome"] == "IDE") & (df_sunburst["Score"].notnull()),
-    #                 "Resultado",
-    #             ]
-    #             .values[0]
-    #             .round(1)
-    #         )
-    #         if df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Score"].notnull().any()
-    #         else None
-    #     )
+    # metrica IDE
+    with col_filter_2:
+        ide = (
+            (
+                df_sunburst.loc[
+                    (df_sunburst["Nome"] == "IDE") & (df_sunburst["Score"].notnull()),
+                    "Resultado",
+                ]
+                .values[0]
+                .round(1)
+            )
+            if df_sunburst.loc[df_sunburst["Nome"] == "IDE", "Score"].notnull().any()
+            else None
+        )
 
     #     # sum of all "Poderação" if Score is not Null
     #     max_ide = df_sunburst.loc[
