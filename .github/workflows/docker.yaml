@@ -1,51 +1,30 @@
-name: Github Actions Workflow
+name: Docker Image CI
 
-on: [push]
+on:
+  push:
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Set up Python 3.12.3
-      uses: actions/setup-python@v5
-      with:
-        python-version: 3.12.3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
-    - name: Install dependencies
-      run: |
-        make install
+      - name: Log in to Docker Registry
+        uses: docker/login-action@v2
+        with:
+          registry: registry.yourdomain.com
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    - name: Lint with pylint
-      run: |
-        make lint
+      - name: Build and tag Docker image
+        run: |
+          docker build . --file Dockerfile --tag registry.mgfhub.com/mgfhub:latest
 
-    - name: Test with pytest
-      run: |
-        make test
-      env:
-        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-
-    - name: Format code
-      run: |
-        make format
-
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-
-    - name: Log in to Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/mgfhub:latest
+      - name: Push Docker image
+        run: |
+          docker push registry.mgfhub.com/mgfhub:latest
