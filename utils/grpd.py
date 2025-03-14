@@ -4,7 +4,7 @@ import streamlit as st
 @st.dialog("Politica de privacidade e de colheita de dados")
 def consent_popup():
     # read the terms of use from content/politica_privacidade.md
-    with open("content/content_popup.md", "r") as file:
+    with open("content/content_popup.md", "r", encoding="utf-8") as file:
         content_popup = file.read()
 
     st.markdown(content_popup)

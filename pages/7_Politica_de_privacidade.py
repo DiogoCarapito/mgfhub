@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.style import (
-    mgfhub_style,
+    #mgfhub_style,
     page_config,
     # web_link,
     main_title,
@@ -18,7 +18,7 @@ page_config()
 main_title("Politica de Privacidade")
 
 # read the terms of use from content/politica_privacidade.md
-with open("content/politica_privacidade.md", "r") as file:
+with open("content/politica_privacidade.md", "r", encoding="utf-8") as file:
     politica_privacidade = file.read()
 
 st.markdown(politica_privacidade)
