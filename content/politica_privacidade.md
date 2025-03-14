@@ -1,3 +1,5 @@
+# Política de privacidade
+
 #### Última atualização: 9/11/2024
 
 A sua privacidade é importante para nós. Esta **Política de Privacidade** descreve como a mgfhub coleta, armazena e utiliza informações relacionadas com a informçaão necessária e gerada para o funcionamento da aplicação. Por favor, leia este documento atentamente para compreender as práticas adotadas.
