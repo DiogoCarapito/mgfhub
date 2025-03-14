@@ -11,6 +11,8 @@ from utils.style import (
     bottom_suport_email,
 )
 
+from utils.grpd import consent_popup
+
 
 def main():
     page_config()
@@ -56,6 +58,9 @@ def main():
     # empty column to style the page
     with col3:
         st.empty()
+
+    if "consent" not in st.session_state:
+        consent_popup()
 
     st.write("")
     bottom_suport_email()

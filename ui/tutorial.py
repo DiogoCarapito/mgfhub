@@ -16,7 +16,7 @@ def tutorial_loop(tutorial):
 
 @st.cache_data()
 def tutorial_expander(tutorial):
-    col_tutorial_1, col_tutorial_2, col_tutorial_3 = st.columns([1, 6, 1])
+    col_tutorial_1, col_tutorial_2, col_tutorial_3 = st.columns([1, 4, 1])
 
     with col_tutorial_1:
         st.write("")
