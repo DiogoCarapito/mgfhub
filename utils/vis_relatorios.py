@@ -1,3 +1,5 @@
+# pylint ignore W0613
+
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
@@ -526,10 +528,14 @@ def horizontal_bar(df, ano, ordenar_por):
 
     nome = df["Nome"].unique()[0]
 
-    min_aceitavel = df[f"Mínimo Aceitável {ano}"].unique()[0]
-    min_esperado = df[f"Mínimo Esperado {ano}"].unique()[0]
-    max_aceitavel = df[f"Máximo Aceitável {ano}"].unique()[0]
-    max_esperado = df[f"Máximo Esperado {ano}"].unique()[0]
+    min_aceitavel = df["Mínimo Aceitável"].unique()[0]
+    min_esperado = df["Mínimo Esperado"].unique()[0]
+    max_aceitavel = df["Máximo Aceitável"].unique()[0]
+    max_esperado = df["Máximo Esperado"].unique()[0]
+    # min_aceitavel = df[f"Mínimo Aceitável {ano}"].unique()[0]
+    # min_esperado = df[f"Mínimo Esperado {ano}"].unique()[0]
+    # max_aceitavel = df[f"Máximo Aceitável {ano}"].unique()[0]
+    # max_esperado = df[f"Máximo Esperado {ano}"].unique()[0]
     minimo = 0
 
     maximo_medico = df.groupby("Médico Familia")["Valor"].max().max()

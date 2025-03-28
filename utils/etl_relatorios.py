@@ -78,7 +78,7 @@ def extrair_id(df, coluna):
 def etiqueta_ano_completo(df, ano, list_texto):
     list_etiquetas = []
 
-    ano = 2024
+    #ano = 2024
 
     for each in list_texto:
         etiqueta = f"{each} {ano}"
@@ -109,10 +109,14 @@ def etiqueta_ano(df, ano):
 def calculate_score_mimuf(row):
     # Convert the values to floats
     valor = float(row["Valor"])
-    min_aceitavel = float(row["Mínimo Aceitável 2024"])
-    min_esperado = float(row["Mínimo Esperado 2024"])
-    max_esperado = float(row["Máximo Esperado 2024"])
-    max_aceitavel = float(row["Máximo Aceitável 2024"])
+    min_aceitavel = float(row["Mínimo Aceitável"])
+    min_esperado = float(row["Mínimo Esperado"])
+    max_esperado = float(row["Máximo Esperado"])
+    max_aceitavel = float(row["Máximo Aceitável"])
+    # min_aceitavel = float(row["Mínimo Aceitável 2024"])
+    # min_esperado = float(row["Mínimo Esperado 2024"])
+    # max_esperado = float(row["Máximo Esperado 2024"])
+    # max_aceitavel = float(row["Máximo Aceitável 2024"])
 
     if valor > max_aceitavel or valor < min_aceitavel:
         return 0
@@ -131,35 +135,60 @@ def calculate_score_mimuf(row):
 @st.cache_data()
 def calculate_score_bicsp(row):
     if (
-        row["Resultado"] > row["Máximo Aceitável 2024"]
-        or row["Resultado"] < row["Mínimo Aceitável 2024"]
+        row["Resultado"] > row["Máximo Aceitável"]
+        or row["Resultado"] < row["Mínimo Aceitável"]
     ):
         return 0
-    elif row["Mínimo Aceitável 2024"] <= row["Resultado"] < row["Mínimo Esperado 2024"]:
+    elif row["Mínimo Aceitável"] <= row["Resultado"] < row["Mínimo Esperado"]:
         score_min = (
             2
-            * (row["Resultado"] - row["Mínimo Aceitável 2024"])
-            / (row["Mínimo Esperado 2024"] - row["Mínimo Aceitável 2024"])
+            * (row["Resultado"] - row["Mínimo Aceitável"])
+            / (row["Mínimo Esperado"] - row["Mínimo Aceitável"])
         )
         return score_min
-    elif row["Máximo Esperado 2024"] < row["Resultado"] <= row["Máximo Aceitável 2024"]:
+    elif row["Máximo Esperado"] < row["Resultado"] <= row["Máximo Aceitável"]:
         score_max = (
             2
-            * (row["Máximo Aceitável 2024"] - row["Resultado"])
-            / (row["Máximo Aceitável 2024"] - row["Máximo Esperado 2024"])
+            * (row["Máximo Aceitável"] - row["Resultado"])
+            / (row["Máximo Aceitável"] - row["Máximo Esperado"])
         )
         return score_max
-    elif row["Mínimo Esperado 2024"] <= row["Resultado"] <= row["Máximo Esperado 2024"]:
+    elif row["Mínimo Esperado"] <= row["Resultado"] <= row["Máximo Esperado"]:
         return 2
     else:
         return "Error"  # Return some value or raise an exception in case none of the conditions are met
+    # if (
+    #     row["Resultado"] > row["Máximo Aceitável 2024"]
+    #     or row["Resultado"] < row["Mínimo Aceitável 2024"]
+    # ):
+    #     return 0
+    # elif row["Mínimo Aceitável 2024"] <= row["Resultado"] < row["Mínimo Esperado 2024"]:
+    #     score_min = (
+    #         2
+    #         * (row["Resultado"] - row["Mínimo Aceitável 2024"])
+    #         / (row["Mínimo Esperado 2024"] - row["Mínimo Aceitável 2024"])
+    #     )
+    #     return score_min
+    # elif row["Máximo Esperado 2024"] < row["Resultado"] <= row["Máximo Aceitável 2024"]:
+    #     score_max = (
+    #         2
+    #         * (row["Máximo Aceitável 2024"] - row["Resultado"])
+    #         / (row["Máximo Aceitável 2024"] - row["Máximo Esperado 2024"])
+    #     )
+    #     return score_max
+    # elif row["Mínimo Esperado 2024"] <= row["Resultado"] <= row["Máximo Esperado 2024"]:
+    #     return 2
+    # else:
+    #     return "Error"  # Return some value or raise an exception in case none of the conditions are met
 
 
 @st.cache_data()
 def etl_bicsp(list_of_files):
     if list_of_files is None:
         return None
-
+    
+    print(list_of_files)
+    
     dict_dfs = {}
 
     dict_of_dfs = {
@@ -173,6 +202,7 @@ def etl_bicsp(list_of_files):
 
         # processamento se o ficherio tiver cabeçalho (summarized e underalying data)
         first_column_name = df.columns[0]
+        
         # versão ENG
         if first_column_name.startswith("Applied"):
             # get the text int he header of the first column
@@ -225,12 +255,26 @@ def etl_bicsp(list_of_files):
 
         # nome = f"{unidade} {ano}/{mes}"
         nome = f"{unidade} {mes}/{ano}"
-
+        
         # correção_vacina_gripe_435(df)
 
         df["Resultado"] = df["Resultado"].astype(float)
 
-        sf_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
+        df.rename(
+            columns={
+                "Min. Aceit": "Mínimo Aceitável",
+                "Máx. Aceit": "Máximo Aceitável",
+                " Min. Esper": "Mínimo Esperado",
+                "Máx. Esper": "Máximo Esperado",
+            },
+            inplace=True,
+        )
+
+        df_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
+
+        # #print("sf_portaria.columns")
+        # #print(sf_portaria.columns)
+
 
         colunas_portaria = [
             "id",
@@ -240,24 +284,27 @@ def etl_bicsp(list_of_files):
             "Lable",
             "Área clínica",
         ]
+        
+        # #print("colunas_portaria")
+        # #print(colunas_portaria)
 
-        etiquetas_intervalos_ano = etiqueta_ano_completo(
-            df,
-            ano,
-            [
-                "Intervalo Aceitável",
-                "Mínimo Aceitável",
-                "Máximo Aceitável",
-                "Intervalo Esperado",
-                "Mínimo Esperado",
-                "Máximo Esperado",
-            ],
-        )
+        # etiquetas_intervalos_ano = etiqueta_ano_completo(
+        #     df,
+        #     ano,
+        #     [
+        #         "Intervalo Aceitável",
+        #         "Mínimo Aceitável",
+        #         "Máximo Aceitável",
+        #         "Intervalo Esperado",
+        #         "Mínimo Esperado",
+        #         "Máximo Esperado",
+        #     ],
+        # )
 
-        colunas_portaria.extend(etiquetas_intervalos_ano)
-
+        # colunas_portaria.extend(etiquetas_intervalos_ano)
+        
         df = df.merge(
-            sf_portaria[colunas_portaria],
+            df_portaria[colunas_portaria],
             on="id",
             how="right",
         )
@@ -268,6 +315,9 @@ def etl_bicsp(list_of_files):
         df = df[df["Score"] != "Error"]
 
         df["Score"] = df["Score"].astype(float)
+
+        print("df.columns")
+        print(df.columns)
 
         # Update list_of_dfs with the new df
         dict_dfs[nome] = {
@@ -370,6 +420,7 @@ def merge_portaria_bicsp(df_bicsp, ano):
 
 @st.cache_data()
 def localizacao_coluna_medico(df):
+    print(df.columns)
     index = df.columns.get_loc("Médico Familia") - 3
     list_text = [
         "para_remover_2",
@@ -379,6 +430,7 @@ def localizacao_coluna_medico(df):
 
     list_text.insert(index, "Médico Familia")
 
+    
     return list_text
 
 
@@ -409,7 +461,7 @@ def etl_mimuf(list_of_files):
         # remove the first row
         df = df[1:]
         df = df.reset_index(drop=True)
-
+        
         nome_colunas = localizacao_coluna_medico(df)
 
         # #give name to columns
@@ -451,22 +503,27 @@ def etl_mimuf(list_of_files):
 
         # make id the index
         df = df.set_index("id")
+        
+        print(df.columns)
+        print(df)
 
-        etiquetas_intervalos_ano = etiqueta_ano_completo(
-            df,
-            ano,
-            [
-                "Intervalo Aceitável",
-                "Mínimo Aceitável",
-                "Máximo Aceitável",
-                "Intervalo Esperado",
-                "Mínimo Esperado",
-                "Máximo Esperado",
-            ],
-        )
+        # etiquetas_intervalos_ano = etiqueta_ano_completo(
+        #     df,
+        #     ano,
+        #     [
+        #         "Intervalo Aceitável",
+        #         "Mínimo Aceitável",
+        #         "Máximo Aceitável",
+        #         "Intervalo Esperado",
+        #         "Mínimo Esperado",
+        #         "Máximo Esperado",
+        #     ], 
+        # )
 
         # get sunburst_portaria csv
         df_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
+        st.write(df_portaria)
+
 
         colunas_portaria = [
             "id",
@@ -474,15 +531,34 @@ def etl_mimuf(list_of_files):
             "Dimensão",
             "Ponderação",
             "Lable",
+            "Intervalo Esperado 2024",
+            "Intervalo Aceitável 2024",
+            "Mínimo Aceitável 2024",
+            "Máximo Aceitável 2024",
+            "Mínimo Esperado 2024",
+            "Máximo Esperado 2024",
+            
         ]
-
-        colunas_portaria.extend(etiquetas_intervalos_ano)
+        
+        # colunas_portaria.extend(etiquetas_intervalos_ano)
 
         # merge df with df_portaria
         df = df.merge(
             df_portaria[colunas_portaria],
             on="id",
             how="left",
+        )
+
+        df.rename(
+            columns={
+                "Intervalo Aceitável 2024": "Intervalo Aceitável",
+                "Mínimo Aceitável 2024": "Mínimo Aceitável",
+                "Máximo Aceitável 2024": "Máximo Aceitável",
+                "Intervalo Esperado 2024": "Intervalo Esperado",
+                "Mínimo Esperado 2024": "Mínimo Esperado",
+                "Máximo Esperado 2024": "Máximo Esperado",
+            },
+            inplace=True,
         )
 
         # drop rows with NaN
@@ -536,6 +612,8 @@ def etl_mimuf(list_of_files):
         # se acima do maximo esperado mas abaico do maximo aceitavel, score = 1
         # valores aceitáveis e esperados estão noutra coluna e deve ser usados o da mesma linha
 
+        st.write(df)
+
         df["Score"] = df.apply(calculate_score_mimuf, axis=1)
 
         # calculate the score for each dimension based on the average wheighed score
@@ -553,8 +631,6 @@ def etl_mimuf(list_of_files):
             df.loc[df["Nome"] == dim, "Resultado"] = df[df["Dimensão"] == dim][
                 "contributo"
             ].sum()
-
-        # st.write(df.columns)
 
         df.loc[df["Dimensão"] == "IDE", "Score"] = (
             2
@@ -610,8 +686,8 @@ def process_indicador(df):
     numerador = df["Numerador"].sum()
     denominador = df["Denominador"].sum()
     valor = round(numerador / denominador * 100, 1)
-    min_esperado = df["Mínimo Esperado 2024"].unique()[0]
-    min_acetavel = df["Mínimo Aceitável 2024"].unique()[0]
+    min_esperado = df["Mínimo Esperado"].unique()[0]
+    min_acetavel = df["Mínimo Aceitável"].unique()[0]
     # round up to the nearest integer
     quantos_faltam_aceitavel = -math.ceil(denominador * min_acetavel / 100 - numerador)
     quantos_faltam_esperado = -math.ceil(denominador * min_esperado / 100 - numerador)
@@ -621,8 +697,8 @@ def process_indicador(df):
         "nome_indicador": df["Nome"].unique()[0],
         "min_aceitavel": min_acetavel,
         "min_esperado": min_esperado,
-        "max_esperado": df["Máximo Esperado 2024"].unique()[0],
-        "max_aceitavel": df["Máximo Aceitável 2024"].unique()[0],
+        "max_esperado": df["Máximo Esperado"].unique()[0],
+        "max_aceitavel": df["Máximo Aceitável"].unique()[0],
         "numerador": numerador,
         "denominador": denominador,
         "valor": valor,
@@ -678,10 +754,14 @@ def process_filter_temporal(df_mimuf, filtro_indicador):
                 "Denominador": [filtered_df["Denominador"].sum()],
                 "Valor": valor,
                 "Score": [0],
-                "Mínimo Aceitável 2024": [filtered_df["Mínimo Aceitável 2024"].iloc[0]],
-                "Mínimo Esperado 2024": [filtered_df["Mínimo Esperado 2024"].iloc[0]],
-                "Máximo Esperado 2024": [filtered_df["Máximo Esperado 2024"].iloc[0]],
-                "Máximo Aceitável 2024": [filtered_df["Máximo Aceitável 2024"].iloc[0]],
+                "Mínimo Aceitável": [filtered_df["Mínimo Aceitável"].iloc[0]],
+                "Mínimo Esperado": [filtered_df["Mínimo Esperado"].iloc[0]],
+                "Máximo Esperado": [filtered_df["Máximo Esperado"].iloc[0]],
+                "Máximo Aceitável": [filtered_df["Máximo Aceitável"].iloc[0]],
+                # "Mínimo Aceitável 2024": [filtered_df["Mínimo Aceitável 2024"].iloc[0]],
+                # "Mínimo Esperado 2024": [filtered_df["Mínimo Esperado 2024"].iloc[0]],
+                # "Máximo Esperado 2024": [filtered_df["Máximo Esperado 2024"].iloc[0]],
+                # "Máximo Aceitável 2024": [filtered_df["Máximo Aceitável 2024"].iloc[0]],
             }
         )
 
@@ -699,10 +779,14 @@ def process_filter_temporal(df_mimuf, filtro_indicador):
                     "Denominador",
                     "Valor",
                     "Score",
-                    "Mínimo Aceitável 2024",
-                    "Mínimo Esperado 2024",
-                    "Máximo Esperado 2024",
-                    "Máximo Aceitável 2024",
+                    "Mínimo Aceitável",
+                    "Mínimo Esperado",
+                    "Máximo Esperado",
+                    "Máximo Aceitável",
+                    # "Mínimo Aceitável 2024",
+                    # "Mínimo Esperado 2024",
+                    # "Máximo Esperado 2024",
+                    # "Máximo Aceitável 2024",
                 ]
             ]
         )
@@ -713,10 +797,14 @@ def process_filter_temporal(df_mimuf, filtro_indicador):
     # change the name of the columns
     concatenated_df = concatenated_df.rename(
         {
-            "Mínimo Aceitável 2024": "min_aceitavel",
-            "Mínimo Esperado 2024": "min_esperado",
-            "Máximo Esperado 2024": "max_esperado",
-            "Máximo Aceitável 2024": "max_aceitavel",
+            "Mínimo Aceitável": "min_aceitavel",
+            "Mínimo Esperado": "min_esperado",
+            "Máximo Esperado": "max_esperado",
+            "Máximo Aceitável": "max_aceitavel",
+            # "Mínimo Aceitável 2024": "min_aceitavel",
+            # "Mínimo Esperado 2024": "min_esperado",
+            # "Máximo Esperado 2024": "max_esperado",
+            # "Máximo Aceitável 2024": "max_aceitavel",
         },
         axis=1,
     )
