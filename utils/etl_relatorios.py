@@ -187,8 +187,6 @@ def etl_bicsp(list_of_files):
     if list_of_files is None:
         return None
     
-    print(list_of_files)
-    
     dict_dfs = {}
 
     dict_of_dfs = {
@@ -316,8 +314,7 @@ def etl_bicsp(list_of_files):
 
         df["Score"] = df["Score"].astype(float)
 
-        print("df.columns")
-        print(df.columns)
+        df["ano_mes"] = f"{ano}-{mes}"
 
         # Update list_of_dfs with the new df
         dict_dfs[nome] = {
@@ -662,6 +659,8 @@ def etl_mimuf(list_of_files):
 
         df["Denominador"] = df["Denominador"].astype(float)
         df["Numerador"] = df["Numerador"].astype(float)
+        
+        df["ano_mes"] = f"{ano}-{mes}"
 
         # save as a dictionary name:df
         dict_dfs[nome] = {
@@ -748,6 +747,7 @@ def process_filter_temporal(df_mimuf, filtro_indicador):
                 "id": [id_indicador_selected],
                 "Mês": [df_mimuf[each]["mes"]],
                 "Ano": [df_mimuf[each]["ano"]],
+                "ano_mes": [f"{df_mimuf[each]['ano']}-{df_mimuf[each]['mes']}"],
                 "Nome": [filtro_indicador],
                 "Médico Familia": ["Unidade"],
                 "Numerador": [filtered_df["Numerador"].sum()],
@@ -773,6 +773,7 @@ def process_filter_temporal(df_mimuf, filtro_indicador):
                     "id",
                     "Mês",
                     "Ano",
+                    "ano_mes",
                     "Nome",
                     "Médico Familia",
                     "Numerador",

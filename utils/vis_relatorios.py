@@ -699,6 +699,7 @@ def ide_bar(info_indicador=None):
 
 @st.cache_data()
 def line_chart(df, filtro_visualização):
+    print(df.columns)
     if filtro_visualização == "Unidade":
         df = df[df["Médico Familia"] == "Unidade"]
     else:
@@ -773,7 +774,7 @@ def line_chart(df, filtro_visualização):
         df_medico = df.loc[df["Médico Familia"] == medico]
         fig.add_trace(
             go.Scatter(
-                x=df_medico["Mês"],
+                x=df_medico["ano_mes"],
                 y=df_medico["Valor"],
                 mode="lines+markers",
                 name=medico,
@@ -796,8 +797,8 @@ def line_chart(df, filtro_visualização):
         yaxis_title="Cumprimento",
         xaxis=dict(
             tickmode="array",
-            tickvals=df["Mês"].unique(),
-            ticktext=df["Mês"].unique(),
+            tickvals=df["ano_mes"].unique(),
+            ticktext=df["ano_mes"].unique(),
             title_font=dict(size=24),
             tickfont=dict(size=24),
         ),
