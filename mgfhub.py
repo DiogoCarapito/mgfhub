@@ -61,8 +61,8 @@ def main():
     with col3:
         st.empty()
 
-    if "consent" not in st.session_state:
-        consent_popup()
+    # if "consent" not in st.session_state:
+    #     consent_popup()
 
     st.write("")
     bottom_suport_email()
