@@ -7,9 +7,9 @@ def ide_sidebar():
     with st.sidebar:
         # upload de xlsx de bicsp
 
-        st.warning(
-            "Ainda não é possível fazer upload de ficheiros do BI-CSP e MIM@UF referentes ao ano de 2025. Será corrigido até ao fim de Março."
-        )
+        # st.warning(
+        #     "Ainda não é possível fazer upload de ficheiros do BI-CSP e MIM@UF referentes ao ano de 2025. Será corrigido até ao fim de Março."
+        # )
 
         st.markdown(
             "## Upload do excel do [BI-CSP](https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx)"

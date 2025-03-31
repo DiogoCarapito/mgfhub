@@ -39,9 +39,9 @@ def main():
         # it picks the most recent one
         novidades("content/changelog.csv")
 
-        st.warning(
-            "Ainda não é possível fazer upload de ficheiros do BI-CSP e MIM@UF referentes ao ano de 2025. Será corrigido até ao fim de Março."
-        )
+        # st.warning(
+        #     "Ainda não é possível fazer upload de ficheiros do BI-CSP e MIM@UF referentes ao ano de 2025. Será corrigido até ao fim de Março."
+        # )
 
         # card containers with links to other pages
 
