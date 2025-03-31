@@ -5,7 +5,7 @@ pages = [
     "pages/2_Indicadores.py",
     "pages/3_IDE.py",
     "pages/5_FAQs.py",
-    "pages/6_Sobre.py",
+    "pages/8_Sobre.py",
 ]
 
 for each_page in pages:

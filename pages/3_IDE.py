@@ -1,6 +1,8 @@
 import streamlit as st
 from utils.style import page_config, main_title, bottom_suport_email, em_desenvolvimento
 
+# from utils.grpd import consent_popup
+
 from ui.ide_sidebar import ide_sidebar
 from ui.ide_tab_unidade import tab_visao_unidade
 from ui.ide_tab_indicador import tab_visao_indicador
@@ -15,6 +17,9 @@ from utils.vis_relatorios import sunburst_bicsp
 page_config()
 
 main_title("IDE")
+
+# if "consent" not in st.session_state:
+#     consent_popup()
 
 # variaveis iniciais
 # Dicinoários para guardar os dataframes carregados

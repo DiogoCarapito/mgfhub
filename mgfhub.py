@@ -11,6 +11,8 @@ from utils.style import (
     bottom_suport_email,
 )
 
+# from utils.grpd import consent_popup
+
 
 def main():
     page_config()
@@ -37,6 +39,11 @@ def main():
         # it picks the most recent one
         novidades("content/changelog.csv")
 
+        # st.warning(
+        #     "Ainda não é possível fazer upload de ficheiros do BI-CSP e MIM@UF referentes ao ano de 2025. Será corrigido até ao fim de Março."
+        # )
+    
+
         # card containers with links to other pages
 
         # open content/cartoes_home.csv and read the content with pandas
@@ -56,6 +63,9 @@ def main():
     # empty column to style the page
     with col3:
         st.empty()
+
+    # if "consent" not in st.session_state:
+    #     consent_popup()
 
     st.write("")
     bottom_suport_email()

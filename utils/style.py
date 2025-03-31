@@ -358,6 +358,9 @@ def bottom_suport_email():
     st.divider()
 
     text = mgfhub_style("© mgfhub 2024 - Todos os direitos reservados")
+
+    # link politia de privacidade e termos de utilização
+
     st.markdown(
         '<div style="text-align: center;">'
         '<p style="font-size: 16px;">Dúvidas, sugestões? Envia-nos um email para <a href="mailto:mgfhub.suporte@gmail.com" style="text-decoration: underline; font-size: 16px;">mgfhub.suporte@gmail.com</a></p>'

@@ -1,3 +1,5 @@
+# pylint ignore W0613
+
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
@@ -515,6 +517,7 @@ def tabela(df, ano, nome):
 @st.cache_data()
 def horizontal_bar(df, ano, ordenar_por):
     # ano = 2024
+    print(ano)
 
     df = df.dropna(subset=["id"])
 
@@ -526,10 +529,14 @@ def horizontal_bar(df, ano, ordenar_por):
 
     nome = df["Nome"].unique()[0]
 
-    min_aceitavel = df[f"Mínimo Aceitável {ano}"].unique()[0]
-    min_esperado = df[f"Mínimo Esperado {ano}"].unique()[0]
-    max_aceitavel = df[f"Máximo Aceitável {ano}"].unique()[0]
-    max_esperado = df[f"Máximo Esperado {ano}"].unique()[0]
+    min_aceitavel = df["Mínimo Aceitável"].unique()[0]
+    min_esperado = df["Mínimo Esperado"].unique()[0]
+    max_aceitavel = df["Máximo Aceitável"].unique()[0]
+    max_esperado = df["Máximo Esperado"].unique()[0]
+    # min_aceitavel = df[f"Mínimo Aceitável {ano}"].unique()[0]
+    # min_esperado = df[f"Mínimo Esperado {ano}"].unique()[0]
+    # max_aceitavel = df[f"Máximo Aceitável {ano}"].unique()[0]
+    # max_esperado = df[f"Máximo Esperado {ano}"].unique()[0]
     minimo = 0
 
     maximo_medico = df.groupby("Médico Familia")["Valor"].max().max()
@@ -693,6 +700,7 @@ def ide_bar(info_indicador=None):
 
 @st.cache_data()
 def line_chart(df, filtro_visualização):
+    print(df.columns)
     if filtro_visualização == "Unidade":
         df = df[df["Médico Familia"] == "Unidade"]
     else:
@@ -767,7 +775,7 @@ def line_chart(df, filtro_visualização):
         df_medico = df.loc[df["Médico Familia"] == medico]
         fig.add_trace(
             go.Scatter(
-                x=df_medico["Mês"],
+                x=df_medico["ano_mes"],
                 y=df_medico["Valor"],
                 mode="lines+markers",
                 name=medico,
@@ -790,8 +798,8 @@ def line_chart(df, filtro_visualização):
         yaxis_title="Cumprimento",
         xaxis=dict(
             tickmode="array",
-            tickvals=df["Mês"].unique(),
-            ticktext=df["Mês"].unique(),
+            tickvals=df["ano_mes"].unique(),
+            ticktext=df["ano_mes"].unique(),
             title_font=dict(size=24),
             tickfont=dict(size=24),
         ),
