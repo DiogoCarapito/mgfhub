@@ -11,7 +11,7 @@ from utils.style import (
     bottom_suport_email,
 )
 
-#from utils.grpd import consent_popup
+# from utils.grpd import consent_popup
 
 
 def main():
@@ -38,8 +38,10 @@ def main():
         # novidades from content/novidades.csv
         # it picks the most recent one
         novidades("content/changelog.csv")
-        
-        st.warning("Ainda não é possível fazer upload de ficheiros do BI-CSP e MIM@UF referentes ao ano de 2025. Será corrigido até ao fim de Março.")
+
+        st.warning(
+            "Ainda não é possível fazer upload de ficheiros do BI-CSP e MIM@UF referentes ao ano de 2025. Será corrigido até ao fim de Março."
+        )
 
         # card containers with links to other pages
 

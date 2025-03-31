@@ -78,7 +78,7 @@ def extrair_id(df, coluna):
 def etiqueta_ano_completo(df, ano, list_texto):
     list_etiquetas = []
 
-    #ano = 2024
+    # ano = 2024
 
     for each in list_texto:
         etiqueta = f"{each} {ano}"
@@ -186,7 +186,7 @@ def calculate_score_bicsp(row):
 def etl_bicsp(list_of_files):
     if list_of_files is None:
         return None
-    
+
     dict_dfs = {}
 
     dict_of_dfs = {
@@ -200,7 +200,7 @@ def etl_bicsp(list_of_files):
 
         # processamento se o ficherio tiver cabeçalho (summarized e underalying data)
         first_column_name = df.columns[0]
-        
+
         # versão ENG
         if first_column_name.startswith("Applied"):
             # get the text int he header of the first column
@@ -253,7 +253,7 @@ def etl_bicsp(list_of_files):
 
         # nome = f"{unidade} {ano}/{mes}"
         nome = f"{unidade} {mes}/{ano}"
-        
+
         # correção_vacina_gripe_435(df)
 
         df["Resultado"] = df["Resultado"].astype(float)
@@ -273,7 +273,6 @@ def etl_bicsp(list_of_files):
         # #print("sf_portaria.columns")
         # #print(sf_portaria.columns)
 
-
         colunas_portaria = [
             "id",
             "Nome",
@@ -282,7 +281,7 @@ def etl_bicsp(list_of_files):
             "Lable",
             "Área clínica",
         ]
-        
+
         # #print("colunas_portaria")
         # #print(colunas_portaria)
 
@@ -300,7 +299,7 @@ def etl_bicsp(list_of_files):
         # )
 
         # colunas_portaria.extend(etiquetas_intervalos_ano)
-        
+
         df = df.merge(
             df_portaria[colunas_portaria],
             on="id",
@@ -427,7 +426,6 @@ def localizacao_coluna_medico(df):
 
     list_text.insert(index, "Médico Familia")
 
-    
     return list_text
 
 
@@ -458,7 +456,7 @@ def etl_mimuf(list_of_files):
         # remove the first row
         df = df[1:]
         df = df.reset_index(drop=True)
-        
+
         nome_colunas = localizacao_coluna_medico(df)
 
         # #give name to columns
@@ -500,7 +498,7 @@ def etl_mimuf(list_of_files):
 
         # make id the index
         df = df.set_index("id")
-        
+
         print(df.columns)
         print(df)
 
@@ -514,13 +512,12 @@ def etl_mimuf(list_of_files):
         #         "Intervalo Esperado",
         #         "Mínimo Esperado",
         #         "Máximo Esperado",
-        #     ], 
+        #     ],
         # )
 
         # get sunburst_portaria csv
         df_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
-        #st.write(df_portaria)
-
+        # st.write(df_portaria)
 
         colunas_portaria = [
             "id",
@@ -534,9 +531,8 @@ def etl_mimuf(list_of_files):
             "Máximo Aceitável 2024",
             "Mínimo Esperado 2024",
             "Máximo Esperado 2024",
-            
         ]
-        
+
         # colunas_portaria.extend(etiquetas_intervalos_ano)
 
         # merge df with df_portaria
@@ -609,7 +605,7 @@ def etl_mimuf(list_of_files):
         # se acima do maximo esperado mas abaico do maximo aceitavel, score = 1
         # valores aceitáveis e esperados estão noutra coluna e deve ser usados o da mesma linha
 
-        #st.write(df)
+        # st.write(df)
 
         df["Score"] = df.apply(calculate_score_mimuf, axis=1)
 
@@ -659,7 +655,7 @@ def etl_mimuf(list_of_files):
 
         df["Denominador"] = df["Denominador"].astype(float)
         df["Numerador"] = df["Numerador"].astype(float)
-        
+
         df["ano_mes"] = f"{ano}-{mes}"
 
         # save as a dictionary name:df

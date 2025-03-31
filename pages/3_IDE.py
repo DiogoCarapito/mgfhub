@@ -1,6 +1,7 @@
 import streamlit as st
 from utils.style import page_config, main_title, bottom_suport_email, em_desenvolvimento
-#from utils.grpd import consent_popup
+
+# from utils.grpd import consent_popup
 
 from ui.ide_sidebar import ide_sidebar
 from ui.ide_tab_unidade import tab_visao_unidade
