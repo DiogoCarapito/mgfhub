@@ -10,6 +10,8 @@ def ide_sidebar():
         # st.warning(
         #     "Ainda não é possível fazer upload de ficheiros do BI-CSP e MIM@UF referentes ao ano de 2025. Será corrigido até ao fim de Março."
         # )
+        
+        st.success('Já é possivel analisar dados de 2025! Se encontrar algum erro agradeço o contacto pelo endereço de email mgfhub.suporte@gmail.com')
 
         st.markdown(
             "## Upload do excel do [BI-CSP](https://bicsp.min-saude.pt/pt/contratualizacao/idg/Paginas/default.aspx)"
