@@ -1,7 +1,7 @@
 import streamlit as st
 from utils.utils import data_source, filter_df
 from utils.style import page_config, main_title, cartao_indicador, bottom_suport_email
-from utils.grpd import consent_popup
+#from utils.grpd import consent_popup
 
 import os
 from dotenv import load_dotenv
@@ -14,8 +14,8 @@ page_config()
 # titulo principal estilizado com a função main_title
 main_title("Indicadores")
 
-if "consent" not in st.session_state:
-    consent_popup()
+# if "consent" not in st.session_state:
+#     consent_popup()
 
 
 # Load Supabase with .env file

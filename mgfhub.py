@@ -11,7 +11,7 @@ from utils.style import (
     bottom_suport_email,
 )
 
-from utils.grpd import consent_popup
+#from utils.grpd import consent_popup
 
 
 def main():

@@ -519,7 +519,7 @@ def etl_mimuf(list_of_files):
 
         # get sunburst_portaria csv
         df_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
-        st.write(df_portaria)
+        #st.write(df_portaria)
 
 
         colunas_portaria = [
@@ -609,7 +609,7 @@ def etl_mimuf(list_of_files):
         # se acima do maximo esperado mas abaico do maximo aceitavel, score = 1
         # valores aceitáveis e esperados estão noutra coluna e deve ser usados o da mesma linha
 
-        st.write(df)
+        #st.write(df)
 
         df["Score"] = df.apply(calculate_score_mimuf, axis=1)
 
