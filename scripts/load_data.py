@@ -97,7 +97,7 @@ def pre_process_sdm(source):
     # save to ./data folder
     df.to_csv(f"./data/{source}")
 
-    print(f"{source} pre-processed successfully!")
+    # print(f"{source} pre-processed successfully!")
 
 
 def pre_process_portaria_sunburst(source):
@@ -198,7 +198,7 @@ def pre_process_portaria_sunburst(source):
     # save to ./data folder
     df.to_csv(f"./data/sunburst_{source}", index=False)
 
-    print(f"{source} pre-processed successfully!")
+    # print(f"{source} pre-processed successfully!")
 
 
 def download_update_data(source):
@@ -210,7 +210,7 @@ def download_update_data(source):
     df.to_csv("./data/" + source)
 
     # success message
-    print(f"{source} saved successfully!")
+    # print(f"{source} saved successfully!")
 
 
 def bicsp_list_indicadores():
@@ -241,12 +241,12 @@ def bicsp_list_indicadores():
     df.to_csv("./data/indicadores_bicsp.csv", index=False, header=False)
 
     # success message
-    print("indicadores_bicsp.csv saved successfully!")
+    # print("indicadores_bicsp.csv saved successfully!")
 
 
 def delete_file(file_path):
     os.remove(file_path)
-    print(f"{file_path} deleted successfully!")
+    # print(f"{file_path} deleted successfully!")
 
 
 def complete_sunburst_portaria_411a_2023():

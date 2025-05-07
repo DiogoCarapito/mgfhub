@@ -270,8 +270,8 @@ def etl_bicsp(list_of_files):
 
         df_portaria = pd.read_csv("./data/sunburst_portaria_411a_2023.csv")
 
-        # #print("sf_portaria.columns")
-        # #print(sf_portaria.columns)
+        # ## print("sf_portaria.columns")
+        # ## print(sf_portaria.columns)
 
         colunas_portaria = [
             "id",
@@ -282,8 +282,8 @@ def etl_bicsp(list_of_files):
             "Área clínica",
         ]
 
-        # #print("colunas_portaria")
-        # #print(colunas_portaria)
+        # ## print("colunas_portaria")
+        # ## print(colunas_portaria)
 
         # etiquetas_intervalos_ano = etiqueta_ano_completo(
         #     df,
@@ -416,7 +416,6 @@ def merge_portaria_bicsp(df_bicsp, ano):
 
 @st.cache_data()
 def localizacao_coluna_medico(df):
-    print(df.columns)
     index = df.columns.get_loc("Médico Familia") - 3
     list_text = [
         "para_remover_2",
@@ -499,8 +498,8 @@ def etl_mimuf(list_of_files):
         # make id the index
         df = df.set_index("id")
 
-        print(df.columns)
-        print(df)
+        # print(df.columns)
+        # print(df)
 
         # etiquetas_intervalos_ano = etiqueta_ano_completo(
         #     df,
@@ -680,7 +679,7 @@ def extracao_areas_clinicas(df):
 def process_indicador(df):
     numerador = df["Numerador"].sum()
     denominador = df["Denominador"].sum()
-    valor = round(numerador / denominador * 100, 1)
+    valor = numerador / denominador * 100
     min_esperado = df["Mínimo Esperado"].unique()[0]
     min_acetavel = df["Mínimo Aceitável"].unique()[0]
     # round up to the nearest integer
@@ -700,6 +699,29 @@ def process_indicador(df):
         "quantos_faltam_aceitavel": quantos_faltam_aceitavel,
         "quantos_faltam_esperado": quantos_faltam_esperado,
     }
+
+    list_indicadores_valor_10x = [
+        302,
+        310,
+        311,
+        312,
+        330,
+        331,
+        341,
+        354,
+        404,
+    ]
+
+    if info_indicador["id_indicador"] in list_indicadores_valor_10x:
+        info_indicador["valor"] = info_indicador["valor"] / 100
+
+    if info_indicador["id_indicador"] == 294:
+        info_indicador["quantos_faltam_aceitavel"] = (
+            info_indicador["denominador"] * min_acetavel / 1000 - numerador
+        )
+        info_indicador["quantos_faltam_esperado"] = (
+            info_indicador["denominador"] * min_esperado / 1000 - numerador
+        )
 
     return info_indicador
 
