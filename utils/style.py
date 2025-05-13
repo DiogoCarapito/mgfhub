@@ -158,7 +158,7 @@ def card_container(title, text, image, em_construcao):
             f'<p style="font-size: 19px;">{msg_construcao}</p>'
             f'<p style="font-size: 19px;">{mgfhub_style(text)}</p>'
             f"<div>{image_markdown}</div>"
-            f'<a href="{title}" style="text-decoration: underline; font-size: 19px;">Ir para {title}</a>'
+            f'<a href="{title}" style="text-decoration: underline; font-size: 19px;"; target="_self">Ir para {title}</a>'
             f"<p> </p>",
             unsafe_allow_html=True,
         )

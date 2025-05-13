@@ -701,6 +701,7 @@ def process_indicador(df):
     }
 
     list_indicadores_valor_10x = [
+        269,
         302,
         310,
         311,

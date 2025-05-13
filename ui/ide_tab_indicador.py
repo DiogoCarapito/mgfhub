@@ -124,6 +124,7 @@ def tab_visao_indicador(df_mimuf):
         #     )
 
         list_indidacores_no_metric = [
+            269,
             302,
             310,
             311,
