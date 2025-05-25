@@ -357,7 +357,7 @@ def page_bottom():
 def bottom_suport_email():
     st.divider()
 
-    text = mgfhub_style("© mgfhub 2024 - Todos os direitos reservados")
+    text = mgfhub_style("© mgfhub 2025 - Todos os direitos reservados")
 
     # link politia de privacidade e termos de utilização
 
