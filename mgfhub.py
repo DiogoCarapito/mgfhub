@@ -35,6 +35,8 @@ def main():
         # intro from content/intro.md
         intro("content/intro.md")
 
+        st.warning("Atenção: Foram identificados prováveis alterações no MIM@UF que tornam a extração de dados incompatível com a implementação atual do mgfhub (aparentemente foi removida a opção de transformar filtros em colunas através da Lupa). Até resolução deste problema, está a ser trabalhado uma alternativa para aceitar outro tipo de ficheiros provenientes do MIM@UF que manténham a capacidade de analise por indicador e por profissional. A análise por Unidade mantém-se funcional.")
+
         # novidades from content/novidades.csv
         # it picks the most recent one
         novidades("content/changelog.csv")
