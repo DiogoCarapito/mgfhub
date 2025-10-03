@@ -103,7 +103,7 @@ def tutorial_mimuf():
         },
         {
             "texto": "##### 8. Selecionar o Médico Familia (já não se faz o passo de transformar em coluna, agora é necessário fazer uma extração por cada médico)",
-            "imagem": "content/tutorial_mimuf/tutorial_mimuf_8_novo.png",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_8_NOVO.png",
         },
         {
             "texto": "##### 9. Mudar para indicador Flutuante",
