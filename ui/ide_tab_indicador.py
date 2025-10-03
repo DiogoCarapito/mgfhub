@@ -157,6 +157,9 @@ def tab_visao_indicador(df_mimuf):
                 * valores_indicador["min_esperado"]
                 / 100,
             )
+        st.info(
+            "Nota: É necessário colocar todos os médicos para as métricas serem calculadas para a unidade toda corretamente."
+        )
 
         # visualização barra horizontal com os valores indicador
         (
