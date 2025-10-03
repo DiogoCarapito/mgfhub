@@ -38,6 +38,7 @@ def main():
         st.success(
             """
 #### Funcionalidade de Visão por Indicador e Profissional reposta:
+
 Já não se faz o passo da lupa para transformar o filtro Médico Familia em coluna (esta funcionalidade aparentemente foi removida do MIM@UF).
 Para ultrapassar esta limitação agora é necessário:
 - Fazer uma extração por cada médico do mesmo relatório (P02_01_R03. Indicadores por lista de utentes de médico).
@@ -46,6 +47,8 @@ Para ultrapassar esta limitação agora é necessário:
 - No fim, fazer o upload dos ficheiros todos para o mgfhub no mesmo local, que faz a junção automática dos dados.
 
 Há um novo tutorial com a explicação detalhada dos novos passos na secção de [FAQs](https://mgfhub.com/FAQs).
+
+Os ficheiros antigos do MIM@UF continuam a funcionar, não é necessário voltar a extrair os que já funcionavam antes da alteração para fazer visões temporais.
 
 Agradeço o feedback e reportar qualquer erro que encontrem para [mgfhub.suporte@gmail.com](mailto:mgfhub.suporte@gmail.com)
 """
