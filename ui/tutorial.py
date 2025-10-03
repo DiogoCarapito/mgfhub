@@ -157,6 +157,8 @@ Para ultrapassar esta limitação agora é necessário:
 - Antes de exportar, garantir que estão selecionados ☑️ em "Exportar título do relatório", ☑️ "Exportar Informações de Pagina Por" e ☑️ "Exportar detalhes do filtro" (dantes eram pedidos para retirar, mas na realidade têm informação útil que permite a identificação automática do médico, particularmente útil na nova solução).
 - No fim, fazer o upload dos ficheiros todos para o mgfhub no mesmo local, que faz a junção automática dos dados.
 
+Os ficheiros antigos do MIM@UF continuam a funcionar, não é necessário voltar a extrair os que já funcionavam antes da alteração para fazer visões temporais.
+
 O tutorial que se segue já contempla os novos passos para a extração correta.
 """
     )

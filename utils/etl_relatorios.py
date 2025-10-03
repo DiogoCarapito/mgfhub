@@ -420,7 +420,7 @@ def localizacao_coluna_medico(df):
 
     list_text.insert(index, "Médico Familia")
 
-    st.write(list_text)
+    
     return list_text
 
     # df["Médico Familia"] = "Sem informação"
@@ -743,7 +743,7 @@ def etl_mimuf(list_of_files):
 
         df["ano_mes"] = f"{ano}-{mes}"
 
-        st.write(df)
+        
 
         # save as a dictionary name:df
         if nome in dict_dfs:
