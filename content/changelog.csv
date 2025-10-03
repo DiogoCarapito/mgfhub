@@ -31,3 +31,4 @@ version,date,text
 2.10.0,2024-10-03,"Adicionada visão de evolução temporal interativa para a Unidade e Profissionais na Visão por indicador na pagina do IDE"
 2.11.0,2025-03-31,"Corrigido erro que impedia a análise de dados referentes ao ano 2025"
 2.12.0,2025-05-07,"Melhorias na consistência, interface e correção de erros da Visão por Indicador - Visualização de Equipa:  Reorganização de filtros, Redefinição de métricas e correção de gráficos com erros nos eixos e cores"
+2.13.0,2025-10-03,"Novo workflow para extrair dados do MIM@UF (depois de 10/2025) - já não é possível transformar o filtro Médico Familia em coluna, pelo que é necessário fazer a extração por cada médico, sendo que a junção dos dados é feita automaticamente pelo mgfhub. Ver tutorial atualizado na secção de FAQs"

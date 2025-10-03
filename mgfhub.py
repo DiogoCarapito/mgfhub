@@ -35,7 +35,21 @@ def main():
         # intro from content/intro.md
         intro("content/intro.md")
 
-        st.warning("Atenção: Foram identificados prováveis alterações no MIM@UF que tornam a extração de dados incompatível com a implementação atual do mgfhub (aparentemente foi removida a opção de transformar filtros em colunas através da Lupa). Até resolução deste problema, está a ser trabalhado uma alternativa para aceitar outro tipo de ficheiros provenientes do MIM@UF que manténham a capacidade de analise por indicador e por profissional. A análise por Unidade mantém-se funcional.")
+        st.success(
+            """
+#### Funcionalidade de Visão por Indicador e Profissional reposta:
+Já não se faz o passo da lupa para transformar o filtro Médico Familia em coluna (esta funcionalidade aparentemente foi removida do MIM@UF).
+Para ultrapassar esta limitação agora é necessário:
+- Fazer uma extração por cada médico do mesmo relatório (P02_01_R03. Indicadores por lista de utentes de médico).
+- Já não se faz o passo da planilha para separar as linhas unificadas.
+- Antes de exportar, garantir que estão selecionados ☑️ em "Exportar título do relatório", ☑️ "Exportar Informações de Pagina Por" e ☑️ "Exportar detalhes do filtro" (dantes eram pedidos para retirar, mas na realidade têm informação útil que permite a identificação automática do médico, particularmente útil na nova solução).
+- No fim, fazer o upload dos ficheiros todos para o mgfhub no mesmo local, que faz a junção automática dos dados.
+
+Há um novo tutorial com a explicação detalhada dos novos passos na secção de [FAQs](https://mgfhub.com/FAQs).
+
+Agradeço o feedback e reportar qualquer erro que encontrem para [mgfhub.suporte@gmail.com](mailto:mgfhub.suporte@gmail.com)
+"""
+        )
 
         # novidades from content/novidades.csv
         # it picks the most recent one
