@@ -117,28 +117,28 @@ def tutorial_mimuf():
         #     "texto": "##### 10. Escrever Méd e selecionar Médico Familia",
         #     "imagem": "content/tutorial_mimuf/tutorial_mimuf_11.png",
         # },
-        # {
-        #     "texto": "##### 10. Corrigir as linas unificadas na Planilha e depois butão com colinas a amarelo",
-        #     "imagem": "content/tutorial_mimuf/tutorial_mimuf_12.png",
-        # },
         {
-            "texto": "##### 10. Voltar ao Home e clicar no botão Exportar",
+            "texto": "##### 10. Corrigir as linhas unificadas na Planilha e depois butão com colunas a amarelo",
+            "imagem": "content/tutorial_mimuf/tutorial_mimuf_12_NOVO.png",
+        },
+        {
+            "texto": "##### 11. Voltar ao Home e clicar no botão Exportar",
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_13.png",
         },
         {
-            "texto": '##### 11. Selecionar Excel com texto simples; MANTER ☑️ do "Exportar título do relatório"; MANTER ☑️ do "Exportar Informações de Pagina Por"; MANTER ☑️ do "Exportar detalhes do filtro"; Clicar em Exportar (permite incluir informação do médico para depois construir a equipa completa)',
+            "texto": '##### 12. Selecionar Excel com texto simples; MANTER ☑️ do "Exportar título do relatório"; MANTER ☑️ do "Exportar Informações de Pagina Por"; MANTER ☑️ do "Exportar detalhes do filtro"; Clicar em Exportar (permite incluir informação do médico para depois construir a equipa completa)',
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_14_NOVO.png",
         },
         {
-            "texto": "##### 12. Abrir o Excel",
+            "texto": "##### 13. Abrir ficheiro no Excel",
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_15.png",
         },
         {
-            "texto": "##### 13. Exportar como Livro",
+            "texto": "##### 14. Exportar como Livro",
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_16.png",
         },
         {
-            "texto": "##### 14. Fazer o upload do ficheiro para o mgfhub",
+            "texto": "##### 15. Fazer o upload do ficheiro para o mgfhub",
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_17.png",
         },
     ]
@@ -153,7 +153,6 @@ def tutorial_mimuf():
 Já não se faz o passo da lupa para transformar o filtro Médico Familia em coluna (esta funcionalidade foi removida do MIM@UF).
 Para ultrapassar esta limitação agora é necessário:
 - Fazer uma extração por cada médico do mesmo relatório (P02_01_R03. Indicadores por lista de utentes de médico).
-- Já não se faz o passo da planilha para separar as linhas unificadas.
 - Antes de exportar, garantir que estão selecionados ☑️ em "Exportar título do relatório", ☑️ "Exportar Informações de Pagina Por" e ☑️ "Exportar detalhes do filtro" (dantes eram pedidos para retirar, mas na realidade têm informação útil que permite a identificação automática do médico, particularmente útil na nova solução).
 - No fim, fazer o upload dos ficheiros todos para o mgfhub no mesmo local, que faz a junção automática dos dados.
 
