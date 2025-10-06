@@ -18,7 +18,9 @@ openpyxl==3.1.2
 plotly==5.18.0
 matplotlib
 
+
 # Streamlit libraries
+streamlit==1.50.0
 streamlit-plotly-events
 
 # Seach with fuzzy matching
