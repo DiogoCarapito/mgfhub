@@ -118,7 +118,7 @@ def tutorial_mimuf():
         #     "imagem": "content/tutorial_mimuf/tutorial_mimuf_11.png",
         # },
         {
-            "texto": "##### 10. Corrigir as linas unificadas na Planilha e depois butão com colinas a amarelo",
+            "texto": "##### 10. Corrigir as linhas unificadas na Planilha e depois butão com colunas a amarelo",
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_12_NOVO.png",
         },
         {
@@ -130,7 +130,7 @@ def tutorial_mimuf():
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_14_NOVO.png",
         },
         {
-            "texto": "##### 13. Abrir o Excel",
+            "texto": "##### 13. Abrir ficheiro no Excel",
             "imagem": "content/tutorial_mimuf/tutorial_mimuf_15.png",
         },
         {
