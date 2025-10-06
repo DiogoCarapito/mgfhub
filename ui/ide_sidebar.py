@@ -60,7 +60,7 @@ def ide_sidebar():
                 "**1 -** Podes carregar mais do que um ficheiro do BI-CSP e/ou MIM@UF com periodos diferentes. Permite comparar diferentes periodos e/ou unidades."
             )
             st.markdown(
-                "**2 -** Depois de extrarir uma vez os ficheitos do BI-CSP/MIM@UF no mês, podes guardar nas pastas partilhadas da unidade para utlilizar novamente, uma vez que os dados não ficam guardados no servidor do mgfhub."
+                "**2 -** Depois de extrair uma vez os ficheiros do BI-CSP/MIM@UF no mês, podes guardar nas pastas partilhadas da unidade para utlilizar novamente, uma vez que os dados não ficam guardados no servidor do mgfhub."
             )
 
         post_etl_bicsp = etl_bicsp(uploaded_file_bicsp)
