@@ -322,7 +322,7 @@ def etl_bicsp(list_of_files):
             )
         else:
             dict_dfs[nome] = {
-                "df": df,
+                "data": df,
                 "ano": ano,
                 "mes": mes,
                 "unidade": unidade,
