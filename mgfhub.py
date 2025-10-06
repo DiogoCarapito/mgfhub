@@ -42,7 +42,6 @@ def main():
 Já não se faz o passo da lupa para transformar o filtro Médico Familia em coluna (esta funcionalidade aparentemente foi removida do MIM@UF).
 Para ultrapassar esta limitação agora é necessário:
 - Fazer uma extração por cada médico do mesmo relatório (P02_01_R03. Indicadores por lista de utentes de médico).
-- Já não se faz o passo da planilha para separar as linhas unificadas.
 - Antes de exportar, garantir que estão selecionados ☑️ em "Exportar título do relatório", ☑️ "Exportar Informações de Pagina Por" e ☑️ "Exportar detalhes do filtro" (dantes eram pedidos para retirar, mas na realidade têm informação útil que permite a identificação automática do médico, particularmente útil na nova solução).
 - No fim, fazer o upload dos ficheiros todos para o mgfhub no mesmo local, que faz a junção automática dos dados.
 
