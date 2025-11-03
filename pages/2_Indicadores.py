@@ -211,7 +211,7 @@ else:
                     display_text="SDM",
                 )
             },
-            width='stretch',
+            width="stretch",
             # esconder o index
             hide_index=False,
             # ordem das colunas
