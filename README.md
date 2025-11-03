@@ -20,7 +20,7 @@ Nova versão 2.1 disponível em [mgfhub.com](mgfhub.com)
 ### create and activate .venv
 
 ```bash
-python3 -m venv .venv
+python3.13 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -42,4 +42,18 @@ run with image id
 
 ```bash
 docker run -p 8501:8501 mgfhub:latest
-````
+```
+
+run docker scout
+
+```bash
+docker scout quickview mgfhub:latest
+```
+
+```bash
+docker scout cves mgfhub:latest
+```
+
+```bash
+docker scout recommendations mgfhub:latest
+```

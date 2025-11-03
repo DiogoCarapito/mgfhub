@@ -147,20 +147,20 @@ def tutorial_mimuf():
         "Como extrair o ficheiro excel necessário do MIM@UF (nova versão depois de 10/2025)"
     )
 
-    st.success(
-        """
-#### Resumo das alterações:
-Já não se faz o passo da lupa para transformar o filtro Médico Familia em coluna (esta funcionalidade foi removida do MIM@UF).
-Para ultrapassar esta limitação agora é necessário:
-- Fazer uma extração por cada médico do mesmo relatório (P02_01_R03. Indicadores por lista de utentes de médico).
-- Antes de exportar, garantir que estão selecionados ☑️ em "Exportar título do relatório", ☑️ "Exportar Informações de Pagina Por" e ☑️ "Exportar detalhes do filtro" (dantes eram pedidos para retirar, mas na realidade têm informação útil que permite a identificação automática do médico, particularmente útil na nova solução).
-- No fim, fazer o upload dos ficheiros todos para o mgfhub no mesmo local, que faz a junção automática dos dados.
+    #     st.success(
+    #         """
+    # #### Resumo das alterações:
+    # Já não se faz o passo da lupa para transformar o filtro Médico Familia em coluna (esta funcionalidade foi removida do MIM@UF).
+    # Para ultrapassar esta limitação agora é necessário:
+    # - Fazer uma extração por cada médico do mesmo relatório (P02_01_R03. Indicadores por lista de utentes de médico).
+    # - Antes de exportar, garantir que estão selecionados ☑️ em "Exportar título do relatório", ☑️ "Exportar Informações de Pagina Por" e ☑️ "Exportar detalhes do filtro" (dantes eram pedidos para retirar, mas na realidade têm informação útil que permite a identificação automática do médico, particularmente útil na nova solução).
+    # - No fim, fazer o upload dos ficheiros todos para o mgfhub no mesmo local, que faz a junção automática dos dados.
 
-Os ficheiros antigos do MIM@UF continuam a funcionar, não é necessário voltar a extrair os que já funcionavam antes da alteração para fazer visões temporais.
+    # Os ficheiros antigos do MIM@UF continuam a funcionar, não é necessário voltar a extrair os que já funcionavam antes da alteração para fazer visões temporais.
 
-O tutorial que se segue já contempla os novos passos para a extração correta.
-"""
-    )
+    # O tutorial que se segue já contempla os novos passos para a extração correta.
+    # """
+    #     )
 
     tutorial_expander(tutorial)
 
@@ -240,8 +240,8 @@ def tutorial_mimuf_antigo():
 
     st.subheader("Como extrair o ficheiro excel necessário do MIM@UF (versão Antiga)")
 
-    st.warning(
-        """Neste momento não funciona porque a funcionalidade de transformar o filtro Médico Familia em coluna foi removida do MIM@UF, que permitia colocar a unidade toda num unico ficheiro. Agora é necessário fazer a extração por cada médico. Ver o tutorial do **MIM@UF depois 10/2025**."""
-    )
+    # st.warning(
+    #     """Neste momento não funciona porque a funcionalidade de transformar o filtro Médico Familia em coluna foi removida do MIM@UF, que permitia colocar a unidade toda num unico ficheiro. Agora é necessário fazer a extração por cada médico. Ver o tutorial do **MIM@UF depois 10/2025**."""
+    # )
 
     tutorial_expander(tutorial)

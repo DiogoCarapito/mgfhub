@@ -37,20 +37,15 @@ def main():
 
         st.success(
             """
-#### Funcionalidade de Visão por Indicador e Profissional reposta:
+#### Novidade importante:
 
-Já não se faz o passo da lupa para transformar o filtro Médico Familia em coluna (esta funcionalidade aparentemente foi removida do MIM@UF).
-Para ultrapassar esta limitação agora é necessário:
-- Fazer uma extração por cada médico do mesmo relatório (P02_01_R03. Indicadores por lista de utentes de médico).
-- Antes de exportar, garantir que estão selecionados ☑️ em "Exportar título do relatório", ☑️ "Exportar Informações de Pagina Por" e ☑️ "Exportar detalhes do filtro" (anteriormente era pedido para retirar, mas na realidade têm informação útil que permite a identificação automática do médico, particularmente útil na nova solução).
+O MIMI@UF tem tido actualizações importantes no seu interface na visão de relatlório. A Lupa desapareceu, mas a sua funcionalidade não foi removida como se pensava inicialemnte.
 
-- No fim, fazer o upload dos ficheiros todos para o mgfhub no mesmo local, que faz a junção automática dos dados.
+Neste momento é possivel **transformar um filtro numa coluna na tabela arrastando este filtro para a tabela na zona de colunas** (drag-and-drop). Assim deixa de ser necessário exportar um relatório por médico e é possível ter todos os médicos num único relatório novamente! Esta interface é muito melhor e mais intuitiva que a Lupa.
 
-Há um novo tutorial com a explicação detalhada dos novos passos na secção de [FAQs](https://mgfhub.com/FAQs).
+Agradeço aos colegas Riquen Mulji - USF Dona Amelia de Portugal - e Monica Albino - USF Amato Lusitano - por me terem alertado para esta nova funcionalidade.
 
-Os ficheiros antigos do MIM@UF continuam a funcionar, não é necessário voltar a extrair os que já funcionavam antes da alteração para fazer visões temporais.
-
-Agradeço o feedback e reportar qualquer erro que encontrem para [mgfhub.suporte@gmail.com](mailto:mgfhub.suporte@gmail.com)
+Irei actualizar o tutorial brevemente com esta informação (se não existirem novas alterações no MIM@UF entretanto)
 """
         )
 
