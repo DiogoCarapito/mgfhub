@@ -112,7 +112,7 @@ def sunburst_bicsp(df, ano, mes, unidade, size=800):
 
     # sunburst_size_change(df, ano, mes, unidade, size)
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 @st.cache_data()
@@ -245,7 +245,7 @@ def sunburst_mimuf(df, ano, mes, unidade, size=800):
     #     selected_id = event[0]["pointNumber"]
     #     st.write(selected_id)
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 @st.cache_data()
@@ -291,7 +291,7 @@ def horizontal_bar_chart(df1, ano1):
         height=900,
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 @st.cache_data()
@@ -461,7 +461,7 @@ def dumbbell_plot(dict_dfs, ano):
         ),
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 @st.cache_data()
@@ -954,4 +954,4 @@ def line_chart(df, filtro_visualização):
     #     fig.update_yaxes(range=[y_min, y_max])
 
     # Display the plot in Streamlit
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')

@@ -651,27 +651,27 @@ def etl_mimuf(list_of_files):
         df["Valor"] = (
             df["Valor"]
             .apply(
-                lambda x: x.replace(".", "").replace(",", ".")
-                if isinstance(x, str)
-                else x
+                lambda x: (
+                    x.replace(".", "").replace(",", ".") if isinstance(x, str) else x
+                )
             )
             .astype(float)
         )
         df["Numerador"] = (
             df["Numerador"]
             .apply(
-                lambda x: x.replace(".", "").replace(",", ".")
-                if isinstance(x, str)
-                else x
+                lambda x: (
+                    x.replace(".", "").replace(",", ".") if isinstance(x, str) else x
+                )
             )
             .astype(float)
         )
         df["Denominador"] = (
             df["Denominador"]
             .apply(
-                lambda x: x.replace(".", "").replace(",", ".")
-                if isinstance(x, str)
-                else x
+                lambda x: (
+                    x.replace(".", "").replace(",", ".") if isinstance(x, str) else x
+                )
             )
             .astype(float)
         )

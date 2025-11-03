@@ -1,0 +1,17 @@
+services:
+  mgfhub:
+    image: mgfhub:latest  # Replace with your built image tag
+    container_name: mgfhub
+    restart: always
+    ports:
+      - "8501:8501"  # Map Streamlit's default port to the host
+    volumes:
+      - .:/app  # Map the entire project directory to /app in the container
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
